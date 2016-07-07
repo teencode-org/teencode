@@ -1,7 +1,7 @@
 # react-bootstrap-test-boilerplate
 react-bootstrap-test-boilerplate is a minimalistic, comprehensive starter kit for quick application development with React and bootstrap
 
-Why this boilerplate?
+**Why this boilerplate?**
 
 1. **One command to launch** - Fire up your console and type `npm start`. The app automatically opens in your default browser
 2. **Error highlighting and hot reload** - Every time you save, changes hot reload and linting and automated tests run.
