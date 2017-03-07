@@ -19,7 +19,9 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+gulp.task('compile-all', ['sass', 'minify-css', 'minify-js', 'copy']);
+
+gulp.task('default', ['watch']);
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
@@ -45,5 +47,5 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*', ['default'])
+    gulp.watch('src/**/*', ['compile-all'])
 });
