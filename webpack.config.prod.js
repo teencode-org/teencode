@@ -1,44 +1,55 @@
 import webpack from 'webpack';
 import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const buildPath = path.resolve(__dirname, 'dist');
 const entryPath = path.resolve(__dirname, 'src', 'js', 'index.js');
 
-module.exports = {
+const GLOBALS = {
+  'process.env.NODE_ENV': JSON.stringify('production')
+};
+
+export default {
   debug: true,
-  devtool: '#inline-source-map',
+  devtool: 'cheap-module-eval-source-map',
   noInfo: false,
-  entry: [
-    'eventsource-polyfill',
-    'webpack-hot-middleware/client?reload=true',
-    entryPath
-  ],
-  target: 'web',
+  entry: entryPath,
+  target: 'web', // bundle app the way web browsers can understand
   output: {
     path: buildPath,
     publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './src'
+    contentBase: './dist'
   },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin(GLOBALS),
+    new ExtractTextPlugin('styles.css'),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin()
+  ],
   module: {
     loaders: [
       {
-        test: /src\/js\/.+.js$/,
-        exclude: /node_modules/,
-        loader: 'babel'
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: [nodeModulesPath]
       },
       // SASS
       {
         test: /css\/.+.(scss|css)$/,
-        loaders: ['style', 'css', 'sass']
+        loader: 'style!css!sass'
       },
       {
         test: /\.(png|jpg|gif)$/,
         loader: 'url?limit=25000'
       },
+
+      // Needed for the css-loader when [bootstrap-webpack](https://github.com/bline/bootstrap-webpack)
+      // loads bootstrap's css.
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=application/font-woff'
@@ -60,17 +71,5 @@ module.exports = {
         loader: 'url?limit=10000&mimetype=image/svg+xml'
       }
     ]
-  },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ],
-  resolve: {
-    modulesDirectories: [
-      'src',
-      'node_modules'
-    ],
-    extensions: ['', '.json', '.js', '.jsx']
   }
 };
