@@ -199,12 +199,42 @@ header {
     }
     img {
       width: 100%;
-      margin-top: -70px;
-      opacity: 0.5;
+      opacity: 0.1;
     }
+    #banner div {
+			position: absolute;
+      margin-top: -70px;
+		}
+		#banner div:nth-child(2) {
+			-webkit-animation: wipe 6s;
+			animation: wipe 6s;
+			-webkit-animation-delay: 0;
+			animation-delay: 0;
+			-webkit-animation-direction: alternate;
+			animation-direction: alternate;
+			-webkit-mask-size: 2000px 2000px;
+			-webkit-mask-image: -webkit-gradient(linear, left top, right bottom, 
+        color-stop(0.00,  rgba(0,0,0,1)),
+        color-stop(0.45,  rgba(0,0,0,1)),
+        color-stop(0.50,  rgba(0,0,0,0)),
+        color-stop(0.55,  rgba(0,0,0,0)),
+        color-stop(1.00,  rgba(0,0,0,0)));
+      img {
+        opacity: 0.4;
+      }
+		}
   }
   .overlay {
     background: rgba(87, 198, 212, 0.95);
+  }
+}
+
+@keyframes wipe {
+  0% {
+    -webkit-mask-position: -1200px -1200px;
+  }
+        100% {
+    -webkit-mask-position: 0 0;
   }
 }
 

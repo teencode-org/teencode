@@ -15,17 +15,17 @@ gulp.task('copy', function() {
   gulp.src('src/index.html')
     .pipe(gulp.dest('public'))
 
-  gulp.src('src/**/*.*(png|jpg)')
+  gulp.src('src/**/*.*(png|jpg|gif)')
     .pipe(gulp.dest('public'))
 })
 
 gulp.task('compile-all', ['sass', 'minify-css', 'minify-js', 'copy']);
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['compile-all', 'watch']);
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
-  return gulp.src('public/css/main.css')
+  return gulp.src('src/css/main.css')
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('public/css'))
@@ -43,7 +43,7 @@ gulp.task('minify-js', function() {
 gulp.task('sass', function() {
   return gulp.src('src/scss/main.scss')
     .pipe(sass())
-    .pipe(gulp.dest('public/css'))
+    .pipe(gulp.dest('src/css'))
 });
 
 gulp.task('watch', function() {
