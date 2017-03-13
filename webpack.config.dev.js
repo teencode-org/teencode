@@ -5,7 +5,7 @@ const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const buildPath = path.resolve(__dirname, 'dist');
 const entryPath = path.resolve(__dirname, 'src', 'js', 'index.js');
 
-module.exports = {
+export default {
   debug: true,
   devtool: '#inline-source-map',
   noInfo: false,
@@ -64,7 +64,14 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery',
+      Tether: 'tether',
+      'window.Tether': 'tether'
+    })
   ],
   resolve: {
     modulesDirectories: [
