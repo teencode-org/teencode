@@ -17,7 +17,11 @@ body {
 }
 
 p {
+<<<<<<< HEAD
   font-size: 14px;
+=======
+  font-size: 16px;
+>>>>>>> transfer static page to react js application
   line-height: 1.75;
   font-weight: 300;
   @include paragraph-font;
@@ -59,10 +63,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $blue-light;
 }
 
+<<<<<<< HEAD
 .bg-lighter-blue {
   background-color: $blue-lighter;
 }
 
+=======
+>>>>>>> transfer static page to react js application
 // Restyled Primary Buttons
 
 .btn-primary {
@@ -313,21 +320,35 @@ section {
   }
 }
 
+<<<<<<< HEAD
 // why Section
 
 .why-bg {
+=======
+// whoami Section
+
+.whoami-bg {
+>>>>>>> transfer static page to react js application
   padding: 0;
   margin-top: -280px;
   text-align: center;
   background: rgba(255, 255, 255, 0.3);
+<<<<<<< HEAD
   .why-section {
+=======
+  .whoami-section {
+>>>>>>> transfer static page to react js application
     padding: 0;
     z-index: 10;
     padding-top: 250px;
     &.last {
       background: rgba(255, 255, 255, 0.5);
       z-index: 1;
+<<<<<<< HEAD
       .why-text {
+=======
+      .whoami-text {
+>>>>>>> transfer static page to react js application
         text-align: left;
         margin-top: -20px;
         h4 {
@@ -342,6 +363,10 @@ section {
       }
     }
     &:last-child {
+<<<<<<< HEAD
+=======
+      border-right: 1px solid $blue-light;
+>>>>>>> transfer static page to react js application
       background: rgba(255, 255, 255, 0.7);
     }
     img {
@@ -351,6 +376,7 @@ section {
   }
 }
 
+<<<<<<< HEAD
 // whoami Section
 
 .whoami-bg {
@@ -382,6 +408,8 @@ section {
   }
 }
 
+=======
+>>>>>>> transfer static page to react js application
 // Services Section
 
 #services {
