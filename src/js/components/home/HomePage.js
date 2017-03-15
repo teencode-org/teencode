@@ -30,8 +30,9 @@ class HomePage extends React.Component {
                   <div className="col-md-6 col-xs-12">
                     <div className="home-content">
                       <h1>We Teach Teens to Code</h1>
-                      <p>We are Lorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
-                      <p><span className="action">Don't Stop Them</span></p>
+                      <p>Professional software developers taking time outside of 
+                        work to teach teenagers in high school how to code... for free!</p>
+                      <p><span className="action">Apply</span></p>
                     </div>
                   </div>
               </div>
@@ -40,9 +41,33 @@ class HomePage extends React.Component {
         </div>
       </div>
 
-      <section id="team" className="whoami">
+      <section id="reason" className="why">
           <div className="row">
-              <div className="col-lg-10 offset-lg-1 whoami-bg">
+              <div className="col-lg-10 offset-lg-1 why-bg">
+                  <div className="col-lg-4 why-section">
+                    <img src={people} alt="Why" />
+                  </div>
+                  <div className="col-lg-2 why-section last">
+                  </div>
+                  <div className="col-lg-6 why-section last">
+                    <div className="col-lg-8 offset-lg-2 why-text">
+                        <h4>Why?</h4>
+                        <div>
+                            <p className="text-muted">Everyone in this country should learn how to program a computer.
+                              It teaches you to think. - Steve Jobs</p>
+                              <p className="text-muted">It's more about the proces of breaking down problems into simpler units
+                              than coming out with complex algorithms. - Makinde, early Facebook Engineer</p>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="team" className="whoami whoami-bg">
+        <div className="container">
+          <div className="row">
+              <div className="col-lg-10 offset-lg-1">
                   <div className="col-lg-4 whoami-section">
                     <img src={people} alt="Who we are" />
                   </div>
@@ -52,20 +77,24 @@ class HomePage extends React.Component {
                     <div className="col-lg-8 offset-lg-2 whoami-text">
                         <h4>Who We Are</h4>
                         <div>
-                            <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                            <p className="text-muted">We are Andelans. 
+                              An entire community of software devlopers in Lagos and Nairobi. 
+                              We work with tech companies around the world.
+                            </p>
                         </div>
                     </div>
                   </div>
               </div>
           </div>
+        </div>
       </section>
 
       <section id="services" className="bg-light-blue">
           <div className="container">
               <div className="row">
                   <div className="col-lg-12 text-md-center">
-                      <h4 className="section-heading">What We Do</h4>
-                      <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                      <h4 className="section-heading">How we do this?</h4>
+                      <h3 className="section-subheading text-muted"></h3>
                   </div>
               </div>
               <div className="row">
@@ -76,7 +105,7 @@ class HomePage extends React.Component {
                         </div>
                         <div className="col-md-10 col-sm-10">
                           <h4 className="service-heading">Develop</h4>
-                          <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
                         </div>
                     </div>
                     <div className="col-md-6 service-col">
@@ -85,7 +114,7 @@ class HomePage extends React.Component {
                         </div>
                         <div className="col-md-10 col-sm-10">
                           <h4 className="service-heading">Design</h4>
-                          <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                          <p className="text-muted">We guide teens through a process of tackiling their favorite problem through technology.</p>
                         </div>
                     </div>
                     <div className="col-md-6 service-col">
@@ -93,8 +122,8 @@ class HomePage extends React.Component {
                           <img className="puzzle" src={puzzle3} alt="puzzle" />
                         </div>
                         <div className="col-md-10 col-sm-10">
-                          <h4 className="service-heading">Impact</h4>
-                          <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                          <h4 className="service-heading">Mentor</h4>
+                          <p className="text-muted">Very experienced developers take it upon themselves to oversee continued growth.</p>
                         </div>
                     </div>
                     <div className="col-md-6 service-col">
@@ -102,8 +131,8 @@ class HomePage extends React.Component {
                           <img className="puzzle" src={puzzle4} alt="puzzle" />
                         </div>
                         <div className="col-md-10 col-sm-10">
-                          <h4 className="service-heading">Mentor</h4>
-                          <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                          <h4 className="service-heading">Community</h4>
+                          <p className="text-muted">Teens across different geographical regions, bound by an interest in tech, supporting each other</p>
                         </div>
                     </div>
                 </div>
