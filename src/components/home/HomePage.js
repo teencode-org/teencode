@@ -321,6 +321,33 @@ export default HomePage
               </div>
           </div>
       </section>
+
+      <section id="video" className="why">
+          <div className="container">
+              <div className="row">
+                  <div className="col-lg-12 text-md-center">
+                      <div class="embed-responsive embed-responsive-16by9">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/Fkd9TWUtFm0" allowfullscreen></iframe>
+                      </div>
+                      <p className="text-muted lead">
+                        Thomas Suarez - 12 year old app developer 
+                        <br />gives quality advice to ... um ... everyone!
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="sponsor" className="bg-light-blue">
+          <div className="container">
+              <div className="row">
+                  <div className="col-lg-12 text-md-center">
+                      <h4 className="section-subheading text-muted">#teencode is proudly supported by </h4>
+                      <h1 className="section-heading text-muted">&lt; Andela &gt;</h1>
+                  </div>
+              </div>              
+          </div>
+      </section>
     </div>
     )
   }
