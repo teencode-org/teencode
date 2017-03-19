@@ -1,0 +1,472 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+// Global Components
+
+body {
+  overflow-x: hidden;
+  @include body-font;
+}
+
+.text-muted {
+  color: $gray-light;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 300;
+  @include paragraph-font;
+}
+
+p.large {
+  font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+}
+
+a {
+  color: $primary;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: darken($primary, 10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading-font;
+  font-weight: 700;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+.bg-light-blue {
+  background-color: $blue-light;
+}
+
+.bg-lighter-blue {
+  background-color: $blue-lighter;
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {
+  @include button-variant(white, $primary, $primary);
+  @include heading-font;
+  font-weight: 700;
+}
+
+.action {
+  @include body-font;
+  background: $orange;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border-radius: 0;
+  font-size: 18px;
+  padding: 10px 40px;
+}
+
+// Custom Navigation Bar
+
+.navbar-custom {
+  background-color: $primary;
+  border-color: transparent;
+  border-radius: 0;
+  .navbar-brand > img {
+    width: 100px;
+  }
+  .navbar-toggler {
+    background-color: $primary;
+    border-color: $primary;
+    @include heading-font;
+    color: white;
+    font-size: 24px;
+    border-radius: 0;
+    outline: none;
+    &:focus {
+      background-color: $primary;
+    }
+    &:hover,
+    &[aria-expanded="true"] {
+      background-color: $orange;
+    }
+  }
+  .navbar-toggleable-sm {
+    text-align: right;
+    clear: right;      
+    &.in>.nav {
+      li {
+        a {
+          background: rgba(255, 255, 255, 0.2);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        a:hover,
+        a:focus {
+          color: white;
+          outline: none;
+        }
+      }
+    }
+  }
+  .nav {
+    li {
+      a {
+        @include heading-font;
+        font-weight: 400;
+        letter-spacing: 1px;
+        border: 1px solid transparent;
+        color: white;
+        font-size: 14px;
+        padding: 10px 15px;
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          color: white;
+          outline: none;
+          border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+  .navbar-nav>li>a.active {
+    border-radius: 0;
+    color: white;
+    background-color: $orange;
+  }
+  .navbar-nav>li>a.active:hover,
+  .navbar-nav>li>a.active:focus {
+    color: white;
+    background-color: $orange;
+  }
+}
+
+@media(min-width:768px) {
+  .navbar-custom {
+    background-color: transparent;
+    padding: 25px 0 30px;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+    border: none;
+    .navbar-brand {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+  }
+}
+
+// Navbar Change on Scroll
+
+@media(min-width:768px) {
+  .navbar-custom.is-sticky {
+    background-color: $primary;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    .navbar-brand {
+      padding: 10px;
+      img {
+        width: 90px;
+      }
+    }
+  }
+}
+
+div.intro {
+  color: white;
+  background: url(../img/header-bg.jpg) no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  .intro-text {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    .intro-lead-in {
+      @include serif-font;
+      font-size: 22px;
+      line-height: 22px;
+      margin-bottom: 25px;
+    }
+    .intro-heading {
+      @include heading-font;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 50px;
+      margin-bottom: 25px;
+    }
+    img {
+      width: 100%;
+      opacity: 0.1;
+    }
+    #banner div {
+			position: absolute;
+      margin-top: -70px;
+		}
+		#banner div:nth-child(2) {
+			-webkit-animation: wipe 6s;
+			animation: wipe 6s;
+			-webkit-animation-delay: 0;
+			animation-delay: 0;
+			-webkit-animation-direction: alternate;
+			animation-direction: alternate;
+			-webkit-mask-size: 2000px 2000px;
+			-webkit-mask-image: -webkit-gradient(linear, left top, right bottom, 
+        color-stop(0.00,  rgba(0,0,0,1)),
+        color-stop(0.45,  rgba(0,0,0,1)),
+        color-stop(0.50,  rgba(0,0,0,0)),
+        color-stop(0.55,  rgba(0,0,0,0)),
+        color-stop(1.00,  rgba(0,0,0,0)));
+      img {
+        opacity: 0.4;
+      }
+		}
+  }
+  .overlay {
+    background: rgba(87, 198, 212, 0.95);
+  }
+}
+
+@keyframes wipe {
+  0% {
+    -webkit-mask-position: -1200px -1200px;
+  }
+        100% {
+    -webkit-mask-position: 0 0;
+  }
+}
+
+.home-content {
+  color: #fff;
+  h1 {
+    text-transform: capitalize;
+    font-weight: 200;
+    font-size: 42px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: .3px;
+    line-height: 1.7em;
+    margin: 30px 0;
+  }
+}
+
+@media(min-width:768px) {
+  div.intro {
+    .intro-text {
+      padding-top: 250px;
+      padding-bottom: 500px;
+      .intro-lead-in {
+        @include serif-font;
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 25px;
+      }
+      .intro-heading {
+        @include heading-font;
+        font-weight: 700;
+        font-size: 55px;
+        line-height: 75px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+// Section Styles
+
+section {
+  padding: 100px 0;
+  h2.section-heading {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  h3.section-subheading {
+    font-size: 16px;
+    @include serif-font;
+    text-transform: none;
+    font-weight: 400;
+    margin-bottom: 75px;
+  }
+}
+
+@media(min-width:768px) {
+  section {
+    padding: 200px 0;
+  }
+}
+
+// why Section
+
+.why-bg {
+  padding: 0;
+  margin-top: -280px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+
+  .why-section {
+    padding: 0;
+    z-index: 10;
+    padding-top: 250px;
+
+    &.last {
+      background: rgba(255, 255, 255, 0.5);
+      z-index: 1;
+
+      .why-text {
+        text-align: left;
+        margin-top: -20px;
+        h4 {
+          padding-bottom: 10px;
+          font-size: 22px;
+          font-weight: 300;
+          color: $primary;
+        }
+        p {
+          font-size: 22px;
+        }
+      }
+    }
+    &:last-child {
+      border-right: 1px solid $blue-light;
+      background: rgba(255, 255, 255, 0.7);
+    }
+    img {
+      width: 130%;
+      padding-left: 100px;
+    }
+  }
+}
+
+// whoami Section
+
+.whoami-bg {
+  padding-top: 0;
+  margin-top: -100px;
+  text-align: center;
+  background: $blue-lighter;
+  .whoami-section {
+    padding: 0;
+    z-index: 10;
+    padding-top: 250px;
+    .whoami-text {
+      text-align: left;
+      margin-top: -20px;
+      h4 {
+        padding-bottom: 10px;
+        font-size: 22px;
+        font-weight: 300;
+        color: $primary;
+      }
+      p {
+        font-size: 22px;
+      }
+    }
+    img {
+      width: 130%;
+      padding-left: 100px;
+    }
+  }
+}
+
+// Services Section
+
+#services {
+  padding-bottom: 0;
+  margin-bottom: -50px;
+  .service-col {
+    margin-bottom: 40px;
+    .col-md-2 {
+      padding-right: 0;
+      text-align: right;
+      margin-top: 8px;
+    }
+    .puzzle {
+      width: 30px;
+    }
+    .service-heading {
+      margin: 12px 0;
+      font-size: 22px;
+      font-weight: 300;
+      color: $blue-dark;
+      text-transform: none;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .section-heading {
+    color: $gray-dark;
+    font-size: 22px;
+    font-weight: 300;
+  }
+}
+
+// Footer
+
+footer {
+  background-image: url(../img/footer-bg.png);
+  background-color: $blue-light;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  @include background-cover;
+  padding: 500px 0 50px;
+  font-size: 16px;
+  color: $orange;
+  img {
+    width: 90px;
+    margin-bottom: 3px;
+  }
+  span.copyright {
+    line-height: 40px;
+    @include heading-font;
+    text-transform: none;
+  }
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+  outline: none;
+}
+
+// Highlight Color Customization
+
+::-moz-selection {
+  text-shadow: none;
+  background: $blue-light;
+}
+
+::selection {
+  text-shadow: none;
+  background: $blue-light;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+

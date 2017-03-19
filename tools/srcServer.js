@@ -2,6 +2,7 @@ import express from 'express';
 import webpack from 'webpack';
 import path from 'path';
 import config from '../webpack.config.dev';
+import favicon from 'serve-favicon';
 import open from 'open';
 
 /* eslint-disable no-console */
@@ -15,6 +16,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath
 }));
 
+app.use(favicon(path.join(__dirname, '..', 'src', 'img', 'favicon.png')));
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', function(req, res) {
