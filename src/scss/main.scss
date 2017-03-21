@@ -74,12 +74,19 @@ h1, h2, h3, h4, h5, h6 {
 .action {
   @include body-font;
   background: $orange;
+  border: 2px solid $orange;
   color: white;
   letter-spacing: 1px;
   font-weight: 700;
   border-radius: 0;
   font-size: 18px;
   padding: 10px 40px;
+  &:hover,
+  &:focus {
+    color: $orange;
+    background: transparent;
+    text-decoration: none;
+  }
 }
 
 // Custom Navigation Bar
@@ -125,15 +132,16 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   .nav {
+    margin-left: 2px;
     li {
       a {
         @include heading-font;
         font-weight: 400;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
         border: 1px solid transparent;
         color: white;
         font-size: 14px;
-        padding: 10px 15px;
+        padding: 8px 12px;
         &:hover,
         &:focus {
           cursor: pointer;
@@ -149,10 +157,38 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     background-color: $orange;
   }
+}
+
+@media(min-width:768px) {
   .navbar-nav>li>a.active:hover,
   .navbar-nav>li>a.active:focus {
     color: white;
     background-color: $orange;
+  }
+}
+
+// sections
+
+.why-bg .why-section,
+.whoami-bg .whoami-section {
+  img {
+    width: 90%;
+  }
+}
+
+@media(max-width:768px) {
+  div.body-pad {
+    padding: 0 30px;
+  }
+
+  .why-bg .why-section,
+  .whoami-bg .whoami-section {
+    &.last {
+      padding-top: 50px;
+    }
+    img {
+      padding: 40px;
+    }
   }
 }
 
@@ -177,10 +213,9 @@ h1, h2, h3, h4, h5, h6 {
 @media(min-width:768px) {
   .navbar-custom.is-sticky {
     background-color: $primary;
-    padding: 7px 0;
+    padding: 8px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     .navbar-brand {
-      padding: 10px;
       img {
         width: 90px;
       }
@@ -252,6 +287,7 @@ div.intro {
 
 .home-content {
   color: #fff;
+  min-height: 450px;
   h1 {
     text-transform: capitalize;
     font-weight: 200;
@@ -309,15 +345,14 @@ section {
 
 @media(min-width:768px) {
   section {
-    padding: 200px 0;
+    padding: 250px 0;
   }
 }
 
 // why Section
 
 .why-bg {
-  padding: 0;
-  margin-top: -280px;
+  margin-top: -330px;
   text-align: center;
   background: rgba(255, 255, 255, 0.3);
 
@@ -332,7 +367,7 @@ section {
 
       .why-text {
         text-align: left;
-        margin-top: -20px;
+        margin-top: 50px;
         h4 {
           padding-bottom: 10px;
           font-size: 22px;
@@ -349,8 +384,7 @@ section {
       background: rgba(255, 255, 255, 0.7);
     }
     img {
-      width: 130%;
-      padding-left: 100px;
+      width: 100%;
     }
   }
 }
@@ -368,7 +402,7 @@ section {
     padding-top: 250px;
     .whoami-text {
       text-align: left;
-      margin-top: -20px;
+      margin-top: 50px;
       h4 {
         padding-bottom: 10px;
         font-size: 22px;
@@ -379,18 +413,12 @@ section {
         font-size: 22px;
       }
     }
-    img {
-      width: 130%;
-      padding-left: 100px;
-    }
   }
 }
 
 // Services Section
 
 #services {
-  padding-bottom: 0;
-  margin-bottom: -50px;
   .service-col {
     margin-bottom: 40px;
     .col-md-2 {
@@ -418,6 +446,41 @@ section {
     font-size: 22px;
     font-weight: 300;
   }
+}
+
+// Video
+
+.embed-responsive {
+  position: relative;
+  z-index: -1;
+}
+
+.embed {
+  margin: 50px;
+  border: 6px solid $blue-light;
+  text-align: center;
+  line-height: 100px;
+  position:relative;
+  @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset);
+}
+
+.embed:before,
+.embed:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  @include box-shadow(0 0 20px rgba(0,0,0,0.8));
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  -moz-border-radius: 100px / 10px;
+  border-radius: 100px / 10px;
+}
+.embed:after {
+  right:10px;
+  left:auto;
+  @include skew;
 }
 
 // Footer
