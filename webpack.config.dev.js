@@ -33,7 +33,9 @@ export default {
       Tether: 'tether',
       'window.Tether': 'tether'
     }),
-    new webpack.DefinePlugin({SEGMENT_KEY: JSON.stringify(process.env.SEGMENT_KEY)})
+    new webpack.DefinePlugin({
+      SEGMENT_KEY: JSON.stringify(process.env.SEGMENT_KEY)
+    })
   ],
   module: {
     loaders: [
