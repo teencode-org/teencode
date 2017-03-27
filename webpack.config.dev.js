@@ -26,15 +26,15 @@ export default {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      SEGMENT_KEY: JSON.stringify(process.env.SEGMENT_KEY || 'Tv6xwYgtVrVvvV8dxeM6nXjlr5RKugV3')
+    }),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
       jquery: 'jquery',
       Tether: 'tether',
       'window.Tether': 'tether'
-    }),
-    new webpack.DefinePlugin({
-      SEGMENT_KEY: JSON.stringify(process.env.SEGMENT_KEY)
     })
   ],
   module: {

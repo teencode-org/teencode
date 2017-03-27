@@ -13,6 +13,41 @@ class HomePage extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    window.analytics.page();   
+  }
+
+  viewForm(e) {
+    e.preventDefault();
+    window.analytics.track('View Application Form', {
+      category: 'Application'
+    });
+  }
+
+  submitForm(e) {
+    e.preventDefault();
+    window.analytics.track('Submit', {
+      category: 'Application',
+      label: 'Submit Application Form'
+    });
+  }
+
+  checkEligibility(e) {
+    e.preventDefault();
+    window.analytics.track('View', {
+      category: 'Show Interest', 
+      label: 'Check Requirements'
+    });
+  }
+  
+  submitDetails(e) {
+    e.preventDefault();
+    window.analytics.track('Submit', {
+      category: 'Show Interest',
+      label: 'Submit Email'
+    });
+  }
+
   render() {
     return (
       <div>
@@ -32,7 +67,11 @@ class HomePage extends React.Component {
                       <h1>We Teach Teens to Code</h1>
                       <p>Professional software developers taking time outside of 
                         work to teach teenagers in high school how to code... for free!</p>
-                      <p><span className="action">Apply</span></p>
+                      <p>
+                        <button className="btn action" onClick={this.viewForm}>
+                         Apply
+                        </button>
+                      </p>
                     </div>
                   </div>
               </div>
