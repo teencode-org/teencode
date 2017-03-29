@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import introImage from '../../../img/intro.png';
 import people from '../../../img/people.png';
 import girl from '../../../img/girl_on_computer.jpg';
 import puzzle1 from '../../../img/puzzle1.png';
@@ -17,26 +16,41 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <div className="intro">
+        <section className="intro">
           <div className="overlay">
             <div className="container">
               <div className="row">
                 <div className="intro-text">
-                  <div className="col-md-6 col-xs-12">
+                  <div className="col-md-7 col-xs-12">
                     <div className="home-content body-pad">
-                      <h1>We Teach Teens to Code</h1>
-                      <p>Professional software developers taking time outside of 
-                        work to teach teenagers in high school how to code... for free!</p>
-                      <p><Link to="#" className="action">Apply</Link></p>
+                      <h1>6 out of 10 most successful tech geniuses started coding before the age of 15.</h1>
+                    </div>
+                  </div>
+                  <div className="offset-md-6 col-md-6 col-xs-12">
+                    <div className="home-content body-pad place text-xs-right">
+                      <p className="font-italic">MaryLeakey High School - Saturday, March 11, 2017.</p>
                     </div>
                   </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <section id="reason" className="why">
+      <section className="cta">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-7 col-xs-12">
+              <h3 className="action">High schools in Lagos can apply between 10th - 17th April, 2017</h3>
+            </div>
+            <div className="col-md-5 col-xs-12 text-md-right">
+              <Link to="#" className="btn btn-action">Check if your school is eligible >></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reason" className="why section">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 why-bg">
@@ -61,7 +75,7 @@ class HomePage extends React.Component {
         </div>
       </section>
 
-      <section id="team" className="whoami whoami-bg">
+      <section id="team" className="whoami whoami-bg section">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 whoami-section">
@@ -82,7 +96,7 @@ class HomePage extends React.Component {
         </div>
       </section>
 
-      <section id="services" className="bg-light-blue">
+      <section id="services" className="bg-light-blue section">
           <div className="container">
               <div className="row">
                   <div className="col-lg-12 text-xs-center body-pad">
@@ -133,7 +147,7 @@ class HomePage extends React.Component {
           </div>
       </section>
 
-      <section id="video" className="why">
+      <section id="video" className="why section">
           <div className="container">
               <div className="row">
                   <div className="col-lg-12 text-md-center body-pad embed-pad">
@@ -151,7 +165,7 @@ class HomePage extends React.Component {
           </div>
       </section>
 
-      <section id="sponsor" className="bg-light-blue">
+      <section id="sponsor" className="bg-light-blue section">
           <div className="container">
               <div className="row">
                   <div className="col-lg-12 text-md-center body-pad">

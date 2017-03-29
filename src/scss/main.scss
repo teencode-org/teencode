@@ -5,7 +5,7 @@
 
 body {
   overflow-x: hidden;
-  @include body-font;
+  @include lato-font;
 }
 
 .text-muted {
@@ -20,7 +20,7 @@ p {
   font-size: 16px;
   line-height: 1.75;
   font-weight: 300;
-  @include paragraph-font;
+  @include roboto-font;
 }
 
 p.large {
@@ -47,8 +47,7 @@ a.active {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @include heading-font;
-  font-weight: 700;
+  @include roboto-font;
 }
 
 .img-centered {
@@ -67,26 +66,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
   @include button-variant(white, $primary, $primary);
-  @include heading-font;
-  font-weight: 700;
 }
 
-.action {
-  @include body-font;
-  background: $orange;
-  border: 2px solid $orange;
-  color: white;
-  letter-spacing: 1px;
-  font-weight: 700;
-  border-radius: 0;
-  font-size: 18px;
-  padding: 10px 40px;
-  &:hover,
-  &:focus {
-    color: $orange;
-    background: transparent;
-    text-decoration: none;
-  }
+.btn-action {
+  @include button-variant(white, $orange, $orange);
+  font-size: 22px;
 }
 
 // Custom Navigation Bar
@@ -101,7 +85,6 @@ h1, h2, h3, h4, h5, h6 {
   .navbar-toggler {
     background-color: $primary;
     border-color: $primary;
-    @include heading-font;
     color: white;
     font-size: 24px;
     border-radius: 0;
@@ -135,11 +118,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 2px;
     li {
       a {
-        @include heading-font;
+        @include lato-font;
         font-weight: 400;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.3px;
         border: 1px solid transparent;
-        color: white;
+        color: rgba(255, 255, 255, 0.7);
         font-size: 14px;
         padding: 8px 12px;
         &:hover,
@@ -155,15 +138,12 @@ h1, h2, h3, h4, h5, h6 {
   .navbar-nav>li>a.active {
     border-radius: 0;
     color: white;
-    background-color: $orange;
-  }
-}
-
-@media(min-width:768px) {
-  .navbar-nav>li>a.active:hover,
-  .navbar-nav>li>a.active:focus {
-    color: white;
-    background-color: $orange;
+    border-bottom: 1px solid $orange;
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $orange;
+      border-color: $orange;
+    }
   }
 }
 
@@ -201,6 +181,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: padding 0.3s;
     border: none;
     .navbar-brand {
+      opacity: 0.7;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
@@ -212,9 +193,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media(min-width:768px) {
   .navbar-custom.is-sticky {
-    background-color: $primary;
+    background-color: $black-trans;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     .navbar-brand {
       img {
         width: 90px;
@@ -223,8 +204,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-div.intro {
+.intro {
   color: white;
+  height: calc(100vh);
   background: url(../img/header-bg.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -232,13 +214,13 @@ div.intro {
     padding-top: 100px;
     padding-bottom: 150px;
     .intro-lead-in {
-      @include serif-font;
+      @include sans-font;
       font-size: 22px;
       line-height: 22px;
       margin-bottom: 25px;
     }
     .intro-heading {
-      @include heading-font;
+      @include roboto-font;
       font-weight: 700;
       font-size: 50px;
       line-height: 50px;
@@ -248,74 +230,58 @@ div.intro {
       width: 100%;
       opacity: 0.1;
     }
-    #banner div {
-			position: absolute;
-      margin-top: -70px;
-		}
-		#banner div:nth-child(2) {
-			-webkit-animation: wipe 6s;
-			animation: wipe 6s;
-			-webkit-animation-delay: 0;
-			animation-delay: 0;
-			-webkit-animation-direction: alternate;
-			animation-direction: alternate;
-			-webkit-mask-size: 2000px 2000px;
-			-webkit-mask-image: -webkit-gradient(linear, left top, right bottom, 
-        color-stop(0.00,  rgba(0,0,0,1)),
-        color-stop(0.45,  rgba(0,0,0,1)),
-        color-stop(0.50,  rgba(0,0,0,0)),
-        color-stop(0.55,  rgba(0,0,0,0)),
-        color-stop(1.00,  rgba(0,0,0,0)));
-      img {
-        opacity: 0.4;
-      }
-		}
   }
   .overlay {
-    background: rgba(87, 198, 212, 0.95);
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
   }
 }
 
-@keyframes wipe {
-  0% {
-    -webkit-mask-position: -1200px -1200px;
-  }
-        100% {
-    -webkit-mask-position: 0 0;
+// cta
+
+.cta {
+  height: 80px;
+  margin-top: -80px;
+  color: $gray-light;
+  background: rgba(19, 31, 39, 0.85);
+  padding-top: 15px;
+  position: absolute;
+  width: 100%;
+  .action {
+    font-size: 24px;
+    margin-top: 6px;
   }
 }
 
 .home-content {
-  color: #fff;
-  min-height: 450px;
-  h1 {
-    text-transform: capitalize;
-    font-weight: 200;
-    font-size: 42px;
+  &.place {
+    margin-top: 50px;
+    p {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.4);
+    }
   }
-  p {
-    font-size: 20px;
-    font-weight: 300;
-    color: #fff;
-    letter-spacing: .3px;
-    line-height: 1.7em;
-    margin: 30px 0;
+  h1 {
+    color: $blue-light;
+    font-weight: 400;
+    font-size: 42px;
+    text-shadow: 4px 4px 4px black;
   }
 }
 
 @media(min-width:768px) {
-  div.intro {
+  .intro {
     .intro-text {
       padding-top: 250px;
       padding-bottom: 500px;
       .intro-lead-in {
-        @include serif-font;
+        @include sans-font;
         font-size: 40px;
         line-height: 40px;
         margin-bottom: 25px;
       }
       .intro-heading {
-        @include heading-font;
+        @include roboto-font;
         font-weight: 700;
         font-size: 55px;
         line-height: 75px;
@@ -327,7 +293,7 @@ div.intro {
 
 // Section Styles
 
-section {
+.section {
   padding: 100px 0;
   h2.section-heading {
     font-size: 40px;
@@ -336,7 +302,7 @@ section {
   }
   h3.section-subheading {
     font-size: 16px;
-    @include serif-font;
+    @include sans-font;
     text-transform: none;
     font-weight: 400;
     margin-bottom: 75px;
@@ -344,7 +310,7 @@ section {
 }
 
 @media(min-width:768px) {
-  section {
+  .section {
     padding: 250px 0;
   }
 }
@@ -352,7 +318,6 @@ section {
 // why Section
 
 .why-bg {
-  margin-top: -330px;
   text-align: center;
   background: rgba(255, 255, 255, 0.3);
 
@@ -501,7 +466,7 @@ footer {
   }
   span.copyright {
     line-height: 40px;
-    @include heading-font;
+    @include roboto-font;
     text-transform: none;
   }
 }
