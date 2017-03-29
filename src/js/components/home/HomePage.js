@@ -50,26 +50,36 @@ class HomePage extends React.Component {
         </div>
       </section>
 
-      <section id="reason" className="why section">
+      <section className="proof">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-12 why-bg">
-                <div className="col-lg-4 why-section">
-                  <img src={girl} alt="Why" />
+          <div className="row divide">
+            <div className="col-sm-6"><p>Nigerian brothers Osite and Anime <span className="text-primary">Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit. nobis rerum non rem repudiandae in consequuntur </p></div>
+            <div className="col-sm-6"><p>Repellendus praesentium, nulla distinctio aperiam unde, tenetur explicabo, <span className="text-primary">hic beatae nisi quibusdam</span>, cum vero  temporibus!</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="volunteer">
+        <div className="container">
+          <div className="row profile">
+            <div className="col-md-3 col-xs-12">
+              <img src={require('../../../img/volunteer.jpeg')} className="img-thumbnail picture hidden-xs" />
+              <h4 className="name">Oluwadamilola Adebayo</h4>
+              <p className="title">Software developer at Andela</p>
+              <p className="role">Teencode volunteer facilitator</p>
+            </div>
+            <div className="col-md-9 col-xs-12">
+              <div className="header">
+                <h4>How is your high school preparing the next generation of Africa's tech leaders?</h4>
+                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                  "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+                </p>
+              </div>
+              <div className="offset-md-6 col-md-6 col-xs-12">
+                <div className="body-pad text-xs-right">
+                  <p className="action">Show me who these volunteers are >></p>
                 </div>
-                <div className="col-lg-2 why-section last">
-                </div>
-                <div className="col-lg-6 why-section last">
-                  <div className="why-text body-pad">
-                      <h4>Why?</h4>
-                      <div>
-                          <p className="text-muted">Everyone in this country should learn how to program a computer.
-                            It teaches you to think. - Steve Jobs</p>
-                            <p className="text-muted">It's more about the proces of breaking down problems into simpler units
-                            than coming out with complex algorithms. - Makinde, early Facebook Engineer</p>
-                      </div>
-                  </div>
-                </div>
+              </div>
             </div>
           </div>
         </div>
