@@ -1,13 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import people from '../../../img/people.png';
-import girl from '../../../img/girl_on_computer.jpg';
-import puzzle1 from '../../../img/puzzle1.png';
-import puzzle2 from '../../../img/puzzle2.png';
-import puzzle3 from '../../../img/puzzle3.png';
-import puzzle4 from '../../../img/puzzle4.png';
-
 class HomePage extends React.Component {
   constructor(props, context){
     super(props);
@@ -37,7 +30,7 @@ class HomePage extends React.Component {
         </div>
       </section>
 
-      <section className="cta">
+      <section id="cta" className="cta">
         <div className="container">
           <div className="row">
             <div className="col-md-7 col-xs-12">
@@ -59,7 +52,7 @@ class HomePage extends React.Component {
         </div>
       </section>
 
-      <section className="volunteer">
+      <section id="volunteer" className="volunteer">
         <div className="container">
           <div className="row profile">
             <div className="col-md-3 col-xs-12">
@@ -85,71 +78,42 @@ class HomePage extends React.Component {
         </div>
       </section>
 
-      <section id="team" className="whoami whoami-bg section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 whoami-section">
-              <div className="whoami-text body-pad">
-                  <h4>Who We Are</h4>
-                  <div>
-                      <p className="text-muted">We are Andelans. 
-                        An entire community of software devlopers in Lagos and Nairobi. 
-                        We work with tech companies around the world.
-                      </p>
-                  </div>
-              </div>
-            </div>
-            <div className="col-lg-6 whoami-section">
-              <img src={people} alt="Who we are" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" className="bg-light-blue section">
+      <section id="how" className="how bg-lighter-blue section">
           <div className="container">
               <div className="row">
                   <div className="col-lg-12 text-xs-center body-pad">
-                      <h4 className="section-heading">How we do this?</h4>
+                      <h4 className="section-heading">Help students succeed in a future of technology</h4>
                       <h3 className="section-subheading text-muted"></h3>
                   </div>
               </div>
               <div className="row">
                   <div className="col-lg-10 offset-lg-1 col-xs-12 body-pad">
-                    <div className="col-md-6 service-col">
-                        <div className="col-md-2 col-sm-2 pull-sm-left pull-xs-right">
-                          <img className="puzzle" src={puzzle1} alt="puzzle" />
-                        </div>
-                        <div className="col-md-10 col-sm-10">
-                          <h4 className="service-heading">Develop</h4>
+                    <div className="col-md-6">
+                        <div className="service-col">
+                          <img className="picture" src={require('../../../img/apply.svg')} alt="Apply" />
+                          <h4 className="service-heading">Apply</h4>
                           <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
                         </div>
                     </div>
-                    <div className="col-md-6 service-col">
-                        <div className="col-md-2 col-sm-2 pull-sm-left pull-xs-right">
-                          <img className="puzzle" src={puzzle2} alt="puzzle" />
-                        </div>
-                        <div className="col-md-10 col-sm-10">
-                          <h4 className="service-heading">Design</h4>
-                          <p className="text-muted">We guide teens through a process of tackiling their favorite problem through technology.</p>
+                    <div className="col-md-6">
+                        <div className="service-col">
+                          <img className="picture" src={require('../../../img/nurture.svg')} alt="Nurture" />
+                          <h4 className="service-heading">Nurture</h4>
+                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
                         </div>
                     </div>
-                    <div className="col-md-6 service-col">
-                        <div className="col-md-2 col-sm-2 pull-sm-left pull-xs-right">
-                          <img className="puzzle" src={puzzle3} alt="puzzle" />
-                        </div>
-                        <div className="col-md-10 col-sm-10">
+                    <div className="col-md-6">
+                        <div className="service-col">
+                          <img className="picture" src={require('../../../img/mentor.svg')} alt="Mentor" />
                           <h4 className="service-heading">Mentor</h4>
-                          <p className="text-muted">Very experienced developers take it upon themselves to oversee continued growth.</p>
+                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
                         </div>
                     </div>
-                    <div className="col-md-6 service-col">
-                        <div className="col-md-2 col-sm-2 pull-sm-left pull-xs-right">
-                          <img className="puzzle" src={puzzle4} alt="puzzle" />
-                        </div>
-                        <div className="col-md-10 col-sm-10">
+                    <div className="col-md-6">
+                        <div className="service-col">
+                          <img className="picture" src={require('../../../img/community.svg')} alt="Community" />
                           <h4 className="service-heading">Community</h4>
-                          <p className="text-muted">Teens across different geographical regions, bound by an interest in tech, supporting each other</p>
+                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
                         </div>
                     </div>
                 </div>
@@ -175,7 +139,7 @@ class HomePage extends React.Component {
           </div>
       </section>
 
-      <section id="sponsor" className="bg-light-blue section">
+      <section id="sponsor" className="bg-lighter-blue section">
           <div className="container">
               <div className="row">
                   <div className="col-lg-12 text-md-center body-pad">

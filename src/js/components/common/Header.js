@@ -48,13 +48,10 @@ class Header extends React.Component {
           <div className="collapse navbar-toggleable-sm" id="collapsingNavbar">
             <ul className="nav navbar-nav pull-md-right">
               <li className="nav-item">
-                <Link to="#reason" className="page-scroll nav-link">Why Us</Link>
+                <Link to="#volunteer" className="page-scroll nav-link">What We Do</Link>
               </li>
               <li className="nav-item">
-                <Link to="#team" className="page-scroll nav-link">Who We Are</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="#services" className="page-scroll nav-link">What We Do</Link>
+                <Link to="#how" className="page-scroll nav-link">How</Link>
               </li>
               <li className="nav-item">
                 <Link to="#sponsor" className="page-scroll nav-link">Sponsors</Link>
