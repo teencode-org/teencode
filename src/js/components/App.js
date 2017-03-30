@@ -48,9 +48,7 @@ App.propTypes = {
       };
       analytics.SNIPPET_VERSION = "4.0.0";
       analytics.load(SEGMENT_KEY);
-      analytics.page();
     }
 }();
-
 
 export default App;
