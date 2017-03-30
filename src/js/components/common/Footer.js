@@ -6,12 +6,12 @@ const Footer = () => {
     <footer>
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-5">
             <span className="copyright">
               Copyright &copy; <img src={require('../../../img/logo.png')} alt="Site Logo" /> 2017. All Rights Reserved
             </span>
           </div>
-          <div className="offset-md-11">
+          <div className="offset-sm-11">
             <a href="" ><i className="fa fa-facebook-square fa-2x"></i></a>
           </div>
           

@@ -47,13 +47,13 @@ class HomePage extends React.Component {
       <section className="proof">
         <div className="container">
           <div className="row divide">
-            <div className="col-sm-6"><p>Nigerian brothers Osite and Anime <span className="text-primary">Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit. nobis rerum non rem repudiandae in consequuntur </p></div>
-            <div className="col-sm-6"><p>Repellendus praesentium, nulla distinctio aperiam unde, tenetur explicabo, <span className="text-primary">hic beatae nisi quibusdam</span>, cum vero  temporibus!</p></div>
+            <div className="col-sm-6"><p>Nigerian brothers Osite and Anime Okhaliome <span className="text-primary">built a mobile browser</span> at ages 13 and 15 respectively</p></div>
+            <div className="col-sm-6"><p><span className="text-primary">17 year old Collins Nji,</span> a Cameroonian art-inclined student, is the first African to ever win Google's Code-in competition</p></div>
           </div>
         </div>
       </section>
 
-      <section id="volunteer" className="volunteer">
+      <section id="volunteer" className="volunteers">
         <div className="container">
           <div className="row profile">
             <div className="col-md-3 col-xs-12">
@@ -65,8 +65,8 @@ class HomePage extends React.Component {
             <div className="col-md-9 col-xs-12">
               <div className="header">
                 <h4>How is your high school preparing the next generation of Africa's tech leaders?</h4>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                  "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+                <p>
+                  #teencode pairs volunteer professional developers to high schools so they teach teenagers how to build programs that solve useful problems
                 </p>
               </div>
               <div className="offset-md-6 col-md-6 col-xs-12">
@@ -93,28 +93,29 @@ class HomePage extends React.Component {
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/apply.svg')} alt="Apply" />
                           <h4 className="service-heading">Apply</h4>
-                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
+                          <p className="text-muted">We reach out to schools that apply, to agree on terms and work out a schedule that is fitting. Check if your school is eligible</p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/nurture.svg')} alt="Nurture" />
                           <h4 className="service-heading">Nurture</h4>
-                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
+                          <p className="text-muted">Students in successful schools are taken through 3-months of classes that build up into building a real, useful app
+                          </p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/mentor.svg')} alt="Mentor" />
                           <h4 className="service-heading">Mentor</h4>
-                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
+                          <p className="text-muted">Very experienced developers take it upon themselves to oversee continued growth</p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/community.svg')} alt="Community" />
                           <h4 className="service-heading">Community</h4>
-                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
+                          <p className="text-muted">Teens across different geographical regions, bound by an interest in tech are pulled together, to support each other</p>
                         </div>
                     </div>
                 </div>
@@ -128,19 +129,21 @@ class HomePage extends React.Component {
           <div className="container">
               <div className="row">
                   <div className="offset-sm-2 col-sm-8 text-md-center body-pad embed-pad">
+                    <div className="embed">
                       <div className="embed-responsive embed-responsive-16by9">
                         <iframe className="embed-responsive-item" src="//www.youtube.com/embed/Fkd9TWUtFm0" allowFullScreen></iframe>
                       </div>
-                      <p className="text-muted lead">
-                        Thomas Suarez - 12 year old app developer 
-                        <br />gives quality advice to ... um ... everyone!
-                      </p>
+                    </div>
+                    <p className="text-muted lead">
+                      Thomas Suarez - 12 year old app developer 
+                      <br />gives quality advice to ... um ... everyone!
+                    </p>
                   </div>
               </div>
           </div>
       </section>
 
-      <section id="sponsors" className="bg-green section sponsored-by">
+      <section id="sponsor" className="bg-green section sponsored-by">
           <div className="container">
               <div className="row">
                   <div className="col-md-12 text-md-center body-pad">
