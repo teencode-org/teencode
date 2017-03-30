@@ -30,9 +30,6 @@ export default {
     new ExtractTextPlugin('styles.css'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
-    new webpack.DefinePlugin({
-      SEGMENT_KEY: JSON.stringify(process.env.SEGMENT_KEY || 'Tv6xwYgtVrVvvV8dxeM6nXjlr5RKugV3')
-    }),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',

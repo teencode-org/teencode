@@ -28,7 +28,7 @@ class HomePage extends React.Component {
 
   checkEligibility(e) {
     e.preventDefault();
-    window.analytics.track('View', {
+    window.analytics.track('View Eligibility', {
       category: 'Show Interest', 
       label: 'Check Requirements'
     });
