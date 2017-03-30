@@ -3,20 +3,22 @@
 // Bootstrap Button Variant
 
 @mixin button-variant($color, $background, $border) {
+  @include lato-font;
   color: $color;
   background-color: $background;
-  border-color: $border;
+  border: 2px solid $border;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border-radius: 0;
+  font-size: 18px;
+  padding: 10px 15px;
 
-  &:focus,
-  &.focus {
-    color: $color;
-    background-color: darken($background, 10%);
-    border-color: darken($border, 25%);
-  }
-  &:hover {
-    color: $color;
-    background-color: darken($background, 10%);
-    border-color: darken($border, 12%);
+  &:hover,
+  &:focus {
+    color: $background;
+    background: transparent;
+    text-decoration: none;
+    border: 2px solid $border;
   }
   &:active,
   &.active,
@@ -55,6 +57,12 @@
   }
 }
 
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
 // Background Cover Mixin
 
 @mixin background-cover {
@@ -64,22 +72,32 @@
   -o-background-size: cover;
 }
 
+@mixin transition {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+@mixin skew {
+  -webkit-transform:skew(8deg) rotate(3deg);
+     -moz-transform:skew(8deg) rotate(3deg);
+      -ms-transform:skew(8deg) rotate(3deg);
+       -o-transform:skew(8deg) rotate(3deg);
+          transform:skew(8deg) rotate(3deg);
+}
+
 // Font Mixins
 
-@mixin serif-font {
+@mixin sans-font {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-@mixin body-font {
+@mixin lato-font {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-@mixin heading-font {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-}
-
-@mixin paragraph-font {
+@mixin roboto-font {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
