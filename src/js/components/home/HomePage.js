@@ -32,7 +32,11 @@ class HomePage extends React.Component {
                       <h1>We Teach Teens to Code</h1>
                       <p>Professional software developers taking time outside of 
                         work to teach teenagers in high school how to code... for free!</p>
-                      <p><span className="action">Apply</span></p>
+                      <p>
+                        <Link to="/apply">
+                          <span className="action">Apply</span>
+                        </Link>
+                      </p>
                     </div>
                   </div>
               </div>

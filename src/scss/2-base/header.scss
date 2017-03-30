@@ -1,0 +1,106 @@
+// Custom Navigation Bar
+
+.navbar-custom {
+  background-color: $primary;
+  border-color: transparent;
+  border-radius: 0;
+  .navbar-brand > img {
+    width: 100px;
+  }
+  .navbar-toggler {
+    background-color: $primary;
+    border-color: $primary;
+    @include heading-font;
+    color: white;
+    font-size: 24px;
+    border-radius: 0;
+    outline: none;
+    &:focus {
+      background-color: $primary;
+    }
+    &:hover,
+    &[aria-expanded="true"] {
+      background-color: $orange;
+    }
+  }
+  .navbar-toggleable-sm {
+    text-align: right;
+    clear: right;
+    &.in>.nav {
+      li {
+        a {
+          background: rgba(255, 255, 255, 0.2);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        a:hover,
+        a:focus {
+          color: white;
+          outline: none;
+        }
+      }
+    }
+  }
+  .nav {
+    li {
+      a {
+        @include heading-font;
+        font-weight: 400;
+        letter-spacing: 1px;
+        border: 1px solid transparent;
+        color: white;
+        font-size: 14px;
+        padding: 10px 15px;
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          color: white;
+          outline: none;
+          border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+  .navbar-nav>li>a.active {
+    border-radius: 0;
+    color: white;
+    background-color: $orange;
+  }
+  .navbar-nav>li>a.active:hover,
+  .navbar-nav>li>a.active:focus {
+    color: white;
+    background-color: $orange;
+  }
+}
+
+@include tablet {
+  .navbar-custom {
+    background-color: transparent;
+    padding: 25px 0 30px;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+    border: none;
+    .navbar-brand {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+  }
+}
+
+// Navbar Change on Scroll
+
+@include tablet {
+  .navbar-custom.is-sticky {
+    background-color: $primary;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    .navbar-brand {
+      padding: 10px;
+      img {
+        width: 90px;
+      }
+    }
+  }
+}
+
