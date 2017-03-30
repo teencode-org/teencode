@@ -58,8 +58,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $blue-light;
 }
 
-.bg-lighter-blue {
-  background-color: $blue-lighter;
+.bg-green  {
+  background-color: $green;
 }
 
 // Restyled Primary Buttons
@@ -490,7 +490,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimony {
   color: white;
-  height: 70vh;
   background: url(../img/testimony-bg.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -506,15 +505,16 @@ h1, h2, h3, h4, h5, h6 {
     }
     .testifier {
       font-weight: 700;
-      font-size: 20px;
-      color: $blue-light;
+      font-size: 24px;
+      color: $primary;
     }
     .location {
+      font-weight: 700;
       color: $gray-light;
     }
   }
   .overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(21,47,50, 0.5);
     height: 100%;
   }
 }
@@ -554,18 +554,22 @@ h1, h2, h3, h4, h5, h6 {
   @include skew;
 }
 
+// Sponsors
+.sponsored-by{
+  color: $gray-lighter;
+}
+.andela-logo {
+  width: 100%;
+}
+
 // Footer
 
 footer {
-  background-image: url(../img/footer-bg.png);
-  background-color: $blue-lighter;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  @include background-cover;
-  padding: 500px 0 50px;
+  background-color: #205b5f;
+  padding: 50px 0 50px;
   font-size: 16px;
-  color: $orange;
+  color: $gray-light;
+  text-decoration: none;
   img {
     width: 90px;
     margin-bottom: 3px;
@@ -574,6 +578,9 @@ footer {
     line-height: 40px;
     @include roboto-font;
     text-transform: none;
+  }
+  i {
+    color: $gray-light;
   }
 }
 

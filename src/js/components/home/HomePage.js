@@ -140,12 +140,14 @@ class HomePage extends React.Component {
           </div>
       </section>
 
-      <section id="sponsor" className="bg-lighter-blue section">
+      <section id="sponsors" className="bg-green section sponsored-by">
           <div className="container">
               <div className="row">
-                  <div className="col-lg-12 text-md-center body-pad">
-                      <h4 className="section-subheading text-muted">#teencode is proudly supported by </h4>
-                      <h1 className="section-heading text-muted">&lt; Andela &gt;</h1>
+                  <div className="col-md-12 text-md-center body-pad">
+                      <h3>#teencode is proudly powered by</h3>
+                  </div>
+                  <div className="col-md-4 offset-md-4 col-xs-12">
+                      <img className="andela-logo" src={require('../../../img/andela-white-logo.png')} alt="Andela" />
                   </div>
               </div>              
           </div>
