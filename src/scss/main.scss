@@ -486,6 +486,39 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// testimony section
+
+.testimony {
+  color: white;
+  height: 70vh;
+  background: url(../img/testimony-bg.jpg) no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  .intro-text {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    img {
+      width: 100%;
+      opacity: 0.1;
+    }
+    h1 {
+      margin-bottom: 50px;
+    }
+    .testifier {
+      font-weight: 700;
+      font-size: 20px;
+      color: $blue-light;
+    }
+    .location {
+      color: $gray-light;
+    }
+  }
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+  }
+}
+
 // Video
 
 .embed-responsive {

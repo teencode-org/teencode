@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import TestimonySection from './TestimonySection';
 
 class HomePage extends React.Component {
   constructor(props, context){
@@ -121,14 +122,14 @@ class HomePage extends React.Component {
           </div>
       </section>
 
+      <TestimonySection />
+
       <section id="video" className="why section">
           <div className="container">
               <div className="row">
-                  <div className="col-lg-12 text-md-center body-pad embed-pad">
-                      <div className="embed">
-                        <div className="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fkd9TWUtFm0" allowFullScreen></iframe>
-                        </div>
+                  <div className="offset-sm-2 col-sm-8 text-md-center body-pad embed-pad">
+                      <div className="embed-responsive embed-responsive-16by9">
+                        <iframe className="embed-responsive-item" src="//www.youtube.com/embed/Fkd9TWUtFm0" allowFullScreen></iframe>
                       </div>
                       <p className="text-muted lead">
                         Thomas Suarez - 12 year old app developer 
