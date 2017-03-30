@@ -7,6 +7,41 @@ class HomePage extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    window.analytics.page();   
+  }
+
+  viewForm(e) {
+    e.preventDefault();
+    window.analytics.track('View Application Form', {
+      category: 'Application'
+    });
+  }
+
+  submitForm(e) {
+    e.preventDefault();
+    window.analytics.track('Submit', {
+      category: 'Application',
+      label: 'Submit Application Form'
+    });
+  }
+
+  checkEligibility(e) {
+    e.preventDefault();
+    window.analytics.track('View', {
+      category: 'Show Interest', 
+      label: 'Check Requirements'
+    });
+  }
+  
+  submitDetails(e) {
+    e.preventDefault();
+    window.analytics.track('Submit', {
+      category: 'Show Interest',
+      label: 'Submit Email'
+    });
+  }
+
   render() {
     return (
       <div>
