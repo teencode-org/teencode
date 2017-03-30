@@ -7,10 +7,6 @@ class HomePage extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    window.analytics.page();   
-  }
-
   viewForm(e) {
     e.preventDefault();
     window.analytics.track('View Application Form', {
