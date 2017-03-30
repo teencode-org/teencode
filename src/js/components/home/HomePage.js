@@ -73,7 +73,7 @@ class HomePage extends React.Component {
               <h3 className="action">High schools in Lagos can apply between 10th - 17th April, 2017</h3>
             </div>
             <div className="col-md-5 col-xs-12 text-md-right">
-              <Link to="#" className="btn btn-action">Check if your school is eligible >></Link>
+              <Link to="#" className="btn btn-action" onClick={this.checkEligibility}>Check if your school is eligible >></Link>
             </div>
           </div>
         </div>
