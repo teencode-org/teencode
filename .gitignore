@@ -3,3 +3,6 @@ bower_modules
 **/npm-debug.log
 **/*.swo
 **/*.swp
+**/.DS_Store
+**/.idea
+.env
