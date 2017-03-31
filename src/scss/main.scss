@@ -2,8 +2,7 @@
 @import "2-base/-base-index";
 @import "3-modules/-modules-index";
 @import "4-pages/-pages-index";
-@import "variables.scss";
-@import "mixins.scss";
+//@import "variables.scss";
 
 // Global Components
 
@@ -69,11 +68,11 @@ h1, h2, h3, h4, h5, h6 {
 // Restyled Primary Buttons
 
 .btn-primary {
-  @include button-variant(white, $primary, $primary);
+  @include button-variant($white, $primary, $primary);
 }
 
 .btn-action {
-  @include button-variant(white, $orange, $orange);
+  @include button-variant($white, $orange, $orange);
   font-size: 22px;
 }
 
@@ -83,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $primary;
   border-color: transparent;
   border-radius: 0;
+  opacity: 0.5;
   .navbar-brand > img {
     width: 100px;
   }
@@ -173,11 +173,11 @@ h1, h2, h3, h4, h5, h6 {
 
 // sections
 
-@media(max-width:768px) {
-  div.body-pad {
-    padding: 0 30px;
-  }
-}
+//@media(max-width:768px) {
+//  div.body-pad {
+//    padding: 0 30px;
+//  }
+//}
 
 @media(min-width:768px) {
   .navbar-custom {
@@ -217,15 +217,35 @@ h1, h2, h3, h4, h5, h6 {
   background: url(../img/header-bg.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+
   .intro-text {
+    display: flex;
+    height: 100%;
+    padding: 0;
+    align-items: center;
+    width: 100%;
+
     padding-top: 100px;
     padding-bottom: 150px;
+
+    > .banner-text {
+      flex: 1 100%;
+      padding: 0;
+    }
+
+    > .muted-banner-desc {
+      margin: 0;
+      margin-top: 70%;
+      margin-bottom: 20%;
+    }
+
     .intro-lead-in {
       @include sans-font;
       font-size: 22px;
       line-height: 22px;
       margin-bottom: 25px;
     }
+
     .intro-heading {
       @include roboto-font;
       font-weight: 700;
@@ -247,8 +267,8 @@ h1, h2, h3, h4, h5, h6 {
 // cta
 
 .cta {
-  height: 80px;
-  margin-top: -80px;
+  height: 100px;
+  margin-top: -100px;
   color: $gray-light;
   background: $gray-bg;
   padding-top: 15px;
@@ -258,15 +278,20 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
     margin-top: 6px;
   }
+
+  > .container {
+    margin: 10px auto;
+  }
 }
 
 .home-content {
   &.place {
     margin-top: 60px;
     p {
+      color: rgba(255, 255, 255, 0.2);
       font-size: 20px;
-      color: rgba(255, 255, 255, 0.15);
-      text-shadow: 2px 2px 4px black;
+      font-weight: 400;
+      text-shadow: 0px 2px 4px black;
     }
   }
   h1 {
@@ -274,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
     color: $blue-light;
     line-height: 1.4;
     font-weight: 600;
-    font-size: 42px;
+    font-size: 3.5em;
     text-shadow: 0px 3px 4px black;
   }
 }
@@ -351,8 +376,6 @@ h1, h2, h3, h4, h5, h6 {
 @media(min-width:768px) {
   .intro {
     .intro-text {
-      padding-top: 35vh;
-      padding-bottom: 500px;
       .intro-lead-in {
         @include sans-font;
         font-size: 40px;

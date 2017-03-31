@@ -14,12 +14,12 @@ class HomePage extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="intro-text">
-                  <div className="col-md-7 col-xs-12">
+                  <div className="col-md-9 col-xs-12 banner-text">
                     <div className="home-content body-pad">
                       <h1>6 out of 10 most successful tech geniuses started coding before the age of 15.</h1>
                     </div>
                   </div>
-                  <div className="offset-md-6 col-md-6 col-xs-12">
+                  <div className="offset-md-6 col-md-6 col-xs-12 muted-banner-desc">
                     <div className="home-content body-pad place text-xs-right">
                       <p className="font-italic">MaryLeakey High School - Saturday, March 11, 2017.</p>
                     </div>
@@ -46,8 +46,22 @@ class HomePage extends React.Component {
       <section className="proof">
         <div className="container">
           <div className="row divide">
-            <div className="col-sm-6"><p>Nigerian brothers Osite and Anime <span className="text-primary">Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit. nobis rerum non rem repudiandae in consequuntur </p></div>
-            <div className="col-sm-6"><p>Repellendus praesentium, nulla distinctio aperiam unde, tenetur explicabo, <span className="text-primary">hic beatae nisi quibusdam</span>, cum vero  temporibus!</p></div>
+            <div className="col-sm-6">
+                <p>Nigeria brothers Osite and Anime
+                  <a href="http://techcabal.com/2015/04/23/meet-osine-and-anesi-the-nigerian-teenagers-who-built-a-mobile-web-browser/" target="_blank">
+                    <span className="text-primary">
+                      &nbsp;built a mobile browser
+                    </span>
+                  </a> at ages 13 and 15 respectively
+                </p>
+            </div>
+            <div className="col-sm-6">
+              <p>17 year old Collins Nji, a Cameroonian art-inclined student, is the
+                <span className="text-primary">
+                  &nbsp;first African to ever win Google’s Code-in competition.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -64,13 +78,11 @@ class HomePage extends React.Component {
             <div className="col-md-9 col-xs-12">
               <div className="header">
                 <h4>How is your high school preparing the next generation of Africa's tech leaders?</h4>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                  "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-                </p>
+                <p>Teencode pairs volunteer professional developers to high schools so they teach teenagers how to build programs that solve useful problems.</p>
               </div>
               <div className="offset-md-6 col-md-6 col-xs-12">
                 <div className="body-pad text-xs-right">
-                  <p className="action">Show me who these volunteers are >></p>
+                  <Link to="/volunteers"><p className="action">Show me who these volunteers are >></p></Link>
                 </div>
               </div>
             </div>
@@ -82,7 +94,7 @@ class HomePage extends React.Component {
           <div className="container">
               <div className="row">
                   <div className="col-lg-12 text-xs-center body-pad">
-                      <h4 className="section-heading">Help students succeed in a future of technology</h4>
+                      <h4 className="section-heading">Partner with us to help students succeed in a future of technology</h4>
                       <h3 className="section-subheading text-muted"></h3>
                   </div>
               </div>
@@ -92,28 +104,38 @@ class HomePage extends React.Component {
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/apply.svg')} alt="Apply" />
                           <h4 className="service-heading">Apply</h4>
-                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
+                          <p className="text-muted">We reach out to schools that apply to agree on terms and work out a schedule that is fitting.
+                            <Link to="/eligibility"><span className="text-primary">&nbsp;Check if your school is eligible.</span></Link>
+                          </p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/nurture.svg')} alt="Nurture" />
                           <h4 className="service-heading">Nurture</h4>
-                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
+                          <p className="text-muted">Students in
+                            <Link to="/partners"><span className="text-primary"> &nbsp;schools we partner with</span></Link>
+                            &nbsp;are taken through 3-months of classes that build up into building a real useful apps.
+                          </p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/mentor.svg')} alt="Mentor" />
                           <h4 className="service-heading">Mentor</h4>
-                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
+                          <p className="text-muted">
+                            <Link to="/volunteers" className="text-primary">Very experienced software developers</Link>
+                              &nbsp;take it upon themselves to oversee continued growth of the students during and after the 3 month programme.
+                          </p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/community.svg')} alt="Community" />
                           <h4 className="service-heading">Community</h4>
-                          <p className="text-muted">With our 3 month classes, we awaken the curiousity of learning to program in teens.</p>
+                          <p className="text-muted">Teens across different geographical region, bound by an interest in tech are pull together, to support each other.
+                            <Link to="/communities">&nbsp;Take a peek at our communities.</Link>
+                          </p>
                         </div>
                     </div>
                 </div>
