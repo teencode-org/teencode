@@ -51,7 +51,7 @@ export default {
         loader: 'style!css!sass'
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'url?limit=25000'
       },
 
