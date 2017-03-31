@@ -8,7 +8,10 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    window.analytics.page();   
+    // debugger;
+    // let analytics = window.analytics || []
+    // if (analytics.initialize) return
+    // window.analytics.page();
   }
 
   viewForm(e) {
