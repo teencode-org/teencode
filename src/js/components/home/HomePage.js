@@ -57,7 +57,7 @@ class HomePage extends React.Component {
                   </div>
                   <div className="offset-md-6 col-md-6 col-xs-12 muted-banner-desc">
                     <div className="home-content body-pad place text-xs-right">
-                      <p className="font-italic">MaryLeakey High School - Saturday, March 11, 2017.</p>
+                      <p className="font-italic">Kariobangi High School - Saturday, March 11, 2017.</p>
                     </div>
                   </div>
               </div>

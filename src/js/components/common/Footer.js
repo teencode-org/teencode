@@ -12,7 +12,7 @@ const Footer = () => {
             </span>
           </div>
           <div className="offset-sm-11">
-            <a href="" ><i className="fa fa-facebook-square fa-2x"></i></a>
+            <a href="https://www.facebook.com/Teencode-Africa-1345535292156762/" target="_blank"><i className="fa fa-facebook-square fa-2x"></i></a>
           </div>
           
         </div>

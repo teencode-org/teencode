@@ -17,7 +17,7 @@ class TestimonySection extends React.Component {
                   <h2>
                     "I was in love with our session and our instructor Getrude. 
                     It was challenging, fun and inspirational. Now I know I can be an IT expert.
-                    I look forward to more classes"
+                    I look forward to more classes."
                   </h2>
                   <p className="testifier">Joyce Kinuthia</p>
                   <p className="location">Form 4 Arts Student<br/>MaryLeakey Girls High School, Nairobi</p>

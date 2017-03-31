@@ -61,6 +61,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $blue-light;
 }
 
+.bg-lighter-blue {
+  background: #e9ecef;
+}
+
 .bg-green  {
   background-color: $green;
 }
@@ -82,10 +86,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $primary;
   border-color: transparent;
   border-radius: 0;
-  opacity: 0.5;
+
   .navbar-brand > img {
     width: 100px;
   }
+
   .navbar-toggler {
     background-color: $primary;
     border-color: $primary;
@@ -213,20 +218,30 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro {
   color: white;
-  height: 100vh;
+  //background: url(../img/testimony-bg.jpg) no-repeat;
   background: url(../img/header-bg.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 
   .intro-text {
+    align-items: center;
     display: flex;
     height: 100%;
     padding: 0;
-    align-items: center;
     width: 100%;
 
     padding-top: 100px;
     padding-bottom: 150px;
+
+    @include mobile {
+      flex-flow: row wrap;
+    }
+
+    @include phablet {
+      flex-flow: row wrap;
+    }
 
     > .banner-text {
       flex: 1 100%;
@@ -237,6 +252,14 @@ h1, h2, h3, h4, h5, h6 {
       margin: 0;
       margin-top: 70%;
       margin-bottom: 20%;
+
+      @include mobile {
+        margin: 0;
+      }
+
+      @include phablet {
+        margin: 0;
+      }
     }
 
     .intro-lead-in {
@@ -259,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   .overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(29, 29, 29, 0.22);
     height: 100%;
   }
 }
@@ -288,10 +311,10 @@ h1, h2, h3, h4, h5, h6 {
   &.place {
     margin-top: 60px;
     p {
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(179, 235, 239, 0.5);
       font-size: 20px;
       font-weight: 400;
-      text-shadow: 0px 2px 4px black;
+      text-shadow: 0px 1px 2px black;
     }
   }
   h1 {
@@ -301,6 +324,18 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     font-size: 3.5em;
     text-shadow: 0px 3px 4px black;
+
+    @include mobile {
+      font-size: 3em;
+      text-align: center;
+      margin-top: 40%;
+    }
+
+    @include phablet {
+      font-size: 3em;
+      text-align: center;
+      margin-top: 40%;
+    }
   }
 }
 
@@ -518,8 +553,12 @@ h1, h2, h3, h4, h5, h6 {
 .testimony {
   color: white;
   background: url(../img/testimony-bg.jpg) no-repeat;
+  //background: url(../img/header-bg.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  background-attachment: fixed;
+  height: 600px;
+
   .intro-text {
     padding-top: 15%;
     padding-bottom: 15%;
@@ -530,14 +569,19 @@ h1, h2, h3, h4, h5, h6 {
     h1 {
       margin-bottom: 2em;
     }
+    h2 {
+      font-weight: 400;
+      letter-spacing: 1;
+      line-height: 1.5;
+    }
     .testifier {
       margin-top: 2em;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 24px;
       color: $primary;
     }
     .location {
-      font-weight: 700;
+      font-weight: 400;
       color: $gray-light;
     }
   }
