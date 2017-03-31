@@ -52,7 +52,7 @@ class HomePage extends React.Component {
                 <div className="intro-text">
                   <div className="col-md-9 col-xs-12 banner-text">
                     <div className="home-content body-pad">
-                      <h1>6 out of 10 most successful tech geniuses started coding before the age of 15.</h1>
+                      <h1><a href="http://www.investopedia.com/articles/personal-finance/072715/10-richest-most-successful-tech-geniuses.asp" className="text-primary" target="_blank">6 out of 10</a> most successful tech leaders started coding before the age of 15.</h1>
                     </div>
                   </div>
                   <div className="offset-md-6 col-md-6 col-xs-12 muted-banner-desc">
@@ -93,9 +93,9 @@ class HomePage extends React.Component {
             </div>
             <div className="col-sm-6">
               <p>17 year old Collins Nji, a Cameroonian art-inclined student, is the
-                <span className="text-primary">
+                <a href="https://qz.com/909614/a-cameroonian-17-year-old-won-the-google-code-in-after-the-internet-was-shut-down-in-his-hometown-of-bamenda/" target="_blank" className="text-primary">
                   &nbsp;first African to ever win Google’s Code-in competition.
-                </span>
+                </a>
               </p>
             </div>
           </div>
@@ -107,18 +107,19 @@ class HomePage extends React.Component {
           <div className="row profile">
             <div className="col-md-3 col-xs-12">
               <img src={require('../../../img/volunteer.jpeg')} className="img-thumbnail picture hidden-xs" />
-              <h4 className="name">Oluwadamilola Adebayo</h4>
+              <h5 className="name">Oluwadamilola Adebayo</h5>
               <p className="title">Software developer at Andela</p>
               <p className="role">Teencode volunteer facilitator</p>
+              <p className="role role-cta"><Link to="/volunteers">See more volunteers >></Link></p>
             </div>
             <div className="col-md-9 col-xs-12">
               <div className="header">
                 <h4>How is your high school preparing the next generation of Africa's tech leaders?</h4>
-                <p>Teencode pairs volunteer professional developers to high schools so they teach teenagers how to build programs that solve useful problems.</p>
+                <p>Teencode pairs volunteer professional developers with high schools so they teach students how to build programs that solve useful problems.</p>
               </div>
               <div className="offset-md-6 col-md-6 col-xs-12">
                 <div className="body-pad text-xs-right">
-                  <Link to="/volunteers"><p className="action">Show me who these volunteers are >></p></Link>
+                  <Link to="/volunteers"><p className="action">Show me what the curriculum looks like >></p></Link>
                 </div>
               </div>
             </div>
@@ -192,7 +193,7 @@ class HomePage extends React.Component {
                     </div>
                     <p className="text-muted lead">
                       Thomas Suarez - 12 year old app developer 
-                      <br />gives quality advice to ... um ... everyone!
+                      <br />gives a talk on why students should be introduced to programming.
                     </p>
                   </div>
               </div>

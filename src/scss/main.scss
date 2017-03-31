@@ -53,6 +53,12 @@ h1, h2, h3, h4, h5, h6 {
   @include lato-font;
 }
 
+h4 {
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  letter-spacing: 1;
+}
+
 .img-centered {
   margin: 0 auto;
 }
@@ -386,13 +392,15 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 14px;
       margin-bottom: 0;
     }
+    .role-cta {
+      margin-top: 10px;
+    }
   }
   .header{
     @include lato-font;    
     padding-top: 50px;
     line-height: 1.5;
     h4 {
-      font-size: 28px;
       line-height: 1.5;
     }
   }
@@ -402,9 +410,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
   }
   .action {
-    // color: $blue;
-    padding-top: 50px;
     font-weight: 400;
+    font-size: 16px;
+    padding-top: 20px;
+  }
+  p {
+    font-size: 22px;
   }
 }
 
@@ -472,7 +483,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-top: 50px;
         h4 {
           padding-bottom: 10px;
-          font-size: 22px;
+          //font-size: 22px;
           font-weight: 300;
           color: $primary;
         }
