@@ -1,9 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router';
+import TestimonySection from './TestimonySection';
 
 class HomePage extends React.Component {
   constructor(props, context){
     super(props);
+  }
+
+  componentDidMount() {
+    window.analytics.page();   
+  }
+
+  viewForm(e) {
+    e.preventDefault();
+    window.analytics.track('View Application Form', {
+      category: 'Application'
+    });
+  }
+
+  submitForm(e) {
+    e.preventDefault();
+    window.analytics.track('Submit', {
+      category: 'Application',
+      label: 'Submit Application Form'
+    });
+  }
+
+  checkEligibility(e) {
+    e.preventDefault();
+    window.analytics.track('View Eligibility', {
+      category: 'Show Interest', 
+      label: 'Check Requirements'
+    });
+  }
+  
+  submitDetails(e) {
+    e.preventDefault();
+    window.analytics.track('Submit', {
+      category: 'Show Interest',
+      label: 'Submit Email'
+    });
   }
 
   render() {
@@ -37,7 +73,7 @@ class HomePage extends React.Component {
               <h3 className="action">High schools in Lagos can apply between 10th - 17th April, 2017</h3>
             </div>
             <div className="col-md-5 col-xs-12 text-md-right">
-              <Link to="#" className="btn btn-action">Check if your school is eligible >></Link>
+              <Link to="#" className="btn btn-action" onClick={this.checkEligibility}>Check if your school is eligible >></Link>
             </div>
           </div>
         </div>
@@ -66,7 +102,7 @@ class HomePage extends React.Component {
         </div>
       </section>
 
-      <section id="volunteer" className="volunteer">
+      <section id="volunteer" className="volunteers">
         <div className="container">
           <div className="row profile">
             <div className="col-md-3 col-xs-12">
@@ -143,30 +179,34 @@ class HomePage extends React.Component {
           </div>
       </section>
 
+      <TestimonySection />
+
       <section id="video" className="why section">
           <div className="container">
               <div className="row">
-                  <div className="col-lg-12 text-md-center body-pad embed-pad">
-                      <div className="embed">
-                        <div className="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fkd9TWUtFm0" allowFullScreen></iframe>
-                        </div>
+                  <div className="offset-sm-2 col-sm-8 text-md-center body-pad embed-pad">
+                    <div className="embed">
+                      <div className="embed-responsive embed-responsive-16by9">
+                        <iframe className="embed-responsive-item" src="//www.youtube.com/embed/Fkd9TWUtFm0" allowFullScreen></iframe>
                       </div>
-                      <p className="text-muted lead">
-                        Thomas Suarez - 12 year old app developer 
-                        <br />gives quality advice to ... um ... everyone!
-                      </p>
+                    </div>
+                    <p className="text-muted lead">
+                      Thomas Suarez - 12 year old app developer 
+                      <br />gives quality advice to ... um ... everyone!
+                    </p>
                   </div>
               </div>
           </div>
       </section>
 
-      <section id="sponsor" className="bg-lighter-blue section">
+      <section id="sponsor" className="bg-green section sponsored-by">
           <div className="container">
               <div className="row">
-                  <div className="col-lg-12 text-md-center body-pad">
-                      <h4 className="section-subheading text-muted">#teencode is proudly supported by </h4>
-                      <h1 className="section-heading text-muted">&lt; Andela &gt;</h1>
+                  <div className="col-md-12 text-md-center body-pad">
+                      <h3>#teencode is proudly powered by</h3>
+                  </div>
+                  <div className="col-md-4 offset-md-4 col-xs-12">
+                    <a href="http://andela.com" target="_blank"><img className="andela-logo" src={require('../../../img/andela-white-logo.png')} alt="Andela" /></a>
                   </div>
               </div>              
           </div>

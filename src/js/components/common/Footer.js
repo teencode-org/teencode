@@ -1,15 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router';
-import logo from '../../../img/logo.png';
 
 const Footer = () => {
   return (
     <footer>
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
-            <span className="copyright">Copyright &copy; <img src={logo} alt="Site Logo" /> 2017</span>
+          <div className="col-md-5">
+            <span className="copyright">
+              Copyright &copy; <img src={require('../../../img/logo.png')} alt="Site Logo" /> 2017. All Rights Reserved
+            </span>
           </div>
+          <div className="offset-sm-11">
+            <a href="" ><i className="fa fa-facebook-square fa-2x"></i></a>
+          </div>
+          
         </div>
       </div>
     </footer>
