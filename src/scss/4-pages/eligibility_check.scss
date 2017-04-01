@@ -1,6 +1,11 @@
+@keyframes flipFlop {
+  0% { transform: rotateY(90deg); }
+  100% { transform: rotateY(0deg); }
+}
 .eligibility-check {
   height: 100%;
   padding: 100px auto;
+  transition: all 3s ease-in;
   width: 100%;
   z-index: 5;
 
@@ -37,6 +42,10 @@
     }
     small {
       color: lighten($gray-dark, 10%);
+    }
+    p {
+      font-size: 22px;
+      margin-top: 50px;
     }
   }
 
@@ -78,4 +87,7 @@
     }
   }
 
+  &.apply {
+    animation: 1s ease 0s 1 flipFlop;
+  }
 }

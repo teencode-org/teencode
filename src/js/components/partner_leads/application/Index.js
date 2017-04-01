@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-import logo from '../../../../img/logo.png';
+import logo from '../../../../img/logo-colored.png';
 
 const ApplicationPage = () => {
   return (
-    <div className="container eligibility-check">
+    <div className="container eligibility-check apply">
       <div className="header">
         <img src={logo} />
         <Link to="/">
@@ -14,7 +14,7 @@ const ApplicationPage = () => {
 
       <div className="page-title">
         <h2>You are eligible!!!</h2>
-        <p>Join us in building Africa's next generation of Tech Leaders!</p>
+        <p>Join us in building Africa's next generation of Tech Leaders.</p>
       </div>
 
       <content className="wrapper">
@@ -36,7 +36,7 @@ const ApplicationPage = () => {
             <div className="form-group row">
               <label for="phoneNum" className="col-md-4 col-sm-12  col-form-label">Your phone number:</label>
               <div className="col-md-8 col-sm-12">
-                <input type="number" className="form-control form-control-lg" id="phoneNum" placeholder="Phone number" />
+                <input type="tel" className="form-control form-control-lg" id="phoneNum" placeholder="Phone number" />
               </div>
             </div>
             <div className="form-group row btn-row">
