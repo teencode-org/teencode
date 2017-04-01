@@ -52,11 +52,15 @@
   }
 
   .response {
-    min-width: 135px;
+    min-width: 180px;
 
     button {
       &:first-child {
         margin: 10px;
+      }
+
+      &.active {
+        color: $orange;
       }
     }
   }
