@@ -1,0 +1,64 @@
+.eligibility-check {
+  height: 100%;
+  padding: 100px auto;
+  width: 100%;
+  z-index: 5;
+
+  @include desktop {
+    padding: 100px;
+  }
+
+  .header {
+    height: 50px;
+    width: 100%;
+
+    img {
+      height: 100%;
+    }
+
+    .fa {
+      float: right;
+      font-size: 3em;
+      color: lighten($gray-light, 30);
+
+      &:hover {
+        color: $gray-light;
+      }
+    }
+  }
+
+  .page-title {
+    margin: 100px 20px;
+    text-align: center;
+
+    h2 {
+      color: $orange;
+      font-size: 3em;
+    }
+    small {
+      color: lighten($gray-dark, 10%);
+    }
+  }
+
+  .single-question {
+    color: $gray-dark;
+    font-size: 1.5em;
+    margin: 50px 20px;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .response {
+    min-width: 135px;
+
+    button {
+      &:first-child {
+        margin: 10px;
+      }
+    }
+  }
+
+}

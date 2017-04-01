@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import logo from '../../../img/logo.png';
+import logo from '../../../../img/logo.png';
 
 const ApplicationPage = () => {
   return (
