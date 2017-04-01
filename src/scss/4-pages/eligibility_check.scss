@@ -65,4 +65,17 @@
     }
   }
 
+  .btn-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+
+    @include desktop {
+      float: right;
+      .btn {
+        width: 200px;
+      }
+    }
+  }
+
 }

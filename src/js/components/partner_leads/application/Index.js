@@ -14,7 +14,7 @@ const ApplicationPage = () => {
 
       <div className="page-title">
         <h2>You are eligible!!!</h2>
-        <small>Join us in building Africa's next generation of Tech Leaders!</small>
+        <p>Join us in building Africa's next generation of Tech Leaders!</p>
       </div>
 
       <content className="wrapper">
@@ -22,24 +22,26 @@ const ApplicationPage = () => {
         <div className="container">
           <form>
             <div className="form-group row">
-              <label for="inputEmail3" className="col-md-4 col-sm-12 col-form-label">Name of your school:</label>
+              <label for="schoolName" className="col-md-4 col-sm-12 col-form-label">Name of your school:</label>
               <div className="col-md-8 col-sm-12">
-                <input type="email" className="form-control" id="inputEmail3" placeholder="Email" />
+                <input type="text" className="form-control form-control-lg" id="schoolName" placeholder="School" />
               </div>
             </div>
             <div className="form-group row">
               <label for="inputPassword3" className="col-md-4 col-sm-12  col-form-label">Your email:</label>
               <div className="col-md-8 col-sm-12">
-                <input type="password" className="form-control" id="inputPassword3" placeholder="Password" />
+                <input type="email" className="form-control form-control-lg" id="email" placeholder="Email" />
               </div>
             </div>
             <div className="form-group row">
-              <label for="inputPassword3" className="col-md-4 col-sm-12  col-form-label">Your phone number:</label>
+              <label for="phoneNum" className="col-md-4 col-sm-12  col-form-label">Your phone number:</label>
               <div className="col-md-8 col-sm-12">
-                <input type="password" className="form-control" id="inputPassword3" placeholder="Password" />
+                <input type="number" className="form-control form-control-lg" id="phoneNum" placeholder="Phone number" />
               </div>
             </div>
-            <button className="btn btn-action" >Apply</button>
+            <div className="form-group row btn-row">
+              <button className="btn btn-action" >Apply</button>
+            </div>
           </form>
         </div>
 
