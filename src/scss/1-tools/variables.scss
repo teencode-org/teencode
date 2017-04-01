@@ -1,0 +1,29 @@
+$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic";
+
+@import url($font-url);
+
+$primary: #57c6d4;
+$blue-lighter: #f7ffff;
+$blue-light: #84a4a7;
+
+$blue-dark: #335578;
+$gold:    #f7af1e;
+$orange:     #e17034;
+$blue:     #1eb7fc;
+$white: #e0e0e0;
+$green: #396e71;
+
+$gray-base:			#000 !default;
+$gray-bg:			rgba(19, 31, 39, 0.85) !default;
+$black-trans:			rgba(0, 0, 0, 0.8) !default;
+$gray-darker:		lighten($gray-base, 13.5%) !default;
+$gray-dark:			lighten($gray-base, 20%) !default;
+$gray:				lighten($gray-base, 33.5%) !default;
+$gray-light:		#778899;
+$gray-lighter:		lighten($gray-base, 93.5%) !default;
+
+// responsiveness
+$mobile-width: 500px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+

@@ -8,7 +8,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    window.analytics.page();   
+    window.analytics.page();
   }
 
   viewForm(e) {
@@ -50,14 +50,14 @@ class HomePage extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="intro-text">
-                  <div className="col-md-7 col-xs-12">
+                  <div className="col-md-9 col-xs-12 banner-text">
                     <div className="home-content body-pad">
-                      <h1>6 out of 10 most successful tech geniuses started coding before the age of 15.</h1>
+                      <h1><a href="http://www.investopedia.com/articles/personal-finance/072715/10-richest-most-successful-tech-geniuses.asp" className="text-primary" target="_blank">6 out of 10</a> most successful tech leaders started coding before the age of 15.</h1>
                     </div>
                   </div>
-                  <div className="offset-md-6 col-md-6 col-xs-12">
+                  <div className="offset-md-6 col-md-6 col-xs-12 muted-banner-desc">
                     <div className="home-content body-pad place text-xs-right">
-                      <p className="font-italic">MaryLeakey High School - Saturday, March 11, 2017.</p>
+                      <p className="font-italic">Kariobangi High School - Saturday, March 11, 2017.</p>
                     </div>
                   </div>
               </div>
@@ -82,8 +82,22 @@ class HomePage extends React.Component {
       <section className="proof">
         <div className="container">
           <div className="row divide">
-            <div className="col-sm-6"><p>Nigerian brothers Osite and Anime Okhaliome <span className="text-primary">built a mobile browser</span> at ages 13 and 15 respectively</p></div>
-            <div className="col-sm-6"><p><span className="text-primary">17 year old Collins Nji,</span> a Cameroonian art-inclined student, is the first African to ever win Google's Code-in competition</p></div>
+            <div className="col-sm-6">
+                <p>Nigeria brothers Osite and Anime
+                  <a href="http://techcabal.com/2015/04/23/meet-osine-and-anesi-the-nigerian-teenagers-who-built-a-mobile-web-browser/" target="_blank">
+                    <span className="text-primary">
+                      &nbsp;built a mobile browser
+                    </span>
+                  </a> at ages 13 and 15 respectively
+                </p>
+            </div>
+            <div className="col-sm-6">
+              <p>17 year old Collins Nji, a Cameroonian art-inclined student, is the
+                <a href="https://qz.com/909614/a-cameroonian-17-year-old-won-the-google-code-in-after-the-internet-was-shut-down-in-his-hometown-of-bamenda/" target="_blank" className="text-primary">
+                  &nbsp;first African to ever win Google’s Code-in competition.
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -93,20 +107,19 @@ class HomePage extends React.Component {
           <div className="row profile">
             <div className="col-md-3 col-xs-12">
               <img src={require('../../../img/volunteer.jpeg')} className="img-thumbnail picture hidden-xs" />
-              <h4 className="name">Oluwadamilola Adebayo</h4>
+              <h5 className="name">Oluwadamilola Adebayo</h5>
               <p className="title">Software developer at Andela</p>
               <p className="role">Teencode volunteer facilitator</p>
+              <p className="role role-cta"><Link to="/volunteers">See more volunteers >></Link></p>
             </div>
             <div className="col-md-9 col-xs-12">
               <div className="header">
                 <h4>How is your high school preparing the next generation of Africa's tech leaders?</h4>
-                <p>
-                  #teencode pairs volunteer professional developers to high schools so they teach teenagers how to build programs that solve useful problems
-                </p>
+                <p>Teencode pairs volunteer professional developers with high schools so they teach students how to build programs that solve useful problems.</p>
               </div>
               <div className="offset-md-6 col-md-6 col-xs-12">
                 <div className="body-pad text-xs-right">
-                  <p className="action">Show me who these volunteers are >></p>
+                  <Link to="/volunteers"><p className="action">Show me what the curriculum looks like >></p></Link>
                 </div>
               </div>
             </div>
@@ -118,7 +131,7 @@ class HomePage extends React.Component {
           <div className="container">
               <div className="row">
                   <div className="col-lg-12 text-xs-center body-pad">
-                      <h4 className="section-heading">Help students succeed in a future of technology</h4>
+                      <h4 className="section-heading">Partner with us to help students succeed in a future of technology</h4>
                       <h3 className="section-subheading text-muted"></h3>
                   </div>
               </div>
@@ -128,14 +141,18 @@ class HomePage extends React.Component {
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/apply.svg')} alt="Apply" />
                           <h4 className="service-heading">Apply</h4>
-                          <p className="text-muted">We reach out to schools that apply, to agree on terms and work out a schedule that is fitting. Check if your school is eligible</p>
+                          <p className="text-muted">We reach out to schools that apply to agree on terms and work out a schedule that is fitting.
+                            <Link to="/eligibility"><span className="text-primary">&nbsp;Check if your school is eligible.</span></Link>
+                          </p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/nurture.svg')} alt="Nurture" />
                           <h4 className="service-heading">Nurture</h4>
-                          <p className="text-muted">Students in successful schools are taken through 3-months of classes that build up into building a real, useful app
+                          <p className="text-muted">Students in
+                            <Link to="/partners"><span className="text-primary"> &nbsp;schools we partner with</span></Link>
+                            &nbsp;are taken through 3-months of classes that build up into building a real useful apps.
                           </p>
                         </div>
                     </div>
@@ -143,14 +160,19 @@ class HomePage extends React.Component {
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/mentor.svg')} alt="Mentor" />
                           <h4 className="service-heading">Mentor</h4>
-                          <p className="text-muted">Very experienced developers take it upon themselves to oversee continued growth</p>
+                          <p className="text-muted">
+                            <Link to="/volunteers" className="text-primary">Very experienced software developers</Link>
+                              &nbsp;take it upon themselves to oversee continued growth of the students during and after the 3 month programme.
+                          </p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="service-col">
                           <img className="picture" src={require('../../../img/community.svg')} alt="Community" />
                           <h4 className="service-heading">Community</h4>
-                          <p className="text-muted">Teens across different geographical regions, bound by an interest in tech are pulled together, to support each other</p>
+                          <p className="text-muted">Teens across different geographical region, bound by an interest in tech are pull together, to support each other.
+                            <Link to="/communities">&nbsp;Take a peek at our communities.</Link>
+                          </p>
                         </div>
                     </div>
                 </div>
@@ -171,7 +193,7 @@ class HomePage extends React.Component {
                     </div>
                     <p className="text-muted lead">
                       Thomas Suarez - 12 year old app developer 
-                      <br />gives quality advice to ... um ... everyone!
+                      <br />gives a talk on why students should be introduced to programming.
                     </p>
                   </div>
               </div>
@@ -182,10 +204,10 @@ class HomePage extends React.Component {
           <div className="container">
               <div className="row">
                   <div className="col-md-12 text-md-center body-pad">
-                      <h3>#teencode is proudly powered by</h3>
+                      <h3>#teencode is powered by</h3>
                   </div>
                   <div className="col-md-4 offset-md-4 col-xs-12">
-                      <img className="andela-logo" src={require('../../../img/andela-white-logo.png')} alt="Andela" />
+                    <a href="http://andela.com" target="_blank"><img className="andela-logo" src={require('../../../img/andela-white-logo.png')} alt="Andela" /></a>
                   </div>
               </div>              
           </div>

@@ -1,5 +1,8 @@
-@import "variables.scss";
-@import "mixins.scss";
+@import "1-tools/-tools-index";
+@import "2-base/-base-index";
+@import "3-modules/-modules-index";
+@import "4-pages/-pages-index";
+//@import "variables.scss";
 
 // Global Components
 
@@ -50,12 +53,23 @@ h1, h2, h3, h4, h5, h6 {
   @include lato-font;
 }
 
+h4 {
+  font-size: 22px;
+  letter-spacing: 1;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+}
+
 .img-centered {
   margin: 0 auto;
 }
 
 .bg-light-blue {
   background-color: $blue-light;
+}
+
+.bg-lighter-blue {
+  background: #e9ecef;
 }
 
 .bg-green  {
@@ -65,11 +79,11 @@ h1, h2, h3, h4, h5, h6 {
 // Restyled Primary Buttons
 
 .btn-primary {
-  @include button-variant(white, $primary, $primary);
+  @include button-variant($white, $primary, $primary);
 }
 
 .btn-action {
-  @include button-variant(white, $orange, $orange);
+  @include button-variant($white, $orange, $orange);
   font-size: 22px;
 }
 
@@ -79,9 +93,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $primary;
   border-color: transparent;
   border-radius: 0;
+
   .navbar-brand > img {
     width: 100px;
   }
+
   .navbar-toggler {
     background-color: $primary;
     border-color: $primary;
@@ -169,11 +185,11 @@ h1, h2, h3, h4, h5, h6 {
 
 // sections
 
-@media(max-width:768px) {
-  div.body-pad {
-    padding: 0 30px;
-  }
-}
+//@media(max-width:768px) {
+//  div.body-pad {
+//    padding: 0 30px;
+//  }
+//}
 
 @media(min-width:768px) {
   .navbar-custom {
@@ -209,19 +225,57 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro {
   color: white;
-  height: 100vh;
+  //background: url(../img/testimony-bg.jpg) no-repeat;
   background: url(../img/header-bg.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+
   .intro-text {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+
     padding-top: 100px;
     padding-bottom: 150px;
+
+    @include mobile {
+      flex-flow: row wrap;
+    }
+
+    @include phablet {
+      flex-flow: row wrap;
+    }
+
+    > .banner-text {
+      flex: 1 100%;
+      padding: 0;
+    }
+
+    > .muted-banner-desc {
+      margin: 0;
+      margin-top: 70%;
+      margin-bottom: 20%;
+
+      @include mobile {
+        margin: 0;
+      }
+
+      @include phablet {
+        margin: 0;
+      }
+    }
+
     .intro-lead-in {
       @include sans-font;
       font-size: 22px;
       line-height: 22px;
       margin-bottom: 25px;
     }
+
     .intro-heading {
       @include roboto-font;
       font-weight: 700;
@@ -235,7 +289,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   .overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(29, 29, 29, 0.22);
     height: 100%;
   }
 }
@@ -243,8 +297,8 @@ h1, h2, h3, h4, h5, h6 {
 // cta
 
 .cta {
-  height: 80px;
-  margin-top: -80px;
+  height: 100px;
+  margin-top: -100px;
   color: $gray-light;
   background: $gray-bg;
   padding-top: 15px;
@@ -254,15 +308,20 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
     margin-top: 6px;
   }
+
+  > .container {
+    margin: 10px auto;
+  }
 }
 
 .home-content {
   &.place {
     margin-top: 60px;
     p {
+      color: rgba(179, 235, 239, 0.5);
       font-size: 20px;
-      color: rgba(255, 255, 255, 0.15);
-      text-shadow: 2px 2px 4px black;
+      font-weight: 400;
+      text-shadow: 0px 1px 2px black;
     }
   }
   h1 {
@@ -270,8 +329,20 @@ h1, h2, h3, h4, h5, h6 {
     color: $blue-light;
     line-height: 1.4;
     font-weight: 600;
-    font-size: 42px;
+    font-size: 3.5em;
     text-shadow: 0px 3px 4px black;
+
+    @include mobile {
+      font-size: 3em;
+      text-align: center;
+      margin-top: 40%;
+    }
+
+    @include phablet {
+      font-size: 3em;
+      text-align: center;
+      margin-top: 40%;
+    }
   }
 }
 
@@ -322,13 +393,15 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 14px;
       margin-bottom: 0;
     }
+    .role-cta {
+      margin-top: 10px;
+    }
   }
   .header{
     @include lato-font;    
     padding-top: 50px;
     line-height: 1.5;
     h4 {
-      font-size: 28px;
       line-height: 1.5;
     }
   }
@@ -338,17 +411,18 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
   }
   .action {
-    // color: $blue;
-    padding-top: 50px;
     font-weight: 400;
+    font-size: 16px;
+    padding-top: 20px;
+  }
+  p {
+    font-size: 22px;
   }
 }
 
 @media(min-width:768px) {
   .intro {
     .intro-text {
-      padding-top: 35vh;
-      padding-bottom: 500px;
       .intro-lead-in {
         @include sans-font;
         font-size: 40px;
@@ -410,7 +484,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-top: 50px;
         h4 {
           padding-bottom: 10px;
-          font-size: 22px;
+          //font-size: 22px;
           font-weight: 300;
           color: $primary;
         }
@@ -491,8 +565,12 @@ h1, h2, h3, h4, h5, h6 {
 .testimony {
   color: white;
   background: url(../img/testimony-bg.jpg) no-repeat;
+  //background: url(../img/header-bg.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  background-attachment: fixed;
+  height: 600px;
+
   .intro-text {
     padding-top: 15%;
     padding-bottom: 15%;
@@ -503,14 +581,19 @@ h1, h2, h3, h4, h5, h6 {
     h1 {
       margin-bottom: 2em;
     }
+    h2 {
+      font-weight: 400;
+      letter-spacing: 1;
+      line-height: 1.5;
+    }
     .testifier {
       margin-top: 2em;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 24px;
       color: $primary;
     }
     .location {
-      font-weight: 700;
+      font-weight: 400;
       color: $gray-light;
     }
   }
