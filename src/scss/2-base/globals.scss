@@ -1,110 +1,101 @@
-//html {
-//  line-height: $line-height;
-//}
-//
-//body {
-//  overflow-x: hidden;
-//  @include body-font;
-//}
-//
-//.text-muted {
-//  color: $gray-light;
-//}
-//
-//.text-primary {
-//  color: $primary;
-//}
-//
-//p {
-//  font-size: 16px;
-//  line-height: 1.75;
-//  font-weight: 300;
-//  @include paragraph-font;
-//}
-//
-//p.large {
-//  font-size: 16px;
-//}
-//
-//a,
-//a:hover,
-//a:focus,
-//a:active,
-//a.active {
-//  outline: none;
-//}
-//
-//a {
-//  color: $primary;
-//}
-//
-//a:hover,
-//a:focus,
-//a:active,
-//a.active {
-//  color: darken($primary, 10%);
-//}
-//
-//h1, h2, h3, h4, h5, h6 {
-//  @include heading-font;
-//  font-weight: 700;
-//}
-//
-//.img-centered {
-//  margin: 0 auto;
-//}
-//
-//.bg-light-blue {
-//  background-color: $blue-light;
-//}
-//
-//.bg-lighter-blue {
-//  background-color: $blue-lighter;
-//}
-//
-//// Restyled Primary Buttons
-//
-//.btn-primary {
-//  @include button-variant(white, $primary, $primary);
-//  @include heading-font;
-//  font-weight: 700;
-//}
-//
-//.action {
-//  @include body-font;
-//  background: $orange;
-//  color: white;
-//  letter-spacing: 1px;
-//  font-weight: 700;
-//  border-radius: 0;
-//  font-size: 18px;
-//  padding: 10px 40px;
-//}
-//
-//.btn:focus,
-//.btn:active,
-//.btn.active,
-//.btn:active:focus {
-//  outline: none;
-//}
-//
-//// Highlight Color Customization
-//
-//::-moz-selection {
-//  text-shadow: none;
-//  background: $blue-light;
-//}
-//
-//::selection {
-//  text-shadow: none;
-//  background: $blue-light;
-//}
-//
-//img::selection {
-//  background: transparent;
-//}
-//
-//img::-moz-selection {
-//  background: transparent;
-//}
+body {
+  overflow-x: hidden;
+  @include lato-font;
+}
+
+.text-muted {
+  color: $gray-light;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 300;
+  @include roboto-font;
+}
+
+p.large {
+  font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+}
+
+a {
+  color: $primary;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: darken($primary, 10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include lato-font;
+}
+
+h4 {
+  font-size: 22px;
+  letter-spacing: 1;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+.bg-light-blue {
+  background-color: $blue-light;
+}
+
+.bg-lighter-blue {
+  background: #e9ecef;
+}
+
+.bg-green  {
+  background-color: $green;
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {
+  @include button-variant($white, $primary, $primary);
+}
+
+.btn-action {
+  @include button-variant($white, $orange, $orange);
+  font-size: 22px;
+}
+
+// Highlight Color Customization
+
+::-moz-selection {
+  text-shadow: none;
+  background: $blue-light;
+}
+
+::selection {
+  text-shadow: none;
+  background: $blue-light;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
 

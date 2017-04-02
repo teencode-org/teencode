@@ -1,0 +1,99 @@
+@keyframes flipFlop {
+  0% { transform: rotateY(90deg); }
+  100% { transform: rotateY(0deg); }
+}
+.eligibility-check {
+  height: 100%;
+  padding: 100px auto;
+  transition: all 3s ease-in;
+  width: 100%;
+
+  @include desktop {
+    padding: 100px;
+  }
+
+  .header {
+    height: 50px;
+    width: 100%;
+
+    img {
+      height: 100%;
+    }
+
+    .fa {
+      float: right;
+      font-size: 3em;
+      color: lighten($gray-light, 30);
+
+      &:hover {
+        color: $gray-light;
+      }
+    }
+  }
+
+  .page-title {
+    margin: 100px 20px;
+    text-align: center;
+
+    h2 {
+      color: $orange;
+      font-size: 3em;
+    }
+    small {
+      color: lighten($gray-dark, 10%);
+    }
+    p {
+      font-size: 22px;
+      margin-top: 50px;
+    }
+  }
+
+  .single-question {
+    color: $gray-dark;
+    font-size: 1.5em;
+    margin: 50px 20px;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .response {
+    min-width: 180px;
+
+    button {
+      &:first-child {
+        margin: 10px;
+      }
+
+      &.active {
+        color: $orange;
+      }
+    }
+  }
+
+  .btn-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+
+    @include desktop {
+      float: right;
+      .btn {
+        width: 200px;
+      }
+    }
+  }
+
+  &.apply {
+    animation: 1s ease 0s 1 flipFlop;
+  }
+
+  .form-group {
+    label {
+      font-size: 22px;
+      font-weight: 300;
+    }
+  }
+}
