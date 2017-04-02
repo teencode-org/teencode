@@ -1,23 +1,29 @@
-//// Footer
-//
-//footer {
-//  background-image: url(../img/footer-bg.png);
-//  background-color: $blue-light;
-//  background-repeat: no-repeat;
-//  background-attachment: scroll;
-//  background-position: center center;
-//  @include background-cover;
-//  padding: 500px 0 50px;
-//  font-size: 16px;
-//  color: $orange;
-//  img {
-//    width: 90px;
-//    margin-bottom: 3px;
-//  }
-//  span.copyright {
-//    line-height: 40px;
-//    @include heading-font;
-//    text-transform: none;
-//  }
-//}
+// Footer
+
+footer {
+  background-color: #205b5f;
+  padding: 50px 0 50px;
+  font-size: 16px;
+  color: $gray-light;
+  text-decoration: none;
+  img {
+    width: 90px;
+    margin-bottom: 3px;
+  }
+  span.copyright {
+    line-height: 40px;
+    @include roboto-font;
+    text-transform: none;
+  }
+  i {
+    color: $gray-light;
+  }
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+  outline: none;
+}
 

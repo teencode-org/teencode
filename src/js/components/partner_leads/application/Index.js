@@ -19,6 +19,8 @@ class ApplicationPageContainer extends React.Component {
 
   submitApplication = (e) => {
     e.preventDefault();
+    e.target.value = 'Submitting ...';
+    e.target.disabled = true;
     apply(this.state)
       .then(data => {
         toastr.success(`Application successful for ${data.message}`);
