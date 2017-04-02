@@ -26,7 +26,7 @@ class EligibilityCheck extends React.Component {
       return (!(eligible = this.state.criteria[criterionKey].value))
     });
     if (!eligible) return
-    browserHistory.push('/partner_leads/apply');
+    browserHistory.push('/partner-leads/apply');
   }
 
   render() {

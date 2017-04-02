@@ -7,7 +7,6 @@
   padding: 100px auto;
   transition: all 3s ease-in;
   width: 100%;
-  z-index: 5;
 
   @include desktop {
     padding: 100px;
@@ -89,5 +88,12 @@
 
   &.apply {
     animation: 1s ease 0s 1 flipFlop;
+  }
+
+  .form-group {
+    label {
+      font-size: 22px;
+      font-weight: 300;
+    }
   }
 }

@@ -17,7 +17,7 @@ const HowSection = () =>
               <img className="picture" src={require('../../../img/apply.svg')} alt="Apply" />
               <h4 className="service-heading">Apply</h4>
               <p className="text-muted">We reach out to schools that apply to agree on terms and work out a schedule that is fitting.
-                <Link to="/eligibility"><span className="text-primary">&nbsp;Check if your school is eligible.</span></Link>
+                <Link to="/partner-leads/check-eligibility"><span className="text-primary">&nbsp;Check if your school is eligible.</span></Link>
               </p>
             </div>
           </div>
