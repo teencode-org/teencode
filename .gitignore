@@ -5,3 +5,4 @@ bower_modules
 **/*.swp
 **/.DS_Store
 **/.idea
+.env

@@ -1,0 +1,128 @@
+// Mixins
+
+// Bootstrap Button Variant
+
+@mixin button-variant($color, $background, $border) {
+  @include lato-font;
+  color: $color;
+  background-color: $background;
+  border: 2px solid $border;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border-radius: 0;
+  font-size: 18px;
+  padding: 10px 15px;
+
+  &:hover,
+  &:focus {
+    color: $background;
+    background: transparent;
+    text-decoration: none;
+    border: 2px solid $border;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+      border-color: darken($border, 25%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// Background Cover Mixin
+
+@mixin background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+@mixin transition {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+@mixin skew {
+  -webkit-transform:skew(8deg) rotate(3deg);
+     -moz-transform:skew(8deg) rotate(3deg);
+      -ms-transform:skew(8deg) rotate(3deg);
+       -o-transform:skew(8deg) rotate(3deg);
+          transform:skew(8deg) rotate(3deg);
+}
+
+// Font Mixins
+
+@mixin sans-font {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin lato-font {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin roboto-font {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+// responsiveness
+
+@mixin mobile {
+  @media (min-width: #{100px}) and (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin phablet {
+  @media (min-width: #{$mobile-width + 1}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
