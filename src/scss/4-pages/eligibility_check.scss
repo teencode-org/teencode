@@ -97,3 +97,17 @@
     }
   }
 }
+
+.progress {
+  display: flex;
+  overflow: hidden;
+  font-size: .75rem;
+  line-height: -9rem;
+  text-align: center;
+  background-color: lighten($gray-dark, 70);
+  border-radius: .25rem;
+
+  .progress-bar {
+    transition: width 1s
+  }
+}
