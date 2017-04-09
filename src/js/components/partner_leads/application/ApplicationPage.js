@@ -22,7 +22,7 @@ const ApplicationPage = ({ onChange, submitApplication }) => {
         <div className="container">
           <form>
             <div className="form-group row">
-              <label for="schoolName" className="col-md-4 col-sm-12 col-form-label">Name of your school:</label>
+              <label htmlFor="schoolName" className="col-md-4 col-sm-12 col-form-label">Name of your school:</label>
               <div className="col-md-8 col-sm-12">
                 <input type="text"
                        className="form-control form-control-lg"
@@ -32,7 +32,7 @@ const ApplicationPage = ({ onChange, submitApplication }) => {
               </div>
             </div>
             <div className="form-group row">
-              <label for="inputPassword3" className="col-md-4 col-sm-12  col-form-label">Your email:</label>
+              <label htmlFor="inputPassword3" className="col-md-4 col-sm-12  col-form-label">Your email:</label>
               <div className="col-md-8 col-sm-12">
                 <input type="email"
                        className="form-control
@@ -43,7 +43,7 @@ const ApplicationPage = ({ onChange, submitApplication }) => {
               </div>
             </div>
             <div className="form-group row">
-              <label for="phoneNum" className="col-md-4 col-sm-12  col-form-label">Your phone number:</label>
+              <label htmlFor="phoneNum" className="col-md-4 col-sm-12  col-form-label">Your phone number:</label>
               <div className="col-md-8 col-sm-12">
                 <input type="tel"
                        className="form-control form-control-lg"

@@ -10,7 +10,7 @@ class EligibilityCheck extends React.Component {
     this.state = {
       criteria: criteriaList
     };
-  }
+  };
 
   setCriterion = (criterion, value) => {
     let updatedCriterion = {[criterion.key]: criterion};
@@ -18,18 +18,26 @@ class EligibilityCheck extends React.Component {
       criteria: Object.assign(this.state.criteria, updatedCriterion)
     });
     this.checkEligibility();
-  }
+  };
 
   checkEligibility = () => {
-    let eligible = true;
-    Object.keys(this.state.criteria).some((criterionKey) => {
-      return (!(eligible = this.state.criteria[criterionKey].value))
+    let eligible = null;
+    const {criteria} = this.state;
+    Object.keys(criteria).some((criterionKey) => {
+      if (eligible == null) eligible = criteria[criterionKey].value;
+      if (eligible != criteria[criterionKey].value) {
+        eligible = null;
+        return true;
+      }
+      return false;
     });
-    if (!eligible) return
-    browserHistory.push('/partner-leads/apply');
-  }
+    if (eligible == null) return;
+    browserHistory.push(eligible ? '/partner-leads/apply' : '/partner-leads/ineligible');
+  };
 
   render() {
+    const {criteria} = this.state;
+    let key = 0;
     return (
       <div className="container eligibility-check">
         <div className="header">
@@ -46,9 +54,10 @@ class EligibilityCheck extends React.Component {
 
         <content className="wrapper">
 
-          {Object.keys(this.state.criteria).map(criterion =>
+          {Object.keys(criteria).map(criterion =>
             <SingleQuestion
-              criterion={this.state.criteria[criterion]}
+              key={criterion}
+              criterion={criteria[criterion]}
               setCriterion={this.setCriterion} />
           )}
         </content>
