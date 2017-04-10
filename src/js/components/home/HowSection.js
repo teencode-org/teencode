@@ -45,7 +45,7 @@ const HowSection = () =>
             <div className="service-col">
               <img className="picture" src={require('../../../img/community.svg')} alt="Community" />
               <h4 className="service-heading">Community</h4>
-              <p className="text-muted">Teens across different geographical region, bound by an interest in tech are pull together, to support each other.
+              <p className="text-muted">Teens across different geographical region, bound by an interest in tech are pulled together, to support each other.
                 <Link to="/communities">&nbsp;Take a peek at our communities.</Link>
               </p>
             </div>
