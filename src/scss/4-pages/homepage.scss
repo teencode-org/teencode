@@ -68,6 +68,37 @@
   }
 }
 
+.ribbon {
+  position: absolute;
+  color: $primary;
+  font-size: 16px;
+  margin: 2.3px 25px;
+  padding: 3px 6px 4px 2px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.ribbon:before,
+.ribbon:after {
+  content: "";
+  position: absolute;
+  border: 0.8em solid rgba(0, 0, 0, 0.7);
+  top: 0;
+  border-left-width: 0.4em;
+  border-right-width: 0.4em;
+}
+
+.ribbon:after {
+  right: -0.7em;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+.ribbon:before {
+  left: -0.7em;
+  border-left-color: transparent;
+}
+
 // cta
 
 .cta {

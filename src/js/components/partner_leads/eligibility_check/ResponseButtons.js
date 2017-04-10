@@ -5,7 +5,7 @@ const ResponseButtons = ({criterion, setCriterion}) => {
   let affirmative = () => setCriterion(Object.assign(criterion, {value: true}));
   let negative = () => setCriterion(Object.assign(criterion, {value: false}));
   let successActive = criterion.value ? 'success' : 'default';
-  let negativeActive = criterion.value ? 'default' : 'danger';
+  let negativeActive = criterion.value == false ? 'danger' : 'default';
 
   return (
     <div className="response">
