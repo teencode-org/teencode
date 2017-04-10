@@ -7,6 +7,7 @@ class Header extends React.Component {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
     this.stickyToggle = this.stickyToggle.bind(this);
+    this.navLinkOnClick = this.navLinkOnClick.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +30,14 @@ class Header extends React.Component {
     }
   }
 
+  navLinkOnClick(event) {
+    let href = event.target.getAttribute('href');
+    $('html, body').stop().animate({
+        scrollTop: ($(href).offset().top - 50)
+    }, 1250);
+    event.preventDefault();
+  }
+
   handleScroll() {
     const sticky = document.querySelector('[data-toggle="sticky-onscroll"]');
     this.stickyToggle(sticky);
@@ -47,13 +56,16 @@ class Header extends React.Component {
           <div className="collapse navbar-toggleable-sm" id="collapsingNavbar">
             <ul className="nav navbar-nav pull-md-right">
               <li className="nav-item">
-                <Link to="#volunteer" className="page-scroll nav-link">What We Do</Link>
+                <Link to="#volunteer" className="page-scroll nav-link" onClick={this.navLinkOnClick}>Volunteers</Link>
               </li>
               <li className="nav-item">
-                <Link to="#how" className="page-scroll nav-link">How</Link>
+                <Link to="#how" className="page-scroll nav-link" onClick={this.navLinkOnClick}>Process</Link>
               </li>
               <li className="nav-item">
-                <Link to="#sponsor" className="page-scroll nav-link">Sponsors</Link>
+                <Link to="#testimonials" className="page-scroll nav-link" onClick={this.navLinkOnClick}>Testimonials</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="#sponsor" className="page-scroll nav-link" onClick={this.navLinkOnClick}>Sponsors</Link>
               </li>
             </ul>
           </div>
