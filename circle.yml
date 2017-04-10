@@ -1,0 +1,29 @@
+machine:
+  node:
+    version: 6.3.0
+
+dependencies:
+  pre:
+    - npm install istanbul -g
+    - npm install -g babel-cli
+    - npm install mocha -g
+  post:
+
+deployment:
+  production:
+    branch: master
+  staging:
+    branch: develop
+    heroku:
+      appname: teencode
+
+test:
+  override:
+    - nvm install stable && nvm alias default stable
+    - npm run test:coverage
+
+  post:
+
+general:
+  artifacts:
+    - ./coverage
