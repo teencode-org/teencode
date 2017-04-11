@@ -10,6 +10,8 @@
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
+    "test:coverage": "rimraf coverage/ && istanbul cover _mocha tools/testSetup.js \"src/**/*.spec.js\"",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf dist",
     "build:html": "babel-node tools/buildHtml.js",

@@ -1,5 +1,7 @@
 node_modules
 bower_modules
+buildcoverage
+coverage
 **/npm-debug.log
 **/*.swo
 **/*.swp
