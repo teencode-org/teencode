@@ -59,19 +59,7 @@
           outline: none;
         }
       }
-      a.nav-link {
-        &:hover:before,
-        &:focus:before {
-          position: absolute;
-          margin-top: 20px;
-          margin-left: 9px;
-          content: "\2022";
-          font-size: 0.5em;
-          pointer-events: none;
-          color: #fff;
-          text-shadow: 7px 0 #fff, -7px 0 #fff;
-        }
-      }
+      
       a.dropdown-item {
         &:hover,
         &:focus{
