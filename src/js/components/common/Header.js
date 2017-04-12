@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
-import utils from '../../utils';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
-    this.stickyToggle = this.stickyToggle.bind(this);
     this.navLinkOnClick = this.navLinkOnClick.bind(this);
   }
 
@@ -30,22 +28,6 @@ class Header extends React.Component {
     });
   }
 
-  isActiveDropdown(path) {
-    return path === window.location.pathname;
-  }
-
-  stickyToggle(sticky) {
-    const stickyHeight = sticky.clientHeight;
-    const stickyTop = sticky.offsetTop;
-    const scrollTop = document.body.scrollTop;
-
-    if (scrollTop > stickyHeight + stickyTop){
-      utils.addClass(sticky, 'is-sticky');
-    } else if (scrollTop <= stickyTop) {
-      utils.removeClass(sticky, 'is-sticky');
-    }
-  }
-
   navLinkOnClick(event) {
     let target = $(event.target).attr('href') ? event.target : $(event.target).parents(".page-scroll")[0];
     let href = $(target).attr('href');
@@ -53,6 +35,10 @@ class Header extends React.Component {
         scrollTop: ($(href).offset().top - 50)
     }, 1250);
     event.preventDefault();
+  }
+
+  isHomeLink() {
+    return window.location.pathname === '/';
   }
 
   generateDropdownLink(path, name, linkMap) {
@@ -82,12 +68,21 @@ class Header extends React.Component {
 
   handleScroll() {
     const sticky = document.querySelector('[data-toggle="sticky-onscroll"]');
-    this.stickyToggle(sticky);
+    const stickyHeight = sticky.clientHeight;
+    const stickyTop = sticky.offsetTop;
+    const scrollTop = document.body.scrollTop;
+
+    if (scrollTop > stickyHeight + stickyTop){
+      $(sticky).addClass('is-sticky');
+    } else if (scrollTop <= stickyTop) {
+      this.isHomeLink() && $(sticky).removeClass('is-sticky');
+    }
   }
 
   render() {
+    let stickyClass = this.isHomeLink() ? '' : 'is-sticky'
     return (
-      <nav id="top-nav" className="navbar navbar-full navbar-custom navbar-fixed-top" data-toggle="sticky-onscroll">
+      <nav id="top-nav" className={`navbar navbar-full navbar-custom navbar-fixed-top ${stickyClass}`} data-toggle="sticky-onscroll">
         <div className="container">
           <div className="navbar-header">
             <button className="navbar-toggler hidden-md-up pull-xs-right pull-sm-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
