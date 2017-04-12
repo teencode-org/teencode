@@ -10,22 +10,10 @@ class Header extends React.Component {
 
   componentDidMount() {
     document.addEventListener('scroll', this.handleScroll);
-    this.getActiveNavLink();
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll);
-  }
-
-  getActiveNavLink() {
-    let path = window.location.pathname;
-    $('.nav-link').each(function() {
-      if (path === $(this).attr('href') || path === $(this).data('href')) {
-        $(this).addClass('active');
-      } else {
-        $(this).removeClass('active');
-      }
-    });
   }
 
   navLinkOnClick(event) {
@@ -50,7 +38,7 @@ class Header extends React.Component {
     if (window.location.pathname === path) {
       return (
         <li className="nav-item dropdown">
-          <Link className="nav-link dropdown-toggle" to="#" data-href={path} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <Link className="nav-link dropdown-toggle" onlyActiveOnIndex activeClassName="active" to="#" data-href={path} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {name} <span className="caret down"></span>
           </Link>
           <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -61,7 +49,7 @@ class Header extends React.Component {
     }
     return (
       <li className="nav-item">
-        <Link to={path} className="nav-link">{name}</Link>
+        <Link to={path} activeClassName="active" onlyActiveOnIndex className="nav-link">{name}</Link>
       </li>
     )
   }
@@ -94,10 +82,10 @@ class Header extends React.Component {
             <ul className="nav navbar-nav pull-md-right">
               {this.generateDropdownLink('/', 'Home', {how: 'Process', testimonials: 'Testimonials', sponsor: 'Sponsors'})}
               <li className="nav-item">
-                <Link to="/volunteer" className="nav-link">Volunteers</Link>
+                <Link to="/volunteer" activeClassName="active" className="nav-link">Volunteers</Link>
               </li>
               <li className="nav-item">
-                <Link to="/curriculum" className="nav-link">Curriculum</Link>
+                <Link to="/curriculum" activeClassName="active" className="nav-link">Curriculum</Link>
               </li>
             </ul>
           </div>
