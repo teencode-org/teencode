@@ -44,11 +44,12 @@
   .nav {
     margin-left: 2px;
     li {
-      a {
+      a.nav-link,
+      a.dropdown-item {
         @include lato-font;
         font-weight: 400;
         letter-spacing: 0.3px;
-        color: rgba(255, 255, 255, 0.7);
+        color: $white-trans;
         font-size: 14px;
         padding: 8px 12px;
         &:hover,
@@ -56,40 +57,42 @@
           cursor: pointer;
           color: white;
           outline: none;
-          &:before {
-            position: absolute;
-            margin-top: 20px;
-            margin-left: 12px;
-            color: transparent;
-            content: "\2022";
-            text-shadow: transparent 0px 0px;
-            font-size: 0.5em;
-            transform: translateX(-50%);
-            pointer-events: none;
-            transition: text-shadow 0.3s, color 0.3s;
-            color: #fff;
-            text-shadow: 7px 0 #fff, -7px 0 #fff;
-          }
+        }
+      }
+      
+      a.dropdown-item {
+        &:hover,
+        &:focus{
+          background: transparent;
         }
       }
     }
   }
-  .navbar-nav>li>a.active {
-    border-radius: 0;
-    color: white;
-    &:before {
-      position: absolute;
-      margin-top: 20px;
-      margin-left: 12px;
-      color: transparent;
-      content: "\2022";
-      text-shadow: transparent 0px 0px;
-      font-size: 0.5em;
-      transform: translateX(-50%);
-      pointer-events: none;
-      transition: text-shadow 0.3s, color 0.3s;
+  .navbar-nav>li {
+    &>a.active {
+      border-radius: 0;
+      color: white;
+      .caret {
+        border-color: white;
+      }
+      &:before {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 9px;
+        content: "\2022";
+        font-size: 0.5em;
+        pointer-events: none;
+        color: $orange;
+        text-shadow: 7px 0 $orange, -7px 0 $orange;
+      }
+    }
+    .dropdown-item.active {
       color: $orange;
-      text-shadow: 7px 0 $orange, -7px 0 $orange;
+      background-color: $black-trans-light;
+      &:hover,
+      &:focus {
+        background: $black-trans-light;
+      }
     }
   }
 }
@@ -134,3 +137,53 @@
   }
 }
 
+// Navbar dropdown
+.nav-item.dropdown {
+  margin-right: 10px;
+
+  .dropdown-toggle::after {
+    content: initial;
+  }
+
+  .caret {
+    position: absolute;
+    top: 50%;
+    margin-left: 8px;
+    width: 7px;
+    height: 7px;
+    background: transparent;
+    border-top: 2px solid rgba(255, 255, 255, 0.7);
+    border-right: 2px solid rgba(255, 255, 255, 0.7);
+    transition: all 200ms ease;
+    
+    &.down {
+      transform: translate3d(0,-50%,0) rotate(135deg);
+    }
+  }
+
+  .dropdown-menu {
+    margin: 0;
+    background-color: $gray-bg;
+    border: none;
+    border-top: 20px solid transparent;
+    border-radius: 0;
+
+    .dropdown-item:hover {
+      background: $black-trans-light;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      border: 8px solid transparent;
+      border-bottom-color: $gray-bg;
+      z-index: 990;
+      left: 8px;
+      bottom: 100%;
+    }
+  }
+
+  &:hover .dropdown-menu {
+    display: block;
+  }
+}
