@@ -5,6 +5,9 @@ table.table {
 table.table td {
   padding: 20px 40px 40px;
   border: 1px solid #e2e4e4;
+  &:first-child {
+    width: 26%;
+  }
 }
 
 .cur-links a {
