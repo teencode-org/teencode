@@ -2,17 +2,17 @@ const criteriaList = {
   high_school: {
     key: 'high_school',
     question: "Is your school a high school?",
-    value: false
+    value: null
   },
   computer_lab: {
     key: 'computer_lab',
     question: "Does your school have a computer laboratory with working computers?",
-    value: false
+    value: null
   },
   power: {
     key: 'power',
     question: "Can the computer laboratory be consistently powered for at least two hours every day?",
-    value: false
+    value: null
   }
 }
 

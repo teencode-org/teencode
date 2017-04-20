@@ -56,7 +56,9 @@ class Header extends React.Component {
             <button className="navbar-toggler hidden-md-up pull-xs-right pull-sm-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
               &#9776;
             </button>
-            <Link to="#intro" className="navbar-brand page-scroll" onClick={this.navLinkOnClick}><img src={require('../../../img/logo.png')}/></Link>
+            <Link to="#page-top" className="navbar-brand page-scroll nav-link" onClick={this.navLinkOnClick}>
+              <img src={require('../../../img/logo.png')}/>
+            </Link>
           </div>
           <div className="collapse navbar-toggleable-sm" id="collapsingNavbar">
             <ul className="nav navbar-nav pull-md-right">
