@@ -7,29 +7,57 @@ import criteriaList from './criteriaList';
 class EligibilityCheck extends React.Component {
   constructor() {
     super();
-    this.state = {
-      criteria: criteriaList
-    };
+    this.state = this.getDefaultState();
+  };
+
+  componentWillMount() {
+    this.setState(this.getDefaultState());
   }
+
+  getDefaultState = () => {
+    Object.keys(criteriaList).forEach(key => criteriaList[key].value = null);
+    return {
+      criteria: criteriaList,
+      percentageCompletion: 0
+    };
+  };
 
   setCriterion = (criterion, value) => {
     let updatedCriterion = {[criterion.key]: criterion};
     this.setState({
-      criteria: Object.assign(this.state.criteria, updatedCriterion)
+      criteria: Object.assign(this.state.criteria, updatedCriterion),
+      percentageCompletion: this.percentageCompletion()
+    }, this.checkEligibility);
+  };
+
+  percentageCompletion = () => {
+    const {criteria} = this.state;
+    let criteriaKeys = Object.keys(criteria);
+    let selected = 0;
+    criteriaKeys.forEach(key => {
+      if (criteria[key].value != null) selected++;
     });
-    this.checkEligibility();
-  }
+    return (selected / criteriaKeys.length) * 100;
+  };
 
   checkEligibility = () => {
-    let eligible = true;
-    Object.keys(this.state.criteria).some((criterionKey) => {
-      return (!(eligible = this.state.criteria[criterionKey].value))
+    let eligible = null;
+    const {criteria, percentageCompletion} = this.state;
+    Object.keys(criteria).some((criterionKey) => {
+      if (eligible == null) eligible = criteria[criterionKey].value;
+      if (eligible != criteria[criterionKey].value) {
+        eligible = false;
+        return true;
+      }
+      return false;
     });
-    if (!eligible) return
-    browserHistory.push('/partner-leads/apply');
-  }
+    if (percentageCompletion != 100) return;
+    browserHistory.push(eligible ? '/partner-leads/apply' : '/partner-leads/ineligible');
+  };
 
   render() {
+    const {criteria, percentageCompletion} = this.state;
+    let key = 0;
     return (
       <div className="container eligibility-check">
         <div className="header">
@@ -45,10 +73,17 @@ class EligibilityCheck extends React.Component {
         </div>
 
         <content className="wrapper">
+          <div className="progress">
+            <div className="progress-bar bg-success" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style={{width: `${percentageCompletion}%`}}>
+              <span className="sr-only">70% Complete</span>
+            </div>
+          </div>
 
-          {Object.keys(this.state.criteria).map(criterion =>
+          {Object.keys(criteria).map(criterion =>
             <SingleQuestion
-              criterion={this.state.criteria[criterion]}
+              key={criterion}
+              criterion={criteria[criterion]}
               setCriterion={this.setCriterion} />
           )}
         </content>
