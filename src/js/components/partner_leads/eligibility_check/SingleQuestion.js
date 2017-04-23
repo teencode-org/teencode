@@ -11,4 +11,9 @@ const SingleQuestion = ({criterion, setCriterion}) =>
       setCriterion={setCriterion}/>
   </div>
 
+SingleQuestion.propTypes = {
+  criterion: PropTypes.object,
+  setCriterion: PropTypes.func
+}
+
 export default SingleQuestion;
