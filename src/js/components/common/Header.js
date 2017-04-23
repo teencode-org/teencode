@@ -8,7 +8,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
-    this.navLinkOnClick = this.navLinkOnClick.bind(this);
+    this.subLinkOnClick = this.subLinkOnClick.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +19,7 @@ class Header extends React.Component {
     document.removeEventListener('scroll', this.handleScroll);
   }
 
-  navLinkOnClick(event) {
+  subLinkOnClick(event) {
     let href = event.currentTarget.getAttribute('href');
     jquery('html, body').stop().animate({
         scrollTop: (jquery(href).offset().top - 50)
@@ -56,7 +56,7 @@ class Header extends React.Component {
             <button className="navbar-toggler hidden-md-up pull-xs-right pull-sm-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
               &#9776;
             </button>
-            <Link to="#page-top" className="navbar-brand page-scroll nav-link" onClick={this.navLinkOnClick}>
+            <Link to="#page-top" className="navbar-brand page-scroll nav-link" onClick={this.subLinkOnClick}>
               <img src={require('../../../img/logo.png')}/>
             </Link>
           </div>
@@ -65,7 +65,7 @@ class Header extends React.Component {
               <NavLink
                 path="/"
                 name="Home"
-                navLinkOnClick={this.navLinkOnClick}
+                subLinkOnClick={this.subLinkOnClick}
                 subLinks={{
                   how: 'Process',
                   testimonials: 'Testimonials',

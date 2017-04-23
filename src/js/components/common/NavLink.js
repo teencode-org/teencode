@@ -10,7 +10,7 @@ class NavLink extends React.Component {
           key={key}
           to={`#${key}`}
           className="page-scroll dropdown-item"
-          onClick={this.props.navLinkOnClick}
+          onClick={this.props.subLinkOnClick}
         >
           {this.props.subLinks[key]}
         </Link>
@@ -66,7 +66,7 @@ NavLink.defaultProps = {
 NavLink.propTypes = {
   path: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
-  navLinkOnClick: React.PropTypes.func,
+  subLinkOnClick: React.PropTypes.func,
   subLinks: React.PropTypes.object
 }
 
