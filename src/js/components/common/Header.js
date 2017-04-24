@@ -37,7 +37,7 @@ class Header extends React.Component {
     const stickyTop = sticky.offsetTop;
     const scrollTop = document.body.scrollTop;
 
-    if (scrollTop > stickyHeight + stickyTop){
+    if (scrollTop > stickyHeight + stickyTop) {
       utils.addClass(sticky, 'is-sticky');
     } else if (scrollTop <= stickyTop) {
       if (this.isHomeLink()) {
