@@ -51,7 +51,6 @@
         &:hover,
         &:focus {
           cursor: pointer;
-          color: white;
           outline: none;
         }
       }
@@ -84,10 +83,10 @@
     }
     .dropdown-item.active {
       color: $orange;
-      background-color: $black-trans-lighter;
+      background-color: $black-trans;
       &:hover,
       &:focus {
-        background: $black-trans-lighter;
+        background: $black-trans;
       }
     }
   }
@@ -150,11 +149,12 @@
     margin: 0;
     background-color: $gray-bg;
     border: none;
+    padding: 5px 0 0;
     border-top: 20px solid transparent;
     border-radius: 0;
 
     .dropdown-item:hover {
-      background: $black-trans-lighter;
+      background: $black-trans-light;
     }
 
     &:before {
@@ -168,8 +168,10 @@
     }
   }
 
-  &:hover .dropdown-menu {
-    display: block;
+  @include desktop {
+    &:hover .dropdown-menu {
+      display: block;
+    }
   }
 
   @include mobile {

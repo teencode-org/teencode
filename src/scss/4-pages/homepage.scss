@@ -364,6 +364,19 @@
     font-size: 22px;
     font-weight: 300;
   }
+
+  @include mobile {
+    .service-col {
+      padding: 70px 20px;
+      .picture {
+        width: 50px;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 // testimony section
@@ -422,7 +435,7 @@
   .lead {
     margin-top: -70px;
     position: inherit;
-    color: white;
+    color: $white-trans;
     z-index: 1000;
     font-size: 18px;
     line-height: 1.5;
