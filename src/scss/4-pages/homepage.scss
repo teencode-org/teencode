@@ -129,6 +129,11 @@
       line-height: 1.5;
       margin-top: -6px;
     }
+
+    @include tablet {
+      font-size: 22px;
+      margin-top: 0;
+    }
   }
 
   > .container {
@@ -290,9 +295,32 @@
       font-size: 16px;
     }
   }
+
+  @include tablet {
+    .header{
+      padding-top: 10px;
+      h4 {
+        font-size: 18px;
+      }
+    }
+    .picture{
+      height: 185px;
+      width: 185px;
+    }
+  }
+
+  @include desktop {
+    .header{
+      padding-top: 20px;
+    }
+    .picture{
+      height: 185px;
+      width: 185px;
+    }
+  }
 }
 
-@media(min-width:768px) {
+@include desktop {
   .intro {
     .intro-text {
       .intro-lead-in {
@@ -316,17 +344,26 @@
 
 .section {
   padding: 100px 0;
-  h2.section-heading {
-    font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 15px;
+  .section-heading {
+    color: $gray-dark;
+    font-size: 22px;
+    font-weight: 300;
   }
-  h3.section-subheading {
+  .section-subheading {
     font-size: 16px;
     @include sans-font;
     text-transform: none;
     font-weight: 400;
     margin-bottom: 75px;
+  }
+
+  @include mobile {
+    .section-heading {
+      font-size: 18px;
+    }
+    .section-subheading {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -359,15 +396,10 @@
     }
   }
 
-  .section-heading {
-    color: $gray-dark;
-    font-size: 22px;
-    font-weight: 300;
-  }
-
   @include mobile {
     .service-col {
       padding: 70px 20px;
+      margin: 0 10px 30px;
       .picture {
         width: 50px;
         margin-bottom: 15px;
@@ -448,6 +480,13 @@
       text-align: center;
     }
   }
+
+  @include tablet {
+    .lead {
+      margin-top: -75px;
+      font-size: 16px;
+    }
+  }
 }
 
 .embed-responsive {
@@ -462,25 +501,6 @@
   line-height: 100px;
   position:relative;
   @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset);
-}
-
-.embed:before,
-.embed:after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  @include box-shadow(0 0 20px rgba(0,0,0,0.8));
-  top: 0;
-  bottom: 0;
-  left: 10px;
-  right: 10px;
-  -moz-border-radius: 100px / 10px;
-  border-radius: 100px / 10px;
-}
-.embed:after {
-  right:10px;
-  left:auto;
-  @include skew;
 }
 
 // Sponsors
