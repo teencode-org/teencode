@@ -18,7 +18,7 @@ const VolunteerSection = () =>
             <p>Teencode pairs volunteer professional developers with high schools so they teach students how to build programs that solve useful problems.</p>
           </div>
           <div className="offset-lg-6 col-lg-6 col-xs-12">
-            <div className="text-xs-right">
+            <div className="text-sm-right text-xs-center">
               <Link to="/volunteers"><p className="action">Show me what the curriculum looks like >></p></Link>
             </div>
           </div>
