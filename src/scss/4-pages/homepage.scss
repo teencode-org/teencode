@@ -125,7 +125,7 @@
     margin-top: 6px;
 
     @include mobile {
-      font-size: 20px;
+      font-size: 16px;
       line-height: 1.5;
       margin-top: -6px;
     }
@@ -228,6 +228,9 @@
         }
         &:not(:last-child) {
           padding: 30px 15px 15px;
+          &:after {
+            content: initial;
+          }
         }
       }
       p {

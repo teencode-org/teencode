@@ -79,8 +79,8 @@ h4 {
   font-size: 22px;
 
   @include mobile {
-    font-size: 18px;
-    letter-spacing: 0.8px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
   }
 
   @include tablet {
