@@ -77,6 +77,11 @@ h4 {
 .btn-action {
   @include button-variant($white, $orange, $orange);
   font-size: 22px;
+
+  @include mobile {
+    font-size: 18px;
+    letter-spacing: 0.8px;
+  }
 }
 
 // Highlight Color Customization

@@ -11,7 +11,7 @@ const Footer = () => {
               Copyright &copy; <img src={require('../../../img/logo.png')} alt="Site Logo" /> 2017. All Rights Reserved
             </span>
           </div>
-          <div className="offset-sm-11">
+          <div className="offset-sm-11 col-sm-1">
             <a href="https://www.facebook.com/Teencode-Africa-1345535292156762/" target="_blank"><i className="fa fa-facebook-square fa-2x"></i></a>
           </div>
         </div>

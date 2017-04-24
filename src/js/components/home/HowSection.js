@@ -5,13 +5,13 @@ const HowSection = () =>
   <section id="how" className="how bg-lighter-blue section">
     <div className="container">
       <div className="row">
-        <div className="col-lg-12 text-xs-center body-pad">
+        <div className="col-lg-12 text-xs-center">
           <h4 className="section-heading">Partner with us to help students succeed in a future of technology</h4>
           <h3 className="section-subheading text-muted"></h3>
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-10 offset-lg-1 col-xs-12 body-pad">
+        <div className="col-lg-10 offset-lg-1 col-xs-12">
           <div className="col-md-6">
             <div className="service-col">
               <img className="picture" src={require('../../../img/apply.svg')} alt="Apply" />
