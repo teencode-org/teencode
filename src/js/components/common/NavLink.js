@@ -1,22 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router'
-import jquery from 'jquery'
+import React from 'react';
+import { Link } from 'react-router';
+import jquery from 'jquery';
+import SubLinks from './SubLinks';
 
 class NavLink extends React.Component {
   generateNavLink() {
-    let links = Object.keys(this.props.subLinks).map((key) => {
-      return (
-        <Link
-          key={key}
-          to={`#${key}`}
-          className="page-scroll dropdown-item"
-          onClick={this.props.subLinkOnClick}
-        >
-          {this.props.subLinks[key]}
-        </Link>
-      )
-    });
-
     if (window.location.pathname === this.props.path && Object.keys(this.props.subLinks).length) {
       return (
         <li className="nav-item dropdown">
@@ -32,9 +20,10 @@ class NavLink extends React.Component {
           >
             {this.props.name} <span className="caret down"></span>
           </Link>
-          <div className="dropdown-menu">
-            {links}
-          </div>
+          <SubLinks
+            subLinks={this.props.subLinks}
+            subLinkOnClick={this.props.subLinkOnClick}
+          />
         </li>
       )
     }
