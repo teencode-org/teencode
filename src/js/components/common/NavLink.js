@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router';
-import jquery from 'jquery';
+import React from 'react'
+import { Link } from 'react-router'
+import jquery from 'jquery'
 
 class NavLink extends React.Component {
   generateNavLink() {
@@ -10,7 +10,7 @@ class NavLink extends React.Component {
           key={key}
           to={`#${key}`}
           className="page-scroll dropdown-item"
-          onClick={this.props.navLinkOnClick}
+          onClick={this.props.subLinkOnClick}
         >
           {this.props.subLinks[key]}
         </Link>
@@ -26,14 +26,13 @@ class NavLink extends React.Component {
             activeClassName="active"
             to="#"
             data-href={this.props.path}
-            id="navbarDropdownMenuLink"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
           >
             {this.props.name} <span className="caret down"></span>
           </Link>
-          <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <div className="dropdown-menu">
             {links}
           </div>
         </li>
@@ -66,7 +65,7 @@ NavLink.defaultProps = {
 NavLink.propTypes = {
   path: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
-  navLinkOnClick: React.PropTypes.func,
+  subLinkOnClick: React.PropTypes.func,
   subLinks: React.PropTypes.object
 }
 
