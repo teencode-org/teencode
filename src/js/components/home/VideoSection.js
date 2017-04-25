@@ -4,7 +4,7 @@ const VideoSection = () =>
     <section id="video" className="why section">
       <div className="container">
           <div className="row">
-              <div className="offset-md-2 col-md-8 col-sm-12 text-md-center embed-pad">
+              <div className="offset-lg-2 offset-md-1 col-lg-8 col-md-10 col-sm-12 text-md-center embed-pad">
                 <div className="embed">
                   <div className="embed-responsive embed-responsive-16by9">
                     <iframe className="embed-responsive-item" src="//www.youtube.com/embed/Fkd9TWUtFm0" allowFullScreen></iframe>
