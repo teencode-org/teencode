@@ -12,7 +12,7 @@ class CurriculumPage extends React.Component {
             <div className="row">
               <div className="col-lg-12 text-xs-center body-pad">
                 <h3 className="page-header">Curriculum</h3>
-                <table className="table">
+                <table className="table table-responsive">
                   <CurriculumBody/>
                 </table>
               </div>

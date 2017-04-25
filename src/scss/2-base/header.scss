@@ -1,7 +1,6 @@
 // Custom Navigation Bar
 
 .navbar-custom {
-  background-color: $primary;
   border-color: transparent;
   border-radius: 0;
 
@@ -10,39 +9,36 @@
   }
 
   .navbar-toggler {
-    background-color: $primary;
-    border-color: $primary;
     color: white;
-    font-size: 24px;
+    border-color: transparent;
+    font-size: 28px;
+    padding: 0 0 0.5rem;
     border-radius: 0;
     outline: none;
-    &:focus {
-      background-color: $primary;
+    &:hover {
+      color: white;
     }
-    &:hover,
     &[aria-expanded="true"] {
-      background-color: $orange;
+      color: $orange;
     }
   }
   .navbar-toggleable-sm {
-    text-align: right;
     clear: right;
     &.in>.nav {
       li {
-        a {
-          background: rgba(255, 255, 255, 0.2);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-        }
-        a:hover,
-        a:focus {
-          color: white;
-          outline: none;
+        & > a {
+          background: $gray-bg;
+          border-bottom: 1px solid $white-trans-lighter;
+          &:hover,
+          &:focus {
+            color: white;
+            outline: none;
+          }
         }
       }
     }
   }
   .nav {
-    margin-left: 2px;
     li {
       a.nav-link,
       a.dropdown-item {
@@ -55,7 +51,6 @@
         &:hover,
         &:focus {
           cursor: pointer;
-          color: white;
           outline: none;
         }
       }
@@ -88,22 +83,14 @@
     }
     .dropdown-item.active {
       color: $orange;
-      background-color: $black-trans-light;
+      background-color: $black-trans;
       &:hover,
       &:focus {
-        background: $black-trans-light;
+        background: $black-trans;
       }
     }
   }
 }
-
-// sections
-
-//@media(max-width:768px) {
-//  div.body-pad {
-//    padding: 0 30px;
-//  }
-//}
 
 @media(min-width:768px) {
   .navbar-custom {
@@ -122,23 +109,20 @@
 }
 
 // Navbar Change on Scroll
-
-@media(min-width:768px) {
-  .navbar-custom.is-sticky {
-    background-color: $gray-bg;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    .navbar-brand {
-      img {
-        width: 90px;
-      }
+.navbar-custom.is-sticky {
+  background-color: $gray-bg;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .navbar-brand {
+    img {
+      width: 90px;
     }
   }
 }
 
 // Navbar dropdown
 .nav-item.dropdown {
-  margin-right: 10px;
+  margin-right: 15px;
 
   .dropdown-toggle::after {
     content: initial;
@@ -148,6 +132,7 @@
     position: absolute;
     top: 50%;
     margin-left: 8px;
+    right: 0;
     width: 7px;
     height: 7px;
     background: transparent;
@@ -164,6 +149,7 @@
     margin: 0;
     background-color: $gray-bg;
     border: none;
+    padding: 5px 0 0;
     border-top: 20px solid transparent;
     border-radius: 0;
 
@@ -182,7 +168,39 @@
     }
   }
 
-  &:hover .dropdown-menu {
-    display: block;
+  @include desktop {
+    &:hover .dropdown-menu {
+      display: block;
+    }
+  }
+
+  @include mobile {
+    margin-right: 0;
+
+    .caret {
+      right: 12px;
+      margin-left: 0;
+    }
+
+    .dropdown-menu {
+      background-color: $gray-bg;
+      right: 0;
+      top: 13px;
+
+      .dropdown-item {
+        background: $black-trans-light;
+        border-bottom: 1px solid $white-trans-lighter;
+        &:focus {
+          background: $black-trans;
+        }
+      }
+
+      &:before {
+        border-bottom-color: $black-trans-light;
+        left: auto;
+        right: 8px;
+        bottom: calc(100% - 5px);
+      }
+    }
   }
 }

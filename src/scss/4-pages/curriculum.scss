@@ -8,6 +8,14 @@ table.table td {
   &:first-child {
     width: 26%;
   }
+
+  @include mobile {
+    padding: 10px 20px 40px;
+  }
+
+  @include tablet {
+    padding: 10px 20px 40px;
+  }
 }
 
 .cur-links a {

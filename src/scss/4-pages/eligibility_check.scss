@@ -12,18 +12,30 @@
     padding: 100px;
   }
 
+  @include mobile {
+    padding: 30px 20px;
+  }
+
   .header {
     height: 50px;
     width: 100%;
 
     img {
       height: 100%;
+
+      @include mobile {
+        height: 70%;
+      }
     }
 
     .fa {
       float: right;
       font-size: 3em;
       color: lighten($gray-light, 30);
+
+      @include mobile {
+        font-size: 2.2em;
+      }
 
       &:hover {
         color: $gray-light;
