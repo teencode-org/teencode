@@ -74,6 +74,7 @@ class Header extends React.Component {
               />
               <NavLink path="/volunteer" name="Volunteers" />
               <NavLink path="/curriculum" name="Curriculum" />
+              <NavLink path="/contact-us" name="Contact Us" />
             </ul>
           </div>
         </div>
