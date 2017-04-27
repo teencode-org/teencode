@@ -72,7 +72,7 @@ class Header extends React.Component {
                   sponsor: 'Sponsors'
                 }}
               />
-              <NavLink path="/volunteer" name="Volunteers" />
+              {/*<NavLink path="/volunteer" name="Volunteers" />*/}
               <NavLink path="/curriculum" name="Curriculum" />
               <NavLink path="/contact-us" name="Contact Us" />
             </ul>
