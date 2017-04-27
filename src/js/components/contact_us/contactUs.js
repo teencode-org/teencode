@@ -26,27 +26,21 @@ class ContactUs extends React.Component {
 
         <content className="wrapper">
           <form>
-          {/*<div className="progress">
-            <div className="progress-bar bg-success" role="progressbar" aria-valuenow="70"
-                 aria-valuemin="0" aria-valuemax="100">
-              <span className="sr-only">70% Complete</span>
+            <div className="row contact-form">
+              <div className="col-md-3">
+                  <label className="contact-form-label"> Your email </label>
+              </div>
+              <div className="col-md-9 space-down">
+                  <input type="email" className="form-control" placeholder="somebody@email.com" required/>
+              </div>
+              <div className="col-md-3">
+                  <label className="contact-form-label"> Message for us </label>
+              </div>
+              <div className="col-md-9">
+                  <textarea className="form-control" placeholder="Type your message.." required></textarea>
+              </div>
             </div>
-          </div>*/}
-          <div className="row contact-form">
-            <div className="col-md-3">
-                <label className="contact-form-label"> Your email </label>
-            </div>
-            <div className="col-md-9 space-down">
-                <input type="email" className="form-control" placeholder="somebody@email.com" required/>
-            </div>
-            <div className="col-md-3">
-                <label className="contact-form-label"> Message for us </label>
-            </div>
-            <div className="col-md-9">
-                <textarea className="form-control" placeholder="Type your message.." required></textarea>
-            </div>
-          </div>
-          <button type="submit" className="btn btn-action pull-right contact-form-submit">Send Message <i className="fa fa-paper-plane"></i></button>
+            <button type="submit" className="btn btn-action pull-right contact-form-submit">Send Message <i className="fa fa-paper-plane"></i></button>
           </form>
         </content>
       </div>
