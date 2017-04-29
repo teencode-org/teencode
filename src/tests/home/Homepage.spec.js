@@ -22,10 +22,6 @@ describe('Homepage', () => {
     expect(home.find('ProofArticlesSection').length).toEqual(1);
   });
 
-  it('loads the VolunteerSection on the homepage', () => {
-    expect(home.find('VolunteerSection').length).toEqual(1);
-  });
-
   it('loads the HowSection on the homepage', () => {
     expect(home.find('HowSection').length).toEqual(1);
   });
