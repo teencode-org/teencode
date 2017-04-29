@@ -12,10 +12,16 @@ $orange:     #e17034;
 $blue:     #1eb7fc;
 $white: #e0e0e0;
 $green: #396e71;
+$silver: #e0e0e0;
 
 $gray-base:			#000 !default;
 $gray-bg:			rgba(19, 31, 39, 0.85) !default;
 $black-trans:			rgba(0, 0, 0, 0.8) !default;
+$black-trans-light:			rgba(0, 0, 0, 0.5) !default;
+$black-trans-lighter:			rgba(0, 0, 0, 0.2) !default;
+$white-trans:			rgba(255, 255, 255, 0.7) !default;
+$white-trans-light:			rgba(255, 255, 255, 0.5) !default;
+$white-trans-lighter:			rgba(255, 255, 255, 0.2) !default;
 $gray-darker:		lighten($gray-base, 13.5%) !default;
 $gray-dark:			lighten($gray-base, 20%) !default;
 $gray:				lighten($gray-base, 33.5%) !default;

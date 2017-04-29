@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import HomePage from './components/home/HomePage';
+import CurriculumPage from './components/curriculum/Index';
 import ApplicationPage from './components/partner_leads/application/Index';
 import IneligiblePage from './components/partner_leads/ineligible/Index';
 import AppreciationPage from './components/partner_leads/appreciation/Index';
@@ -12,6 +13,7 @@ export default (
   <Route>
     <Route path="/" component={App} >
       <IndexRoute component={HomePage} />
+      <Route path="curriculum" component={CurriculumPage} />
     </Route>
 
     <Route path="/partner-leads" component={PartnerLeadsPage} >

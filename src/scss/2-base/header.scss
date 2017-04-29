@@ -1,7 +1,6 @@
 // Custom Navigation Bar
 
 .navbar-custom {
-  background-color: $primary;
   border-color: transparent;
   border-radius: 0;
 
@@ -10,97 +9,88 @@
   }
 
   .navbar-toggler {
-    background-color: $primary;
-    border-color: $primary;
     color: white;
-    font-size: 24px;
+    border-color: transparent;
+    font-size: 28px;
+    padding: 0 0 0.5rem;
     border-radius: 0;
     outline: none;
-    &:focus {
-      background-color: $primary;
+    &:hover {
+      color: white;
     }
-    &:hover,
     &[aria-expanded="true"] {
-      background-color: $orange;
+      color: $orange;
     }
   }
   .navbar-toggleable-sm {
-    text-align: right;
     clear: right;
     &.in>.nav {
       li {
-        a {
-          background: rgba(255, 255, 255, 0.2);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-        }
-        a:hover,
-        a:focus {
-          color: white;
-          outline: none;
-        }
-      }
-    }
-  }
-  .nav {
-    margin-left: 2px;
-    li {
-      a {
-        @include lato-font;
-        font-weight: 400;
-        letter-spacing: 0.3px;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 14px;
-        padding: 8px 12px;
-        &:hover,
-        &:focus {
-          cursor: pointer;
-          color: white;
-          outline: none;
-          &:before {
-            position: absolute;
-            margin-top: 20px;
-            margin-left: 12px;
-            color: transparent;
-            content: "\2022";
-            text-shadow: transparent 0px 0px;
-            font-size: 0.5em;
-            transform: translateX(-50%);
-            pointer-events: none;
-            transition: text-shadow 0.3s, color 0.3s;
-            color: #fff;
-            text-shadow: 7px 0 #fff, -7px 0 #fff;
+        & > a {
+          background: $gray-bg;
+          border-bottom: 1px solid $white-trans-lighter;
+          &:hover,
+          &:focus {
+            color: white;
+            outline: none;
           }
         }
       }
     }
   }
-  .navbar-nav>li>a.active {
-    border-radius: 0;
-    color: white;
-    &:before {
-      position: absolute;
-      margin-top: 20px;
-      margin-left: 12px;
-      color: transparent;
-      content: "\2022";
-      text-shadow: transparent 0px 0px;
-      font-size: 0.5em;
-      transform: translateX(-50%);
-      pointer-events: none;
-      transition: text-shadow 0.3s, color 0.3s;
+  .nav {
+    li {
+      a.nav-link,
+      a.dropdown-item {
+        @include lato-font;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        color: $white-trans;
+        font-size: 14px;
+        padding: 8px 12px;
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          outline: none;
+        }
+      }
+      
+      a.dropdown-item {
+        &:hover,
+        &:focus{
+          background: transparent;
+        }
+      }
+    }
+  }
+  .navbar-nav>li {
+    &>a.active {
+      border-radius: 0;
+      color: white;
+      .caret {
+        border-color: white;
+      }
+      &:before {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 9px;
+        content: "\2022";
+        font-size: 0.5em;
+        pointer-events: none;
+        color: $orange;
+        text-shadow: 7px 0 $orange, -7px 0 $orange;
+      }
+    }
+    .dropdown-item.active {
       color: $orange;
-      text-shadow: 7px 0 $orange, -7px 0 $orange;
+      background-color: $black-trans;
+      &:hover,
+      &:focus {
+        background: $black-trans;
+      }
     }
   }
 }
-
-// sections
-
-//@media(max-width:768px) {
-//  div.body-pad {
-//    padding: 0 30px;
-//  }
-//}
 
 @media(min-width:768px) {
   .navbar-custom {
@@ -119,17 +109,98 @@
 }
 
 // Navbar Change on Scroll
-
-@media(min-width:768px) {
-  .navbar-custom.is-sticky {
-    background-color: $gray-bg;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    .navbar-brand {
-      img {
-        width: 90px;
-      }
+.navbar-custom.is-sticky {
+  background-color: $gray-bg;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .navbar-brand {
+    img {
+      width: 90px;
     }
   }
 }
 
+// Navbar dropdown
+.nav-item.dropdown {
+  margin-right: 15px;
+
+  .dropdown-toggle::after {
+    content: initial;
+  }
+
+  .caret {
+    position: absolute;
+    top: 50%;
+    margin-left: 8px;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    background: transparent;
+    border-top: 2px solid rgba(255, 255, 255, 0.7);
+    border-right: 2px solid rgba(255, 255, 255, 0.7);
+    transition: all 200ms ease;
+    
+    &.down {
+      transform: translate3d(0,-50%,0) rotate(135deg);
+    }
+  }
+
+  .dropdown-menu {
+    margin: 0;
+    background-color: $gray-bg;
+    border: none;
+    padding: 5px 0 0;
+    border-top: 20px solid transparent;
+    border-radius: 0;
+
+    .dropdown-item:hover {
+      background: $black-trans-light;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      border: 8px solid transparent;
+      border-bottom-color: $gray-bg;
+      z-index: 990;
+      left: 8px;
+      bottom: 100%;
+    }
+  }
+
+  @include desktop {
+    &:hover .dropdown-menu {
+      display: block;
+    }
+  }
+
+  @include mobile {
+    margin-right: 0;
+
+    .caret {
+      right: 12px;
+      margin-left: 0;
+    }
+
+    .dropdown-menu {
+      background-color: $gray-bg;
+      right: 0;
+      top: 13px;
+
+      .dropdown-item {
+        background: $black-trans-light;
+        border-bottom: 1px solid $white-trans-lighter;
+        &:focus {
+          background: $black-trans;
+        }
+      }
+
+      &:before {
+        border-bottom-color: $black-trans-light;
+        left: auto;
+        right: 8px;
+        bottom: calc(100% - 5px);
+      }
+    }
+  }
+}

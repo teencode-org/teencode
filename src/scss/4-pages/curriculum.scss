@@ -1,0 +1,62 @@
+table.table {
+  border: 1px solid #e2e4e4;
+}
+
+table.table td {
+  padding: 20px 40px 40px;
+  border: 1px solid #e2e4e4;
+  &:first-child {
+    width: 26%;
+  }
+
+  @include mobile {
+    padding: 10px 20px 40px;
+  }
+
+  @include tablet {
+    padding: 10px 20px 40px;
+  }
+}
+
+.cur-links a {
+  display: block;
+  padding-bottom: 10px;
+  font-weight: 100;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.cur-link-text {
+  margin-bottom: 5px;
+}
+
+.cur-period {
+  padding: 25px 0 10px;
+}
+
+.cur-head {
+  padding: 0 0 15px;
+  margin: 25px 0 0;
+  font-size: 18px;
+}
+
+.objectives p {
+  position: relative;
+  margin-left: 15px;
+  line-height: 1.5;
+
+  &:before {
+    content: "";
+    position: absolute;
+    margin-left: -17px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    opacity: 0.8;
+    background: transparent;
+    border-top: 2px solid $orange;
+    border-right: 2px solid $orange;
+    transition: all 200ms ease;
+    transform: translate3d(0,-50%,0) rotate(45deg);
+  }
+}

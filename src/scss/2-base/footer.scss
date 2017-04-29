@@ -7,11 +7,12 @@ footer {
   color: $gray-light;
   text-decoration: none;
   img {
-    width: 90px;
-    margin-bottom: 3px;
+    width: 80px;
+    opacity: 0.5;
+    margin-bottom: -2px;
   }
   span.copyright {
-    line-height: 40px;
+    line-height: 1.5;
     @include roboto-font;
     text-transform: none;
   }
