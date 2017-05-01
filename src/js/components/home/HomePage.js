@@ -61,9 +61,9 @@ class HomePage extends React.Component {
         <EligibilityCheckCtaSection checkEligibility={this.checkEligibility} />
 
         <ProofArticlesSection />
-
+        {/*}
         <VolunteerSection />
-
+        {*/}
         <HowSection />
 
         <TestimonySection />
