@@ -8,6 +8,7 @@ import IneligiblePage from './components/partner_leads/ineligible/Index';
 import AppreciationPage from './components/partner_leads/appreciation/Index';
 import EligibilityCheck from './components/partner_leads/eligibility_check/Index';
 import PartnerLeadsPage from './components/partner_leads/Index';
+import ContactUs from './components/contact_us/contactUs';
 
 export default (
   <Route>
@@ -15,6 +16,8 @@ export default (
       <IndexRoute component={HomePage} />
       <Route path="curriculum" component={CurriculumPage} />
     </Route>
+
+    <Route path="contact-us" component={ContactUs} />
 
     <Route path="/partner-leads" component={PartnerLeadsPage} >
       <Route path="apply" component={ApplicationPage} />
