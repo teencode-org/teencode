@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import TestimonySection from './TestimonySection';
-import VolunteerSection from './VolunteerSection';
 import VideoSection from './VideoSection';
 import HowSection from './HowSection';
 import SponsorSection from './SponsorSection';
@@ -61,8 +60,6 @@ class HomePage extends React.Component {
         <EligibilityCheckCtaSection checkEligibility={this.checkEligibility} />
 
         <ProofArticlesSection />
-
-        <VolunteerSection />
 
         <HowSection />
 
