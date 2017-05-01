@@ -81,6 +81,7 @@
     "expect": "^1.19.0",
     "express": "4.13.4",
     "extract-text-webpack-plugin": "1.0.1",
+    "faker": "^4.1.0",
     "file-loader": "0.8.5",
     "istanbul": "^1.0.0-alpha.2",
     "jsdom": "^9.12.0",
