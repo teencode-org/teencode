@@ -16,10 +16,9 @@ export default (
     <Route path="/" component={App} >
       <IndexRoute component={HomePage} />
       <Route path="curriculum" component={CurriculumPage} />
-      <Route path="contact-us" component={ContactUsPage} />
     </Route>
 
-    <Route path="contact-us" component={ContactUs} />
+    <Route path="contact-us" component={ContactUsPage} />
 
     <Route path="/partner-leads" component={PartnerLeadsPage} >
       <Route path="apply" component={ApplicationPage} />
