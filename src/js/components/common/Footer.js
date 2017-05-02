@@ -28,11 +28,11 @@ class Footer extends React.Component {
 
   handleScroll(event) {
     const stickyFeedback = event.target.querySelector('footer');
-    const stickyHeight = stickyFeedback.clientHeight;
+    const stickyHeight = stickyFeedback.clientHeight * 2;
     const stickyTop = stickyFeedback.offsetTop;
     const scrollTop = document.body.scrollTop;
 
-    if (scrollTop < stickyTop - stickyHeight - 200) {
+    if (scrollTop < stickyTop - stickyHeight && scrollTop > 100) {
       this.setState({ sticky: 'inline-block'});
     } else {
       this.setState({ sticky: 'none'});
@@ -63,10 +63,10 @@ class Footer extends React.Component {
                 CONTACT US <br/>
                 <i className="fa fa-envelope-o"></i> teencodeafrica@gmail.com
               </p>
-              <button className="btn btn-feedback" href="/feedback">
+              <Link to="/feedback" className="btn btn-feedback">
                 <i className="fa fa-comment-o"></i> 
-                Feedback? Please share
-              </button>
+                Feedback? Please share!
+              </Link>
             </div>
           </div>
         </div>
