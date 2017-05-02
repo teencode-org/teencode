@@ -2,8 +2,8 @@
 
 footer {
   background-color: #205b5f;
-  padding: 50px 0 50px;
-  font-size: 16px;
+  padding: 50px 0 0;
+  font-size: 1em;
   color: $gray-light;
   text-decoration: none;
   img {
@@ -16,15 +16,67 @@ footer {
     @include roboto-font;
     text-transform: none;
   }
-  i {
+  .footer-top {
+    color: $primary;
+  }
+  .more {
+    color: $orange-lighter;
+  }
+  .footer-bottom {
+    background-color: $gray-bg;
+    margin: 50px 0 0;
+    line-height: 2em;
+    padding: 1em;
+  }
+  .footer-bottom a {
     color: $gray-light;
   }
-}
+  i {
+    margin-right: 0.5em;
+  }
+  i.fa.fa-question-circle {
+    color: $blue-lighter;
+  }
+  .btn-feedback {
+    @include button-variant($white, $gray-light, $gray-light);
+    margin-top: 1.9em;
+  }
+  .btn-eligibility {
+    @include button-variant($white, $orange, $orange);
+    padding: 10px 5px;
+  }
+  .btn {
+    font-size: 0.9em;
+    border-radius: 0.4em;
+    white-space: normal;
+  }
 
-.btn:focus,
-.btn:active,
-.btn.active,
-.btn:active:focus {
-  outline: none;
-}
+  .share-feedback {
+    background-color: $black-trans-lighter;
+    border-radius: 1.5em;
+    position:fixed;
+    bottom: 1em;
+    right: 2em;
+    padding: 0.5em 1em;
+  }
+  .share-feedback:hover {
+    background-color: $black-trans-light;
+  }
 
+  .share-feedback span {
+    padding: 0.8em 1.8em 0.8em 1em;
+    background-color: $gray-lighter;
+    border-radius: 1.5em;
+    margin-top: 3em;
+    color: $orange;
+    vertical-align: middle;
+  }
+  .share-feedback img {
+    border-radius: 50%;
+    padding: 0.9em;
+    background-color: $gray-lighter;
+    margin: 0 0 0 -1.5em;
+    opacity: 0.9;
+    width: 90px;
+  }
+}
