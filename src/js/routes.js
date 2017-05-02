@@ -19,6 +19,7 @@ export default (
     </Route>
 
     <Route path="contact-us" component={ContactUsPage} />
+    <Route path="feedback" component={ContactUsPage} />
 
     <Route path="/partner-leads" component={PartnerLeadsPage} >
       <Route path="apply" component={ApplicationPage} />
