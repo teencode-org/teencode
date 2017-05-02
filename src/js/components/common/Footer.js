@@ -32,9 +32,7 @@ class Footer extends React.Component {
     const stickyTop = stickyFeedback.offsetTop;
     const scrollTop = document.body.scrollTop;
 
-    console.log(scrollTop, stickyTop - stickyHeight);
     if (scrollTop < stickyTop - stickyHeight - 200) {
-      console.log('triggered');
       this.setState({ sticky: 'inline-block'});
     } else {
       this.setState({ sticky: 'none'});
