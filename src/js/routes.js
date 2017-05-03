@@ -8,8 +8,10 @@ import IneligiblePage from './components/partner_leads/ineligible/Index';
 import AppreciationPage from './components/partner_leads/appreciation/Index';
 import EligibilityCheck from './components/partner_leads/eligibility_check/Index';
 import PartnerLeadsPage from './components/partner_leads/Index';
-import ContactUsPage from './components/contact_us/contactUs';
 import * as flagChecks from './utils/featureFlagChecks';
+import ContactUs from './components/contact_us/Index';
+import ContactUsSuccessPage from './components/contact_us/ContactSuccess';
+import ContactUsPage from './components/contact_us/ContactUsPage';
 
 const redirectIfFlagIsDisabled = (flag, nextState, replaceState) => {
   if (flag) return;
@@ -23,15 +25,17 @@ export default (
       <Route path="curriculum"
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
              component={CurriculumPage} />
+      <Route path="contact-us"
+             component={ContactUsPage}
+             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
+      <Route path="feedback" 
+             component={ContactUsPage}
+             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
     </Route>
 
-           
-    <Route path="contact-us"
-           component={ContactUsPage}
-           onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
-    <Route path="feedback" 
-           component={ContactUsPage}
-           onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
+    <Route path="/contact-us" component={ContactUs} >
+      <Route path="success" component={ContactUsSuccessPage} />
+    </Route>
 
     <Route path="/partner-leads" component={PartnerLeadsPage} >
       <Route path="apply" component={ApplicationPage} />

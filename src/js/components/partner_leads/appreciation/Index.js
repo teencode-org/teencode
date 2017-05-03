@@ -15,11 +15,9 @@ const AppreciationPage = () => {
       </div>
 
       <content className="wrapper">
-
         <div className="form-group row btn-row">
           <Link to="/#volunteer" className="btn btn-action" >Close</Link>
         </div>
-
       </content>
     </div>
 

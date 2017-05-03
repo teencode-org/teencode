@@ -4,7 +4,7 @@ import logo from '../../../../img/logo-colored.png';
 
 const ApplicationPage = ({ onChange, submitApplication }) => {
   return (
-    <div className="container eligibility-check apply">
+    <div className="container page-index eligibility-check apply">
       <div className="header">
         <img src={logo} />
         <Link to="/">
@@ -18,7 +18,6 @@ const ApplicationPage = ({ onChange, submitApplication }) => {
       </div>
 
       <content className="wrapper">
-
         <div className="container">
           <form>
             <div className="form-group row">
@@ -57,8 +56,6 @@ const ApplicationPage = ({ onChange, submitApplication }) => {
             </div>
           </form>
         </div>
-
-
       </content>
     </div>
 

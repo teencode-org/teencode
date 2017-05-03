@@ -4,7 +4,7 @@ import logo from '../../../../img/logo-colored.png';
 
 const IneligiblePage = () => {
   return (
-    <div className="container eligibility-check apply">
+    <div className="container page-index eligibility-check apply">
       <div className="header">
         <img src={logo}/>
       </div>
@@ -19,7 +19,6 @@ const IneligiblePage = () => {
       </div>
 
       <content className="wrapper">
-
         <div className="container">
           <div className="form-group row btn-row">
             <Link to="/#volunteer" className="btn btn-action" >Close</Link>
