@@ -6,49 +6,55 @@ footer {
   font-size: 1em;
   color: $gray-light;
   text-decoration: none;
-  img {
-    width: 80px;
-    opacity: 0.5;
-    margin-bottom: -2px;
-  }
+  width: 100vw;
   span.copyright {
     line-height: 1.5;
     @include roboto-font;
     text-transform: none;
   }
+
   .footer-top {
     color: $primary;
   }
+
   .more {
     color: $orange-lighter;
   }
+
   .footer-bottom {
     background-color: $gray-bg;
     margin: 50px 0 0;
     line-height: 2em;
     padding: 1em;
   }
+
   .footer-bottom a {
     color: $gray-light;
   }
+
   i {
     margin-right: 0.5em;
   }
+
   i.fa.fa-question-circle {
     color: $blue-lighter;
   }
+
   .btn-feedback {
     @include button-variant($white, $gray-light, $gray-light);
     margin-top: 1.9em;
   }
+
   .btn-eligibility {
     @include button-variant($white, $orange, $orange);
     padding: 10px 5px;
   }
+
   .btn {
     font-size: 0.9em;
     border-radius: 0.4em;
     white-space: normal;
+    width: 100%;
   }
 
   .share-feedback {
@@ -59,6 +65,7 @@ footer {
     right: 2em;
     padding: 0.5em 1em;
   }
+
   .share-feedback:hover {
     background-color: $black-trans-light;
   }
@@ -70,13 +77,15 @@ footer {
     margin-top: 3em;
     color: $orange;
     vertical-align: middle;
+    font-size: 0.9em;
   }
+
   .share-feedback img {
     border-radius: 50%;
-    padding: 0.9em;
+    padding: 0.8em;
     background-color: $gray-lighter;
     margin: 0 0 0 -1.5em;
     opacity: 0.9;
-    width: 90px;
+    width: 80px;
   }
 }
