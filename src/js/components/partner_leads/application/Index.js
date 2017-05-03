@@ -17,16 +17,24 @@ class ApplicationPageContainer extends React.Component {
     this.setState({[event.target.id]: event.target.value})
   }
 
-  submitApplication = (e) => {
-    e.preventDefault();
-    e.target.value = 'Submitting ...';
-    e.target.disabled = true;
-    apply(this.state)
+  sendApplication = (event, state) => {
+    apply(state)
       .then(data => {
         toastr.success(`Application successful for ${data.message}`);
         browserHistory.push('/partner-leads/thank-you');
       })
-      .catch(err => toastr.error('An error occured. Please try again later'));
+      .catch(err => {
+        event.target.disabled = false;
+        toastr.error('An error occurred. Please try again later');
+      });
+  }
+
+  submitApplication = (e) => {
+    e.preventDefault();
+    e.target.value = 'Submitting ...';
+    e.target.disabled = true;
+    e.persist()
+    this.sendApplication(e, this.state);
   }
 
   render() {
