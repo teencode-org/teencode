@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { expect } from "chai";
-import ContactUs from "./contactUs";
+import ContactUs from "./Index";
 
 describe("ContactUs", function () {
   let wrapper;
