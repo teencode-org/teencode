@@ -59,7 +59,7 @@ class EligibilityCheck extends React.Component {
     const {criteria, percentageCompletion} = this.state;
     let key = 0;
     return (
-      <div className="container eligibility-check">
+      <div className="container page-index eligibility-check">
         <div className="header">
           <img src={logo} />
           <Link to="/">

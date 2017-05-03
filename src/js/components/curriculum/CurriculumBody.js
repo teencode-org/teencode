@@ -4,6 +4,7 @@ import React, { PropTypes } from 'react'
 import Objectives from './Objectives'
 import Resources from './Resources'
 import Projects from './Projects'
+import curriculumList from './curriculumList'
 
 class CurriculumBody extends React.Component {
   constructor(props) {
@@ -11,7 +12,6 @@ class CurriculumBody extends React.Component {
   }
 
    render () {
-      const { curriculumList } = this.props;
       return (
         <tbody>
           {Object.keys(curriculumList).map(key =>
