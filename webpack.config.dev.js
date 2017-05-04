@@ -1,5 +1,8 @@
+require('dotenv').config();
+
 import webpack from 'webpack';
 import path from 'path';
+import featureFlags from './tools/featureFlags';
 
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const buildPath = path.resolve(__dirname, 'dist');
@@ -10,13 +13,13 @@ export default {
   devtool: 'cheap-module-eval-source-map',
   noInfo: false,
   entry: [
-    'eventsource-polyfill', // necessary for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
+    'eventsource-polyfill',
+    'webpack-hot-middleware/client?reload=true',
     entryPath
   ],
-  target: 'web', // bundle app the way web browsers can understand
+  target: 'web',
   output: {
-    path: buildPath, // Note: Physical files are only output by the production build task `npm run build`.
+    path: buildPath,
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -32,6 +35,9 @@ export default {
       jquery: 'jquery',
       Tether: 'tether',
       'window.Tether': 'tether'
+    }),
+    new webpack.DefinePlugin({
+      'teencode.feature': featureFlags
     })
   ],
   module: {

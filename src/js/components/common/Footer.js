@@ -27,12 +27,12 @@ class Footer extends React.Component {
   }
 
   handleScroll(event) {
-    const stickyFeedback = event.target.querySelector('footer');
-    const stickyHeight = stickyFeedback.clientHeight * 2;
-    const stickyTop = stickyFeedback.offsetTop;
+    const footer = event.target.querySelector('footer');
+    const footerHeight = footer.clientHeight * 2;
+    const footerTop = footer.offsetTop;
     const scrollTop = document.body.scrollTop;
 
-    if (scrollTop < stickyTop - stickyHeight && scrollTop > 100) {
+    if (scrollTop < (footerTop - footerHeight) && scrollTop > 100) {
       this.setState({ sticky: 'inline-block'});
     } else {
       this.setState({ sticky: 'none'});
@@ -78,14 +78,14 @@ class Footer extends React.Component {
                   (c) 2017 TEENCODE AFRICA
                 </span>
               </div>
-              <div className="offset-sm-3 col-sm-2 col-xs-2 socials">
+              <div className="offset-sm-2 col-sm-2 col-xs-2 socials">
                 <a href="https://www.facebook.com/Teencode-Africa-1345535292156762/" target="_blank">
                   <i className="fa fa-facebook-square fa-2x"></i
                 ></a>
                 
                 <a href="#" target="_blank"><i className="fa fa-twitter-square fa-2x"></i></a>
               </div>
-              <div className="offset-sm-1 col-sm-2 col-xs-6 policy">
+              <div className="offset-sm-2 col-sm-2 col-xs-6 policy">
                 <a href="#">PRIVACY POLICY</a>
               </div>
               <div className="col-sm-1 col-xs-6 sitemap">
