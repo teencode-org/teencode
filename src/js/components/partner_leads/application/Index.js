@@ -3,6 +3,7 @@ import ApplicationPage from './ApplicationPage';
 import {apply} from '../../../actions/applicationActions';
 import toastr from 'toastr';
 import {browserHistory} from 'react-router';
+import DocumentTitle from '../../common/DocumentTitle';
 
 class ApplicationPageContainer extends React.Component {
   constructor() {
@@ -21,7 +22,7 @@ class ApplicationPageContainer extends React.Component {
     apply(state)
       .then(data => {
         toastr.success(`Application successful for ${data.message}`);
-        browserHistory.push('/partner-leads/thank-you');
+        browserHistory.push('/feedback/success/application');
       })
       .catch(err => {
         event.target.disabled = false;
@@ -44,4 +45,4 @@ class ApplicationPageContainer extends React.Component {
   }
 }
 
-export default ApplicationPageContainer;
+export default DocumentTitle('Application')(ApplicationPageContainer);
