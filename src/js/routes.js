@@ -25,7 +25,11 @@ export default (
              component={CurriculumPage} />
     </Route>
 
+           
     <Route path="contact-us"
+           component={ContactUsPage}
+           onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
+    <Route path="feedback" 
            component={ContactUsPage}
            onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
 
