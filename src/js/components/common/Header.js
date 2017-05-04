@@ -3,6 +3,7 @@ import { Link, IndexLink } from 'react-router';
 import NavLink from './NavLink';
 import utils from '../../utils/helpers'
 import jquery from 'jquery';
+import * as flagChecks from '../../utils/featureFlagChecks';
 
 class Header extends React.Component {
   constructor(props) {
@@ -72,9 +73,9 @@ class Header extends React.Component {
                   sponsor: 'Sponsors'
                 }}
               />
-              {/*<NavLink path="/volunteer" name="Volunteers" />*/}
-              <NavLink path="/curriculum" name="Curriculum" />
-              <NavLink path="/contact-us" name="Contact Us" />
+              {flagChecks.volunteerPageIsEnabled() && <NavLink path="/volunteer" name="Volunteers" />}
+              {flagChecks.curriculumIsEnabled() && <NavLink path="/curriculum" name="Curriculum" />}
+              {flagChecks.contactUsIsEnabled() && <NavLink path="/contact-us" name="Contact Us" />}
             </ul>
           </div>
         </div>
