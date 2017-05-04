@@ -32,6 +32,13 @@
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    margin-right: 1px;
+
+    .btn {
+      &:disabled {
+        color: white;
+      }
+    }
 
     @include desktop {
       float: right;
