@@ -1,15 +1,19 @@
-import webAPI from '../utils/webAPI'
+import webAPI from '../utils/webAPI';
+import validator from '../utils/validator';
 
-// TODO: Use contact us endpoint.
 const contact = (data) => {
-  return new Promise(function(resolve, reject) {
-    if (data.email && data.message) {
-      resolve("Contact message has been sent!");
-    }
-    else {
-      reject(Error("It broke"));
-    }
-  });
+  const {isValid, concatenatedErrors} = validator.validate(data);
+  if (isValid) {
+    // TODO: Use contact us endpoint.
+    // TODO: Use this error message on server error: Something prevented your message from submitting successfully. Please try again later.'
+    return new Promise(function(resolve, reject) {
+      resolve();
+    });
+  } else {
+    return new Promise(function(resolve, reject) {
+      reject(concatenatedErrors);
+    });
+  }
 }
 
 export {

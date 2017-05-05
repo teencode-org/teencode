@@ -26,7 +26,7 @@ class ContactUsPage extends React.Component {
       })
       .catch(err => {
         event.target.disabled = false;
-        toastr.error('Something prevented your message from submitting successfully. Please try again later.');
+        toastr.error(err);
       });
   }
 
