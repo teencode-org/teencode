@@ -2,6 +2,8 @@
 
 We use feature flags to enable or disable deployed features.
 
+`NB: You must have created a .env file in the root directory.`
+
 ## List of current feature flags
 
 * CURRICULUM_ENABLED
