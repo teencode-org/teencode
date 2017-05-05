@@ -33,7 +33,10 @@ export default (
     // TODO: Create template for feedback and pass in custom messages
     <Route path="/feedback" component={Feedback} >
       <Route path="success/application" component={ApplicationSuccessPage} />
-      <Route path="success/contact-us" component={ContactUsSuccessPage} />
+      <Route
+        path="success/contact-us"
+        onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
+        component={ContactUsSuccessPage} />
       <Route path="error/ineligible" component={EligibilityErrorPage} />
     </Route>
 
