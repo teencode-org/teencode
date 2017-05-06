@@ -1,4 +1,3 @@
-<<<<<<< 585d3ea65107b4a27715f30667c059bdff5153d7
 // import expect from 'expect';
 // import React from 'react';
 // import { mount, shallow } from 'enzyme';
@@ -14,5 +13,3 @@
 //     expect(VolunteerRender.find('.profile').text()).toInclude('Oluwadamilola Adebayo');
 //   });
 // })
-=======
->>>>>>> resolved conflict
