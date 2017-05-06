@@ -23,11 +23,12 @@ export default (
       <Route path="curriculum"
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
              component={CurriculumPage} />
+
+      <Route path="contact-us"
+             component={ContactUsPage}
+             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
     </Route>
 
-    <Route path="contact-us"
-           component={ContactUsPage}
-           onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
 
     <Route path="/partner-leads" component={PartnerLeadsPage} >
       <Route path="apply" component={ApplicationPage} />
