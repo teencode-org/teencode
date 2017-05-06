@@ -6,10 +6,12 @@ import Footer from './common/Footer';
 import toastr from 'toastr';
 
 class App extends React.Component {
-  render () {
+  componentWillMount() {
     toastr.options.positionClass = "toast-nav-top-right";
     toastr.options.preventDuplicates = true;
+  }
 
+  render () {
     return (
       <div>
         <Header />

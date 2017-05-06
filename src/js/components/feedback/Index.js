@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import logo from '../../../img/logo-colored.png';
 import DocumentTitle from '../common/DocumentTitle';
 import toastr from 'toastr';
 
 class Feedback extends React.Component {
-  render() {
+  componentWillMount() {
     toastr.options.positionClass = "toast-top-right";
     toastr.options.preventDuplicates = true;
+  }
 
+  render() {
     return (
       <div className="container page-index">
         <div className="header">
@@ -25,6 +27,10 @@ class Feedback extends React.Component {
       </div>
     )
   }
+}
+
+Feedback.propTypes = {
+  children: PropTypes.object.isRequired
 }
 
 export default DocumentTitle('Feedback')(Feedback);
