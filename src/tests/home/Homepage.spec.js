@@ -1,10 +1,10 @@
 import expect from 'expect';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import HompageComponent from '../../js/components/home/HomePage';
+import HomepageComponent from '../../js/components/home/HomePage';
 
 const homepage = () => {
-  return shallow(<HompageComponent />);
+  return shallow(<HomepageComponent />);
 }
 
 describe('Homepage', () => {

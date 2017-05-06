@@ -3,12 +3,13 @@ import logo from '../../../../img/logo-colored.png';
 import {Link, browserHistory} from 'react-router';
 import SingleQuestion from './SingleQuestion';
 import criteriaList from './criteriaList';
+import DocumentTitle from '../../common/DocumentTitle';
 
 class EligibilityCheck extends React.Component {
   constructor() {
     super();
     this.state = this.getDefaultState();
-  };
+  }
 
   componentWillMount() {
     this.setState(this.getDefaultState());
@@ -52,14 +53,14 @@ class EligibilityCheck extends React.Component {
       return false;
     });
     if (percentageCompletion != 100) return;
-    browserHistory.push(eligible ? '/partner-leads/apply' : '/partner-leads/ineligible');
+    browserHistory.push(eligible ? '/partner-leads/apply' : '/feedback/error/ineligible');
   };
 
   render() {
     const {criteria, percentageCompletion} = this.state;
     let key = 0;
     return (
-      <div className="container eligibility-check">
+      <div className="container page-index eligibility-check">
         <div className="header">
           <img src={logo} />
           <Link to="/">
@@ -92,4 +93,4 @@ class EligibilityCheck extends React.Component {
   }
 }
 
-export default EligibilityCheck;
+export default DocumentTitle('Eligibility')(EligibilityCheck);
