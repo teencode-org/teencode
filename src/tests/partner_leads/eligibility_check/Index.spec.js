@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme';
 import Index from '../../../js/components/partner_leads/eligibility_check/Index';
 
 describe('Eligibility Check Index', () => {
-  const IndexWrapper = shallow(<Index />);
+  const IndexWrapper = mount(<Index />);
 
   it('renders the accurate Component', () => {
 

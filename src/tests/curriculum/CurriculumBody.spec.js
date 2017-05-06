@@ -19,7 +19,7 @@ describe('CurriculumBody', () => {
 
     it('loads markup with the curriculumList', () => {
       expect(Object.keys(curList).length).toEqual(1);
-      expect(trCount).toEqual(1);
+      expect(trCount).toEqual(2);
       expect(Object.keys(curList)).toInclude('curriculumList');
       expect(sessionList).toInclude('firstSession');
     });
@@ -46,9 +46,9 @@ describe('CurriculumBody', () => {
     const trCount = CurriculumBodyRender.find('tr').length;
     const sessionList = Object.keys(curList.curriculumList);
 
-    it('displays 5 curriculum sessions', () => {
+    it('displays 2 curriculum sessions', () => {
       expect(Object.keys(sessionList).length).toEqual(5);
-      expect(trCount).toEqual(5);
+      expect(trCount).toEqual(2);
     });
     
   });
