@@ -1,20 +1,26 @@
 /*global SEGMENT_KEY:true*/
 
-import React, { PropTypes } from 'react'
-import Header from './common/Header'
-import Footer from './common/Footer'
+import React, { PropTypes } from 'react';
+import Header from './common/Header';
+import Footer from './common/Footer';
+import toastr from 'toastr';
 
 class App extends React.Component {
-   render () {
-     return (
-       <div>
+  componentWillMount() {
+    toastr.options.positionClass = "toast-nav-top-right";
+    toastr.options.preventDuplicates = true;
+  }
+
+  render () {
+    return (
+      <div>
         <Header />
         {this.props.children}
         <Footer />
-       </div>
-     )
-   }
- }
+      </div>
+    )
+  }
+}
 
 App.propTypes = {
   children: PropTypes.object.isRequired

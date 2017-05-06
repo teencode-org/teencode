@@ -1,10 +1,10 @@
 import expect from 'expect';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import HompageComponent from '../../js/components/home/HomePage';
+import HomepageComponent from '../../js/components/home/HomePage';
 
 const homepage = () => {
-  return shallow(<HompageComponent />);
+  return shallow(<HomepageComponent />);
 }
 
 describe('Homepage', () => {
@@ -22,13 +22,10 @@ describe('Homepage', () => {
     expect(home.find('ProofArticlesSection').length).toEqual(1);
   });
 
-<<<<<<< 585d3ea65107b4a27715f30667c059bdff5153d7
   // it('loads the VolunteerSection on the homepage', () => {
   //   expect(home.find('VolunteerSection').length).toEqual(1);
   // });
 
-=======
->>>>>>> resolved conflict
   it('loads the HowSection on the homepage', () => {
     expect(home.find('HowSection').length).toEqual(1);
   });

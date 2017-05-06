@@ -56,14 +56,14 @@ class Footer extends React.Component {
               <p>
                 Our vision is the widespread adoption of Computer Programming in High Schools in Africa with a syllabus maintained by experts in the field.
               </p>
-              <Link className="more" to="#how" onClick={this.clickLink}>Learn more about our mission and vision >> </Link>
+              <Link className="more" to="/#how" onClick={this.clickLink}>Learn more about our mission and vision >> </Link>
             </div>
             <div className="offset-sm-1 col-sm-3 col-xs-10 feedback">
               <p>
                 CONTACT US <br/>
                 <i className="fa fa-envelope-o"></i> teencodeafrica@gmail.com
               </p>
-              <Link to="/feedback" className="btn btn-feedback">
+              <Link to="/contact-us" className="btn btn-feedback">
                 <i className="fa fa-comment-o"></i> 
                 Feedback? Please share!
               </Link>
@@ -95,7 +95,7 @@ class Footer extends React.Component {
           </div>
         </div>
         <div className="feedback-sticky" style={{ display: this.state.sticky }}>
-          <Link to="/feedback">
+          <Link to="/contact-us">
           <div className="share-feedback">
             <span>Share your feedback!</span>
             <img src={require('../../../img/chineze-face-transparent-bg.png')} />
