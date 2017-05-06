@@ -2,23 +2,47 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import HomePage from './components/home/HomePage';
+import CurriculumPage from './components/curriculum/Index';
 import ApplicationPage from './components/partner_leads/application/Index';
-import IneligiblePage from './components/partner_leads/ineligible/Index';
-import AppreciationPage from './components/partner_leads/appreciation/Index';
+import EligibilityErrorPage from './components/feedback/error/Eligibility';
+import ApplicationSuccessPage from './components/feedback/success/Application';
 import EligibilityCheck from './components/partner_leads/eligibility_check/Index';
-import PartnerLeadsPage from './components/partner_leads/Index';
+import * as flagChecks from './utils/featureFlagChecks';
+import PartnerLeads from './components/partner_leads/Index';
+import ContactUsSuccessPage from './components/feedback/success/ContactUs';
+import Feedback from './components/feedback/Index';
+import ContactUsPage from './components/contact_us/Index';
+
+const redirectIfFlagIsDisabled = (flag, nextState, replaceState) => {
+  if (flag) return;
+  replaceState('/');
+};
 
 export default (
   <Route>
     <Route path="/" component={App} >
       <IndexRoute component={HomePage} />
+      <Route path="curriculum"
+             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
+             component={CurriculumPage} />
+      <Route path="contact-us"
+             component={ContactUsPage}
+             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
     </Route>
 
-    <Route path="/partner-leads" component={PartnerLeadsPage} >
+    // TODO: Create template for feedback and pass in custom messages
+    <Route path="/feedback" component={Feedback} >
+      <Route path="success/application" component={ApplicationSuccessPage} />
+      <Route
+        path="success/contact-us"
+        onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
+        component={ContactUsSuccessPage} />
+      <Route path="error/ineligible" component={EligibilityErrorPage} />
+    </Route>
+
+    <Route path="/partner-leads" component={PartnerLeads} >
       <Route path="apply" component={ApplicationPage} />
-      <Route path="thank-you" component={AppreciationPage} />
       <Route path="check-eligibility" component={EligibilityCheck} />
-      <Route path="ineligible" component={IneligiblePage} />
     </Route>
   </Route>
 )

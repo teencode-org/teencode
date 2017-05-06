@@ -1,0 +1,90 @@
+.page {
+  padding: 120px 0;
+}
+
+.page-header {
+  color: $orange;
+  margin-bottom: 60px; 
+  text-align: center;
+  font-size: 24px;
+}
+
+.page-index {
+  padding: 100px;
+  transition: all 3s ease-in;
+  width: 100%;
+
+  @include mobile {
+    padding: 30px 20px;
+  }
+
+  .header {
+    height: 50px;
+    width: 100%;
+
+    img {
+      height: 90%;
+
+      @include mobile {
+        height: 70%;
+      }
+    }
+
+    .fa {
+      float: right;
+      font-size: 3em;
+      color: lighten($gray-light, 30);
+
+      @include mobile {
+        font-size: 2.2em;
+      }
+
+      &:hover {
+        color: $gray-light;
+      }
+    }
+  }
+
+  .page-title {
+    margin: 100px 20px;
+    text-align: center;
+
+    h2 {
+      color: $orange;
+      font-size: 3em;
+    }
+    small {
+      color: lighten($gray-dark, 10%);
+    }
+    p {
+      font-size: 22px;
+      color: #555555;
+      margin-top: 50px;
+    }
+
+    @include mobile {
+      margin: 50px 20px;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.toast-nav-top-right {
+  top: 65px;
+  right: 12px;
+}
+
+#toast-container > div {
+  border-radius: 0;
+  -moz-box-shadow: 0 0 12px #383434;
+  -webkit-box-shadow: 0 0 12px #383434;
+  box-shadow: 0 0 12px #383434;
+}
+
+#toast-container > .toast-error {
+  background-image: none !important;
+
+  .toast-message {
+    margin-left: -30px;
+  }
+}

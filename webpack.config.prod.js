@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import featureFlags from './tools/featureFlags';
 
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const buildPath = path.resolve(__dirname, 'dist');
@@ -36,6 +37,9 @@ export default {
       jquery: 'jquery',
       Tether: 'tether',
       'window.Tether': 'tether'
+    }),
+    new webpack.DefinePlugin({
+      'teencode.feature': featureFlags
     })
   ],
   module: {
