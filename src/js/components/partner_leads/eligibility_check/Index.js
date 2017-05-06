@@ -9,7 +9,7 @@ class EligibilityCheck extends React.Component {
   constructor() {
     super();
     this.state = this.getDefaultState();
-  };
+  }
 
   componentWillMount() {
     this.setState(this.getDefaultState());

@@ -63,7 +63,7 @@ class Footer extends React.Component {
                 CONTACT US <br/>
                 <i className="fa fa-envelope-o"></i> teencodeafrica@gmail.com
               </p>
-              <Link to="/feedback" className="btn btn-feedback">
+              <Link to="/contact-us" className="btn btn-feedback">
                 <i className="fa fa-comment-o"></i> 
                 Feedback? Please share!
               </Link>
@@ -95,7 +95,7 @@ class Footer extends React.Component {
           </div>
         </div>
         <div className="feedback-sticky" style={{ display: this.state.sticky }}>
-          <Link to="/feedback">
+          <Link to="/contact-us">
           <div className="share-feedback">
             <span>Share your feedback!</span>
             <img src={require('../../../img/chineze-face-transparent-bg.png')} />
