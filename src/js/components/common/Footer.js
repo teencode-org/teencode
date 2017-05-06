@@ -56,7 +56,7 @@ class Footer extends React.Component {
               <p>
                 Our vision is the widespread adoption of Computer Programming in High Schools in Africa with a syllabus maintained by experts in the field.
               </p>
-              <Link className="more" to="#how" onClick={this.clickLink}>Learn more about our mission and vision >> </Link>
+              <Link className="more" to="/#how" onClick={this.clickLink}>Learn more about our mission and vision >> </Link>
             </div>
             <div className="offset-sm-1 col-sm-3 col-xs-10 feedback">
               <p>
