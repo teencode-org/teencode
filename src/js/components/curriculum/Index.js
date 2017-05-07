@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import CurriculumBody from './CurriculumBody';
 import DocumentTitle from '../common/DocumentTitle';
 
-export class CurriculumPage extends React.Component {
+export class CurriculumPageContainer extends React.Component {
   render () {
     return (
       <section className="curriculum page">
@@ -22,4 +22,4 @@ export class CurriculumPage extends React.Component {
   }
 }
 
-export default DocumentTitle('Curriculum')(CurriculumPage);
+export default DocumentTitle('Curriculum')(CurriculumPageContainer);
