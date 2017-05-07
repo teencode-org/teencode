@@ -16,6 +16,7 @@
   &:hover,
   &:focus {
     color: $background;
+    outline: none;
     background: transparent;
     text-decoration: none;
     border: 2px solid $border;
