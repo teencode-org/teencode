@@ -1,13 +1,13 @@
-import { contactActionTypes } from '../constants/actionTypes';
+import actionTypes from '../constants/actionTypes';
 
 export default function(state = {}, action) {
   switch(action.type) {
-    case contactActionTypes.REQUEST_SEND_FEEDBACK:
+    case actionTypes.REQUEST_SEND_FEEDBACK:
       return requestToSendContact(state, action.payload);
-    case contactActionTypes.RECEIVE_SEND_FEEDBACK:
+    case actionTypes.RECEIVE_SEND_FEEDBACK:
       return sendContact(state, action.payload);
-    case contactActionTypes.FAIL_SEND_FEEDBACK:
-      return receiveError(action.payload);
+    case actionTypes.FAIL_SEND_FEEDBACK:
+      return contactNotSent();
     default:
       return state;
   }
@@ -15,19 +15,18 @@ export default function(state = {}, action) {
 
 const requestToSendContact = (state, payload) => {
   return Object.assign({}, state, {
-    sent: false
+    isFetching: true
   });
 }
 
 const sendContact = (state, payload) => {
   return Object.assign({}, state, {
-    sent: true
+    hasBeenSent: true
   });
 }
 
-const receiveError = (payload) => {
+const contactNotSent = () => {
   return Object.assign({}, {
-    sent: false,
-    errors: payload.errors
+    hasBeenSent: false
   });
 }

@@ -5,7 +5,8 @@ import contact from './contact';
 
 let rootReducer = combineReducers({
   application,
-  contact
+  contact,
+  error
 });
 
 export default rootReducer;

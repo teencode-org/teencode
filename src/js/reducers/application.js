@@ -1,24 +1,32 @@
-import { applicationActionTypes } from '../constants/actionTypes';
+import actionTypes from '../constants/actionTypes';
 
 export default function(state = {}, action) {
   switch(action.type) {
-    case applicationActionTypes.RECEIVE_SEND_APPLICATION:
+    case actionTypes.REQUEST_SEND_APPLICATION:
+      return requestToSendApplication(state, action.payload);
+    case actionTypes.RECEIVE_SEND_APPLICATION:
       return sendApplication(state, action.payload);
-    case applicationActionTypes.FAIL_SEND_APPLICATION:
-      return receiveError(action.payload);
+    case actionTypes.FAIL_SEND_APPLICATION:
+      return applicationNotSent();
     default:
       return state;
   }
 }
 
-const sendApplication = (state, payload) => {
+const requestToSendApplication = (state, payload) => {
   return Object.assign({}, state, {
-    sent: true
+    isFetching: true
   });
 }
 
-const receiveError = (payload) => {
+const sendApplication = (state, payload) => {
+  return Object.assign({}, state, {
+    hasBeenSent: true
+  });
+}
+
+const applicationNotSent = () => {
   return Object.assign({}, {
-    errors: payload.errors
+    hasBeenSent: false
   });
 }
