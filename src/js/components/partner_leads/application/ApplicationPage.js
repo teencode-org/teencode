@@ -25,7 +25,7 @@ const ApplicationPage = ({ onChange, submitApplication }) => {
               <div className="col-md-8 col-sm-12">
                 <input type="text"
                        className="form-control form-control-lg"
-                       id="message"
+                       id="name"
                        onChange={onChange}
                        placeholder="School" />
               </div>
