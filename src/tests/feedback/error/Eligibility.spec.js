@@ -1,7 +1,8 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import IneligibilityPage from '../../../js/components/feedback/error/Eligibility';
+
+/*eslint-disable no-undef*/
+
 
 describe('IneligbleComponent', () => {
   const IneligibilityRender = shallow(<IneligibilityPage />);

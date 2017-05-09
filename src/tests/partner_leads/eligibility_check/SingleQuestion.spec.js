@@ -1,7 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import SingleQuestion from '../../../js/components/partner_leads/eligibility_check/SingleQuestion';
+
+/*eslint-disable no-undef*/
 
 const SingleQuestionFn = () => {
   const criterion = {

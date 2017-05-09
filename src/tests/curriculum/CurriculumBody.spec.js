@@ -1,8 +1,8 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import CurriculumBody from '../../js/components/curriculum/CurriculumBody';
 import fixtures from './fixtures';
+
+/*eslint-disable no-undef*/
 
 const CurriculumBodyFn = (curriculi) => {
   return shallow(<CurriculumBody curriculumList={curriculi} />);

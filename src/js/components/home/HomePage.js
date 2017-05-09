@@ -7,6 +7,7 @@ import SponsorSection from './SponsorSection';
 import ProofArticlesSection from './ProofArticlesSection';
 import EligibilityCheckCtaSection from './EligibilityCheckCtaSection';
 import MainBannerSection from './MainBannerSection';
+import VolunteerSection from './VolunteerSection';
 
 class HomePage extends React.Component {
   constructor(props, context){
@@ -33,12 +34,12 @@ class HomePage extends React.Component {
   }
 
   checkEligibility(e) {
-    // e.preventDefault();
+    e.preventDefault();
     try {
-      // window.analytics.track('View Eligibility', {
-      //   category: 'Show Interest',
-      //   label: 'Check Requirements'
-      // });
+      window.analytics.track('View Eligibility', {
+        category: 'Show Interest',
+        label: 'Check Requirements'
+      });
     } catch (err) {
       console.log(err)
     }
@@ -60,6 +61,8 @@ class HomePage extends React.Component {
         <EligibilityCheckCtaSection checkEligibility={this.checkEligibility} />
 
         <ProofArticlesSection />
+
+        <VolunteerSection />
 
         <HowSection />
 

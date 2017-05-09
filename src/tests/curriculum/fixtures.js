@@ -1,4 +1,7 @@
+import React from 'react';
 import faker from 'faker';
+
+/*eslint-disable no-undef*/
 
 export default {
   knownCurriculum: () => {
