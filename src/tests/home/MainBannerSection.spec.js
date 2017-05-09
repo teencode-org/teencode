@@ -1,4 +1,7 @@
+import React from 'react';
 import MainBannerSection from '../../js/components/home/MainBannerSection';
+
+/*eslint-disable no-undef*/
 
 const MainBannerSectionFn = () => {
   return shallow(<MainBannerSection />);

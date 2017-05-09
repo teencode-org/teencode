@@ -1,4 +1,7 @@
+import React from 'react';
 import ProofArticlesSection from '../../js/components/home/ProofArticlesSection';
+
+/*eslint-disable no-undef*/
 
 describe('ProofArticlesSection', () => {
   const ProofArticlesRender = shallow(<ProofArticlesSection />);

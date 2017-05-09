@@ -1,4 +1,7 @@
+import React from 'react';
 import TestimonySection from '../../js/components/home/TestimonySection';
+
+/*eslint-disable no-undef*/
 
 
 describe('TestimonySection', () => {

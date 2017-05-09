@@ -1,5 +1,7 @@
+import React from 'react';
 import VolunteerSection from '../../js/components/home/VolunteerSection';
 
+/*eslint-disable no-undef*/
 
 describe('VolunteerSection', () => {
   const VolunteerRender = shallow(<VolunteerSection />);

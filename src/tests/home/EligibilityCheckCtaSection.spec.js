@@ -1,4 +1,7 @@
+import React from 'react';
 import EligibilityCheckCtaSection from '../../js/components/home/EligibilityCheckCtaSection';
+
+/*eslint-disable no-undef*/
 
 const eligibilitySection = () => {
   const props = {};

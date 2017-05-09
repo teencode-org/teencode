@@ -1,7 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import { CurriculumPage } from '../../js/components/curriculum/Index';
+
+/*eslint-disable no-undef*/
 
 describe("CurriculumPage", () => {
   const CurriculumPageRender = shallow(<CurriculumPage />);

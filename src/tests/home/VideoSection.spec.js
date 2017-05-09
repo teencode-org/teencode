@@ -1,4 +1,7 @@
+import React from 'react';
 import VideoSection from '../../js/components/home/VideoSection';
+
+/*eslint-disable no-undef*/
 
 
 describe('VideoSection', () => {

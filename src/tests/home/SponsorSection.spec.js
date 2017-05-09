@@ -1,4 +1,7 @@
+import React from 'react';
 import SponsorSection from '../../js/components/home/SponsorSection';
+
+/*eslint-disable no-undef*/
 
 
 describe('SponsorSection', () => {

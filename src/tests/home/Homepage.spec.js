@@ -1,4 +1,7 @@
+import React from 'react';
 import HomepageComponent from '../../js/components/home/HomePage';
+
+/*eslint-disable no-undef*/
 
 const homepage = () => {
   return shallow(<HomepageComponent />);

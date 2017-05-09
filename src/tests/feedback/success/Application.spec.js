@@ -1,8 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
 import AppreciationPage from '../../../js/components/feedback/success/Application';
+
+/*eslint-disable no-undef*/
 
 describe("AppreciationPage", () => {
   const AppreciationPageRender = shallow(<AppreciationPage />);

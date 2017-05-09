@@ -1,4 +1,7 @@
+import React from 'react';
 import ApplicationPage from '../../../js/components/partner_leads/application/ApplicationPage';
+
+/*eslint-disable no-undef*/
 
 const ApplicationPageFn = () => {
   const onChange = () => {
