@@ -12,7 +12,7 @@ export class ApplicationPageContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      message: '',
+      name: '',
       email: '',
       phone_number: ''
     }

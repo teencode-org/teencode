@@ -1,3 +1,5 @@
+/*eslint-disable no-undef*/
+
 export const curriculumIsEnabled = () => {
   return teencode.feature.CURRICULUM_ENABLED;
 };
