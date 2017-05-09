@@ -42,6 +42,28 @@ footer {
     a {
       color: $gray-light;
     }
+
+    @include smaller-device {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .footer-bottom-links {
+        width: 100vw;
+        padding: 10px;
+      }
+
+      .socials {
+        margin: 10px;
+      }
+      
+    }
+    @include phablet {
+      .sitemap {
+        text-align: right;
+      }
+    }
   }
 
   i {
