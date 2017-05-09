@@ -1,6 +1,3 @@
-import expect from 'expect';
-import React from 'react';
-import { mount, shallow } from 'enzyme';
 import ProofArticlesSection from '../../js/components/home/ProofArticlesSection';
 
 describe('ProofArticlesSection', () => {

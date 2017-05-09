@@ -1,6 +1,3 @@
-import expect from 'expect';
-import React from 'react';
-import { mount, shallow } from 'enzyme';
 import Index from '../../../js/components/partner_leads/eligibility_check/Index';
 
 describe('Eligibility Check Index', () => {

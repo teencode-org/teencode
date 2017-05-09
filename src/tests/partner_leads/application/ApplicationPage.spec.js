@@ -1,7 +1,3 @@
-import expect from 'expect';
-import React from 'react';
-import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
 import ApplicationPage from '../../../js/components/partner_leads/application/ApplicationPage';
 
 const ApplicationPageFn = () => {

@@ -9,7 +9,7 @@
   border: 2px solid $border;
   letter-spacing: 1px;
   font-weight: 700;
-  border-radius: 0;
+  border-radius: 5px;
   font-size: 18px;
   padding: 10px 15px;
 
@@ -125,4 +125,9 @@
   @media (min-width: #{$desktop-width}) {
     @content;
   }
+}
+
+@mixin smaller-device {
+  @include mobile { @content };
+  @include phablet { @content };
 }

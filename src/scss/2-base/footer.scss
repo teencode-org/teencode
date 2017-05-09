@@ -2,14 +2,32 @@
 
 footer {
   background-color: #205b5f;
+  font-size: 14px;
   padding: 50px 0 0;
-  font-size: 1em;
   color: $gray-light;
   text-decoration: none;
   width: 100vw;
 
+  p {
+    font-size: 14px;
+  }
+
   .footer-top {
     color: $primary;
+
+    > div:not(:last-child) {
+
+      @include smaller-device {
+        margin-bottom: 40px;
+      }
+    }
+
+    @include smaller-device {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   .more {
@@ -18,8 +36,8 @@ footer {
 
   .footer-bottom {
     background-color: $gray-bg;
-    margin: 50px 0 0;
     line-height: 2em;
+    margin: 50px 0 0;
     padding: 1em;
     a {
       color: $gray-light;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import jquery from 'jquery';
+import FloatingFeedbackButton from './FloatingFeedbackButton';
 import * as featureflags from '../../utils/featureFlagChecks';
 
 class Footer extends React.Component {
@@ -29,7 +30,7 @@ class Footer extends React.Component {
 
   handleScroll(event) {
     const footer = event.target.querySelector('footer');
-    const footerHeight = footer.clientHeight * 2;
+    const footerHeight = footer.offsetHeight * 3;
     const footerTop = footer.offsetTop;
     const scrollTop = document.body.scrollTop;
 
@@ -49,7 +50,7 @@ class Footer extends React.Component {
               <p>
                 Are you a High School administrator or computer teacher and want to be a part of this?
               </p>
-              <Link to="/partner-leads/check-eligibility" className="btn btn-eligibility" > 
+              <Link to="/partner-leads/check-eligibility" className="btn btn-primary" >
                 <i className="fa fa-question-circle"></i>Check if your school is eligible
               </Link>
             </div>
@@ -62,11 +63,12 @@ class Footer extends React.Component {
             <div className="offset-sm-1 col-sm-3 col-xs-10 feedback">
               <p>
                 CONTACT US <br/>
-                <i className="fa fa-envelope-o"></i> teencodeafrica@gmail.com
+                <i className="fa fa-envelope-o"></i>
+                <a href="mailto:teencodeafrica@gmail.com">teencodeafrica@gmail.com</a>
               </p>
-              {featureflags.contactUsIsEnabled() && <Link to="/contact-us" className="btn btn-feedback">
+              {featureflags.contactUsIsEnabled() && <Link to="/contact-us" className="btn btn-primary">
                 <i className="fa fa-comment-o"></i> 
-                Feedback? Please share!
+                We'll love to hear from you
               </Link>}
             </div>
           </div>
@@ -81,8 +83,8 @@ class Footer extends React.Component {
               </div>
               <div className="offset-sm-2 col-sm-2 col-xs-2 socials">
                 <a href="https://www.facebook.com/Teencode-Africa-1345535292156762/" target="_blank">
-                  <i className="fa fa-facebook-square fa-2x"></i
-                ></a>
+                  <i className="fa fa-facebook-square fa-2x"></i>
+                </a>
                 
                 <a href="#" target="_blank"><i className="fa fa-twitter-square fa-2x"></i></a>
               </div>
@@ -95,14 +97,7 @@ class Footer extends React.Component {
             </div>
           </div>
         </div>
-        {featureflags.contactUsIsEnabled() && <div className="feedback-sticky" style={{ display: this.state.sticky }}>
-          <Link to="/contact-us">
-          <div className="share-feedback">
-            <span>Share your feedback!</span>
-            <img src={require('../../../img/chineze-face-transparent-bg.png')} />
-          </div>
-          </Link>
-        </div>}
+        {featureflags.contactUsIsEnabled() && <FloatingFeedbackButton  {...this.state} />}
       </footer>
     )
   }

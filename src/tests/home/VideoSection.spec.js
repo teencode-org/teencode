@@ -1,6 +1,3 @@
-import expect from 'expect';
-import React from 'react';
-import { mount, shallow } from 'enzyme';
 import VideoSection from '../../js/components/home/VideoSection';
 
 
