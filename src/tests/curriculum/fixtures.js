@@ -2,59 +2,59 @@ import faker from 'faker';
 
 export default {
   knownCurriculum: () => {
-    return {
-      'firstSession': {
+    return [
+      {
         title: "First Session",
         description: 'This is the description of the first session in the curriculum',
-        objectives: {
+        objective: {
           title: "At the end of the week, the students should:",
-          values: [
-            "Be excited about learning how to code.",
-            "Be inspired to learn coding.",
-            "Be enlightened about the opportunities out there for coding.",
-            "Be able to use scratch to animate their names."
+          notes: [
+            {description: "Be excited about learning how to code."},
+            {description: "Be inspired to learn coding."},
+            {description: "Be enlightened about the opportunities out there for coding."},
+            {description: "Be able to use scratch to animate their names."}
           ]
         },
-        resources: {
+        resource: {
           title: "Inspirational videos about CS",
-          values: [
+          notes: [
             {
-              name: "Computer Science 101",
+              description: "Computer Science 101",
               href: "https://www.youtube.com/watch?v=z-OxzIC6pic"
             },
             {
-              name: "Computer Science for kids",
+              description: "Computer Science for kids",
               href: "https://www.youtube.com/watch?v=ljmfzjSW1Ew"
             }
           ]
         },
-        projects: {
+        project: {
           title: "Introduction to Scratch I",
-          values: [
-            "Animate your name."
+          notes: [
+            {description: "Animate your name."}
           ]
         }
       }
-    }
+    ]
   },
 
   randomCurriculi: (times) => {
-    const  result = {};
-    [...new Array(times)].map(() => {
-      result[`${faker.random.word()}Session`] = {
+    const  result = [];
+    [...new Array(times)].map((value, index) => {
+      result[index] = {
         title: faker.lorem.words(),
         description: faker.lorem.sentences(),
-        objectives: {
+        objective: {
           title: faker.lorem.text(),
-          values: [...new Array(2)].map(() => faker.lorem.sentence())
+          notes: [...new Array(2)].map(() => faker.lorem.sentence())
         },
-        resources: {
+        resource: {
           title: faker.lorem.text(),
-          values: [...new Array(2)].map(() => faker.lorem.sentence())
+          notes: [...new Array(2)].map(() => faker.lorem.sentence())
         },
-        projects: {
+        project: {
           title: faker.lorem.text(),
-          values: [...new Array(2)].map(() => faker.lorem.sentence())
+          notes: [...new Array(2)].map(() => faker.lorem.sentence())
         }
       }
     });

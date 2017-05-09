@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router';
-import CurriculumTable from './CurriculumTable';
+import { CurriculumTable } from './CurriculumTable';
 import DocumentTitle from '../common/DocumentTitle';
 
 export class CurriculumPageContainer extends React.Component {

@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import DocumentTitle from '../../common/DocumentTitle';
 
-class ApplicationPageContainer extends React.Component {
+export class ApplicationPageContainer extends React.Component {
   constructor() {
     super();
     this.state = {

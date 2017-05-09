@@ -10,7 +10,7 @@ import Projects from './Projects'
 import Loader from '../common/Loader'
 import EmptyPage from '../common/EmptyPage'
 
-class CurriculumBody extends React.Component {
+export class CurriculumTable extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -60,7 +60,7 @@ class CurriculumBody extends React.Component {
   }
 }
 
-CurriculumBody.propTypes = {
+CurriculumTable.propTypes = {
   getCurriculum: React.PropTypes.func.isRequired,
   curriculum: React.PropTypes.object.isRequired
 };
@@ -80,4 +80,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CurriculumBody);
+)(CurriculumTable);

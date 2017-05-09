@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import DocumentTitle from '../common/DocumentTitle';
 import toastr from 'toastr';
 
-class ContactUsPage extends React.Component {
+export class ContactUsPage extends React.Component {
   constructor() {
     super();
     this.state = {
