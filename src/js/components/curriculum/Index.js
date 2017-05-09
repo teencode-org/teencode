@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router';
-import { CurriculumTable } from './CurriculumTable';
+import CurriculumTableContainer from './CurriculumTable';
 import DocumentTitle from '../common/DocumentTitle';
 
 export class CurriculumPageContainer extends React.Component {
@@ -10,7 +10,7 @@ export class CurriculumPageContainer extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-xs-center body-pad">
-              <CurriculumTable/>
+              <CurriculumTableContainer />
             </div>
           </div>
         </div>
