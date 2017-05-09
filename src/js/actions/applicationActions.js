@@ -7,7 +7,7 @@ export const applyActions = () => {
     request: (data) => {
       return {
         type: actionTypes.REQUEST_SEND_APPLICATION,
-        payload: data
+        payload: { data }
       }
     },
     receive: (data) => {
@@ -16,7 +16,7 @@ export const applyActions = () => {
         payload: { receivedAt: new Date() }
       }
     },
-    fail: () => {
+    fail: (errors) => {
       return {
         type: actionTypes.FAIL_SEND_APPLICATION,
         payload: { receivedAt: new Date() }
@@ -33,12 +33,12 @@ export const apply = (data) => {
       .then(response => {
         dispatch(actions.receive(response))
         if (response.errors) {
-          dispatch(actions.fail())
+          dispatch(actions.fail(response.errors))
           dispatch(receiveError('An error occurred. Please try again later', 'application'))
         }
       })
-      .catch(error => {
-        dispatch(actions.fail())
+      .catch(errors => {
+        dispatch(actions.fail(errors))
         dispatch(receiveError('An error occurred. Please try again later', 'application'))
       });
   }

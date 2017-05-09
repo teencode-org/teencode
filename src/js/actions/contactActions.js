@@ -8,7 +8,7 @@ export const sendContactActions = () => {
     request: (data) => {
       return {
         type: actionTypes.REQUEST_SEND_FEEDBACK,
-        payload: data
+        payload: { data }
       }
     },
     receive: (data) => {
@@ -17,10 +17,10 @@ export const sendContactActions = () => {
         payload: { receivedAt: new Date() }
       }
     },
-    fail: () => {
+    fail: (errors) => {
       return {
         type: actionTypes.FAIL_SEND_FEEDBACK,
-        payload: { receivedAt: new Date() }
+        payload: { errors, receivedAt: new Date() }
       }
     }
   }
@@ -38,7 +38,7 @@ export const sendFeedback = (data) => {
         resolve(dispatch(actions.receive(data)));
       });
     } else {
-      dispatch(actions.fail())
+      dispatch(actions.fail(concatenatedErrors))
       dispatch(receiveError(concatenatedErrors, 'contact'))
     }
   }

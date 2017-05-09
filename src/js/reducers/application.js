@@ -15,7 +15,7 @@ export default function(state = {}, action) {
 
 const requestToSendApplication = (state, payload) => {
   return Object.assign({}, state, {
-    isFetching: true
+    isSending: true
   });
 }
 

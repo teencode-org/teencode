@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
-import error from './error';
 import application from './application';
 import contact from './contact';
+import curriculum from './curriculum';
+import error from './error';
 
 let rootReducer = combineReducers({
   application,
   contact,
+  curriculum,
   error
 });
 

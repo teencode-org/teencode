@@ -44,7 +44,7 @@ class ContactUsPage extends React.Component {
         <ContactUsForm
           onChange={this.updateContactForm}
           submitContactForm={this.submitContactForm}
-          buttonDisabled={this.props.contact.isFetching}
+          buttonDisabled={this.props.contact.isSending}
         />
       </div>
     )

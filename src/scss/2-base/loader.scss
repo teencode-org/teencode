@@ -1,0 +1,28 @@
+.spinner {
+  min-height: 40vh;
+  .spinner-header {
+    font-size: 18px;
+    color: $gray-light;
+  }
+  .fa-spin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 10px;
+    z-index: 1;
+    margin: -75px 0 0 -75px;
+  }
+
+  .fa-spin.spin-blue {
+    width: 160px;
+    height: 160px;
+    color: $primary;
+    margin: -100px 0 0 -75px
+  }
+
+  .fa-spin.spin-orange {
+    width: 120px;
+    height: 120px;
+    color: $orange;
+  }
+}

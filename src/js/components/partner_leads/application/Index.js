@@ -52,7 +52,7 @@ class ApplicationPageContainer extends React.Component {
         <ApplicationForm
           onChange={this.updateApplication}
           submitApplication={this.submitApplication}
-          buttonDisabled={this.props.application.isFetching}
+          buttonDisabled={this.props.application.isSending}
         />
       </div>
     )
