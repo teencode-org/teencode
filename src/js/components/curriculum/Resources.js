@@ -1,18 +1,18 @@
 import React, {PropTypes} from 'react';
 
-const Resources = ({title, values}) =>
+const Resources = ({title, notes}) =>
   <div>
     <h5 className="cur-head">{title}</h5>
     <div className="cur-links">
-      {values.map((value, index) =>
-        <a key={index} target="_blank" href={value.href}>{value.name}</a>
+      {notes.map((value, index) =>
+        <a key={index} target="_blank" href={value.link}>{value.description}</a>
       )}
     </div>
   </div>
 
 Resources.propTypes = {
   title: PropTypes.string,
-  values: PropTypes.array
+  notes: PropTypes.array
 }
 
 export default Resources;

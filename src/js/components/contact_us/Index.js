@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import logo from '../../../img/logo-colored.png';
-import {Link, browserHistory} from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import ContactUsForm from './ContactUsForm';
-import {contact} from '../../actions/contactActions';
+import { sendFeedback } from '../../actions/contactActions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import DocumentTitle from '../common/DocumentTitle';
 import toastr from 'toastr';
 
-class ContactUsPage extends React.Component {
+export class ContactUsPage extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -15,27 +17,20 @@ class ContactUsPage extends React.Component {
     }
   }
 
-  updateContactForm = (event) => {
-    this.setState({[event.target.name]: event.target.value})
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.contact.hasBeenSent) {
+      browserHistory.push('/feedback/success/contact-us')
+    }
   }
 
-  sendContact = (event, state) => {
-    contact(state)
-      .then(data => {
-        browserHistory.push('/feedback/success/contact-us');
-      })
-      .catch(err => {
-        event.target.disabled = false;
-        toastr.error(err);
-      });
+  updateContactForm = (event) => {
+    this.setState({[event.target.name]: event.target.value})
   }
 
   submitContactForm = (event) => {
     event.preventDefault();
     event.target.value = 'Submitting ...';
-    event.target.disabled = true;
-    event.persist()
-    this.sendContact(event, this.state)
+    this.props.sendFeedback(this.state);
   }
 
   render() {
@@ -49,10 +44,31 @@ class ContactUsPage extends React.Component {
         <ContactUsForm
           onChange={this.updateContactForm}
           submitContactForm={this.submitContactForm}
+          buttonDisabled={this.props.contact.isSending}
         />
       </div>
     )
   }
 }
 
-export default DocumentTitle('Contact Us')(ContactUsPage);
+ContactUsPage.propTypes = {
+  sendFeedback: PropTypes.func.isRequired,
+  contact: PropTypes.object.isRequired
+};
+
+const mapStateToProps = (state) => {
+  return {
+    contact: state.contact
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    sendFeedback: sendFeedback
+  }, dispatch)
+}
+
+export default DocumentTitle('Contact Us')(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContactUsPage));
