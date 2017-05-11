@@ -75,10 +75,10 @@
 }
 
 #toast-container > div {
-  border-radius: 0;
-  -moz-box-shadow: 0 0 12px #383434;
-  -webkit-box-shadow: 0 0 12px #383434;
-  box-shadow: 0 0 12px #383434;
+  border-radius: $border-radius;
+  -moz-box-shadow: 0 0 12px $box-shadow;
+  -webkit-box-shadow: 0 0 12px $box-shadow;
+  box-shadow: 0 0 12px $box-shadow;
 }
 
 #toast-container > .toast-error {
