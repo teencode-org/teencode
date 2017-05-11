@@ -26,19 +26,19 @@ export const getCurriculumActions = () => {
 }
 
 export const getCurriculum = () => {
-  let actions = getCurriculumActions()
+  let callGetCurriculumActions = getCurriculumActions()
   return function(dispatch) {
-    dispatch(actions.request())
+    dispatch(callGetCurriculumActions.request())
     return webAPI('/curriculum_sessions', 'GET')
       .then(response => {
-        dispatch(actions.receive(response))
+        dispatch(callGetCurriculumActions.receive(response))
         if (response.errors) {
-          dispatch(actions.fail(response.errors))
+          dispatch(callGetCurriculumActions.fail(response.errors))
           dispatch(receiveError('An error occurred while trying to load the curriculum', 'curriculum'))
         }
       })
       .catch(errors => {
-        dispatch(actions.fail(errors))
+        dispatch(callGetCurriculumActions.fail(errors))
         dispatch(receiveError('An error occurred while trying to load the curriculum', 'curriculum'))
       });
   }

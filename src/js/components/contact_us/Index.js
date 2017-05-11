@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import logo from '../../../img/logo-colored.png';
 import { Link, browserHistory } from 'react-router';
 import ContactUsForm from './ContactUsForm';
@@ -52,8 +52,8 @@ export class ContactUsPage extends React.Component {
 }
 
 ContactUsPage.propTypes = {
-  sendFeedback: React.PropTypes.func.isRequired,
-  contact: React.PropTypes.object.isRequired
+  sendFeedback: PropTypes.func.isRequired,
+  contact: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {

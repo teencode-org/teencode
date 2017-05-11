@@ -29,10 +29,10 @@ describe('ContactUs', function () {
   });
 
   it('should render the email textbox', () => {
-    expect(ContactFormWrapper.find('input[name="email"]').length).toEqual(1);
+    expect(ContactFormWrapper.find('TextField').length).toEqual(1);
   });
 
   it('should render the textarea', () => {
-    expect(ContactFormWrapper.find('textarea[name="message"]').length).toEqual(1);
+    expect(ContactFormWrapper.find('Textarea').length).toEqual(1);
   });
 });

@@ -61,8 +61,8 @@ export class CurriculumTable extends React.Component {
 }
 
 CurriculumTable.propTypes = {
-  getCurriculum: React.PropTypes.func.isRequired,
-  curriculum: React.PropTypes.object.isRequired
+  getCurriculum: PropTypes.func.isRequired,
+  curriculum: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {

@@ -8,7 +8,7 @@ const Loader = ({owner}) =>
   </div>
 
 Loader.propTypes = {
-  owner: React.PropTypes.string
+  owner: PropTypes.string
 }
 
 export default Loader;

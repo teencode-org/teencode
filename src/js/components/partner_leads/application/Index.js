@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ApplicationForm from './ApplicationForm';
 import logo from '../../../../img/logo-colored.png';
 import toastr from 'toastr';
@@ -25,7 +25,7 @@ export class ApplicationPageContainer extends React.Component {
   }
 
   updateApplication = (event) => {
-    this.setState({[event.target.id]: event.target.value})
+    this.setState({[event.target.name]: event.target.value})
   }
 
   submitApplication = (event) => {
@@ -60,8 +60,8 @@ export class ApplicationPageContainer extends React.Component {
 }
 
 ApplicationPageContainer.propTypes = {
-  apply: React.PropTypes.func.isRequired,
-  application: React.PropTypes.object.isRequired
+  apply: PropTypes.func.isRequired,
+  application: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {

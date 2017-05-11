@@ -18,10 +18,10 @@ describe('Application Form', () => {
     const applicationForm = ApplicationFormRender.find('form');
     expect(applicationForm.length).toEqual(1);
     expect(applicationForm.is('form')).toBeTruthy();
-    expect(applicationForm.find('input').length).toEqual(3);
-    expect(applicationForm.find('input#message')).toExist();
-    expect(applicationForm.find('input#email')).toExist();
-    expect(applicationForm.find('input#phone_number')).toExist();
-    expect(applicationForm.find('button.btn.btn-action')).toExist();
+    expect(applicationForm.find('TextField').length).toEqual(3);
+    expect(applicationForm.find('TextField').find('input[name="message"]')).toExist();
+    expect(applicationForm.find('TextField').find('input[name="email"]')).toExist();
+    expect(applicationForm.find('TextField').find('input[name="phone_number"]')).toExist();
+    expect(applicationForm.find('Submit')).toExist();
   })
 });

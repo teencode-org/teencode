@@ -88,3 +88,9 @@
     margin-left: -30px;
   }
 }
+
+.btn {
+  &:focus {
+    outline: none;
+  }
+}

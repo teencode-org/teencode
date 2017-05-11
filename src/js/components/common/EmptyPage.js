@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
 const EmptyPage = ({message}) =>
   <div className="empty-page">
@@ -6,7 +6,7 @@ const EmptyPage = ({message}) =>
   </div>
 
 EmptyPage.propTypes = {
-  message: React.PropTypes.string
+  message: PropTypes.string
 }
 
 export default EmptyPage;

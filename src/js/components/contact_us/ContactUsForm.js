@@ -1,6 +1,9 @@
 import React, {PropTypes} from 'react';
 import logo from '../../../img/logo-colored.png';
 import {Link, browserHistory} from 'react-router';
+import TextField from '../common/form/TextField';
+import Textarea from '../common/form/Textarea';
+import Submit from '../common/form/Submit';
 
 class ContactUsForm extends React.Component {
   constructor() {
@@ -22,21 +25,25 @@ class ContactUsForm extends React.Component {
     return (
       <content className="wrapper">
         <form>
-          <div className="row contact-form">
-            <div className="col-md-3">
-                <label className="contact-form-label"> Your email </label>
-            </div>
-            <div className="col-md-9 space-down">
-                <input onChange={this.props.onChange} name="email" type="email" className="form-control" placeholder="somebody@email.com" required/>
-            </div>
-            <div className="col-md-3">
-                <label className="contact-form-label"> Message for us </label>
-            </div>
-            <div className="col-md-9">
-                <textarea onChange={this.props.onChange} name="message" className="form-control" placeholder="Type your message.." required></textarea>
-            </div>
-          </div>
-          <button onClick={this.props.submitContactForm} disabled={this.state.buttonDisabled} type="submit" className="btn btn-action pull-right contact-form-submit">Send Message <i className="fa fa-paper-plane"></i></button>
+          <TextField
+              placeholder="somebody@email.com"
+              type="email"
+              name="email"
+              label="Your email"
+              onChange={this.props.onChange}
+          />
+          <Textarea
+              placeholder="Type your message.."
+              name="message"
+              label="Message for us"
+              onChange={this.props.onChange}
+          />
+          <Submit
+              label="Send Message"
+              icon="paper-plane"
+              disabled={this.state.buttonDisabled}
+              onClick={this.props.submitContactForm}
+          />
         </form>
       </content>
     )

@@ -26,19 +26,19 @@ export const applyActions = () => {
 }
 
 export const apply = (data) => {
-  let actions = applyActions()
+  let callApplyActions = applyActions()
   return function(dispatch) {
-    dispatch(actions.request(data))
+    dispatch(callApplyActions.request(data))
     return webAPI('/inquiries', 'POST', data)
       .then(response => {
-        dispatch(actions.receive(response))
+        dispatch(callApplyActions.receive(response))
         if (response.errors) {
-          dispatch(actions.fail(response.errors))
+          dispatch(callApplyActions.fail(response.errors))
           dispatch(receiveError('An error occurred. Please try again later', 'application'))
         }
       })
       .catch(errors => {
-        dispatch(actions.fail(errors))
+        dispatch(callApplyActions.fail(errors))
         dispatch(receiveError('An error occurred. Please try again later', 'application'))
       });
   }
