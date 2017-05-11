@@ -1,6 +1,4 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import { CurriculumTable } from '../../js/components/curriculum/CurriculumTable';
 import fixtures from './fixtures';
 

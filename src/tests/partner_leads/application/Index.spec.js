@@ -1,8 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
 import { ApplicationPageContainer } from '../../../js/components/partner_leads/application/Index';
+
+/*eslint-disable no-undef*/
 
 describe('Partner leads application index', () => {
   const IndexRender = shallow(<ApplicationPageContainer apply={function() {}} application={{}}/>);

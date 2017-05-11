@@ -1,7 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import Resources from '../../js/components/curriculum/Resources';
+
+/*eslint-disable no-undef*/
 
 describe('Resources Component', () => {
   const props = {
