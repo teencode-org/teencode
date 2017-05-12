@@ -20,8 +20,13 @@ function removeClass(element, className) {
   }
 }
 
+function getFriendlyName(field) {
+  return field.replace("_", " ")
+}
+
 export default {
   hasClass,
   addClass,
-  removeClass
+  removeClass,
+  getFriendlyName
 }

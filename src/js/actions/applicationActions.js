@@ -1,5 +1,6 @@
 import actionTypes from "../constants/actionTypes"
 import webAPI from '../utils/webAPI'
+import validator from '../utils/validator'
 import { receiveError } from './errorActions'
 
 export const applyActions = () => {
@@ -28,18 +29,26 @@ export const applyActions = () => {
 export const apply = (data) => {
   let callApplyActions = applyActions()
   return function(dispatch) {
+    const {isValid, concatenatedErrors} = validator.validate(data);
+    
     dispatch(callApplyActions.request(data))
-    return webAPI('/inquiries', 'POST', data)
+    if (isValid) {
+    return webAPI('/applicants', 'POST', data)
       .then(response => {
-        dispatch(callApplyActions.receive(response))
         if (response.errors) {
           dispatch(callApplyActions.fail(response.errors))
-          dispatch(receiveError('An error occurred. Please try again later', 'application'))
+          dispatch(receiveError('An error occurred. Please try again later.', 'application'))
+        } else {
+          dispatch(callApplyActions.receive(response))
         }
       })
       .catch(errors => {
         dispatch(callApplyActions.fail(errors))
-        dispatch(receiveError('An error occurred. Please try again later', 'application'))
+        dispatch(receiveError('An error occurred. Please try again later.', 'application'))
       });
+    } else {
+      dispatch(callApplyActions.fail(concatenatedErrors))
+      dispatch(receiveError(concatenatedErrors, 'application'))
+    }
   }
 }

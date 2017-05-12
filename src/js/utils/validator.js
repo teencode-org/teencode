@@ -1,6 +1,14 @@
+import helper from './helpers';
+
+const phoneNumberLimit = 9;
+
 function isValidEmail(email) {
   let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return emailRegex.test(email);
+}
+
+function isValidPhoneNumber(phone_number) {
+  return phone_number.toString().length >= 9;
 }
 
 function isEmptyString(str) {
@@ -24,10 +32,14 @@ function validate(data, optionalFields) {
     errors.email = `The email is invalid`;
   }
 
+  if(!isValidPhoneNumber(data.phone_number)) {
+    errors.phone_number = `The phone number is invalid`;
+  }
+
   for(let key in data) {
     if(!optionalFields || optionalFields.indexOf(key) === -1) {
       if(typeof data[key] == 'string' && isEmptyString(data[key])) {
-        errors[key] = `The ${key} is required`;
+        errors[key] = `The ${helper.getFriendlyName(key)} is required`;
       }
     }
   }
