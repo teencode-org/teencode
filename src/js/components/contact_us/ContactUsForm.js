@@ -26,6 +26,12 @@ class ContactUsForm extends React.Component {
       <content className="wrapper">
         <form>
           <TextField
+              placeholder="Somebody Doe"
+              name="name"
+              label="Your name"
+              onChange={this.props.onChange}
+          />
+          <TextField
               placeholder="somebody@email.com"
               type="email"
               name="email"

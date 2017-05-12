@@ -29,14 +29,23 @@ export const sendContactActions = () => {
 export const sendFeedback = (data) => {
   let callSendContactActions = sendContactActions()
   return function(dispatch) {
-    dispatch(callSendContactActions.request(data))
     const {isValid, concatenatedErrors} = validator.validate(data);
+
+    dispatch(callSendContactActions.request(data))
     if (isValid) {
-      // TODO: Use contact us endpoint.
-      // TODO: Use this error message on server error: Something prevented your message from submitting successfully. Please try again later.'
-      return new Promise(function(resolve) {
-        resolve(dispatch(callSendContactActions.receive(data)));
-      });
+      return webAPI('/inquiries', 'POST', data)
+        .then(response => {
+          if (response.errors) {
+            dispatch(callSendContactActions.fail(response.errors))
+            dispatch(receiveError('Something prevented your message from submitting successfully. Please try again later.', 'contact'))
+          } else {
+            dispatch(callSendContactActions.receive(response))
+          }
+        })
+        .catch(errors => {
+          dispatch(callSendContactActions.fail(errors))
+          dispatch(receiveError('Something prevented your message from submitting successfully. Please try again later.', 'contact'))
+        });
     } else {
       dispatch(callSendContactActions.fail(concatenatedErrors))
       dispatch(receiveError(concatenatedErrors, 'contact'))
