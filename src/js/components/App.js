@@ -1,29 +1,55 @@
 /*global SEGMENT_KEY:true*/
 
 import React, { PropTypes } from 'react';
-import Header from './common/Header';
-import Footer from './common/Footer';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { markErrorsAsDisplayed } from '../actions/errorActions';
 import toastr from 'toastr';
 
 class App extends React.Component {
   componentWillMount() {
-    toastr.options.positionClass = "toast-nav-top-right";
     toastr.options.preventDuplicates = true;
   }
 
+  componentWillReceiveProps(nextProps) {
+    let undisplayedErrors = this.getUndisplayedErrors(nextProps.errors)
+    if (undisplayedErrors.length) {
+      toastr.error(undisplayedErrors.join('. '));
+      this.props.markErrorsAsDisplayed()
+    }
+  }
+
+  getUndisplayedErrors = (errors) => {
+    return errors.filter(error =>
+      !error.hasBeenDisplayed
+    ).map(error => {
+      return error.messages
+    })
+  }
+
   render () {
-    return (
-      <div>
-        <Header />
-        {this.props.children}
-        <Footer />
-      </div>
-    )
+    return this.props.children
   }
 }
 
 App.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
+  markErrorsAsDisplayed: PropTypes.func.isRequired
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    errors: Object.values(state.error)
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    markErrorsAsDisplayed: markErrorsAsDisplayed
+  }, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

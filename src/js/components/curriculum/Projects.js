@@ -1,16 +1,16 @@
 import React, {PropTypes} from 'react';
 
-const Projects = ({title, values}) =>
+const Projects = ({title, notes}) =>
   <div>
     <h5 className="cur-head">{title}</h5>
-    {values.map((value, index) =>
-      <p key={index}>{value}</p>
+    {notes.map((value, index) =>
+      <p key={index}>{value.description}</p>
     )}
   </div>
 
 Projects.propTypes = {
   title: PropTypes.string,
-  values: PropTypes.array
+  notes: PropTypes.array
 }
 
 export default Projects;

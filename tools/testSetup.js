@@ -1,3 +1,7 @@
+var expect = require('expect');
+var mount = require('enzyme').mount;
+var shallow = require('enzyme').shallow;
+var sinon = require('sinon');
 
 /* eslint-disable no-var*/
 
@@ -12,6 +16,7 @@ require('babel-register')();
 require.extensions['.css'] = function () {return null;};
 require.extensions['.png'] = function () {return null;};
 require.extensions['.jpg'] = function () {return null;};
+require.extensions['.jpeg'] = function () {return null;};
 
 // Configure JSDOM and set global variables
 // to simulate a browser environment for tests.
@@ -21,7 +26,14 @@ var exposedProperties = ['window', 'navigator', 'document'];
 
 global.document = jsdom('');
 global.teencode = {feature: {}};
+
+global.expect = expect;
+global.mount = mount;
+global.shallow = shallow;
+global.sinon = sinon;
+
 global.window = document.defaultView;
+
 Object.keys(document.defaultView).forEach((property) => {
   if (typeof global[property] === 'undefined') {
     exposedProperties.push(property);

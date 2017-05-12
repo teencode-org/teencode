@@ -1,5 +1,5 @@
-const curriculumList = {
-  firstSession: {
+let curriculumList = [
+  {
     title: 'First Session',
     description: "This session is essential for students to learn how to identify various tools for programming.",
     objectives: {
@@ -31,7 +31,7 @@ const curriculumList = {
       ]
     }
   },
-  secondSession: {
+  {
     title: 'Second Session',
     description: "In this session, students learn how to use the greatest tool of computing and networking, the internet.",
     objectives: {
@@ -69,6 +69,6 @@ const curriculumList = {
       ]
     }
   }
-}
+]
 
 export default curriculumList;

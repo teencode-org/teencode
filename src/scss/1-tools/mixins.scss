@@ -9,13 +9,14 @@
   border: 2px solid $border;
   letter-spacing: 1px;
   font-weight: 700;
-  border-radius: 0;
+  border-radius: $border-radius;
   font-size: 18px;
   padding: 10px 15px;
 
   &:hover,
   &:focus {
     color: $background;
+    outline: none;
     background: transparent;
     text-decoration: none;
     border: 2px solid $border;
@@ -125,4 +126,9 @@
   @media (min-width: #{$desktop-width}) {
     @content;
   }
+}
+
+@mixin smaller-device {
+  @include mobile { @content };
+  @include phablet { @content };
 }

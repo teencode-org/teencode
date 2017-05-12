@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
 import jquery from 'jquery';
 import SubLinks from './SubLinks';
@@ -52,10 +52,10 @@ NavLink.defaultProps = {
 }
 
 NavLink.propTypes = {
-  path: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string.isRequired,
-  subLinkOnClick: React.PropTypes.func,
-  subLinks: React.PropTypes.object
+  path: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  subLinkOnClick: PropTypes.func,
+  subLinks: PropTypes.object
 }
 
 export default NavLink;

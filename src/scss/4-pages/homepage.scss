@@ -115,13 +115,13 @@
 .cta {
   height: 100px;
   margin-top: -100px;
-  color: $gray-light;
+  color: lighten($gray-light, 40);
   background: $gray-bg;
   padding-top: 15px;
   position: absolute;
   width: 100%;
   .action {
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 6px;
 
     @include mobile {
@@ -138,9 +138,18 @@
 
   > .container {
     margin: 10px auto;
+    .row {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+
+      @include smaller-device {
+        flex-direction: column;
+      }
+    }
   }
 
-  @include mobile {
+  @include smaller-device {
     height: 150px;
     margin-top: -150px;
   }
@@ -166,7 +175,7 @@
   }
   h1 {
     @include roboto-font;
-    color: $blue-light;
+    color: lighten($blue-light, 20%);
     line-height: 1.4;
     font-weight: 600;
     font-size: 3.5em;
@@ -213,7 +222,7 @@
       }
     }
     p {
-      font-size: 18px;
+      font-size: 16px;
       color: #7b7b7b;
       padding: 40px 0;
     }
@@ -279,11 +288,11 @@
     font-size: 16px;
     padding-top: 20px;
   }
-  p {
-    font-size: 22px;
+  .btn-primary {
+    margin-top: 40px;
   }
 
-  @include mobile {
+  @include smaller-device {
     .profile {
       text-align: center
     }
@@ -395,9 +404,6 @@
       color: $blue-dark;
       text-transform: none;
     }
-    p {
-      font-size: 20px;
-    }
   }
 
   @include mobile {
@@ -407,9 +413,6 @@
       .picture {
         width: 50px;
         margin-bottom: 15px;
-      }
-      p {
-        font-size: 20px;
       }
     }
   }

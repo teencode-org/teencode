@@ -1,7 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import Index from '../../../js/components/partner_leads/eligibility_check/Index';
+
+/*eslint-disable no-undef*/
 
 describe('Eligibility Check Index', () => {
   const IndexWrapper = mount(<Index />);

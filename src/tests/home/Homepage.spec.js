@@ -1,7 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import HomepageComponent from '../../js/components/home/HomePage';
+
+/*eslint-disable no-undef*/
 
 const homepage = () => {
   return shallow(<HomepageComponent />);
