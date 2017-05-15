@@ -16,7 +16,6 @@ import ContactUsPage from './components/contact_us/Index';
 import NotFound from './components/not_found/notFound';
 
 const redirectIfFlagIsDisabled = (flag, nextState, replace) => {
-  console.log(flag, "flag");
   if (flag) return;
   replace('/');
 };
