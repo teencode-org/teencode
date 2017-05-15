@@ -1,8 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import Footer from '../../js/components/common/Footer';
 
+/*eslint-disable no-undef*/
 
 describe('Footer', () => {
   const footerRender = shallow(<Footer />);

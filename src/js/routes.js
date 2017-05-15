@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
+import Pages from './components/Pages';
 import HomePage from './components/home/HomePage';
 import CurriculumPage from './components/curriculum/Index';
 import ApplicationPage from './components/partner_leads/application/Index';
@@ -25,8 +26,8 @@ const redirectIfPageNotFound = (nextState, replace) => {
 }
 
 export default (
-  <Route>
-    <Route path="/" component={App} >
+  <Route component={App}>
+    <Route path="/" component={Pages} >
       <IndexRoute component={HomePage} />
       <Route path="curriculum"
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}

@@ -1,19 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router';
-import CurriculumBody from './CurriculumBody';
+import CurriculumTableContainer from './CurriculumTable';
 import DocumentTitle from '../common/DocumentTitle';
 
-export class CurriculumPage extends React.Component {
+export class CurriculumPageContainer extends React.Component {
   render () {
     return (
       <section className="curriculum page">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-xs-center body-pad">
-              <h3 className="page-header">Curriculum</h3>
-              <table className="table table-responsive">
-                <CurriculumBody/>
-              </table>
+              <CurriculumTableContainer />
             </div>
           </div>
         </div>
@@ -22,4 +19,4 @@ export class CurriculumPage extends React.Component {
   }
 }
 
-export default DocumentTitle('Curriculum')(CurriculumPage);
+export default DocumentTitle('Curriculum')(CurriculumPageContainer);

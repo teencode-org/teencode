@@ -7,7 +7,6 @@ import toastr from 'toastr';
 class Feedback extends React.Component {
   componentWillMount() {
     toastr.options.positionClass = "toast-top-right";
-    toastr.options.preventDuplicates = true;
   }
 
   render() {

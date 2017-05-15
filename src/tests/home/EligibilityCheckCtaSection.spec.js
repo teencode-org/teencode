@@ -1,8 +1,7 @@
-import expect from 'expect';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
 import EligibilityCheckCtaSection from '../../js/components/home/EligibilityCheckCtaSection';
+
+/*eslint-disable no-undef*/
 
 const eligibilitySection = () => {
   const props = {};
@@ -20,7 +19,7 @@ describe("EligibilityCheckCtaSection", () => {
   it("loads the right CTA text", () => {
     const linkButton = eligibilityComponent.find('.btn-action');
     const linkButtonText = 'Check if your school is eligible';
-    expect(eligibilityComponent.find('h3.action').text()).toEqual('High schools in Lagos can apply between 10th - 17th April, 2017 FREE');
+    expect(eligibilityComponent.find('h3.action').text()).toEqual('High Schools in Lagos and Nairobi can apply to partner with us FREE');
     expect(linkButton.length).toEqual(1);
     expect(linkButton.name()).toEqual('Link');
     expect(linkButton.html()).toInclude(linkButtonText);
