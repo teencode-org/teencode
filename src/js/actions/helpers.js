@@ -1,5 +1,5 @@
 import webAPI from '../utils/webAPI';
-import validator from '../utils/validator';
+import Validator from '../utils/validator';
 import { receiveError } from './errorActions';
 
 const baseActions = ({
@@ -38,7 +38,14 @@ const handleApiCall = ({
   requestMethod
 }) => {
   return (dispatch) => {
-    const {isValid, concatenatedErrors} = validator.validate(data);
+    let validationOptions = {};
+    Object.keys(data).forEach(dataKey => {
+      validationOptions[dataKey] = {
+        required: true
+      }
+    });
+    let validator = new Validator(data, validationOptions);
+    const {isValid, concatenatedErrors} = validator.validateAllInputs();
     
     dispatch(actions.request(data))
     if (isValid) {
