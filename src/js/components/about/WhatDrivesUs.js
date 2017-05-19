@@ -1,27 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-class TestimonySection extends React.Component {
-  constructor(props, context){
-    super(props);
-  }
-
+class WhatDrivesUs extends React.Component {
   render() {
     return (
-      <section id= "testimonials" className="testimony">
+      <section className="half-section what-drives-us">
         <div className="overlay">
           <div className="container">
             <div className="row">
-              <div className="intro-text">
-                <div className="col-md-11 col-xs-12">
-                  <h2>
-                    "I was in love with our session and our instructor Getrude. 
-                    It was challenging, fun and inspirational. Now I know I can be an IT expert.
-                    I look forward to more classes."
-                  </h2>
-                  <p className="testifier">Joyce Kinuthia</p>
-                  <p className="location">Form 4 Arts Student<br/>MaryLeakey Girls High School, Nairobi</p>
-                </div>
+              <div className="col-lg-12 text-xs-center">
+                <h4 className="section-heading">What Drives Us</h4>
+                <h3 className="section-subheading">
+                  We believe programming teaches teenagers how to be part of the solution to problems.
+                  We are through them building a future of creators, not just critical thinkers, to lead the continent of Africa.
+                </h3>
               </div>
             </div>
           </div>
@@ -31,4 +22,4 @@ class TestimonySection extends React.Component {
   }
 }
      
-export default TestimonySection;
+export default WhatDrivesUs;

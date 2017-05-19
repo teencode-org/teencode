@@ -4,10 +4,10 @@ import MainBannerSection from './MainBannerSection';
 import WhatWeDo from './WhatWeDo';
 import WhatDrivesUs from './WhatDrivesUs';
 import OurVision from './OurVision';
-import WhereWeAreNow from './WhereWeAreNow';
-import Leadership from './Leadership';
-import Partners from './Partners';
-import ContactUs from '../contact_us/ContactUsForm';
+// import WhereWeAreNow from './WhereWeAreNow';
+// import Leadership from './Leadership';
+// import Partners from './Partners';
+// import ContactUs from '../contact_us/ContactUsForm';
 
 class AboutUsPage extends React.Component {
   constructor(props, context){
@@ -28,14 +28,6 @@ class AboutUsPage extends React.Component {
         <WhatDrivesUs />
 
         <OurVision />
-
-        <WhereWeAreNow/>
-
-        <Leadership />
-
-        <Partners />
-
-        <ContactUs />
       </div>
     )
   }

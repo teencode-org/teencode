@@ -1,0 +1,41 @@
+.half-section {
+  color: $green;
+  height: 21em;
+  .section-heading {
+    padding-top: 5em;
+    font-size: 22px;
+    font-weight: 300;
+  }
+  .section-subheading {
+    font-size: 16px;
+    line-height: 30px;
+    @include sans-font;
+    text-transform: none;
+    font-weight: 400;
+    }
+
+  @include mobile {
+    .section-heading {
+      font-size: 18px;
+    }
+    .section-subheading {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.what-drives-us {
+  color: $gray-lighter;
+  background: url(../img/teencode_maryleaks.jpg) no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 24em;
+  .overlay {
+    background: rgba(29, 29, 29, 0.65);
+    // min-height: 25em;
+    height: 100%;
+  }
+  @include mobile {
+    height: calc(100vh + 50px);
+  }
+}
