@@ -82,11 +82,11 @@ class Footer extends React.Component {
                 </span>
               </div>
               <div className="offset-md-2 col-md-2 col-sm-12 col-xs-12 socials">
-                <a href="https://www.facebook.com/Teencode-Africa-1345535292156762/" target="_blank">
+                <a href="https://www.facebook.com/groups/teencodeafrica/" target="_blank">
                   <i className="fa fa-facebook-square fa-2x"></i>
                 </a>
                 
-                <a href="#" target="_blank"><i className="fa fa-twitter-square fa-2x"></i></a>
+                <a href="https://twitter.com/TeencodeA" target="_blank"><i className="fa fa-twitter-square fa-2x"></i></a>
               </div>
               <div className="offset-md-2 col-md-2 col-sm-5 col-xs-6 policy">
                 <a href="#">PRIVACY POLICY</a>
