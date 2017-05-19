@@ -1,0 +1,42 @@
+div.not-found {
+    padding-top: 150px;
+    margin-bottom: 150px;
+
+    .page-title {
+        color: #e17034
+    }
+
+    .img-responsive {
+        width: 100%;
+    }
+    .space-up {
+        margin-top: 50px;
+    }
+
+    content.wrapper {
+        margin-bottom: 150px;
+        margin-top: 100px;
+    }
+
+    p.not-found-text {
+        padding-top: 40px;
+        font-weight: 400;
+        color: rgba(132, 125, 121, 0.94);
+    }
+
+    .homepage-redirect-text {
+        span {
+            font-weight: 400;
+            color: rgba(132, 125, 121, 0.94);
+        }
+        .btn-outline {
+            color: #e17034;
+            border-radius: 0px;
+            background: transparent;
+            text-decoration: none;
+            margin-right: 9px;
+            margin-left: 9px;
+            border: 2px solid #e17034
+        }
+    }
+}
