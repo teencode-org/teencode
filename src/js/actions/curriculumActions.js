@@ -1,46 +1,19 @@
-import actionTypes from "../constants/actionTypes"
-import webAPI from '../utils/webAPI'
-import { receiveError } from './errorActions'
-
-export const getCurriculumActions = () => {
-  return {
-    request: () => {
-      return {
-        type: actionTypes.REQUEST_GET_CURRICULUM,
-        payload: {}
-      }
-    },
-    receive: (data) => {
-      return {
-        type: actionTypes.RECEIVE_GET_CURRICULUM,
-        payload: { data, receivedAt: new Date() }
-      }
-    },
-    fail: (errors) => {
-      return {
-        type: actionTypes.FAIL_GET_CURRICULUM,
-        payload: { errors, receivedAt: new Date() }
-      }
-    }
-  }
-}
+import actionTypes from '../constants/actionTypes';
+import { handleApiCall, baseActions } from './helpers';
 
 export const getCurriculum = () => {
-  let callGetCurriculumActions = getCurriculumActions()
-  return function(dispatch) {
-    dispatch(callGetCurriculumActions.request())
-    return webAPI('/curriculum_sessions', 'GET')
-      .then(response => {
-        dispatch(callGetCurriculumActions.receive(response))
-        if (response.errors) {
-          dispatch(callGetCurriculumActions.fail(response.errors))
-          dispatch(receiveError('An error occurred while trying to load the curriculum', 'curriculum'))
-        }
-      })
-      .catch(errors => {
-        dispatch(callGetCurriculumActions.fail(errors))
-        dispatch(receiveError('An error occurred while trying to load the curriculum', 'curriculum'))
-      });
-  }
+  let actions = baseActions({
+    requestType: actionTypes.REQUEST_GET_CURRICULUM,
+    receiveType: actionTypes.RECEIVE_GET_CURRICULUM,
+    failType: actionTypes.FAIL_GET_CURRICULUM
+  });
+  
+  return handleApiCall({
+    actions,
+    errorMessage: 'An error occurred while trying to load the curriculum',
+    caller: 'curriculum',
+    route: '/curriculum_sessions',
+    requestMethod: 'GET'
+  });
 }
 

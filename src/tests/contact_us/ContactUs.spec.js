@@ -28,8 +28,8 @@ describe('ContactUs', function () {
     expect(ContactUsWrapper.find('ContactUsForm').length).toEqual(1);
   });
 
-  it('should render the email textbox', () => {
-    expect(ContactFormWrapper.find('TextField').length).toEqual(1);
+  it('should render the email and name textboxes', () => {
+    expect(ContactFormWrapper.find('TextField').length).toEqual(2);
   });
 
   it('should render the textarea', () => {

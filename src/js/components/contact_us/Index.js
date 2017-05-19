@@ -12,6 +12,7 @@ export class ContactUsPage extends React.Component {
   constructor() {
     super();
     this.state = {
+      name: "",
       email: "",
       message: ""
     }

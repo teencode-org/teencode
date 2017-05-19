@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 import NavLink from './NavLink';
-import utils from '../../utils/helpers'
+import { addClass, removeClass } from '../../utils/helpers'
 import jquery from 'jquery';
 import * as flagChecks from '../../utils/featureFlagChecks';
 
@@ -39,10 +39,10 @@ class Header extends React.Component {
     const scrollTop = document.body.scrollTop;
 
     if (scrollTop > stickyHeight + stickyTop) {
-      utils.addClass(sticky, 'is-sticky');
+      addClass(sticky, 'is-sticky');
     } else if (scrollTop <= stickyTop) {
       if (this.isHomeLink()) {
-        utils.removeClass(sticky, 'is-sticky');
+        removeClass(sticky, 'is-sticky');
       }
     }
 
