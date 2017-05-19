@@ -26,7 +26,7 @@ class ApplicationForm extends React.Component {
           <form>
             <TextField
                 placeholder="School"
-                name="message"
+                name="name"
                 label="Name of your school"
                 onChange={this.props.onChange}
             />
