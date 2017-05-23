@@ -5,9 +5,11 @@ import WhatWeDo from './WhatWeDo';
 import WhatDrivesUs from './WhatDrivesUs';
 import OurVision from './OurVision';
 // import WhereWeAreNow from './WhereWeAreNow';
-// import Leadership from './Leadership';
+import Leadership from './Leadership';
 // import Partners from './Partners';
-// import ContactUs from '../contact_us/ContactUsForm';
+import ContactUsPage from '../contact_us/';
+import SponsorSection from '../home/SponsorSection';
+import Partners from './Partners';
 
 class AboutUsPage extends React.Component {
   constructor(props, context){
@@ -28,6 +30,14 @@ class AboutUsPage extends React.Component {
         <WhatDrivesUs />
 
         <OurVision />
+
+        <Leadership />
+
+        <Partners />
+
+        <ContactUsPage />
+
+        <SponsorSection />
       </div>
     )
   }

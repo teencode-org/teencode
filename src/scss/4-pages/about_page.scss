@@ -39,3 +39,34 @@
     height: calc(100vh + 50px);
   }
 }
+
+section.leadership {
+  text-align: center;
+}
+
+
+.lead h5 {
+  color: $gold;
+  @include sans-font;
+}
+
+.lead p {
+  color: $green;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+section.partners {
+  text-align: center;
+}
+
+.partners-images {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.partners-images img {
+  width: 150px;
+  height: auto;
+}
