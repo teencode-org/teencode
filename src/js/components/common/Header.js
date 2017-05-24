@@ -45,7 +45,6 @@ class Header extends React.Component {
         removeClass(sticky, 'is-sticky');
       }
     }
-
   }
 
   render() {
