@@ -1,0 +1,97 @@
+$circle-size: 200px;
+$circle-background: #D9D9D9;
+$pink: #a65dab;
+$inset-size: 185px;
+$inset-color: #fbfbfb;
+
+.progress-circle {
+	margin: 20px auto;
+	width:  $circle-size;
+	height: $circle-size;
+	background-color: $circle-background;
+	border-radius: 50%;
+
+  .progress-circle-slice,
+  .progress-circle-fill {
+    width:    $circle-size;
+    height:   $circle-size;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 1s;
+    border-radius: 50%;
+  }
+
+  .progress-circle-slice {
+    clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+
+    .progress-circle-fill {
+      clip: rect(0px, $circle-size/2, $circle-size, 0px);
+
+      &.progress-circle-blue {
+        background-color: $primary;
+      }
+
+      &.progress-circle-green {
+        background-color: $green;
+      }
+
+      &.progress-circle-orange {
+        background-color: $orange;
+      }
+    }
+	}
+
+	.progress-circle-overlay {
+		width:       $inset-size;
+		height:      $inset-size;
+		position:    absolute;
+		margin-left: ($circle-size - $inset-size)/2;
+		margin-top:  ($circle-size - $inset-size)/2;
+
+		background-color: $inset-color;
+		border-radius: 50%;
+
+    .progress-circle-percent {
+      position: absolute;
+      font-size: 25px;
+      line-height: 100px;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: calc(50% - 65px);
+      text-align: center;
+
+      & > span {
+        font-size: 15px;
+      }
+
+    }
+
+    .progress-circle-caption {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      font-size: 14px;
+      top: calc(50% - 25px);
+      text-align: center;
+      color: $gray-light;
+    }
+	}
+
+	$i: 0;
+	$increment: 180deg / 100;
+	@while $i <= 100 {
+		&[data-progress='#{$i}'] {
+      .progress-circle-slice.full, .progress-circle-fill {
+        transform: rotate($increment * $i);
+        position: absolute;
+      }
+
+      .progress-circle-fill.progress-circle-bar {
+        transform: rotate($increment * $i * 2);
+      }
+      $i: $i + 1;
+		}
+	}
+}
