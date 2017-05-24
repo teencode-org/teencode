@@ -14,10 +14,10 @@ const baseActions = ({
         payload: { data }
       }
     },
-    receive: () => {
+    receive: (data) => {
       return {
         type: receiveType,
-        payload: { receivedAt: new Date() }
+        payload: { data, receivedAt: new Date() }
       }
     },
     fail: (errors) => {
@@ -46,7 +46,6 @@ const handleApiCall = ({
     });
     let validator = new Validator(data, validationOptions);
     const {isValid, concatenatedErrors} = validator.validateAllInputs();
-    
     dispatch(actions.request(data))
     if (isValid) {
       return webAPI(route, requestMethod, data)

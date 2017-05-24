@@ -21,7 +21,7 @@ export class CurriculumTable extends React.Component {
 
   loadCurriculumContent() {
     const { hasBeenFetched, curriculumList } = this.props.curriculum;
-    if (!hasBeenFetched) return <Loader owner="curriculum"/>
+    if (!hasBeenFetched) return <Loader owner="curriculum"/>;
     if (curriculumList.length) {
       return (
         <div>
