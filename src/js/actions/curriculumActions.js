@@ -10,6 +10,7 @@ export const getCurriculum = () => {
   
   return handleApiCall({
     actions,
+    data: {},
     errorMessage: 'An error occurred while trying to load the curriculum',
     caller: 'curriculum',
     route: '/curriculum_sessions',
