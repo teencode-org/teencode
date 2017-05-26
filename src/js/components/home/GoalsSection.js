@@ -16,20 +16,17 @@ class GoalsSection extends React.Component {
   }
 
   animateProgess(event) {
-    const progressCircles = document.querySelector('#progress');
-    const progressCirclesHeight = progressCircles.clientHeight;
-    const progressCirclesTop = progressCircles.offsetTop;
-    const scrollTop = document.body.scrollTop;
-    const heightToStartOfProgressCircles = progressCirclesTop - window.innerHeight + progressCirclesHeight;
-    const heightToEndOfProgressCircles = progressCirclesTop + progressCirclesHeight;
+    document.querySelectorAll('.progress-circle').forEach((progressCircle, index) => {
+      const scrollTop = document.body.scrollTop;
+      const progressCircleTop = progressCircle.getBoundingClientRect().top + window.scrollY;
+      const heightToStartOfProgressCircle = progressCircleTop + progressCircle.clientHeight - window.innerHeight;
 
-    document.querySelectorAll('.progress-circle').forEach((progressCircle) => {
-      if (scrollTop > heightToStartOfProgressCircles && scrollTop < heightToEndOfProgressCircles) {
+      if (scrollTop < heightToStartOfProgressCircle) {
+        progressCircle.setAttribute('data-progress', 0);
+      } else {
         if (progressCircle.getAttribute('data-progress') !== progressCircle.getAttribute('data-goal')) {
           progressCircle.setAttribute('data-progress', progressCircle.getAttribute('data-goal'));
         }
-      } else {
-        progressCircle.setAttribute('data-progress', 0);
       }
     }, this);
   }
@@ -45,16 +42,16 @@ class GoalsSection extends React.Component {
           </div>
         </div>
         <div className="row" id="progress">
-          <div className="col-lg-10 offset-lg-1 col-xs-12">
+          <div className="col-xs-12">
             <div className="row">
               <div className="col-md-4">
-                <div className="progress-circle" data-goal="100" data-progress="0">
+                <div className="progress-circle progress-circle-orange" data-goal="80" data-progress="0">
                   <div className="circle">
                       <div className="full progress-circle-slice">
-                          <div className="progress-circle-fill progress-circle-orange"></div>
+                          <div className="progress-circle-fill"></div>
                       </div>
                       <div className="progress-circle-slice">
-                          <div className="progress-circle-fill progress-circle-orange"></div>
+                          <div className="progress-circle-fill"></div>
                           <div className="progress-circle-fill progress-circle-bar"></div>
                       </div>
                   </div>
@@ -67,13 +64,13 @@ class GoalsSection extends React.Component {
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="progress-circle" data-goal="15" data-progress="0">
+                <div className="progress-circle progress-circle-green" data-goal="15" data-progress="0">
                   <div className="circle">
                       <div className="full progress-circle-slice">
-                          <div className="progress-circle-fill progress-circle-green"></div>
+                          <div className="progress-circle-fill"></div>
                       </div>
                       <div className="progress-circle-slice">
-                          <div className="progress-circle-fill progress-circle-green"></div>
+                          <div className="progress-circle-fill"></div>
                           <div className="progress-circle-fill progress-circle-bar"></div>
                       </div>
                   </div>
@@ -86,13 +83,13 @@ class GoalsSection extends React.Component {
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="progress-circle" data-goal="21" data-progress="0">
+                <div className="progress-circle progress-circle-blue" data-goal="21" data-progress="0">
                   <div className="circle">
                       <div className="full progress-circle-slice">
-                          <div className="progress-circle-fill progress-circle-blue"></div>
+                          <div className="progress-circle-fill"></div>
                       </div>
                       <div className="progress-circle-slice">
-                          <div className="progress-circle-fill progress-circle-blue"></div>
+                          <div className="progress-circle-fill"></div>
                           <div className="progress-circle-fill progress-circle-bar"></div>
                       </div>
                   </div>
@@ -104,6 +101,13 @@ class GoalsSection extends React.Component {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12">
+            <div className="text-sm-right text-xs-center btn-mission">
+              <Link to="/mission" className="btn btn-primary">See why these numbers are important to us</Link>
             </div>
           </div>
         </div>

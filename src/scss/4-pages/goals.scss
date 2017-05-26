@@ -1,20 +1,13 @@
-$circle-size: 200px;
-$circle-background: #D9D9D9;
-$pink: #a65dab;
-$inset-size: 185px;
-$inset-color: #fbfbfb;
-
 .progress-circle {
 	margin: 20px auto;
-	width:  $circle-size;
-	height: $circle-size;
-	background-color: $circle-background;
+	width:  $progress-circle-size;
+	height: $progress-circle-size;
 	border-radius: 50%;
 
   .progress-circle-slice,
   .progress-circle-fill {
-    width:    $circle-size;
-    height:   $circle-size;
+    width:    $progress-circle-size;
+    height:   $progress-circle-size;
     position: absolute;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -23,33 +16,21 @@ $inset-color: #fbfbfb;
   }
 
   .progress-circle-slice {
-    clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+    clip: rect(0px, $progress-circle-size, $progress-circle-size, $progress-circle-size/2);
 
     .progress-circle-fill {
-      clip: rect(0px, $circle-size/2, $circle-size, 0px);
-
-      &.progress-circle-blue {
-        background-color: $primary;
-      }
-
-      &.progress-circle-green {
-        background-color: $green;
-      }
-
-      &.progress-circle-orange {
-        background-color: $orange;
-      }
+      clip: rect(0px, $progress-circle-size/2, $progress-circle-size, 0px);
     }
 	}
 
 	.progress-circle-overlay {
-		width:       $inset-size;
-		height:      $inset-size;
+		width:       $progress-circle-inset-size;
+		height:      $progress-circle-inset-size;
 		position:    absolute;
-		margin-left: ($circle-size - $inset-size)/2;
-		margin-top:  ($circle-size - $inset-size)/2;
+		margin-left: ($progress-circle-size - $progress-circle-inset-size)/2;
+		margin-top:  ($progress-circle-size - $progress-circle-inset-size)/2;
 
-		background-color: $inset-color;
+		background-color: white;
 		border-radius: 50%;
 
     .progress-circle-percent {
@@ -94,4 +75,40 @@ $inset-color: #fbfbfb;
       $i: $i + 1;
 		}
 	}
+
+  &.progress-circle-blue {
+	  background-color: lighten($primary, 37%);
+    
+    .progress-circle-fill {
+      background-color: $primary;
+    }
+  }
+
+  &.progress-circle-green {
+    background-color: lighten($green, 60%);
+
+    .progress-circle-fill {
+      background-color: $green;
+    }
+  }
+
+  &.progress-circle-orange {
+    background-color: lighten($orange, 42%);
+
+    .progress-circle-fill {
+      background-color: $orange;
+    }
+  }
+}
+
+.btn-mission {
+  margin-top: 80px;
+
+  @include mobile {
+    .btn {
+      font-size: 14px;
+      margin: 0 15px;
+      white-space: normal;
+    }
+  }
 }
