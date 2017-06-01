@@ -1,7 +1,7 @@
 export const PartnersImages = [
   'teenscancode-logo-black-and-white.png',
   'girslcoding-black-and-white copy.png',
-  'girslcoding-black-and-white copy.png'
+  'global peace foundation.jpg'
 ]
 
 export const Leads = [

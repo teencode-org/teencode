@@ -44,10 +44,14 @@ section.leadership {
   text-align: center;
 }
 
+.lead {
+  margin: 12px 0;
+}
 
 .lead h5 {
   color: $gold;
   @include sans-font;
+  font-weight: 100;
 }
 
 .lead p {
