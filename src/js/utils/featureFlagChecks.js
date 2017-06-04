@@ -11,3 +11,7 @@ export const contactUsIsEnabled = () => {
 export const volunteerPageIsEnabled = () => {
   return teencode.feature.VOLUNTEER_PAGE_ENABLED;
 };
+
+export const blogPageIsEnabled = () => {
+  return teencode.feature.BLOG_PAGE_ENABLED;
+};
