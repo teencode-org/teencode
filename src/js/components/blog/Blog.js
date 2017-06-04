@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BlogListArticle from './BlogListArticle';
 import MainBannerSection from '../home/MainBannerSection';
 
 
@@ -7,7 +8,7 @@ export default class Blog extends Component {
     return (
       <div>
         <div className="row blog-header">
-          <div className="col-sm-12 col-md-7 left-col">
+          <div className="col-sm-12 col-lg-7 col-md-12 left-col">
             <div className="description">
               <h1>Brilliance is evenly distributed.<br/>We're doing the same for opportunity</h1>
               <p>By Rowland Henshaw</p>
@@ -29,32 +30,21 @@ export default class Blog extends Component {
         <div className="container">
           <div className="blog-list">
             <h3>Top articles</h3>
-            <div className="row blog-article">
-              <div className="blog-article-image">
-                <img src="http://via.placeholder.com/300x300" />
-              </div>
-              <div className="blog-article-info">
-                <h2 className="article-title">There will be no prisons if our minds were free</h2>
-                <p className="article-author">by Rowland Henshaw</p>
-                <p className="article-summary">
-                  The alarms that wake us up, the tools with which we plan our day, our interactions with friends and colleagues, automations in business processes, you name it
-                </p>
-                <button className="btn">Read More ></button>
-              </div>
-            </div>
-            <div className="row blog-article">
-              <div className="blog-article-image">
-                <img src="http://via.placeholder.com/300x300" />
-              </div>
-              <div className="blog-article-info">
-                <h2 className="article-title">Gender balance in tech could be achieved if only we start early.</h2>
-                <p className="article-author">by Rowland Henshaw</p>
-                <p className="article-summary">
-                  The alarms that wake us up, the tools with which we plan our day, our interactions with friends and colleagues, automations in business processes, you name it
-                </p>
-                <button className="btn">Read More ></button>
-              </div>
-            </div>
+            <BlogListArticle
+              imageUrl="http://via.placeholder.com/300x300"
+              title="There will be no prisons if our minds were free"
+              author="by Rowland Henshaw"
+              summary="The alarms that wake us up, the tools with which we plan our day, our interactions with friends and colleagues, 
+              automations in business processes, you name it"
+            />
+
+            <BlogListArticle
+              imageUrl="http://via.placeholder.com/300x300"
+              title="Gender balance in tech could be achieved if only we start early."
+              author="by Rowland Henshaw"
+              summary="The alarms that wake us up, the tools with which we plan our day, our interactions with friends and colleagues, 
+              automations in business processes, you name it"
+            />
           </div>
 
           <div className="load-more-container">

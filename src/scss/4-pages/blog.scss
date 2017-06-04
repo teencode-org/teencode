@@ -25,6 +25,9 @@
     }
 
   .right-col {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
     div {
       position: relative;
     }
