@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default ({imageUrl, title, author, summary}) => {
+const BlogListArticle = ({imageUrl, title, author, summary}) => {
   return (
     <div className="row blog-article">
       <div className="blog-article-image">
@@ -17,3 +17,12 @@ export default ({imageUrl, title, author, summary}) => {
     </div>
   );
 }
+
+BlogListArticle.propType = {
+  imageUrl: PropTypes.string.required,
+  title: PropTypes.string.required,
+  author: PropTypes.string.required,
+  summary: PropTypes.string.required
+}
+
+export default BlogListArticle;
