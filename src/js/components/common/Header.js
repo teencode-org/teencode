@@ -76,6 +76,7 @@ class Header extends React.Component {
               {flagChecks.volunteerPageIsEnabled() && <NavLink path="/volunteer" name="Volunteers" />}
               {flagChecks.curriculumIsEnabled() && <NavLink path="/curriculum" name="Curriculum" />}
               {flagChecks.contactUsIsEnabled() && <NavLink path="/contact-us" name="Contact Us" />}
+              {flagChecks.contactUsIsEnabled() && <NavLink path="/blog" name="Blog" />}
             </ul>
           </div>
         </div>
