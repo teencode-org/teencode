@@ -39,11 +39,14 @@ const handleApiCall = ({
 }) => {
   return (dispatch) => {
     let validationOptions = {};
-    Object.keys(data).forEach(dataKey => {
-      validationOptions[dataKey] = {
-        required: true
-      }
-    });
+    if (data) {
+      Object.keys(data).forEach(dataKey => {
+        validationOptions[dataKey] = {
+          required: true
+        }
+      });
+    }
+
     let validator = new Validator(data, validationOptions);
     const {isValid, concatenatedErrors} = validator.validateAllInputs();
     dispatch(actions.request(data))
