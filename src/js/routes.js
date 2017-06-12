@@ -39,7 +39,7 @@ export default (
       <Route path="/blog" component={Blog} />
       <Route path="/not-found" component={NotFound} />
       <Route path="about-us"
-             component={AboutUsPage} />
+             component={AboutUsPage} onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.aboutUsIsEnabled())} />
     </Route>
     <Route path="/not-found" component={NotFound} />
 
