@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
-import { getProgresses } from '../../actions/progressActions'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { getProgresses } from '../../actions/progressActions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import InlineLoader from '../common/InlineLoader';
 
 class ProgressSection extends React.Component {
   constructor(props) {
@@ -46,8 +47,21 @@ class ProgressSection extends React.Component {
     }, this);
   }
 
+  generateDataOrLoader(data) {
+    const { hasBeenFetched } = this.props.progress;
+    if (!hasBeenFetched) {
+      return <InlineLoader/>
+    } else {
+      return (
+        <span>
+          {data.value}/<span>{data.total}</span>
+        </span>
+      );
+    }
+  }
+
   render() {
-    const { hasBeenFetched, progressData } = this.props.progress;
+    const { progressData } = this.props.progress;
     const countriesData = this.getProgressValueAndPercentage(progressData, 'countries', 2);
     const schoolsData = this.getProgressValueAndPercentage(progressData, 'schools', 100);
     const studentsData = this.getProgressValueAndPercentage(progressData, 'students', 1000);
@@ -78,7 +92,7 @@ class ProgressSection extends React.Component {
                     </div>
                     <div className="progress-circle-overlay">
                       <span className="progress-circle-percent">
-                        {countriesData.value}/<span>{countriesData.total}</span>
+                        {this.generateDataOrLoader(countriesData)}
                         <p className="progress-circle-caption">countries</p>
                       </span>
                     </div>
@@ -97,7 +111,7 @@ class ProgressSection extends React.Component {
                     </div>
                     <div className="progress-circle-overlay">
                       <span className="progress-circle-percent">
-                        {schoolsData.value}/<span>{schoolsData.total}</span>
+                        {this.generateDataOrLoader(schoolsData)}
                         <p className="progress-circle-caption">schools reached</p>
                       </span>
                     </div>
@@ -116,7 +130,7 @@ class ProgressSection extends React.Component {
                     </div>
                     <div className="progress-circle-overlay">
                       <span className="progress-circle-percent">
-                        {studentsData.value}/<span>{studentsData.total}</span>
+                        {this.generateDataOrLoader(studentsData)}
                         <p className="progress-circle-caption">students enrolled</p>
                       </span>
                     </div>
