@@ -2,31 +2,31 @@ import actionTypes from '../constants/actionTypes';
 
 export default function(state = {}, action) {
   switch(action.type) {
-    case actionTypes.REQUEST_GET_COUNTRIES:
-      return requestToGetCountries(state, action.payload);
-    case actionTypes.RECEIVE_GET_COUNTRIES:
-      return getCountries(state, action.payload);
-    case actionTypes.FAIL_GET_COUNTRIES:
-      return countriesNotReceived();
+    case actionTypes.REQUEST_GET_PROGRESSES:
+      return requestToGetProgresses(state, action.payload);
+    case actionTypes.RECEIVE_GET_PROGRESSES:
+      return getProgresses(state, action.payload);
+    case actionTypes.FAIL_GET_PROGRESSES:
+      return progressesNotReceived();
     default:
       return state;
   }
 }
 
-const requestToGetCountries = (state, payload) => {
+const requestToGetProgresses = (state, payload) => {
   return Object.assign({}, state, {
     isFetching: true
   });
 }
 
-const getCountries = (state, payload) => {
+const getProgresses = (state, payload) => {
   return Object.assign({}, state, {
-    countriesList: payload.data,
+    progressData: payload.data.progress,
     hasBeenFetched: true
   });
 }
 
-const countriesNotReceived = () => {
+const progressesNotReceived = () => {
   return Object.assign({}, {
     hasBeenFetched: false
   });

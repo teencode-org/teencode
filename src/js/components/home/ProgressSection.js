@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
-import { getCountries } from '../../actions/progressActions'
+import { getProgresses } from '../../actions/progressActions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -12,21 +12,22 @@ class ProgressSection extends React.Component {
 
   componentDidMount() {
     document.addEventListener('scroll', this.animateProgess);
-    this.props.getCountries()
+    this.props.getProgresses()
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.animateProgess);
   }
 
-  getProgressValueAndPercentage(progressData, total) {
+  getProgressValueAndPercentage(progressData, key, total) {
     if (progressData) {
       return {
-        value: progressData.length,
-        percentage: progressData.length / total * 100
+        value: progressData[key],
+        percentage: Math.round(progressData[key] / total * 100),
+        total: total
       };
     }
-    return 0;
+    return { value: 0, percentage: 0, total: total };
   }
 
   animateProgess(event) {
@@ -46,9 +47,11 @@ class ProgressSection extends React.Component {
   }
 
   render() {
-    const { hasBeenFetched, countriesList } = this.props.progress;
-    const countryData = this.getProgressValueAndPercentage(countriesList, 2);
-    console.log("countries", countriesList);
+    const { hasBeenFetched, progressData } = this.props.progress;
+    const countriesData = this.getProgressValueAndPercentage(progressData, 'countries', 2);
+    const schoolsData = this.getProgressValueAndPercentage(progressData, 'schools', 100);
+    const studentsData = this.getProgressValueAndPercentage(progressData, 'students', 1000);
+
     return (
       <section id="how" className="goals section">
         <div className="container">
@@ -62,7 +65,7 @@ class ProgressSection extends React.Component {
             <div className="col-xs-12">
               <div className="row">
                 <div className="col-md-4">
-                  <div className="progress-circle progress-circle-orange" data-goal={countryData.percentage} data-progress="0">
+                  <div className="progress-circle progress-circle-orange" data-goal={countriesData.percentage} data-progress="0">
                     <div className="circle">
                         <div className="full progress-circle-slice">
                             <div className="progress-circle-fill"></div>
@@ -74,14 +77,14 @@ class ProgressSection extends React.Component {
                     </div>
                     <div className="progress-circle-overlay">
                       <span className="progress-circle-percent">
-                        {countryData.value}/<span>2</span>
+                        {countriesData.value}/<span>{countriesData.total}</span>
                         <p className="progress-circle-caption">countries</p>
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-4">
-                  <div className="progress-circle progress-circle-green" data-goal="15" data-progress="0">
+                  <div className="progress-circle progress-circle-green" data-goal={schoolsData.percentage} data-progress="0">
                     <div className="circle">
                         <div className="full progress-circle-slice">
                             <div className="progress-circle-fill"></div>
@@ -93,14 +96,14 @@ class ProgressSection extends React.Component {
                     </div>
                     <div className="progress-circle-overlay">
                       <span className="progress-circle-percent">
-                        15/<span>100</span>
+                        {schoolsData.value}/<span>{schoolsData.total}</span>
                         <p className="progress-circle-caption">schools reached</p>
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-4">
-                  <div className="progress-circle progress-circle-blue" data-goal="21" data-progress="0">
+                  <div className="progress-circle progress-circle-blue" data-goal={studentsData.percentage} data-progress="0">
                     <div className="circle">
                         <div className="full progress-circle-slice">
                             <div className="progress-circle-fill"></div>
@@ -112,7 +115,7 @@ class ProgressSection extends React.Component {
                     </div>
                     <div className="progress-circle-overlay">
                       <span className="progress-circle-percent">
-                        214/<span>1000</span>
+                        {studentsData.value}/<span>{studentsData.total}</span>
                         <p className="progress-circle-caption">students enrolled</p>
                       </span>
                     </div>
@@ -135,7 +138,7 @@ class ProgressSection extends React.Component {
 }
 
 ProgressSection.propTypes = {
-  getCountries: PropTypes.func,
+  getProgresses: PropTypes.func,
   progress: PropTypes.object
 };
 
@@ -147,7 +150,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    getCountries: getCountries
+    getProgresses: getProgresses
   }, dispatch)
 }
 
