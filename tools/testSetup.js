@@ -1,9 +1,8 @@
-let expect = require('expect');
-let mount = require('enzyme').mount;
-let shallow = require('enzyme').shallow;
-let sinon = require('sinon');
-
 /* eslint-disable no-var*/
+var expect = require('expect');
+var mount = require('enzyme').mount;
+var shallow = require('enzyme').shallow;
+var sinon = require('sinon');
 
 process.env.NODE_ENV = 'test';
 
@@ -20,9 +19,8 @@ require.extensions['.jpeg'] = function () {return null;};
 
 // Configure JSDOM and set global variables
 // to simulate a browser environment for tests.
-let jsdom = require('jsdom').jsdom;
-
-let exposedProperties = ['window', 'navigator', 'document'];
+var jsdom = require('jsdom').jsdom;
+var exposedProperties = ['window', 'navigator', 'document'];
 
 global.document = jsdom('');
 global.teencode = {feature: {}};
