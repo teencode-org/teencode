@@ -54,6 +54,7 @@ class ProgressSection extends React.Component {
 
     return (
       <section id="how" className="goals section">
+        <div className="goals-overlay"></div>
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-xs-center">
