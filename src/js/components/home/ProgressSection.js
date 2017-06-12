@@ -47,17 +47,40 @@ class ProgressSection extends React.Component {
     }, this);
   }
 
-  generateDataOrLoader(data) {
+  generateProgressCircle(data, goal, color) {
+    let progressStat;
     const { hasBeenFetched } = this.props.progress;
     if (!hasBeenFetched) {
-      return <InlineLoader/>
+      progressStat = <InlineLoader/>
     } else {
-      return (
+      progressStat = (
         <span>
           {data.value}/<span>{data.total}</span>
         </span>
       );
     }
+
+    return (
+      <div className="col-md-4">
+        <div className={`progress-circle progress-circle-${color}`} data-goal={data.percentage} data-progress="0">
+          <div className="circle">
+              <div className="full progress-circle-slice">
+                  <div className="progress-circle-fill" />
+              </div>
+              <div className="progress-circle-slice">
+                  <div className="progress-circle-fill" />
+                  <div className="progress-circle-fill progress-circle-bar" />
+              </div>
+          </div>
+          <div className="progress-circle-overlay">
+            <span className="progress-circle-percent">
+              {progressStat}
+              <p className="progress-circle-caption">{goal}</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   render() {
@@ -68,74 +91,20 @@ class ProgressSection extends React.Component {
 
     return (
       <section id="how" className="goals section">
-        <div className="goals-overlay"></div>
+        <div className="goals-overlay" />
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-xs-center">
               <h4 className="section-heading">Our Goals for 2017</h4>
-              <h3 className="section-subheading text-muted"></h3>
+              <h3 className="section-subheading text-muted" />
             </div>
           </div>
           <div className="row" id="progress">
             <div className="col-xs-12">
               <div className="row">
-                <div className="col-md-4">
-                  <div className="progress-circle progress-circle-orange" data-goal={countriesData.percentage} data-progress="0">
-                    <div className="circle">
-                        <div className="full progress-circle-slice">
-                            <div className="progress-circle-fill"></div>
-                        </div>
-                        <div className="progress-circle-slice">
-                            <div className="progress-circle-fill"></div>
-                            <div className="progress-circle-fill progress-circle-bar"></div>
-                        </div>
-                    </div>
-                    <div className="progress-circle-overlay">
-                      <span className="progress-circle-percent">
-                        {this.generateDataOrLoader(countriesData)}
-                        <p className="progress-circle-caption">countries</p>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="progress-circle progress-circle-green" data-goal={schoolsData.percentage} data-progress="0">
-                    <div className="circle">
-                        <div className="full progress-circle-slice">
-                            <div className="progress-circle-fill"></div>
-                        </div>
-                        <div className="progress-circle-slice">
-                            <div className="progress-circle-fill"></div>
-                            <div className="progress-circle-fill progress-circle-bar"></div>
-                        </div>
-                    </div>
-                    <div className="progress-circle-overlay">
-                      <span className="progress-circle-percent">
-                        {this.generateDataOrLoader(schoolsData)}
-                        <p className="progress-circle-caption">schools reached</p>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="progress-circle progress-circle-blue" data-goal={studentsData.percentage} data-progress="0">
-                    <div className="circle">
-                        <div className="full progress-circle-slice">
-                            <div className="progress-circle-fill"></div>
-                        </div>
-                        <div className="progress-circle-slice">
-                            <div className="progress-circle-fill"></div>
-                            <div className="progress-circle-fill progress-circle-bar"></div>
-                        </div>
-                    </div>
-                    <div className="progress-circle-overlay">
-                      <span className="progress-circle-percent">
-                        {this.generateDataOrLoader(studentsData)}
-                        <p className="progress-circle-caption">students enrolled</p>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                {this.generateProgressCircle(countriesData, 'countries', 'orange')}
+                {this.generateProgressCircle(schoolsData, 'schools reached', 'green')}
+                {this.generateProgressCircle(studentsData, 'students enrolled', 'blue')}
               </div>
             </div>
           </div>
