@@ -8,38 +8,38 @@ const aboutUsPage = () => {
 }
 
 describe('AboutUsPage', () => {
-  const home = aboutUsPage();
+  const about = aboutUsPage();
 
   it('loads the MainBannerSection on the about page', () => {
-    expect(home.find('MainBannerSection').length).toEqual(1);
+    expect(about.find('MainBannerSection').length).toEqual(1);
   });
 
   it('loads the WhatWeDo section on the about page', () => {
-    expect(home.find('WhatWeDo').length).toEqual(1);
+    expect(about.find('WhatWeDo').length).toEqual(1);
   });
   
   it('loads the WhatDrivesUs section on the about page', () => {
-    expect(home.find('WhatDrivesUs').length).toEqual(1);
+    expect(about.find('WhatDrivesUs').length).toEqual(1);
   });
   
   it('loads the OurVision section on the about page', () => {
-    expect(home.find('OurVision').length).toEqual(1);
+    expect(about.find('OurVision').length).toEqual(1);
   });
   
   it('loads the Leadership section on the about page', () => {
-    expect(home.find('Leadership').length).toEqual(1);
+    expect(about.find('Leadership').length).toEqual(1);
   });
   
   it('loads the Partners on the about page', () => {
-    expect(home.find('Partners').length).toEqual(1);
+    expect(about.find('Partners').length).toEqual(1);
   });
   
-  it('loads the ContactUsPage section on the about page', () => {
-    expect(home.find('ContactUsPage').length).toEqual(1);
-  });
+  // it('loads the ContactUsPage section on the about page', () => {
+  //   expect(about.find('ContactUsPage').length).toEqual(1);
+  // });
   
   it('loads the SponsorSection section on the about page', () => {
-    expect(home.find('SponsorSection').length).toEqual(1);
+    expect(about.find('SponsorSection').length).toEqual(1);
   });
 
 });

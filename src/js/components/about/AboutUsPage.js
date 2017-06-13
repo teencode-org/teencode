@@ -6,10 +6,9 @@ import WhatDrivesUs from './WhatDrivesUs';
 import OurVision from './OurVision';
 // import WhereWeAreNow from './WhereWeAreNow';
 import Leadership from './Leadership';
-// import Partners from './Partners';
-import ContactUsPage from '../contact_us/';
-import SponsorSection from '../home/SponsorSection';
 import Partners from './Partners';
+import ContactUsPage from '../contact_us/Index';
+import SponsorSection from '../home/SponsorSection';
 
 class AboutUsPage extends React.Component {
   constructor(props, context){

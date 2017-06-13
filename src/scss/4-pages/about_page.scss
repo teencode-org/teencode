@@ -1,6 +1,6 @@
 .half-section {
   color: $green;
-  height: 21em;
+  min-height: 21em;
   .section-heading {
     padding-top: 5em;
     margin-bottom: 1em;
@@ -33,7 +33,6 @@
   height: 24em;
   .overlay {
     background: rgba(29, 29, 29, 0.65);
-    // min-height: 25em;
     height: 100%;
   }
   @include mobile {

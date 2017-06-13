@@ -45,7 +45,7 @@ export default {
       {
         test: /src\/js\/.+.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       // SASS
       {

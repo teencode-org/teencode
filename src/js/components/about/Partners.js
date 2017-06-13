@@ -1,5 +1,5 @@
 import React from 'react';
-import {PartnersImages } from './config';
+import {PartnersImages } from './data';
 export default class Partners extends React.Component {
   render() {
     return (
@@ -10,7 +10,7 @@ export default class Partners extends React.Component {
             <div className="partners-images">
               {PartnersImages.map((image, index) => {
                 return (
-                  <div key={index} className='col-sm-6 col-md-4'>
+                  <div key={index} className="col-sm-6 col-md-4">
                     <img src={require('../../../img/' + image)} alt=""/>
                   </div>
                 );

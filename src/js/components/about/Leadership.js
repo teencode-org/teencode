@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leads } from './config';
+import { Leads } from './data';
 export default class Leadership extends React.Component {
   render() {
     return (
