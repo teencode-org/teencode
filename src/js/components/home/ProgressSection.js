@@ -55,7 +55,7 @@ class ProgressSection extends React.Component {
           <div className="row">
             <div className="col-xs-12">
               <div className="text-sm-right text-xs-center btn-mission">
-                <Link to="/mission" className="btn btn-primary">See why these numbers are important to us</Link>
+                <Link to="/about-us" className="btn btn-primary">See why these numbers are important to us</Link>
               </div>
             </div>
           </div>
