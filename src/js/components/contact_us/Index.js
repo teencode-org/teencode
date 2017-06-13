@@ -65,7 +65,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    sendFeedback: sendFeedback
+    sendFeedback
   }, dispatch)
 }
 

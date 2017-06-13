@@ -1,0 +1,101 @@
+.progress-circle {
+	margin: 20px auto;
+	width: $progress-circle-size;
+	height: $progress-circle-size;
+	border-radius: 50%;
+
+	.progress-circle-slice,
+	.progress-circle-fill {
+		width: $progress-circle-size;
+		height: $progress-circle-size;
+		position: absolute;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		transition: transform 1s;
+		border-radius: 50%;
+	}
+
+	.progress-circle-slice {
+		clip: rect(0px, $progress-circle-size, $progress-circle-size, $progress-circle-size/2);
+
+		.progress-circle-fill {
+			clip: rect(0px, $progress-circle-size/2, $progress-circle-size, 0px);
+		}
+	}
+
+	.progress-circle-overlay {
+		width: $progress-circle-inset-size;
+		height: $progress-circle-inset-size;
+		position: absolute;
+		margin-left: ($progress-circle-size - $progress-circle-inset-size)/2;
+		margin-top: ($progress-circle-size - $progress-circle-inset-size)/2;
+		background-color: white;
+		border-radius: 50%;
+
+		.progress-circle-percent {
+			position: absolute;
+			font-size: 25px;
+			line-height: 100px;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: calc(50% - 65px);
+			text-align: center;
+
+			& > span > span {
+				font-size: 15px;
+			}
+
+		}
+
+		.progress-circle-caption {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			font-size: 14px;
+			top: calc(50% - 25px);
+			text-align: center;
+			color: $gray-light;
+		}
+	}
+
+	$i: 0;
+	$increment: 180deg / 100;
+	@while $i <= 100 {
+		&[data-progress='#{$i}'] {
+			.progress-circle-slice.full, .progress-circle-fill {
+				transform: rotate($increment * $i);
+				position: absolute;
+			}
+
+			.progress-circle-fill.progress-circle-bar {
+				transform: rotate($increment * $i * 2);
+			}
+			$i: $i + 1;
+		}
+	}
+
+	&.progress-circle-blue {
+		@include progress-circle-color($primary, 37%);
+	}
+
+	&.progress-circle-green {
+		@include progress-circle-color($green, 60%);
+	}
+
+	&.progress-circle-orange {
+		@include progress-circle-color($orange, 42%);
+	}
+}
+
+.btn-mission {
+	margin-top: 80px;
+
+	@include mobile {
+		.btn {
+			font-size: 14px;
+			margin: 0 15px;
+			white-space: normal;
+		}
+	}
+}

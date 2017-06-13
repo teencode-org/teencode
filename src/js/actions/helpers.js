@@ -55,18 +55,18 @@ const handleApiCall = ({
         .then(response => {
           if (response.errors) {
             dispatch(actions.fail(response.errors))
-            dispatch(receiveError(errorMessage, caller))
+            errorMessage && dispatch(receiveError(errorMessage, caller))
           } else {
             dispatch(actions.receive(response))
           }
         })
         .catch(errors => {
           dispatch(actions.fail(errors))
-          dispatch(receiveError(errorMessage, caller))
+          errorMessage && dispatch(receiveError(errorMessage, caller))
         });
     } else {
       dispatch(actions.fail(concatenatedErrors))
-      dispatch(receiveError(concatenatedErrors, caller))
+      errorMessage && dispatch(receiveError(concatenatedErrors, caller))
     }
   }
 }
