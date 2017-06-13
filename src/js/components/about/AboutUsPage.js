@@ -7,7 +7,7 @@ import OurVision from './OurVision';
 // import WhereWeAreNow from './WhereWeAreNow';
 import Leadership from './Leadership';
 import Partners from './Partners';
-import ContactUsPage from '../contact_us/Index';
+import ContactUs from '../contact_us/Index';
 import SponsorSection from '../home/SponsorSection';
 
 class AboutUsPage extends React.Component {
@@ -34,7 +34,7 @@ class AboutUsPage extends React.Component {
 
         <Partners />
 
-        <ContactUsPage />
+        <ContactUs />
 
         <SponsorSection />
       </div>
