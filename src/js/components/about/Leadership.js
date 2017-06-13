@@ -9,7 +9,7 @@ export default class Leadership extends React.Component {
             <h4 className="section-heading">Leadership</h4>
               {Leads.map((lead, index) => {
                 return (
-                  <div key={index} className='col-sm-6 col-md-4 lead'>
+                  <div key={index} className="col-sm-6 col-md-4 lead">
                     <h5>{lead.name}</h5>
                     <p>{lead.position}</p>
                   </div>
