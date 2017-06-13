@@ -10,7 +10,6 @@ export const getProgresses = () => {
   
   return handleApiCall({
     actions,
-    errorMessage: 'An error occurred while trying to load the countries.',
     caller: 'progress',
     route: '/progresses',
     requestMethod: 'GET'

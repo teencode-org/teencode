@@ -2,10 +2,10 @@ $font-url: "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300
 
 @import url($font-url);
 
+// colors
 $primary: #57c6d4;
 $blue-lighter: #f7ffff;
 $blue-light: #84a4a7;
-
 $blue-dark: #335578;
 $gold:    #f7af1e;
 $orange:     #e17034;
@@ -13,7 +13,6 @@ $blue:     #1eb7fc;
 $white: #ffffff;
 $green: #396e71;
 $silver: #e0e0e0;
-
 $gray-base:			#000 !default;
 $gray-bg:			rgba(19, 31, 39, 0.85) !default;
 $black-trans:			rgba(0, 0, 0, 0.8) !default;
