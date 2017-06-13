@@ -1,6 +1,6 @@
 import React from 'react';
 
-class WhatDrivesUs extends React.Component {
+class OurVision extends React.Component {
   render() {
     return (
       <section className="half-section our-vision">
@@ -22,4 +22,4 @@ class WhatDrivesUs extends React.Component {
   }
 }
      
-export default WhatDrivesUs;
+export default OurVision;

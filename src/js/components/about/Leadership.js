@@ -6,7 +6,7 @@ export default class Leadership extends React.Component {
       <section className="half-section leadership">
         <div className="container">
           <div className="row">
-            <h4 className="section-heading">Our Vision</h4>
+            <h4 className="section-heading">Leadership</h4>
               {Leads.map((lead, index) => {
                 return (
                   <div key={index} className='col-sm-6 col-md-4 lead'>
