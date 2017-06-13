@@ -34,10 +34,6 @@ describe('AboutUsPage', () => {
     expect(about.find('Partners').length).toEqual(1);
   });
   
-  // it('loads the ContactUsPage section on the about page', () => {
-  //   expect(about.find('ContactUsPage').length).toEqual(1);
-  // });
-  
   it('loads the SponsorSection section on the about page', () => {
     expect(about.find('SponsorSection').length).toEqual(1);
   });
