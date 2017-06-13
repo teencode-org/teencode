@@ -8,7 +8,7 @@ export const contactUsIsEnabled = () => {
   return teencode.feature.CONTACT_US_ENABLED;
 };
 
-export const abouttUsIsEnabled = () => {
+export const aboutUsIsEnabled = () => {
   return teencode.feature.ABOUT_US_ENABLED;
 };
 
