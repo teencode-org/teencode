@@ -12,7 +12,7 @@ import * as flagChecks from './utils/featureFlagChecks';
 import PartnerLeads from './components/partner_leads/Index';
 import ContactUsSuccessPage from './components/feedback/success/ContactUs';
 import Feedback from './components/feedback/Index';
-import ContactUsPage from './components/contact_us/Index';
+import ContactUs from './components/contact_us/Index';
 import NotFound from './components/not_found/notFound';
 import Blog from './components/blog';
 
@@ -33,7 +33,7 @@ export default (
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
              component={CurriculumPage} />
       <Route path="contact-us"
-             component={ContactUsPage}
+             component={ContactUs}
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
       <Route path="/blog" component={Blog} />
       <Route path="/not-found" component={NotFound} />

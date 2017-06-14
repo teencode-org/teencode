@@ -56,7 +56,7 @@ class Header extends React.Component {
             <button className="navbar-toggler hidden-md-up pull-xs-right pull-sm-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
               &#9776;
             </button>
-            <Link to="#page-top" className="navbar-brand page-scroll nav-link" onClick={this.subLinkOnClick}>
+            <Link to="/" className="navbar-brand page-scroll nav-link" onClick={this.subLinkOnClick}>
               <img src={require('../../../img/logo.png')}/>
             </Link>
           </div>
@@ -72,10 +72,10 @@ class Header extends React.Component {
                   sponsor: 'Sponsors'
                 }}
               />
-              {flagChecks.volunteerPageIsEnabled() && <NavLink path="/volunteer" name="Volunteers" />}
               {flagChecks.curriculumIsEnabled() && <NavLink path="/curriculum" name="Curriculum" />}
-              {flagChecks.contactUsIsEnabled() && <NavLink path="/contact-us" name="Contact Us" />}
               {flagChecks.blogPageIsEnabled() && <NavLink path="/blog" name="Blog" />}
+              {flagChecks.volunteerPageIsEnabled() && <NavLink path="/volunteer" name="Volunteers" />}
+              {flagChecks.contactUsIsEnabled() && <NavLink path="/contact-us" name="Contact Us" />}
             </ul>
           </div>
         </div>

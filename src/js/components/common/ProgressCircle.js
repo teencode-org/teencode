@@ -17,7 +17,7 @@ class ProgressCircle extends React.Component {
   }
 
   getProgressValueAndPercentage = () => {
-    const { progressData, progressDataKey, total } = this.props;
+    const { progressData, total } = this.props;
     if (progressData) {
       return {
         value: progressData,
@@ -91,7 +91,8 @@ ProgressCircle.propTypes = {
   progressData: PropTypes.number,
   total: PropTypes.number,
   goal: PropTypes.string,
-  color: PropTypes.string
+  color: PropTypes.string,
+  loadingShouldStop: PropTypes.bool
 };
 
 export default ProgressCircle;
