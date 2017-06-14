@@ -20,8 +20,8 @@ class ProgressCircle extends React.Component {
     const { progressData, progressDataKey, total } = this.props;
     if (progressData) {
       return {
-        value: progressData[progressDataKey],
-        percentage: Math.round(progressData[progressDataKey] / total * 100)
+        value: progressData,
+        percentage: Math.round(progressData / total * 100)
       };
     }
     return { value: 0, percentage: 0 };
@@ -46,7 +46,6 @@ class ProgressCircle extends React.Component {
   }
 
   generateProgressStat = () => {
-    let progressStat;
     const { loadingShouldStop, total } = this.props;
     if (loadingShouldStop) {
       return (
@@ -66,8 +65,7 @@ class ProgressCircle extends React.Component {
           className={`progress-circle progress-circle-${color}`}
           data-goal={this.friendlyProgressData.percentage}
           data-progress={0}
-          ref={this.setComponentRef}
-        >
+          ref={this.setComponentRef} >
           <div className="circle">
               <div className="full progress-circle-slice">
                   <div className="progress-circle-fill" />
@@ -90,8 +88,7 @@ class ProgressCircle extends React.Component {
 }
 
 ProgressCircle.propTypes = {
-  progressData: PropTypes.object,
-  progressDataKey: PropTypes.string,
+  progressData: PropTypes.number,
   total: PropTypes.number,
   goal: PropTypes.string,
   color: PropTypes.string

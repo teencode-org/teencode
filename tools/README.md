@@ -10,6 +10,8 @@ We use feature flags to enable or disable deployed features.
 * CONTACT_US_ENABLED
 * MISSION_PAGE_ENABLED
 * VOLUNTEER_ENABLED
+* BLOG_PAGE_ENABLED
+* ABOUT_US_ENABLED
 
 ## Adding a feature flag
 

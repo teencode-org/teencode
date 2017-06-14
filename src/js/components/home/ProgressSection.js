@@ -6,12 +6,13 @@ import { bindActionCreators } from 'redux';
 import ProgressCircle from '../common/ProgressCircle';
 
 class ProgressSection extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.getProgresses();
   }
 
   render() {
-    const { progressData, hasBeenFetched } = this.props.progress;
+    let { progressData, hasBeenFetched } = this.props.progress;
+    progressData = progressData || {};
     return (
       <section id="how" className="goals section">
         <div className="goals-overlay" />
@@ -26,26 +27,26 @@ class ProgressSection extends React.Component {
             <div className="col-xs-12">
               <div className="row">
                 <ProgressCircle
-                  progressData={progressData}
+                  key={`countries-${progressData.countries}`}
+                  progressData={progressData.countries}
                   total={2}
                   goal="countries"
-                  progressDataKey="countries"
                   color="orange"
                   loadingShouldStop={hasBeenFetched}
                 />
                 <ProgressCircle
-                  progressData={progressData}
+                  key={`schools-${progressData.schools}`}
+                  progressData={progressData.schools}
                   total={100}
                   goal="schools reached"
-                  progressDataKey="schools"
                   color="green"
                   loadingShouldStop={hasBeenFetched}
                 />
                 <ProgressCircle
-                  progressData={progressData}
+                  key={`students-${progressData.students}`}
+                  progressData={progressData.students}
                   total={1000}
                   goal="students enrolled"
-                  progressDataKey="students"
                   color="blue"
                   loadingShouldStop={hasBeenFetched}
                 />
