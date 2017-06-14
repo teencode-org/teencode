@@ -18,7 +18,7 @@ const BlogListArticle = ({imageUrl, title, author, summary}) => {
   );
 }
 
-BlogListArticle.propType = {
+BlogListArticle.propTypes = {
   imageUrl: PropTypes.string.required,
   title: PropTypes.string.required,
   author: PropTypes.string.required,

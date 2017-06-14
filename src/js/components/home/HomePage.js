@@ -42,7 +42,7 @@ class HomePage extends React.Component {
         label: 'Check Requirements'
       });
     } catch (err) {
-      console.log(err)
+      console.log(err) // eslint-disable-line
     }
   }
   
