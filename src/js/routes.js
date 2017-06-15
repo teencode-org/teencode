@@ -23,7 +23,7 @@ const redirectIfFlagIsDisabled = (flag, nextState, replace) => {
 
 const redirectIfPageNotFound = (nextState, replace) => {
   replace('/not-found');
-}
+};
 
 export default (
   <Route component={App}>
