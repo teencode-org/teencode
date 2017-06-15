@@ -8,6 +8,7 @@ import ProofArticlesSection from './ProofArticlesSection';
 import EligibilityCheckCtaSection from './EligibilityCheckCtaSection';
 import MainBannerSection from './MainBannerSection';
 import VolunteerSection from './VolunteerSection';
+import ProgressSection from './ProgressSection';
 
 class HomePage extends React.Component {
   constructor(props, context){
@@ -41,7 +42,7 @@ class HomePage extends React.Component {
         label: 'Check Requirements'
       });
     } catch (err) {
-      console.log(err)
+      console.log(err) // eslint-disable-line
     }
   }
   
@@ -67,6 +68,8 @@ class HomePage extends React.Component {
         <HowSection />
 
         <TestimonySection />
+
+        <ProgressSection />
 
         <VideoSection />
 

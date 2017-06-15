@@ -45,7 +45,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    markErrorsAsDisplayed: markErrorsAsDisplayed
+    markErrorsAsDisplayed
   }, dispatch)
 }
 
