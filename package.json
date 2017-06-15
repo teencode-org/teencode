@@ -82,6 +82,7 @@
     "redux-logger": "^3.0.1",
     "redux-thunk": "^2.0.1",
     "rimraf": "^2.6.1",
+    "node-sass": "3.8.0",
     "sass-loader": "^6.0.3",
     "serve-favicon": "^2.4.1",
     "sinon": "^1.17.7",
@@ -93,7 +94,6 @@
     "webpack": "^1.12.2"
   },
   "devDependencies": {
-    "node-sass": "3.8.0",
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
