@@ -81,6 +81,7 @@
     "redux": "^3.5.2",
     "redux-logger": "^3.0.1",
     "redux-thunk": "^2.0.1",
+    "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "serve-favicon": "^2.4.1",
     "sinon": "^1.17.7",

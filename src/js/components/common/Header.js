@@ -72,6 +72,7 @@ class Header extends React.Component {
                   sponsor: 'Sponsors'
                 }}
               />
+              {flagChecks.aboutUsIsEnabled() && <NavLink path="/about-us" name="About" />}
               {flagChecks.curriculumIsEnabled() && <NavLink path="/curriculum" name="Curriculum" />}
               {flagChecks.blogPageIsEnabled() && <NavLink path="/blog" name="Blog" />}
               {flagChecks.volunteerPageIsEnabled() && <NavLink path="/volunteer" name="Volunteers" />}
