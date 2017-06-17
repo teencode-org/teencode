@@ -3,8 +3,8 @@ import React from 'react';
 class OurVision extends React.Component {
   render() {
     return (
-      <section className="half-section main-wrapper">
-        <div className="our-vision">
+      <section className="bg-lighter-blue half-section main-wrapper">
+        <div className="inner-wrapper">
           <div className="container">
             <div className="row">
               <div className="col-lg-12 text-xs-center">

@@ -53,13 +53,17 @@ class ProgressSection extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="text-sm-right text-xs-center btn-mission">
-                <Link to="/about-us" className="btn btn-primary">See why these numbers are important to us</Link>
+          {!this.props.hideAboutUsLink &&
+            <div className="row">
+              <div className="col-xs-12">
+                <div className="text-sm-right text-xs-center btn-mission">
+                  <Link to="/about-us"
+                        className="btn btn-primary">
+                    See why these numbers are important to us
+                  </Link>
+                </div>
               </div>
-            </div>
-          </div>
+            </div>}
         </div>
       </section>
     )
@@ -68,12 +72,14 @@ class ProgressSection extends React.Component {
 
 ProgressSection.propTypes = {
   getProgresses: PropTypes.func,
-  progress: PropTypes.object
+  progress: PropTypes.object,
+  hideAboutUsLink: PropTypes.bool
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    progress: state.progress
+    progress: state.progress,
+    hideAboutUsLink: ownProps.hideAboutUsLink
   };
 }
 

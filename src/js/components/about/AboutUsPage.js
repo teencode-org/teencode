@@ -9,6 +9,7 @@ import Leadership from './Leadership';
 import Partners from './Partners';
 import ContactUs from '../contact_us/Index';
 import SponsorSection from '../home/SponsorSection';
+import ProgressSection from './../home/ProgressSection';
 
 class AboutUsPage extends React.Component {
   constructor(props, context){
@@ -21,7 +22,7 @@ class AboutUsPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="about-us">
         <MainBannerSection />
 
         <WhatWeDo />
@@ -30,11 +31,11 @@ class AboutUsPage extends React.Component {
 
         <OurVision />
 
+        <ProgressSection hideAboutUsLink={true} />
+
         <Leadership />
 
         <Partners />
-
-        <ContactUs />
 
         <SponsorSection />
       </div>
