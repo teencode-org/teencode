@@ -1,6 +1,28 @@
+.intro {
+  &.about-us {
+    background-image: url(../img/teencode-group-pic.jpg);
+    height: 90vh;
+  }
+}
 .half-section {
   color: $green;
   min-height: 21em;
+
+  &.main-wrapper {
+    padding: 50px 0;
+    background: #dedede;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .our-vision {
+    padding: 50px 0;
+
+    .section-heading {
+      padding-top: 1em;
+    }
+  }
   .section-heading {
     padding-top: 5em;
     margin-bottom: 1em;
@@ -13,7 +35,7 @@
     @include sans-font;
     text-transform: none;
     font-weight: 400;
-    }
+  }
 
   @include mobile {
     .section-heading {
@@ -29,7 +51,7 @@
   background: url(../img/africa.png) no-repeat;
   background-position: 50% 50%;
   background-size: contain;
-  background-color: #dedede;
+  background-color: transparent;
 }
 .what-drives-us {
   color: $gray-lighter;
