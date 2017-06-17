@@ -13,6 +13,10 @@ class ContactUsForm extends React.Component {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   componentWillMount(nextProps) {
     this.setState({buttonDisabled: false})
   }

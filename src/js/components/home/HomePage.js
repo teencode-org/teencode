@@ -17,6 +17,7 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     window.analytics.page();
+    window.scrollTo(0, 0);
   }
 
   viewForm(e) {
