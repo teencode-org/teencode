@@ -68,11 +68,14 @@
   background: url(../img/teencode_maryleaks.jpg) no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  background-attachment:  fixed;
   height: 24em;
+
   .overlay {
     background: rgba(29, 29, 29, 0.65);
     height: 100%;
   }
+
   @include mobile {
     height: calc(100vh + 50px);
   }
