@@ -4,6 +4,10 @@ import CurriculumTableContainer from './CurriculumTable';
 import DocumentTitle from '../common/DocumentTitle';
 
 export class CurriculumPageContainer extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render () {
     return (
       <section className="curriculum page">

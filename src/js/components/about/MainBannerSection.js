@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
 const MainBannerSection = () =>
-  <section id="intro" className="intro">
+  <section id="intro" className="intro about-us">
     <div className="overlay">
       <div className="container">
         <div className="row">

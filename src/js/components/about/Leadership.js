@@ -3,10 +3,11 @@ import { Leads } from './data';
 export default class Leadership extends React.Component {
   render() {
     return (
-      <section className="half-section leadership">
-        <div className="container">
-          <div className="row">
-            <h4 className="section-heading">Leadership</h4>
+      <section className="half-section leadership bg-lighter-blue main-wrapper">
+        <div className="inner-wrapper">
+          <div className="container">
+            <div className="row">
+              <h4 className="section-heading">Leadership</h4>
               {Leads.map((lead, index) => {
                 return (
                   <div key={index} className="col-sm-6 col-md-4 lead">
@@ -15,9 +16,10 @@ export default class Leadership extends React.Component {
                   </div>
                 );
               })}
+            </div>
           </div>
         </div>
-      </section> 
+      </section>
     );
   }
 }
