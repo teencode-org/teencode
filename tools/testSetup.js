@@ -1,9 +1,8 @@
+/* eslint-disable no-var*/
 var expect = require('expect');
 var mount = require('enzyme').mount;
 var shallow = require('enzyme').shallow;
 var sinon = require('sinon');
-
-/* eslint-disable no-var*/
 
 process.env.NODE_ENV = 'test';
 
@@ -21,7 +20,6 @@ require.extensions['.jpeg'] = function () {return null;};
 // Configure JSDOM and set global variables
 // to simulate a browser environment for tests.
 var jsdom = require('jsdom').jsdom;
-
 var exposedProperties = ['window', 'navigator', 'document'];
 
 global.document = jsdom('');

@@ -64,6 +64,14 @@
           box-shadow: $shadow;
 }
 
+@mixin progress-circle-color($color, $opacity) {
+  background-color: lighten($color, $opacity);
+
+  .progress-circle-fill {
+    background-color: $color;
+  }
+}
+
 // Background Cover Mixin
 
 @mixin background-cover {

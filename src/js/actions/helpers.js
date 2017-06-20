@@ -14,10 +14,10 @@ const baseActions = ({
         payload: { data }
       }
     },
-    receive: () => {
+    receive: (data) => {
       return {
         type: receiveType,
-        payload: { receivedAt: new Date() }
+        payload: { data, receivedAt: new Date() }
       }
     },
     fail: (errors) => {
@@ -39,32 +39,34 @@ const handleApiCall = ({
 }) => {
   return (dispatch) => {
     let validationOptions = {};
-    Object.keys(data).forEach(dataKey => {
-      validationOptions[dataKey] = {
-        required: true
-      }
-    });
+    if (data) {
+      Object.keys(data).forEach(dataKey => {
+        validationOptions[dataKey] = {
+          required: true
+        }
+      });
+    }
+
     let validator = new Validator(data, validationOptions);
     const {isValid, concatenatedErrors} = validator.validateAllInputs();
-    
     dispatch(actions.request(data))
     if (isValid) {
       return webAPI(route, requestMethod, data)
         .then(response => {
           if (response.errors) {
             dispatch(actions.fail(response.errors))
-            dispatch(receiveError(errorMessage, caller))
+            errorMessage && dispatch(receiveError(errorMessage, caller))
           } else {
             dispatch(actions.receive(response))
           }
         })
         .catch(errors => {
           dispatch(actions.fail(errors))
-          dispatch(receiveError(errorMessage, caller))
+          errorMessage && dispatch(receiveError(errorMessage, caller))
         });
     } else {
       dispatch(actions.fail(concatenatedErrors))
-      dispatch(receiveError(concatenatedErrors, caller))
+      errorMessage && dispatch(receiveError(concatenatedErrors, caller))
     }
   }
 }

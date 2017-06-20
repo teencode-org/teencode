@@ -1,0 +1,117 @@
+.about-us {
+
+  .intro {
+    background-image: url(../img/teencode-group-pic-small.jpg);
+    height: 90vh;
+  }
+
+  .goals.section {
+    padding: 8em 0;
+  }
+}
+.half-section {
+  min-height: 21em;
+
+  &.main-wrapper {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inner-wrapper {
+    padding: 50px 0;
+    width: 100%;
+
+    .section-heading {
+      padding-top: 1em;
+    }
+  }
+  .section-heading {
+    color: $green;
+    padding-top: 5em;
+    margin-bottom: 1em;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .section-subheading {
+    font-size: 16px;
+    line-height: 30px;
+    @include sans-font;
+    text-transform: none;
+    font-weight: 400;
+  }
+
+  @include mobile {
+    .section-heading {
+      font-size: 18px;
+    }
+    .section-subheading {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.overlay {
+  .section-heading {
+    color: $white;
+  }
+}
+.our-vision {
+  background: url(../img/africa-transparent-opacified.png) no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-color: transparent;
+}
+.what-drives-us {
+  color: $gray-lighter;
+  background: url(../img/teencode_maryleaks_small.jpeg) no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment:  fixed;
+  height: 24em;
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.65);
+    height: 100%;
+  }
+
+  @include mobile {
+    height: calc(100vh + 50px);
+  }
+}
+
+section.leadership {
+  text-align: center;
+}
+
+.lead {
+  margin: 12px 0;
+}
+
+.lead h5 {
+  color: $gold;
+  @include sans-font;
+  font-weight: 100;
+}
+
+.lead p {
+  color: $green;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+section.partners {
+  text-align: center;
+}
+
+.partners-images {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.partners-images img {
+  width: 150px;
+  height: auto;
+}

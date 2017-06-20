@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
 const VideoSection = () =>
-    <section id="video" className="why section">
+    <section id="video" className="why bg-lighter-blue section">
       <div className="container">
           <div className="row">
               <div className="offset-lg-2 offset-md-1 col-lg-8 col-md-10 col-sm-12 text-md-center embed-pad">

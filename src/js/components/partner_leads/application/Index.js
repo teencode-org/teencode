@@ -72,7 +72,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    apply: apply
+    apply
   }, dispatch)
 }
 

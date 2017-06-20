@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
 
 const FloatingFeedbackButton = ({sticky}) =>
@@ -10,5 +10,9 @@ const FloatingFeedbackButton = ({sticky}) =>
     </div>
     </Link>
   </div>
+
+FloatingFeedbackButton.propTypes = {
+  sticky: PropTypes.string
+}
 
 export default FloatingFeedbackButton;
