@@ -20,9 +20,13 @@ export class CurriculumTable extends React.Component {
   }
 
   loadCurriculumContent() {
-    const { hasBeenFetched, curriculumList } = this.props.curriculum;
+    let { hasBeenFetched, curriculumList } = this.props.curriculum;
     if (!hasBeenFetched) return <Loader owner="curriculum"/>;
     if (curriculumList.length) {
+      // sort curriculumList based on order
+      curriculumList = curriculumList.sort((objA, objB) => {
+        return objA.order - objB.order;
+      })
       return (
         <div>
           <h3 className="page-header">Curriculum</h3>
