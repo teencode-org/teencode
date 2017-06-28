@@ -23,12 +23,14 @@ export class CurriculumTable extends React.Component {
     const { hasBeenFetched, curriculumList } = this.props.curriculum;
     if (!hasBeenFetched) return <Loader owner="curriculum"/>;
     if (curriculumList.length) {
+      // sort curriculumList based on order
+      let sortedCurriculumList = curriculumList.sort((objA, objB) => objA.order - objB.order);
       return (
         <div>
           <h3 className="page-header">Curriculum</h3>
           <table className="table table-responsive">
             <tbody>
-              {curriculumList.map(curriculumSession =>
+              {sortedCurriculumList.map(curriculumSession =>
                 <tr key={curriculumSession.id}>
                   <td>
                     <h6 className="cur-period">{curriculumSession.title}</h6>
