@@ -36,7 +36,6 @@ class BlogList extends Component {
   }
 
   loadMore() {
-    console.log(this.state);
     this.props.getBlogs({}, this.state.page_data.current_page + 1).then(() => {
       if(Array.isArray(this.props.blog.blogs.blogs)) {
         const updatedState = [].concat(this.state.blogs).concat(this.props.blog.blogs.blogs);

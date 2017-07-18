@@ -18,11 +18,4 @@ const BlogListArticle = ({imageUrl, title, author, summary}) => {
   );
 }
 
-// BlogListArticle.propTypes = {
-//   imageUrl: PropTypes.string.required,
-//   title: PropTypes.string.required,
-//   author: PropTypes.string.required,
-//   summary: PropTypes.string.required
-// }
-
 export default BlogListArticle;
