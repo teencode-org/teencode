@@ -1,34 +1,83 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BlogListArticle from './BlogListArticle';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getBlogs } from '../../actions/blogActions';
+import Waypoint from 'react-waypoint';
 
-const BlogList = () => {
-  return (
-    <div className="container">
-      <div className="blog-list">
-        <h3>Top articles</h3>
-        <BlogListArticle
-          imageUrl="http://via.placeholder.com/300x300"
-          title="There will be no prisons if our minds were free"
-          author="by Rowland Henshaw"
-          summary="The alarms that wake us up, the tools with which we plan our day, our interactions with friends and colleagues, 
-          automations in business processes, you name it"
-        />
+class BlogList extends Component {
 
-        <BlogListArticle
-          imageUrl="http://via.placeholder.com/300x300"
-          title="Gender balance in tech could be achieved if only we start early."
-          author="by Rowland Henshaw"
-          summary="The alarms that wake us up, the tools with which we plan our day, our interactions with friends and colleagues, 
-          automations in business processes, you name it"
-        />
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      blogs: [],
+      page_data: {}
+    }
+
+    this.displayBlogs = this.displayBlogs.bind(this);
+    this.loadMore = this.loadMore.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.getBlogs().then(() => {
+      this.setState(Object.assign({}, this.state, this.props.blog.blogs));
+    });
+  }
+
+  displayBlogs() {
+    return this.state.blogs.map((post, index) => (<BlogListArticle key={index}
+        imageUrl={post.image_url ? post.image_url : "http://via.placeholder.com/300x300"}
+        title={post.title}
+        author={`by ${post.author.name}`}
+        summary={post.story.substring(0, 250) + "..."}
+      />
+    ));
+  }
+
+  loadMore() {
+    console.log(this.state);
+    this.props.getBlogs({}, this.state.page_data.current_page + 1).then(() => {
+      if(Array.isArray(this.props.blog.blogs.blogs)) {
+        const updatedState = [].concat(this.state.blogs).concat(this.props.blog.blogs.blogs);
+        this.setState({ page_data: this.props.blog.blogs.page_data, blogs: updatedState });
+      }
+    })
+  }
+
+  noBlogs() {
+    return <div id='no-blog-wrapper'><h1>No Content</h1></div>;
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <div className="blog-list">
+          <h3>Top articles</h3>
+          {this.state.blogs.length > 0 ? this.displayBlogs() : this.noBlogs()}
+        </div>
+
+        <div className="load-more-container">
+          <Waypoint onEnter={this.loadMore} />
+          <i className="fa fa-refresh" />
+          <p>Going to classrooms to fetch more articles ...</p>
+        </div>
       </div>
-
-      <div className="load-more-container">
-        <i className="fa fa-refresh" />
-        <p>Going to classrooms to fetch more articles ...</p>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default BlogList;
+const stateToProps = (store) => {
+  return {
+    blog: store.blog
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    getBlogs
+  }, dispatch)
+}
+
+
+export default connect(stateToProps, mapDispatchToProps)(BlogList);

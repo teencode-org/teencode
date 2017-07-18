@@ -153,3 +153,16 @@
     margin-top: 20px;
   }
 }
+
+#no-blog-wrapper {
+    display: flex;
+    /* border: 1px solid; */
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: rgba(220,220,220,.4);
+
+    h1 {
+      color: rgb(225,112,52);
+    }
+}
