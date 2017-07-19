@@ -21,7 +21,11 @@ class BlogArticle extends React.Component {
       <div className="suggested-reading">
         <h2>Suggested Reads</h2>
         {Article.suggested.map((article, index) => (
-          <div key={`suggested-${index}`} style={{ background: `url(${article.imageUrl}) no-repeat` }}>
+          <div
+            key={`suggested-${index}`} 
+            style={{ background: `url(${article.imageUrl}) no-repeat` }}
+            className="col-md-5"
+          >
             <h4>{article.title}</h4>
             <p>by {article.author}</p>
           </div>

@@ -155,13 +155,9 @@
 }
 
 .blog-full-article{
-  @media screen and (max-width: 768px) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
+  
   .article-title {
-    margin-top: 200px;
+    margin-top: 150px;
     font-size: 28px;
     font-weight: 700;
     text-align: center;
@@ -203,10 +199,8 @@
     max-width: 75em;
     padding: 0 3em;
     div {
-      width: 33em;
       height: 20em;
-      margin: 0.5em;
-      display: inline-block;
+      margin: 1em;
       h4 {
         text-transform: none;
         position: relative;
