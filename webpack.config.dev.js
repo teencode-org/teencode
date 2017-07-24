@@ -37,7 +37,8 @@ export default {
       'window.Tether': 'tether'
     }),
     new webpack.DefinePlugin({
-      'teencode.feature': featureFlags
+      'teencode.feature': featureFlags,
+      'process.env.APPID': JSON.stringify(process.env.APPID)
     })
   ],
   module: {

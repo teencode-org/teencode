@@ -8,7 +8,8 @@ const buildPath = path.resolve(__dirname, 'dist');
 const entryPath = path.resolve(__dirname, 'src', 'js', 'index.js');
 
 const GLOBALS = {
-  'process.env.NODE_ENV': JSON.stringify('production')
+  'process.env.NODE_ENV': JSON.stringify('production'),
+  'process.env.APPID': JSON.stringify(process.env.APPID)
 };
 
 export default {

@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogListArticle from './BlogListArticle';
+import MediaShare from '../media_share';
 
 const BlogList = () => {
   return (
@@ -27,6 +28,7 @@ const BlogList = () => {
         <i className="fa fa-refresh" />
         <p>Going to classrooms to fetch more articles ...</p>
       </div>
+      <MediaShare />
     </div>
   );
 }
