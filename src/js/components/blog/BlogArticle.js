@@ -3,6 +3,12 @@ import SocialLinks from './SocialLinks';
 import {  Article } from './mockData';
 
 class BlogArticle extends React.Component {
+  componentDidMount() {
+    const parser = new DOMParser();
+    const htmlDoc = parser.parseFromString(Article.body, "text/html");
+    this.articleBody.innerHTML = htmlDoc.body.innerHTML;
+  }
+
   render() {
     return (
     <div className="row blog-full-article">
@@ -14,9 +20,7 @@ class BlogArticle extends React.Component {
       </div>
       <img className="article-image" src={Article.imageUrl} />
       <SocialLinks />
-      <div
-        className="article-body"
-        dangerouslySetInnerHTML={{ __html: Article.body }} />
+      <div className="article-body" ref={(articleBody) => {this.articleBody = articleBody;}} />
       <SocialLinks />
       <div className="suggested-reading">
         <h2>Suggested Reads</h2>
