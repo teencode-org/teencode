@@ -38,7 +38,7 @@ export default {
     }),
     new webpack.DefinePlugin({
       'teencode.feature': featureFlags,
-      'process.env.APPID': JSON.stringify(process.env.APPID)
+      'process.env.FB_APPID': JSON.stringify(process.env.FB_APPID)
     })
   ],
   module: {
