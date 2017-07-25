@@ -3,10 +3,19 @@ import SocialLinks from './SocialLinks';
 import {  Article } from './mockData';
 
 class BlogArticle extends React.Component {
+  constructor() {
+    super();
+    this.setArticleBody = this.setArticleBody.bind(this);
+  }
+
   componentDidMount() {
     const parser = new DOMParser();
     const htmlDoc = parser.parseFromString(Article.body, "text/html");
     this.articleBody.innerHTML = htmlDoc.body.innerHTML;
+  }
+
+  setArticleBody(articleBody) {
+    this.articleBody = articleBody;
   }
 
   render() {
@@ -20,7 +29,7 @@ class BlogArticle extends React.Component {
       </div>
       <img className="article-image" src={Article.imageUrl} />
       <SocialLinks />
-      <div className="article-body" ref={(articleBody) => {this.articleBody = articleBody;}} />
+      <div className="article-body" ref={this.setArticleBody} />
       <SocialLinks />
       <div className="suggested-reading">
         <h2>Suggested Reads</h2>
