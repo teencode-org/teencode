@@ -1,7 +1,4 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { getBlogArticle } from '../../actions/blogArticleActions';
 import SocialLinks from './SocialLinks';
 import {  Article } from './mockData';
 
