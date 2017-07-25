@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const BlogListArticle = ({imageUrl, title, author, summary}) => {
+const BlogListArticle = ({ imageUrl, title, author, summary }) => {
   return (
     <div className="row blog-article">
       <div className="blog-article-image">
