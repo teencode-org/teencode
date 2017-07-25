@@ -1,20 +1,18 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getBlogArticle } from '../../actions/blogArticleActions';
 import SocialLinks from './SocialLinks';
 import {  Article } from './mockData';
 
 class BlogArticle extends React.Component {
-  constructor() {
-    super();
-    this.setArticleBody = this.setArticleBody.bind(this);
-  }
-
   componentDidMount() {
     const parser = new DOMParser();
     const htmlDoc = parser.parseFromString(Article.body, "text/html");
     this.articleBody.innerHTML = htmlDoc.body.innerHTML;
   }
 
-  setArticleBody(articleBody) {
+  setArticleBody = (articleBody) => {
     this.articleBody = articleBody;
   }
 
