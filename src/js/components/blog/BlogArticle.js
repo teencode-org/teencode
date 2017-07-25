@@ -23,9 +23,11 @@ class BlogArticle extends React.Component {
         <p className="article-tagline">{Article.author.tagline}</p>
       </div>
       <img className="article-image" src={Article.imageUrl} />
-      <SocialLinks />
-      <div className="article-body" ref={this.setArticleBody} />
-      <SocialLinks />
+      <SocialLinks title={Article.title} />
+      <div className="article-body">
+        <div ref={this.setArticleBody} />
+        <SocialLinks title={Article.title} style={{textAlign: 'left'}} />
+      </div>
       <div className="suggested-reading">
         <h2>Suggested Reads</h2>
         {Article.suggested.map((article, index) => (
