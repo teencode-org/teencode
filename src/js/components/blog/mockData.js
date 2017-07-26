@@ -2,11 +2,11 @@ export const Article = {
   author: {
     name: "Rowland Henshaw",
     tagline: "Changing the world, one child at a time",
-    imageUrl: "http://via.placeholder.com/300x300?text=author"
+    profile_image_url: "http://via.placeholder.com/300x300?text=author"
   },
   title: "Brilliance is evenly distributed. We're doing the same for opportunity",
-  imageUrl: "http://via.placeholder.com/1200x700?text=article+image",
-  body: "<p>It's 2017</p><p>The alarms that wake us up, the tools with which we plan our day, our \
+  featured_image_url: "http://via.placeholder.com/1200x700?text=article+image",
+  story: "<p>It's 2017</p><p>The alarms that wake us up, the tools with which we plan our day, our \
         interactions with friends and colleagues,automations in business processes, you name it</p> \
         <p>Fix soon rejoined Passepartout, who was lounging and looking about on the quay, as if \
         he did not feel that he, at least, was obliged not to see anything.</p> \
@@ -20,18 +20,5 @@ export const Article = {
         <p>I'm generally confused most of the time. I think we have a lot to discuss.\
          After all, you are a client. I'm thinking two circus clowns dancing.</p> \
         <p>He taught me a code. To survive. I'm partial to air conditioning, there's not much \
-        he can do for me. Under normal circumstances, I'd take that as a compliment.</p>",
-  suggested: [
-    {
-      title: "Teencode Facilitators taken on Kariobangi",
-      imageUrl: "http://via.placeholder.com/600x600?text=article+image",
-      author: "Rowland Henshaw"
-    },
-    {
-      title: "No better time to invoke creativity than young",
-      imageUrl: "http://via.placeholder.com/600x600?text=another+image",
-      author: "Rowland Henshaw"
-    }
-  ]
-
+        he can do for me. Under normal circumstances, I'd take that as a compliment.</p>"
 }
