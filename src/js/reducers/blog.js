@@ -9,7 +9,7 @@ export default function(state = initialState, action) {
     case actionTypes.RECEIVE_GET_BLOG_ARTICLE:
       return getBlogArticle(state, action.payload);
     case actionTypes.FAIL_GET_BLOG:
-      return blogNotReceived();
+      return blogNotReceived(action.payload);
     default:
       return state;
   }
@@ -43,8 +43,9 @@ const getBlogArticle = (state, payload) => {
   });
 }
 
-const blogNotReceived = () => {
+const blogNotReceived = (payload) => {
   return Object.assign({}, {
+    error: payload.errors.message,
     hasBeenFetched: false
   });
 }

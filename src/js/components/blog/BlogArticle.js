@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { getBlogArticle } from '../../actions/blogArticleActions';
 import SocialLinks from './SocialLinks';
 import InlineLoader from '../common/InlineLoader';
+import NotFoundPage from '../not_found/notFound';
 import defaultBlogImage from '../../../img/teencode_maryleaks_small.jpeg';
 
 class BlogArticle extends React.Component {
@@ -26,6 +27,12 @@ class BlogArticle extends React.Component {
   render() {
     const blog = this.props.blog;
     const article = blog.article;
+    
+    if ( blog.error ) {
+      return (
+      <div className="blog-full-article"><NotFoundPage /></div>
+      );
+    }
 
     if ( blog.isFetching || !blog.hasBeenFetched ) {
       return <div className="blog-full-article"><InlineLoader /></div>;
