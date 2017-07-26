@@ -155,14 +155,21 @@
 }
 
 .blog-full-article{
-  
+  min-height: 65vh;
+  .dots {
+    position: absolute;
+    top: 30vh;
+    left: 55vh;
+  }
   .article-title {
-    margin-top: 150px;
+    margin-top: 120px;
     font-size: 28px;
     font-weight: 700;
     text-align: center;
   }
   .blog-article-author {
+    display: flex;
+    justify-content: center;
     width: 300px;
     margin: 50px auto;
     img {
@@ -171,18 +178,23 @@
       float: left;
       margin-right: 20px;
     }
-    p {
-      margin: 0;
-      font-size: 14px;
+    div {
+      align-self: center;
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
     }
     .article-author {
       font-weight: 700;
+      margin-bottom: 0.3em;
     }
   }
   .article-image {
     text-align: center;
     width: 100%;
     max-height: 500px;
+    object-fit: cover
   }
   .article-body {
     text-align: justify;
