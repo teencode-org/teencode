@@ -4752,6 +4752,10 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
+react-disqus-comments@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-disqus-comments/-/react-disqus-comments-1.0.3.tgz#4fe5e2fce381720ba804b55a83e81fa372e35e88"
+
 react-dom@~15.2.1:
   version "15.2.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.2.1.tgz#dc942a5268f955e180158c9d4d2609fec9388ff0"
