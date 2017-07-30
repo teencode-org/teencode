@@ -17,7 +17,7 @@ class BlogArticle extends React.Component {
 
   render() {
     const shareProps = {
-      url: 'https://www.google.com' || window.location.href,
+      url: window.location.href,
       title: Article.title,
       imageUrl: Article.imageUrl,
       description: Article.description || ''

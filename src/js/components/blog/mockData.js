@@ -6,6 +6,7 @@ export const Article = {
   },
   title: "Brilliance is evenly distributed. We're doing the same for opportunity",
   imageUrl: "http://via.placeholder.com/1200x700?text=article+image",
+  description: 'A short description of this article, like a TL;DR thingy',
   body: "<p>It's 2017</p><p>The alarms that wake us up, the tools with which we plan our day, our \
         interactions with friends and colleagues,automations in business processes, you name it</p> \
         <p>Fix soon rejoined Passepartout, who was lounging and looking about on the quay, as if \
