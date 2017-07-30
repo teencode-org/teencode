@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import SocialLinks from './SocialLinks';
 import { Article } from './mockData';
+import ArticleThread from './ArticleThread';
+import { DISQUS_SHORT_NAME } from './constants';
 
 class BlogArticle extends React.Component {
   componentDidMount() {
@@ -48,9 +50,20 @@ class BlogArticle extends React.Component {
             </div>
           ))}
         </div>
+        <div className="article-thread">
+          <ArticleThread
+            articleId={this.props.params.id}
+            articleTitle={Article.title}
+            shortName={DISQUS_SHORT_NAME}
+          />
+        </div>
       </div>
     );
   }
+}
+
+BlogArticle.propTypes = {
+  params: PropTypes.object.isRequired
 }
 
 export default BlogArticle;
