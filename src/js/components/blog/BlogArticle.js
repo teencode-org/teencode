@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { getBlogs } from '../../actions/blogActions';
 import { getBlogArticle } from '../../actions/blogArticleActions';
 import SocialLinks from './SocialLinks';
 import InlineLoader from '../common/InlineLoader';
@@ -10,6 +11,9 @@ import defaultBlogImage from '../../../img/teencode_maryleaks_small.jpeg';
 class BlogArticle extends React.Component {
   componentDidMount () {
     this.props.getBlogArticle(this.props.params.id)
+    if (this.props.blog.blogs.length < 1) {
+      this.props.getBlogs();
+    }
   }
   componentDidUpdate(nextProps) {
     const articleStory = this.props.blog.article.story;
@@ -24,9 +28,19 @@ class BlogArticle extends React.Component {
     this.articleBody = articleBody;
   }
 
+  randomSuggested = () => {
+    const blogList = this.props.blog.blogs;
+    const blogListLength = this.props.blog.blogs.length;
+    if (blogListLength < 1) return [];
+    const randomBlog1 = blogList[Math.floor(Math.random() * blogListLength)];
+    const randomBlog2 = blogList[Math.floor(Math.random() * blogListLength)];
+    return [randomBlog1, randomBlog2];
+  }
+
   render() {
     const blog = this.props.blog;
     const article = blog.article;
+    const suggestedBlogs = this.randomSuggested();
     
     if ( blog.error ) {
       return (
@@ -54,17 +68,17 @@ class BlogArticle extends React.Component {
       <SocialLinks />
       <div className="suggested-reading">
         <h2>Suggested Reads</h2>
-        {this.props.blog.blogs.map((blogPost, index) => (
+        {suggestedBlogs.map((blogPost, index) => (
           <div
             key={`suggested-${index}`} 
-            style={{ background: `url(${blogPost.featured_image_url}) no-repeat` }}
+            style={{ background: `url(${blogPost.featured_image_url || defaultBlogImage}) no-repeat` }}
             className="col-md-5"
           >
             <h4>{blogPost.title}</h4>
-            <p>by {blogPost.author}</p>
-          </div>
-        ))}
+            <p>by {blogPost.author.name}</p>
       </div>
+    ))}
+  </div>
     </div>
   );
   }
@@ -73,6 +87,7 @@ class BlogArticle extends React.Component {
 BlogArticle.propTypes = {
   params: PropTypes.object,
   blog: PropTypes.object,
+  getBlogs: PropTypes.func,
   getBlogArticle: PropTypes.func
 }
 
@@ -80,6 +95,6 @@ const stateToProps = (store) => ({
      blog: store.blog
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({getBlogArticle}, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({getBlogArticle, getBlogs}, dispatch);
  
 export default connect(stateToProps, mapDispatchToProps)(BlogArticle);

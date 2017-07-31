@@ -213,11 +213,14 @@
     div {
       height: 20em;
       margin: 1em;
+      background-size: cover !important;
       h4 {
         text-transform: none;
         position: relative;
         top: 8em;
         padding: 2em;
+        background-color: rgba(0,0,0,0.2);
+        color: white;
       }
       p {
         display: none

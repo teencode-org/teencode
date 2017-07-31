@@ -30,7 +30,7 @@ const requestToGetBlogs = (state, payload) => {
 
 const getBlog = (state, payload) => {
   return Object.assign({}, state, {
-    blogs: payload.data,
+    blogs: payload.data.blogs,
     hasBeenFetched: true
   });
 }
