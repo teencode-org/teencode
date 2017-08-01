@@ -15,6 +15,7 @@ import Feedback from './components/feedback/Index';
 import ContactUs from './components/contact_us/Index';
 import NotFound from './components/not_found/notFound';
 import Blog from './components/blog';
+import BlogArticle from './components/blog/BlogArticle';
 import AboutUsPage from './components/about/AboutUsPage';
 
 const redirectIfFlagIsDisabled = (flag, nextState, replace) => {
@@ -37,6 +38,7 @@ export default (
              component={ContactUs}
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:id" component={BlogArticle}/>
       <Route path="/not-found" component={NotFound} />
       <Route path="about-us"
              component={AboutUsPage} onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.aboutUsIsEnabled())} />

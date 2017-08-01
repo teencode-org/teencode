@@ -1,11 +1,17 @@
 import actionTypes from '../constants/actionTypes';
 
-export default function(state = [], action) {
+let initialState = {
+  featured: [],
+  blogs: {}
+}
+export default function(state = initialState, action) {
   switch(action.type) {
     case actionTypes.REQUEST_GET_BLOG:
       return requestToGetBlogs(state, action.payload);
     case actionTypes.RECEIVE_GET_BLOG:
       return getBlog(state, action.payload);
+    case actionTypes.RECEIVE_GET_FEATURED_ARTICLES:
+      return getFeaturedBlog(state, action.payload);
     case actionTypes.FAIL_GET_BLOG:
       return blogNotReceived();
     default:
@@ -20,14 +26,23 @@ const requestToGetBlogs = (state, payload) => {
 }
 
 const getBlog = (state, payload) => {
+  return Object.assign({}, state, payload.data, {
+    hasBeenFetched: true,
+    isFetching: false
+  });
+}
+
+const getFeaturedBlog = (state, payload) => {
   return Object.assign({}, state, {
-    blogs: payload.data,
-    hasBeenFetched: true
+    featured: payload.data.blogs,
   });
 }
 
 const blogNotReceived = () => {
   return Object.assign({}, {
-    hasBeenFetched: false
+    hasBeenFetched: false,
+    isFetching: false
   });
 }
+
+
