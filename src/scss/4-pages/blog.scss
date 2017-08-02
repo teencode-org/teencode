@@ -73,6 +73,7 @@
 
   h3 {
     color: #787878;
+    margin: 20px 0 50px -15px;
   }
 
   .blog-article {
@@ -127,6 +128,7 @@
     .article-summary {
       font-size: 18px;
       font-weight: 400;
+      color: $gray-dark;
     }
 
     button {
@@ -151,6 +153,18 @@
     font-style: italic;
     font-weight: 600;
     margin-top: 20px;
+  }
+}
+
+#no-blog-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: rgba(220,220,220,.4);
+
+  h1 {
+    color: rgb(225,112,52);
   }
 }
 

@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
-const BlogListArticle = ({ imageUrl, title, author, summary }) => {
+const BlogListArticle = ({ id, imageUrl, title, author, summary }) => {
   return (
+    <Link to={`/blog/${id}`}>
     <div className="row blog-article">
       <div className="blog-article-image">
         <img src={imageUrl} />
@@ -15,14 +17,16 @@ const BlogListArticle = ({ imageUrl, title, author, summary }) => {
         <button className="btn">Read More ></button>
       </div>
     </div>
+    </Link>
   );
 }
 
 BlogListArticle.propTypes = {
-  imageUrl: PropTypes.string.required,
-  title: PropTypes.string.required,
-  author: PropTypes.string.required,
-  summary: PropTypes.string.required
+  id: PropTypes.number,
+  imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  summary: PropTypes.string
 }
 
 export default BlogListArticle;

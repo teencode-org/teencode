@@ -9,6 +9,7 @@ class BlogArticle extends React.Component {
     const parser = new DOMParser();
     const htmlDoc = parser.parseFromString(Article.body, "text/html");
     this.articleBody.innerHTML = htmlDoc.body.innerHTML;
+    window.scrollTo(0, 0)
   }
 
   setArticleBody = (articleBody) => {
