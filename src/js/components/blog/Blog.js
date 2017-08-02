@@ -7,13 +7,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 class Blog extends Component {
+  componentWillMount() {
+    this.props.getFeaturedBlogs()
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0)
   }
 
-  componentWillMount() {
-    this.props.getFeaturedBlogs()
-  }
 
   render() {
     return (

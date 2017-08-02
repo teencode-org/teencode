@@ -23,12 +23,15 @@ class BlogList extends Component {
   }
 
   displayBlogs = () => {
-    return this.state.blogs.map((post, index) => (<BlogListArticle key={index}
-        imageUrl={post.featured_image_url ? post.featured_image_url : "http://via.placeholder.com/300x300"}
-        title={post.title}
-        author={`by ${post.author.name}`}
-        summary={post.story.substring(0, 250) + "..."}
-      />
+    return this.state.blogs.map((post, index) => (
+      <BlogListArticle key={index}
+                        id={post.id}
+                        imageUrl={post.featured_image_url ?
+                                    post.featured_image_url :
+                                    "http://via.placeholder.com/300x300"}
+                        title={post.title}
+                        author={`by ${post.author.name}`}
+                        summary={post.story.substring(0, 250) + "..."} />
     ));
   }
 
@@ -38,6 +41,10 @@ class BlogList extends Component {
     } catch(e) {
       return false;
     }
+  }
+
+  articlesAvailable() {
+    return !!this.state.blogs.length
   }
 
   loadMore = () => {
@@ -51,16 +58,20 @@ class BlogList extends Component {
   }
 
   noBlogs() {
-    if(this.props.blog.isFetching) return;
-    return <div id='no-blog-wrapper'><h1>No Content</h1></div>;
+    if(this.props.blog.isFetching) {
+      return <div id="no-blog-wrapper">
+               <h1><i className="fa fa-refresh fa-spin" /></h1>
+             </div>
+    }
+    {/*return <div id='no-blog-wrapper'><h1>No Content</h1></div>;*/}
   }
 
   render() {
     return (
       <div className="container">
         <div className="blog-list">
-          <h3>Top articles</h3>
-          {this.state.blogs.length > 0 ? this.displayBlogs() : this.noBlogs()}
+          {this.articlesAvailable() && <h3>Top articles</h3>}
+          {this.articlesAvailable() ? this.displayBlogs() : this.noBlogs()}
         </div>
 
         {this.moreArticlesAvailable() && <LoadMore onLoad={this.loadMore} />}
