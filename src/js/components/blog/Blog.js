@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import BlogHeader from './BlogHeader';
 import BlogList from './BlogList';
 import { getFeaturedBlogs } from '../../actions/blogActions';

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import BlogListArticle from './BlogListArticle';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
