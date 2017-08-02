@@ -40,4 +40,8 @@ const BlogHeader = ({featured}) => {
   );
 }
 
+BlogHeader.propTypes = {
+  featured: PropTypes.array
+}
+
 export default BlogHeader;

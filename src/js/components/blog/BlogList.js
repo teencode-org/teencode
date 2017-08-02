@@ -59,9 +59,11 @@ class BlogList extends Component {
 
   noBlogs() {
     if(this.props.blog.isFetching) {
-      return <div id="no-blog-wrapper">
-               <h1><i className="fa fa-refresh fa-spin" /></h1>
-             </div>
+      return (
+        <div id="no-blog-wrapper">
+           <h1><i className="fa fa-refresh fa-spin" /></h1>
+         </div>
+      )
     }
     {/*return <div id='no-blog-wrapper'><h1>No Content</h1></div>;*/}
   }
@@ -78,6 +80,12 @@ class BlogList extends Component {
       </div>
     );
   }
+}
+
+BlogList.propTypes = {
+  blog: PropTypes.object,
+  getBlogs: PropTypes.func,
+
 }
 
 const stateToProps = (store) => {

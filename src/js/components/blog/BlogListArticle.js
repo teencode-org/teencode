@@ -21,4 +21,12 @@ const BlogListArticle = ({ id, imageUrl, title, author, summary }) => {
   );
 }
 
+BlogListArticle.propTypes = {
+  id: PropTypes.number,
+  imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  summary: PropTypes.string
+}
+
 export default BlogListArticle;

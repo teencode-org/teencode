@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Waypoint from 'react-waypoint';
 
 const LoadMore = ({ onLoad }) => (
@@ -8,5 +8,9 @@ const LoadMore = ({ onLoad }) => (
     <p>Going to classrooms to fetch more articles ...</p>
   </div>
 );
+
+LoadMore.propTypes = {
+  onLoad: PropTypes.func
+}
 
 export default LoadMore;

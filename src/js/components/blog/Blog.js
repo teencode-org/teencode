@@ -38,5 +38,9 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
+Blog.propTypes = {
+  featured: PropTypes.array,
+  getFeaturedBlogs: PropTypes.func
+}
 
 export default connect(stateToProps, mapDispatchToProps)(Blog);
