@@ -53,33 +53,49 @@ class BlogArticle extends React.Component {
     }
 
     return (
-    <div className="row blog-full-article">
-      <h2 className="article-title">{article.title}</h2>
-      <div className="blog-article-author">
-        <img src={article.author.profile_image_url || 'http://via.placeholder.com/300x300?text=author'} />
-        <div>
-          <p className="article-author">{article.author.name || ''}</p>
-          {article.author.tagline && <p className="article-tagline">{article.author.tagline}</p>}
+      <div className="blog-full-article">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 className="article-title">{article.title}</h2>
+              <div className="blog-article-author">
+                <img src={article.author.profile_image_url || 'http://via.placeholder.com/300x300?text=author'} />
+                <p className="article-author">{article.author.name || ''}</p>
+                <p className="article-tagline">{article.author.tagline}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img className="article-image" src={article.featured_image_url || defaultBlogImage} />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <SocialLinks />
+              <div className="article-body" ref={this.setArticleBody} />
+              <SocialLinks />
+              <div className="suggested-reading row">
+                <div className="col-md-12">
+                  <h2 className="suggested-reading-title">Suggested Reads</h2>
+                </div>
+                {suggestedBlogs.map((blogPost, index) => (
+                  <div
+                    key={`suggested-${index}`}
+                    className="col-md-6 col-sm-12"
+                  >
+                    <div
+                      className="suggested-reading-link"
+                      style={{ background: `url(${blogPost.featured_image_url || defaultBlogImage}) no-repeat` }}
+                    >
+                      <h4 className="suggested-reading-name">{blogPost.title}</h4>
+                      <p>by {blogPost.author.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <img className="article-image" src={article.featured_image_url || defaultBlogImage} />
-      <SocialLinks />
-      <div className="article-body" ref={this.setArticleBody} />
-      <SocialLinks />
-      <div className="suggested-reading">
-        <h2>Suggested Reads</h2>
-        {suggestedBlogs.map((blogPost, index) => (
-          <div
-            key={`suggested-${index}`} 
-            style={{ background: `url(${blogPost.featured_image_url || defaultBlogImage}) no-repeat` }}
-            className="col-md-5"
-          >
-            <h4>{blogPost.title}</h4>
-            <p>by {blogPost.author.name}</p>
-      </div>
-    ))}
-  </div>
-    </div>
   );
   }
 }
