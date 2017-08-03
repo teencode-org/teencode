@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const BlogListArticle = ({ id, imageUrl, title, author, summary }) => {
   return (
-    <Link to={`/blog/${id}`}>
+    <Link to={`/blog/${id}/${title.toLowerCase().split(' ').join('-')}`}>
     <div className="row blog-article">
       <div className="blog-article-image">
         <img src={imageUrl} />

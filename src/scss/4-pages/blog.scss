@@ -169,6 +169,7 @@
 }
 
 .blog-full-article{
+    min-height: 80vh;
   .dots {
     position: absolute;
     top: 30vh;
@@ -183,6 +184,7 @@
   .blog-article-author {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 300px;
     margin: 0 auto 30px;
     img {
@@ -257,6 +259,12 @@
       height: 17em;
       position: relative;
       margin-bottom: 1em;
+      background-size: cover !important;
+
+      .suggested-reading-overlay {
+        background: rgba(0,0,0,0.35);
+        height: 100%;
+      }
 
       .suggested-reading-name {
         text-transform: none;

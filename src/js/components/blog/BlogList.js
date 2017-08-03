@@ -84,7 +84,7 @@ class BlogList extends Component {
 
 BlogList.propTypes = {
   blog: PropTypes.object,
-  getBlogs: PropTypes.func,
+  getBlogs: PropTypes.func
 
 }
 

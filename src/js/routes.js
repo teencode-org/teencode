@@ -38,7 +38,7 @@ export default (
              component={ContactUs}
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
       <Route path="/blog" component={Blog} />
-      <Route path="/blog/:id" component={BlogArticle}/>
+      <Route path="/blog/:id/:title" component={BlogArticle}/>
       <Route path="/not-found" component={NotFound} />
       <Route path="about-us"
              component={AboutUsPage} onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.aboutUsIsEnabled())} />

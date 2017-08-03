@@ -6,7 +6,7 @@ export const getFeaturedBlogs = (page = 1, perPage = 10) => {
   let actions = baseActions({
     requestType: actionTypes.REQUEST_GET_FEATURED_ARTICLES,
     receiveType: actionTypes.RECEIVE_GET_FEATURED_ARTICLES,
-    failType: actionTypes.FAIL_GET_ARTICLES
+    failType: actionTypes.FAIL_GET_FEATURED_ARTICLES
   });
 
   return handleApiCall({
@@ -37,9 +37,9 @@ export const getBlogs = (data, page = 1, perPage = 10) => {
 
 export const getBlogArticle = (id) => {
   let actions = baseActions({
-    requestType: actionTypes.REQUEST_GET_BLOG,
+    requestType: actionTypes.REQUEST_GET_BLOG_ARTICLES,
     receiveType: actionTypes.RECEIVE_GET_BLOG_ARTICLE,
-    failType: actionTypes.FAIL_GET_BLOG
+    failType: actionTypes.FAIL_GET_BLOG_ARTICLE
   });
   
   return handleApiCall({
