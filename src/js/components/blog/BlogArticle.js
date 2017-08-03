@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { getBlogs } from '../../actions/blogActions';
 import { getBlogArticle } from '../../actions/blogArticleActions';
 import SocialLinks from './SocialLinks';
-import InlineLoader from '../common/InlineLoader';
+import Loader from '../common/Loader';
 import NotFoundPage from '../not_found/notFound';
 import defaultBlogImage from '../../../img/teencode_maryleaks_small.jpeg';
 
@@ -49,15 +49,15 @@ class BlogArticle extends React.Component {
     }
 
     if ( blog.isFetching || !blog.hasBeenFetched ) {
-      return <div className="blog-full-article"><InlineLoader /></div>;
+      return <div className="blog-full-article"><Loader /></div>;
     }
 
     return (
-      <div className="blog-full-article">
+      <div className="blog-full-article page">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="article-title">{article.title}</h2>
+              <h2 className="article-title hidden-sm-down">{article.title}</h2>
               <div className="blog-article-author">
                 <img src={article.author.profile_image_url || 'http://via.placeholder.com/300x300?text=author'} />
                 <p className="article-author">{article.author.name || ''}</p>
@@ -66,7 +66,10 @@ class BlogArticle extends React.Component {
             </div>
           </div>
         </div>
-        <img className="article-image" src={article.featured_image_url || defaultBlogImage} />
+        <div className="article-image-container">
+          <img className="article-image" src={article.featured_image_url || defaultBlogImage} />
+          <div className="article-title-sm hidden-md-up">{article.title}</div>
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -86,8 +89,11 @@ class BlogArticle extends React.Component {
                       className="suggested-reading-link"
                       style={{ background: `url(${blogPost.featured_image_url || defaultBlogImage}) no-repeat` }}
                     >
-                      <h4 className="suggested-reading-name">{blogPost.title}</h4>
-                      <p>by {blogPost.author.name}</p>
+                      <h4 className="suggested-reading-name hidden-sm-down">{blogPost.title}</h4>
+                    </div>
+                    <div className="suggested-reading-link-sm hidden-md-up">
+                      <h4 className="suggested-reading-name-sm">{blogPost.title}</h4>
+                      <p className="suggested-reading-author">by {blogPost.author.name}</p>
                     </div>
                   </div>
                 ))}
