@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { getBlogs } from '../../actions/blogActions';
 import { getBlogArticle } from '../../actions/blogArticleActions';
 import SocialLinks from './SocialLinks';
+<<<<<<< HEAD
 import Loader from '../common/Loader';
 import NotFoundPage from '../not_found/notFound';
 import defaultBlogImage from '../../../img/teencode_maryleaks_small.jpeg';
@@ -22,6 +23,18 @@ class BlogArticle extends React.Component {
       const htmlDoc = parser.parseFromString(articleStory, "text/html");
       this.articleBody.innerHTML = htmlDoc.body.innerHTML;
     }
+=======
+import { Article } from './mockData';
+import ArticleThread from './ArticleThread';
+import { DISQUS_SHORT_NAME } from './constants';
+
+class BlogArticle extends React.Component {
+  componentDidMount() {
+    const parser = new DOMParser();
+    const htmlDoc = parser.parseFromString(Article.body, "text/html");
+    this.articleBody.innerHTML = htmlDoc.body.innerHTML;
+    window.scrollTo(0, 0)
+>>>>>>> 8f82ac1c5321f43353f4e4e8ecd5192f69155a7f
   }
 
   setArticleBody = (articleBody) => {
@@ -41,6 +54,12 @@ class BlogArticle extends React.Component {
     const blog = this.props.blog;
     const article = blog.article;
     const suggestedBlogs = this.randomSuggested();
+    const shareProps = {
+      url: window.location.href,
+      title: article.title,
+      imageUrl: article.featured_image_url,
+      description: article.description || ''
+    };
     
     if ( blog.error ) {
       return (
@@ -73,30 +92,36 @@ class BlogArticle extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <SocialLinks />
+              <SocialLinks {...shareProps} />
               <div className="article-body" ref={this.setArticleBody} />
-              <SocialLinks />
+              <SocialLinks {...shareProps} style={{ textAlign: 'left' }} />
               <div className="suggested-reading row">
                 <div className="col-md-12">
                   <h2 className="suggested-reading-title">Suggested Reads</h2>
                 </div>
                 {suggestedBlogs.map((blogPost, index) => (
-                  <div
-                    key={`suggested-${index}`}
-                    className="col-md-6 col-sm-12"
-                  >
-                    <div
-                      className="suggested-reading-link"
-                      style={{ background: `url(${blogPost.featured_image_url || defaultBlogImage}) no-repeat` }}
-                    >
-                      <h4 className="suggested-reading-name hidden-sm-down">{blogPost.title}</h4>
-                    </div>
-                    <div className="suggested-reading-link-sm hidden-md-up">
-                      <h4 className="suggested-reading-name-sm">{blogPost.title}</h4>
-                      <p className="suggested-reading-author">by {blogPost.author.name}</p>
-                    </div>
+                  <div key={`suggested-${index}`} className="col-md-6 col-sm-12">
+                    <a href={``}>
+                      <div
+                        className="suggested-reading-link"
+                        style={{ background: `url(${blogPost.featured_image_url || defaultBlogImage}) no-repeat` }}
+                      >
+                        <h4 className="suggested-reading-name hidden-sm-down">{blogPost.title}</h4>
+                      </div>
+                      <div className="suggested-reading-link-sm hidden-md-up">
+                        <h4 className="suggested-reading-name-sm">{blogPost.title}</h4>
+                        <p className="suggested-reading-author">by {blogPost.author.name}</p>
+                      </div>
+                    </a>
                   </div>
                 ))}
+              </div>
+              <div className="article-thread">
+                <ArticleThread
+                  articleId={this.props.params.id}
+                  articleTitle={Article.title}
+                  shortName={DISQUS_SHORT_NAME}
+                />
               </div>
             </div>
           </div>
@@ -107,7 +132,7 @@ class BlogArticle extends React.Component {
 }
 
 BlogArticle.propTypes = {
-  params: PropTypes.object,
+  params: PropTypes.object.isRequired,
   blog: PropTypes.object,
   getBlogs: PropTypes.func,
   getBlogArticle: PropTypes.func

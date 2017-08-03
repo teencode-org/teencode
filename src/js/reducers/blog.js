@@ -1,5 +1,13 @@
 import actionTypes from '../constants/actionTypes';
 
+const initialState = {
+  isFetching: false,
+  hasBeenFetched: false,
+  featured: [],
+  blogs: {},
+  article: {}
+}
+
 export default function(state = initialState, action) {
   switch(action.type) {
     case actionTypes.REQUEST_GET_BLOG:
@@ -8,18 +16,13 @@ export default function(state = initialState, action) {
       return getBlog(state, action.payload);
     case actionTypes.RECEIVE_GET_BLOG_ARTICLE:
       return getBlogArticle(state, action.payload);
+    case actionTypes.RECEIVE_GET_FEATURED_ARTICLES:
+      return getFeaturedBlog(state, action.payload);
     case actionTypes.FAIL_GET_BLOG:
       return blogNotReceived(action.payload);
     default:
       return state;
   }
-}
-
-const initialState = {
-  isFetching: false,
-  hasBeenFetched: false,
-  blogs: [],
-  article: { }
 }
 
 const requestToGetBlogs = (state, payload) => {
@@ -29,9 +32,9 @@ const requestToGetBlogs = (state, payload) => {
 }
 
 const getBlog = (state, payload) => {
-  return Object.assign({}, state, {
-    blogs: payload.data.blogs,
-    hasBeenFetched: true
+  return Object.assign({}, state, payload.data, {
+    hasBeenFetched: true,
+    isFetching: false
   });
 }
 
@@ -47,5 +50,11 @@ const blogNotReceived = (payload) => {
   return Object.assign({}, {
     error: payload.errors.message,
     hasBeenFetched: false
+  });
+}
+
+const getFeaturedBlog = (state, payload) => {
+  return Object.assign({}, state, {
+    featured: payload.data.blogs
   });
 }

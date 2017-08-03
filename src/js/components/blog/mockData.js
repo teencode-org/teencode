@@ -5,8 +5,10 @@ export const Article = {
     profile_image_url: "http://via.placeholder.com/300x300?text=author"
   },
   title: "Brilliance is evenly distributed. We're doing the same for opportunity",
+  category: "fiction",
   featured_image_url: "http://via.placeholder.com/1200x700?text=article+image",
-  story: "<p>It's 2017</p><p>The alarms that wake us up, the tools with which we plan our day, our \
+  description: 'A short description of this article, like a TL;DR thingy',
+  body: "<p>It's 2017</p><p>The alarms that wake us up, the tools with which we plan our day, our \
         interactions with friends and colleagues,automations in business processes, you name it</p> \
         <p>Fix soon rejoined Passepartout, who was lounging and looking about on the quay, as if \
         he did not feel that he, at least, was obliged not to see anything.</p> \
@@ -20,5 +22,29 @@ export const Article = {
         <p>I'm generally confused most of the time. I think we have a lot to discuss.\
          After all, you are a client. I'm thinking two circus clowns dancing.</p> \
         <p>He taught me a code. To survive. I'm partial to air conditioning, there's not much \
-        he can do for me. Under normal circumstances, I'd take that as a compliment.</p>"
+        he can do for me. Under normal circumstances, I'd take that as a compliment.</p>",
+  suggested_reads: [
+    {
+      id: 1,
+      category: "fiction",
+      title: "What is Minitest?",
+      story: "Minitest is a testing suite for Ruby. It provides a complete suite of testing facilities supporting test-driven development (TDD), behavior-driven development (BDD), mocking, and benchmarking. It's small, fast, and it aims to make tests clean and readable. Minitest is the default testing suite used with Rails, so no further setup is required to get it to work. Along with RSpec, it is one of the two most commonly used testing suites used in Ruby. If you would like to learn more about RSpec, we have a tutorial on Getting Started with RSpec, as well as tutorial on Testing Rails Models with RSpec.",
+      featured_image_url: null,
+      author: {
+        id: 1,
+        name: "admin admin"
+      }
+    },
+    {
+      id: 2,
+      category: "fiction",
+      title: "What is Minitest?",
+      story: "Minitest is a testing suite for Ruby. It provides a complete suite of testing facilities supporting test-driven development (TDD), behavior-driven development (BDD), mocking, and benchmarking. It's small, fast, and it aims to make tests clean and readable. Minitest is the default testing suite used with Rails, so no further setup is required to get it to work. Along with RSpec, it is one of the two most commonly used testing suites used in Ruby. If you would like to learn more about RSpec, we have a tutorial on Getting Started with RSpec, as well as tutorial on Testing Rails Models with RSpec.",
+      featured_image_url: null,
+      author: {
+        id: 1,
+        name: "admin admin"
+      }
+    }
+  ]
 }

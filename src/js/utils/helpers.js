@@ -20,6 +20,10 @@ const removeClass = (element, className) => {
   }
 }
 
+export const trimText = (text, length) => {
+  return text.substring(0, length);
+}
+
 export {
   hasClass,
   addClass,
