@@ -9,7 +9,7 @@ const BlogHeader = ({featured}) => {
     <div className="row blog-header">
       <div className="col-sm-12 col-lg-7 col-md-12 left-col"
         style={{ backgroundImage: `url("${firstImage}")`}}>
-        <Link to={`/blog/${featured[0].id}`} >
+        <Link to={`/blog/${featured[0].id}/${featured[0].title.toLowerCase().split(' ').join('-')}`} >
         <div className="description">
           <h1>{featured[0].title}</h1>
           <p>By {featured[0].author.name}</p>
@@ -18,7 +18,7 @@ const BlogHeader = ({featured}) => {
       </div>
 
       <div className="col-sm-12 col-md-12 col-lg-5 right-col">
-        <Link to={`/blog/${featured[1].id}`} >
+        <Link to={`/blog/${featured[1].id}/${featured[1].title.toLowerCase().split(' ').join('-')}`} >
           <div className="row top-row"
             style={{ backgroundImage: `url("${secondImage}")`}}>
             <div className="description">
@@ -27,7 +27,7 @@ const BlogHeader = ({featured}) => {
           </div>
         </Link>
 
-        <Link to={`/blog/${featured[2].id}`} >
+        <Link to={`/blog/${featured[2].id}/${featured[2].title.toLowerCase().split(' ').join('-')}`}  >
           <div className="row bottom-row"
             style={{ backgroundImage: `url("${thirdImage}")`}}>
               <div className="description">
