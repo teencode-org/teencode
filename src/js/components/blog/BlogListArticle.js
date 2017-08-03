@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { parseBlogTitle } from '../../utils/parseBlogTitle';
 
 const BlogListArticle = ({ id, imageUrl, title, author, summary }) => {
   return (
-    <Link to={`/blog/${id}/${title.toLowerCase().split(' ').join('-')}`}>
+    <Link to={`/blog/${id}/${parseBlogTitle(title)}`}>
     <div className="row blog-article">
       <div className="blog-article-image">
         <img src={imageUrl} />
