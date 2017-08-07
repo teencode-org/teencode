@@ -4,8 +4,7 @@ import { parseBlogTitle } from '../../utils/parseBlogTitle';
 
 const BlogHeader = ({featured}) => {
   let firstImage = featured[0].featured_image_url || 'http://via.placeholder.com/700x500'
-  let secondImage = featured[1].featured_image_url || 'http://via.placeholder.com/700x250'
-  let thirdImage = featured[2].featured_image_url || 'http://via.placeholder.com/700x250'
+  let altImage = 'http://via.placeholder.com/700x250'
   return (
     <div className="row blog-header">
       <div className="col-sm-12 col-lg-7 col-md-12 left-col"
@@ -19,23 +18,18 @@ const BlogHeader = ({featured}) => {
       </div>
 
       <div className="col-sm-12 col-md-12 col-lg-5 right-col">
-        <Link to={`/blog/${featured[1].id}/${parseBlogTitle(featured[1].title)}`} >
-          <div className="row top-row"
-            style={{ backgroundImage: `url("${secondImage}")`}}>
-            <div className="description">
-              <h3>{featured[1].title}</h3>
-            </div>
-          </div>
-        </Link>
-
-        <Link to={`/blog/${featured[2].id}/${parseBlogTitle(featured[2].title)}`}  >
-          <div className="row bottom-row"
-            style={{ backgroundImage: `url("${thirdImage}")`}}>
-              <div className="description">
-                <h3>{featured[2].title}</h3>
+        {
+          featured && featured.slice(1, 3).map(post =>
+            <Link to={`/blog/${post.id}/${parseBlogTitle(featured[1].title)}`} >
+              <div className="row top-row"
+                   style={{ backgroundImage: `url("${post.featured_image_url || altImage}")`}}>
+                <div className="description">
+                  <h3>{post.title}</h3>
+                </div>
               </div>
-          </div>
-        </Link>
+            </Link>
+          )
+        }
       </div>
     </div>
   );
