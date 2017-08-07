@@ -9,18 +9,18 @@ const BlogHeader = ({featured}) => {
     <div className="row blog-header">
       <div className="col-sm-12 col-lg-7 col-md-12 left-col"
         style={{ backgroundImage: `url("${firstImage}")`}}>
-        <Link to={`/blog/${featured[0].id}/${parseBlogTitle(featured[0].title)}`} >
-        <div className="description">
-          <h1>{featured[0].title}</h1>
-          <p>By {featured[0].author.name}</p>
-        </div>
+        <Link key={featured[0].id} to={`/blog/${featured[0].id}/${parseBlogTitle(featured[0].title)}`} >
+          <div className="description">
+            <h1>{featured[0].title}</h1>
+            <p>By {featured[0].author.name}</p>
+          </div>
         </Link>
       </div>
 
       <div className="col-sm-12 col-md-12 col-lg-5 right-col">
         {
           featured && featured.slice(1, 3).map(post =>
-            <Link to={`/blog/${post.id}/${parseBlogTitle(featured[1].title)}`} >
+            <Link key={post.id} to={`/blog/${post.id}/${parseBlogTitle(featured[1].title)}`} >
               <div className="row top-row"
                    style={{ backgroundImage: `url("${post.featured_image_url || altImage}")`}}>
                 <div className="description">
