@@ -303,7 +303,10 @@
   margin: 50px auto;
   text-align: center;
   a {
-    color: $gray-dark;
+    color: lighten($gray-dark, 60%);
     margin: 0 5px;
+    &:hover {
+      color: $gray-dark;
+    }
   }
 }
