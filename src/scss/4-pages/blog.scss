@@ -175,6 +175,11 @@
     top: 30vh;
     left: 50vw;
   }
+  > .container {
+    max-width: 960px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
   .article-title {
     font-size: 28px;
     font-weight: 700;
@@ -229,6 +234,7 @@
       flex-direction: column;
       align-items: center;
       display: flex;
+      padding: 0 50px;
     }
   }
   .article-body {

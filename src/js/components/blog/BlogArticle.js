@@ -14,11 +14,18 @@ import defaultBlogImage from '../../../img/teencode_maryleaks_small.jpeg';
 
 class BlogArticle extends Component {
   componentWillMount() {
-    this.props.getFeaturedBlogs();
-    this.props.getBlogArticle(this.props.params.id);
-    if (this.props.blog.featured.length < 1) {
-      this.props.getFeaturedBlogs();
-    }
+    this.initComponent(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.id == nextProps.params.id) return;
+    this.initComponent(nextProps);
+    window.scrollTo(0, 0);
+  }
+
+  initComponent(props) {
+    props.getFeaturedBlogs();
+    props.getBlogArticle(props.params.id);
   }
 
   componentDidMount() {
@@ -38,11 +45,20 @@ class BlogArticle extends Component {
     this.articleBody = articleBody;
   }
 
+  getRandomId = (limit, currentId, alreadySelectedId) => {
+    let rand = currentId
+    while(rand == currentId || rand == alreadySelectedId) {
+      rand = Math.floor(Math.random() * limit)
+    }
+    return rand;
+  }
+
   randomSuggested = () => {
     const blogList = this.props.blog.featured;
     if (blogList.length < 1) return [];
-    const randomBlog1 = blogList[Math.floor(Math.random() * blogList.length)];
-    const randomBlog2 = blogList[Math.floor(Math.random() * blogList.length)];
+    const randomBlog1 = blogList[this.getRandomId(blogList.length, this.props.params.id)];
+    const randomBlog2 = blogList[this.getRandomId(blogList.length, this.props.params.id, randomBlog1.id)];
+
     return [randomBlog1, randomBlog2];
   }
 
@@ -52,7 +68,7 @@ class BlogArticle extends Component {
     const suggestedBlogs = this.randomSuggested();
     const shareProps = {
       url: window.location.href,
-      title: article.title,
+      title: article.title || '',
       imageUrl: article.featured_image_url || '',
       description: article.description || ''
     };
@@ -73,11 +89,11 @@ class BlogArticle extends Component {
           <div className="row">
             <div className="col-md-12">
               <h2 className="article-title hidden-sm-down">{article.title}</h2>
-              <div className="blog-article-author">
+              {article.author && <div className="blog-article-author">
                 <img src={article.author.profile_image_url || 'http://via.placeholder.com/300x300?text=author'} />
                 <p className="article-author">{article.author.name || ''}</p>
                 {article.author.tagline && <p className="article-tagline">{article.author.tagline}</p>}
-              </div>
+              </div>}
             </div>
           </div>
         </div>
