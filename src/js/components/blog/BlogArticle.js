@@ -17,18 +17,13 @@ class BlogArticle extends Component {
     this.initComponent(this.props);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.params.id == nextProps.params.id) return;
-    this.initComponent(nextProps);
+  componentDidMount() {
     window.scrollTo(0, 0);
   }
 
-  initComponent(props) {
-    props.getFeaturedBlogs();
-    props.getBlogArticle(props.params.id);
-  }
-
-  componentDidMount() {
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.id == nextProps.params.id) return;
+    this.initComponent(nextProps);
     window.scrollTo(0, 0);
   }
 
@@ -39,6 +34,11 @@ class BlogArticle extends Component {
       const htmlDoc = parser.parseFromString(articleStory, "text/html");
       this.articleBody.innerHTML = htmlDoc.body.innerHTML;
     }
+  }
+
+  initComponent(props) {
+    props.getFeaturedBlogs();
+    props.getBlogArticle(props.params.id);
   }
 
   setArticleBody = (articleBody) => {
