@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 import { getFeaturedBlogs, getBlogArticle } from '../../actions/blogActions';
 import SocialLinks from './SocialLinks';
 import ArticleThread from './ArticleThread';
-import { DISQUS_SHORT_NAME } from './constants';
 import Loader from '../common/Loader';
 import NotFoundPage from '../not_found/notFound';
 import { parseBlogTitle } from '../../utils/parseBlogTitle';
@@ -137,11 +136,18 @@ class BlogArticle extends Component {
                 <ArticleThread
                   articleId={this.props.params.id}
                   articleTitle={article.title}
-                  shortName={DISQUS_SHORT_NAME}
+                  shortName={process.env.DISQUS_SHORT_NAME}
                 />
               </div>
             </div>
           </div>
+        </div>
+        <div className="article-thread">
+          <ArticleThread
+            articleId={this.props.params.id}
+            articleTitle={article.title}
+            shortName={process.env.DISQUS_SHORT_NAME}
+          />
         </div>
       </div>
     );

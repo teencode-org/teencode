@@ -1,1 +1,0 @@
-export const DISQUS_SHORT_NAME = 'teencodeafrica';
