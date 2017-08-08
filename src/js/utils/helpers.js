@@ -20,12 +20,19 @@ const removeClass = (element, className) => {
   }
 }
 
-export const trimText = (text, length) => {
+const trimText = (text, length) => {
   return text.substring(0, length);
 }
 
+const stripHtmlTags = (html) => {
+  let div = document.createElement('div');
+  div.innerHTML = html;
+  return div.textContent || div.innerText;
+};
 export {
   hasClass,
   addClass,
-  removeClass
+  removeClass,
+  trimText,
+  stripHtmlTags
 }

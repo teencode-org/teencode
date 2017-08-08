@@ -68,7 +68,7 @@ class Footer extends React.Component {
               </p>
               {featureflags.contactUsIsEnabled() && <Link to="/contact-us" className="btn btn-primary">
                 <i className="fa fa-comment-o"></i> 
-                We'll love to hear from you
+                We'd love to hear from you
               </Link>}
             </div>
           </div>
