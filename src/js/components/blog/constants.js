@@ -1,1 +1,1 @@
-export const DISQUS_SHORT_NAME = 'teencodeafrica';
+export const DISQUS_SHORT_NAME = process.env.NODE_ENV === 'production' ? 'teencodeafrica' : 'teencodeafrica-staging';
