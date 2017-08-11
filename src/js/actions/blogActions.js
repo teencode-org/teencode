@@ -13,7 +13,7 @@ export const getFeaturedBlogs = (page = 1, perPage = 10) => {
     actions,
     errorMessage: 'Something prevented getting featured posts',
     caller: 'featured articles',
-    route: `/blogs?page=${page}&per_page=${perPage}&featured=true`,
+    route: `/blogs/featured`,
     requestMethod: 'GET'
   });
 }
