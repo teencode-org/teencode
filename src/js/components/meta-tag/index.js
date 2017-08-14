@@ -1,14 +1,14 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import MetaTags from 'react-meta-tags';
 
 const MetaTag = (props) =>
-  <Helmet>
+  <MetaTags>
     <meta property="og:title" content={props.title} />
     <meta property="og:description" content={props.description} />
     <meta property="og:url" content={props.url} />
     <meta property="og:image" content={props.imageUrl} />
     <meta property="og:type" content="article" />
-  </Helmet>
+  </MetaTags>
 
 MetaTag.propTypes = {
   title: React.PropTypes.string,
