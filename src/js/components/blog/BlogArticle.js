@@ -67,9 +67,9 @@ class BlogArticle extends Component {
     const suggestedBlogs = this.randomSuggested();
     const shareProps = {
       url: window.location.href,
-      title: article.title || '',
+      title: article.title || 'Teencode blog',
       imageUrl: article.featured_image_url || defaultBlogImage,
-      description: article.description || ''
+      description: article.description || 'A blog article published by teencode'
     };
 
     if ( blog.error ) {
