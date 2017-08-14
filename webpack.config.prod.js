@@ -9,7 +9,8 @@ const entryPath = path.resolve(__dirname, 'src', 'js', 'index.js');
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
-  'process.env.FB_APPID': JSON.stringify(process.env.FB_APPID)
+  'process.env.FB_APPID': JSON.stringify(process.env.FB_APPID),
+  'process.env.DISQUS_SHORT_NAME': JSON.stringify(process.env.DISQUS_APP_NAME)
 };
 
 export default {

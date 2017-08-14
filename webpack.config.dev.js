@@ -8,6 +8,12 @@ const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const buildPath = path.resolve(__dirname, 'dist');
 const entryPath = path.resolve(__dirname, 'src', 'js', 'index.js');
 
+const GLOBALS = {
+  'teencode.feature': featureFlags,
+  'process.env.FB_APPID': JSON.stringify(process.env.FB_APPID),
+  'process.env.DISQUS_SHORT_NAME': JSON.stringify(process.env.DISQUS_APP_NAME)
+};
+
 export default {
   debug: true,
   devtool: 'cheap-module-eval-source-map',
@@ -36,10 +42,7 @@ export default {
       Tether: 'tether',
       'window.Tether': 'tether'
     }),
-    new webpack.DefinePlugin({
-      'teencode.feature': featureFlags,
-      'process.env.FB_APPID': JSON.stringify(process.env.FB_APPID)
-    })
+    new webpack.DefinePlugin(GLOBALS)
   ],
   module: {
     loaders: [
