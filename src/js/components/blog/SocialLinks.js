@@ -12,6 +12,7 @@ const SocialLinks = (props) => {
     <div className="blog-socials" style={props.style}>
       <MetaTag {...props} />
       <a
+        target="_blank"
         className="share-link"
         href={`https://www.facebook.com/dialog/share?app_id=${process.env.FB_APPID}&display=popup&href=${url}/&redirect_uri=${url}`}
       >

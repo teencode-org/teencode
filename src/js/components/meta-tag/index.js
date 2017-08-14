@@ -7,6 +7,7 @@ const MetaTag = (props) =>
     <meta property="og:description" content={props.description} />
     <meta property="og:url" content={props.url} />
     <meta property="og:image" content={props.imageUrl} />
+    <meta property="og:type" content="article" />
   </Helmet>
 
 MetaTag.propTypes = {
