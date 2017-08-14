@@ -68,7 +68,7 @@ class BlogArticle extends Component {
     const shareProps = {
       url: window.location.href,
       title: article.title || '',
-      imageUrl: article.featured_image_url || '',
+      imageUrl: article.featured_image_url || defaultBlogImage,
       description: article.description || ''
     };
 
