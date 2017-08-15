@@ -35,6 +35,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "6.8.0",
     "babel-runtime": "6.6.1",
+    "body-parser": "^1.17.2",
     "bootstrap": "4.0.0-alpha.3",
     "chai": "^3.5.0",
     "colors": "^1.1.2",

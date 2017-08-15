@@ -29,6 +29,7 @@ const stripHtmlTags = (html) => {
   div.innerHTML = html;
   return div.textContent || div.innerText;
 };
+
 export {
   hasClass,
   addClass,

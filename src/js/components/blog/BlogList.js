@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getBlogs } from '../../actions/blogActions';
 import LoadMore from './LoadMore';
+import config from '../../config/';
 
 class BlogList extends Component {
 
@@ -31,7 +32,7 @@ class BlogList extends Component {
                                     "http://via.placeholder.com/300x300"}
                         title={post.title}
                         author={`by ${post.author.name}`}
-                        summary={post.story.substring(0, 250) + "..."} />
+                        summary={post.story.substring(0, config.SUMMARY_LENGTH) + "..."} />
     ));
   }
 
