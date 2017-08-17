@@ -39,13 +39,12 @@ function fetchBlog(id, cb) {
 }
 
 function buildTags(data, url) {
-
-  const description = data.blog.story
+  let description = data.blog.story
     .replace(/[<&]\/?[a-zA-Z]+[0-9]?[>;]/g, ' ').substring(0, appConfig.SUMMARY_LENGTH);
-
+  description = description.replace(/['"]+/g, '');
   return `
-    <meta id="og-title" property="og:title" content=${data.blog.title} />
-    <meta id="meta-description" property="og:description" content=${description} />
+    <meta id="og-title" property="og:title" content='${data.blog.title}' />
+    <meta id="meta-description" property="og:description" content='${description}' />
     <meta id="og-url" property="og:url" content=${url} />
     <meta id="og-image" property="og:image" content=${data.blog.featured_image_url} />
     <meta id="og-type" property="og:type" content="article" />
