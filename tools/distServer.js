@@ -56,7 +56,8 @@ app.get('/blog/:id/:title', function (req, res) {
     if (err) {
       return res.sendFile(path.join(__dirname, '../src/index.html'));
     }
-    const tags = buildTags(JSON.parse(data), req.url);
+    const url = req.hostname + req.url;
+    const tags = buildTags(JSON.parse(data), url);
 
     const file = fs.readFileSync(path.join(__dirname, '../src/index.html'), 'utf8');
     const newfile = injectMetaTag(file, tags);
