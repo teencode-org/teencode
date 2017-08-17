@@ -8,7 +8,6 @@ import request from 'request';
 import bodyParser from 'body-parser';
 import env from '../src/js/config/environment';
 import appConfig from '../src/js/config';
-import { stripHtmlTags } from '../src/js/utils/helpers';
 import fs from 'fs';
 
 /* eslint-disable no-console */
@@ -70,11 +69,6 @@ app.get('/blog/:id/:title', function (req, res) {
 
     const file = fs.readFileSync(path.join(__dirname, '../src/index.html'), 'utf8');
     const newfile = injectMetaTag(file, tags);
-    console.log('\n\n\n\n\n');
-    console.log('=============')
-    console.log(newfile)
-    console.log('=============')
-    console.log('\n\n\n\n\n');
     res.send(newfile);
   });
 });
