@@ -35,12 +35,12 @@ function buildTags(data, url) {
     .replace(/[<&]\/?[a-zA-Z]+[0-9]?[>;]/g, ' ').substring(0, appConfig.SUMMARY_LENGTH);
 
   return `
-  <meta id="og-title" property="og:title" content={${data.blog.title}} />
-  <meta id="meta-description" property="og:description" content={${description}} />
-  <meta id="og-url" property="og:url" content={${url}} />
-  <meta id="og-image" property="og:image" content={${data.blog.featured_image_url}} />
-  <meta id="og-type" property="og:type" content="article" />
-  `;
+    <meta id="og-title" property="og:title" content=${data.blog.title} />
+    <meta id="meta-description" property="og:description" content=${description} />
+    <meta id="og-url" property="og:url" content=${url} />
+    <meta id="og-image" property="og:image" content=${data.blog.featured_image_url} />
+    <meta id="og-type" property="og:type" content="article" />
+    `;
 }
 
 function injectMetaTag(file, tags) {
@@ -72,7 +72,7 @@ app.use(function (req, res) {
 
 
 
-app.listen(port, function(err) {
+app.listen(port, function (err) {
   if (err) {
     console.log(err);
   } else {
