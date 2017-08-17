@@ -93,7 +93,7 @@ app.get('/blog/:id/:title', function (req, res) {
   });
 });
 
-app.get('*', function (req, res) {
+app.use(function (req, res) {
   res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 

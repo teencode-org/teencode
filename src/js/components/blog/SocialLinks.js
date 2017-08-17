@@ -1,6 +1,5 @@
 import React from 'react';
 import { trimText } from '../../utils/helpers';
-import MetaTag from '../meta-tag/';
 
 const SocialLinks = (props) => {
   const url = props.url;
@@ -10,7 +9,6 @@ const SocialLinks = (props) => {
 
   return (
     <div className="blog-socials" style={props.style}>
-      {/* <MetaTag {...props} /> */}
       <a
         target="_blank"
         className="share-link"
