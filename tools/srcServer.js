@@ -88,11 +88,7 @@ app.get('/blog/:id/:title', function (req, res) {
 
     const file = fs.readFileSync(path.join(__dirname , '../src/index.html'), 'utf8');
     const newfile = injectMetaTag(file, tags);
-    fs.writeFileSync(path.join(__dirname, '../src/index.html'), newfile);
-    console.log('\n\n\n\n\n\n')
-    console.log('===========INDEX FILE UPDATED============')
-    console.log('\n\n\n\n\n\n')
-    res.sendFile(path.join(__dirname, '../src/index.html'), options);
+    res.send(newfile);
   });
 });
 
