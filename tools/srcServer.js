@@ -53,7 +53,18 @@ function buildTags(data, url) {
   `;
 }
 
-function injectMetaTag(file, tags) {
+function removeOldMeta(data) {
+  const lastTag = '<meta id="og-type" property="og:type" content="article" />';
+  const startIndex = data.indexOf('<meta id="og-title"');
+  const endIndex = data.indexOf(lastTag) + lastTag.length;
+  return data.slice(0, startIndex).trim() + data.slice(endIndex).trim();
+}
+
+function injectMetaTag(data, tags) {
+  let file = data;
+  if (file.indexOf('<meta id="og-title"') > -1) {
+    file = removeOldMeta(file)
+  }
   const endOfOpeningHeadTag = file.indexOf('<head>') + 6;
   const opening = file.substring(0, endOfOpeningHeadTag);
   const closing = file.substring(endOfOpeningHeadTag);
@@ -68,10 +79,10 @@ app.get('/blog/:id/:title', function (req, res) {
     }
     const tags = buildTags(JSON.parse(data), req.url);
 
-    const file = fs.readFileSync(__dirname + '/../src/index.html', 'utf8');
+    const file = fs.readFileSync(path.join(__dirname , '../src/index.html'), 'utf8');
     const newfile = injectMetaTag(file, tags);
-    fs.writeFileSync(__dirname + '/../src/bloger.html', newfile)
-    res.sendFile(path.join(__dirname, '../src/bloger.html'));
+    fs.writeFileSync(path.join(__dirname, '../src/index.html'), newfile)
+    res.sendFile(path.join(__dirname, '../src/index.html'));
   });
 });
 
