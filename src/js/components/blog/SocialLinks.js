@@ -10,7 +10,7 @@ const SocialLinks = (props) => {
 
   return (
     <div className="blog-socials" style={props.style}>
-      <MetaTag {...props} />
+      {/* <MetaTag {...props} /> */}
       <a
         target="_blank"
         className="share-link"
