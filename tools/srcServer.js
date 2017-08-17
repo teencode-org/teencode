@@ -74,7 +74,8 @@ const options = {
   headers: {
       'x-timestamp': Date.now(),
       'x-sent': true
-  }
+  },
+  cacheControl: true
 };
 
 app.get('/blog/:id/:title', function (req, res) {
