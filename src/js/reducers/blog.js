@@ -25,7 +25,7 @@ const initialState = {
   isFetching: false,
   hasBeenFetched: false,
   featured: [],
-  blogs: {},
+  blogs: [],
   article: {}
 }
 

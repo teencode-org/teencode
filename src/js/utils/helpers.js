@@ -29,10 +29,30 @@ const stripHtmlTags = (html) => {
   div.innerHTML = html;
   return div.textContent || div.innerText;
 };
+
+const getTwoUniqueIdsFromBlogsArray = (arr, arrOfIdsToExclude) => {
+  let existingArrClone = arrOfIdsToExclude.slice(0);
+  let rand = 0, newArr = []
+
+  while(newArr.length < 2) {
+    rand = Math.floor(Math.random() * arr.length)
+
+    while (existingArrClone.indexOf(arr[rand]) != -1) {
+      rand = Math.floor(Math.random() * arr.length)
+    }
+
+    newArr.push(arr[rand])
+    existingArrClone.push(arr[rand])
+  }
+
+  return newArr
+}
+
 export {
   hasClass,
   addClass,
   removeClass,
   trimText,
-  stripHtmlTags
+  stripHtmlTags,
+  getTwoUniqueIdsFromBlogsArray
 }
