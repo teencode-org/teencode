@@ -5,9 +5,9 @@ import { Link } from 'react-router';
 import { getBlogs, getBlogArticle } from '../../../actions/blogActions';
 import SocialLinks from '../SocialLinks';
 import ArticleThread from './ArticleThread';
-import ArticleHeader from './articleHeader';
-import ArticleBanner from './articleBanner';
-// import ArticleBody from './articleBody';
+import ArticleHeader from './ArticleHeader';
+import ArticleBanner from './ArticleBanner';
+import ArticleBody from './ArticleBody';
 import Loader from '../../common/Loader';
 import NotFoundPage from '../../not_found/notFound';
 import { getTwoUniqueIdsFromBlogsArray } from '../../../utils/helpers';
@@ -86,9 +86,7 @@ class BlogArticle extends Component {
 
               <SocialLinks {...shareProps} />
 
-              <div className="article-body">
-                <div dangerouslySetInnerHTML={{__html: article.story}} />
-              </div>
+              <ArticleBody {...{article}} />
 
               <SocialLinks {...shareProps} style={{ textAlign: 'left' }} />
 
@@ -97,7 +95,7 @@ class BlogArticle extends Component {
                   <h2 className="suggested-reading-title">Suggested Reads</h2>
                 </div>
                 {suggestedBlogs.map((blogPost, index) => (
-                  <SuggestedArticle  {...{blogPost, index}} />
+                  <SuggestedArticle key={index}  {...{blogPost, index}} />
                 ))}
               </div>
 
