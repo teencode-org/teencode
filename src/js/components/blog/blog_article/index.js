@@ -35,14 +35,6 @@ class BlogArticle extends Component {
     props.getBlogArticle(props.params.id);
   }
 
-  getRandomId = (limit, currentId, alreadySelectedId) => {
-    let rand = currentId
-    while(rand == currentId || rand == alreadySelectedId) {
-      rand = Math.floor(Math.random() * limit)
-    }
-    return rand;
-  }
-
   randomSuggested = () => {
     const {blogs: blogList} = this.props.blog;
     if (!blogList || blogList.length < 1) return [];
