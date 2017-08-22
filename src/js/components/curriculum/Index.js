@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router';
 import CurriculumTableContainer from './CurriculumTable';
 import DocumentTitle from '../common/DocumentTitle';
 

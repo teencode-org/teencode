@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import BlogListArticle from './BlogListArticle';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getBlogs } from '../../actions/blogActions';
+import { getBlogs } from 'Actions/blogActions';
 import LoadMore from './LoadMore';
 
 class BlogList extends Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { trimText } from '../../utils/helpers';
+import { trimText } from 'Utils/helpers';
 import MetaTag from '../meta-tag/';
 
 const SocialLinks = (props) => {

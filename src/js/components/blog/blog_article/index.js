@@ -9,11 +9,10 @@ import ArticleHeader from './ArticleHeader';
 import ArticleBanner from './ArticleBanner';
 import ArticleBody from './ArticleBody';
 import Loader from '../../common/Loader';
-import NotFoundPage from '../../not_found/notFound';
+import NotFoundPage from 'Components/not_found/notFound';
 import { getTwoUniqueIdsFromBlogsArray } from '../../../utils/helpers';
 import SuggestedArticle from './SuggestedArticle';
-import defaultBlogImage from '../../../../img/teencode_maryleaks_small.jpeg';
-
+import defaultBlogImage from 'Images/teencode_maryleaks_small.jpeg';
 
 class BlogArticle extends Component {
   componentWillMount() {
@@ -58,7 +57,6 @@ class BlogArticle extends Component {
 
     const article = blog.article;
     const suggestedBlogs = this.randomSuggested();
-    console.log('suggested blogs ', suggestedBlogs)
     const shareProps = {
       url: window.location.href,
       title: article.title || '',

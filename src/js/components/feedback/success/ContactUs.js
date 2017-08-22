@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from '../../../../img/logo-colored.png';
-import {Link} from 'react-router';
 
 const ContactUsSuccess = () => {
   return (
