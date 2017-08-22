@@ -9,7 +9,7 @@ import {
   fetchBlog,
 } from './helpers';
 
-module.exports = (req, res) => {
+export default (req, res) => {
   const blogId = req.params.id;
   fetchBlog(blogId, (err, data) => {
     if (err) {
