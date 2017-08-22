@@ -6,6 +6,10 @@ if (process.ENV === 'production') {
   host = "https://teencode-backend-staging.herokuapp.com/api/v1"
 }
 
-export default {
+// export default {
+//   host
+// };
+
+module.exports = {
   host
-};
+}
