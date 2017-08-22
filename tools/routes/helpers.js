@@ -1,12 +1,12 @@
-import env from '../../src/js/config/environment';
-import appConfig from '../../src/js/config';
-import request from 'request';
+let env = require('../../src/js/config/environment');
+let appConfig = require('../../src/js/config');
+let request = require('request');
 
 const buildTags = (data, url) => {
   let description = data.blog.story
     .replace(/[<&]\/?[a-zA-Z]+[0-9]?[>;]/g, ' ').substring(0, appConfig.SUMMARY_LENGTH);
   description = description.replace(/<(?:.|\n)*?>/gm, '');
-  description = description.replace(/['"]+/g, '');
+  description = description.replace(/['"]+/g, '').trim();
 
   return `
       <meta id="og-title" property="og:title" content='${data.blog.title}' />
@@ -45,7 +45,7 @@ const fetchBlog = (id, cb) => {
   });
 }
 
-export {
+module.exports = {
   buildTags,
   injectMetaTag,
   fetchBlog
