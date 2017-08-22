@@ -8,8 +8,6 @@ import commonConfig from './common';
 
 const entryPath = path.resolve(PATH_ROOT, 'src', 'js', 'index.js');
 
-console.log(entryPath);
-
 export default Object.assign({}, commonConfig, {
   debug: true,
   devtool: 'cheap-module-eval-source-map',

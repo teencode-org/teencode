@@ -33,7 +33,6 @@ const stripHtmlTags = (html) => {
 };
 
 const sanitizeHtml = (dirtyHTML) => {
-  console.log('sanitize ', DOMPurify.sanitize(dirtyHTML))
   return DOMPurify.sanitize(dirtyHTML);
 }
 
