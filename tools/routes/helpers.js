@@ -2,7 +2,7 @@ import env from '../../src/js/config/environment';
 import appConfig from '../../src/js/config';
 import request from 'request';
 
-function buildTags(data, url) {
+const buildTags = (data, url) => {
   let description = data.blog.story
     .replace(/[<&]\/?[a-zA-Z]+[0-9]?[>;]/g, ' ').substring(0, appConfig.SUMMARY_LENGTH);
   description = description.replace(/<(?:.|\n)*?>/gm, '');
@@ -26,7 +26,7 @@ function buildTags(data, url) {
     `;
 }
 
-function injectMetaTag(file, tags) {
+const injectMetaTag = (file, tags) => {
   const headTag = '<head>';
   const endOfOpeningHeadTag = file.indexOf(headTag) + headTag.length;
   const opening = file.substring(0, endOfOpeningHeadTag);
@@ -34,18 +34,18 @@ function injectMetaTag(file, tags) {
   return opening + tags + closing;
 }
 
-function fetchBlog(id, cb) {
+const fetchBlog = (id, cb) => {
   const url = `${env.host}/blogs/${id}`;
   request({ url }, (err, response, body) => {
     if (err !== null) {
-      console.log('error \n', err);
+      console.log('error \n', err); // eslint-disable-line
       return cb(err);
     }
     cb(null, body);
   });
 }
 
-module.exports = {
+export {
   buildTags,
   injectMetaTag,
   fetchBlog

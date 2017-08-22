@@ -3,10 +3,10 @@ import path from 'path';
 
 const ROOT_PATH = path.join(__dirname, '..', '..');
 
-import  {
+import {
   buildTags,
   injectMetaTag,
-  fetchBlog
+  fetchBlog,
 } from './helpers';
 
 module.exports = (req, res) => {
