@@ -1,8 +1,7 @@
 import React, {PropTypes} from 'react';
-import logo from '../../../img/logo-colored.png';
 import { Link, browserHistory } from 'react-router';
 import ContactUsForm from './ContactUsForm';
-import { sendFeedback } from '../../actions/contactActions';
+import { sendFeedback } from 'Actions/contactActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import DocumentTitle from '../common/DocumentTitle';

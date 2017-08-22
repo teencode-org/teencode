@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { parseBlogTitle } from '../../utils/parseBlogTitle';
+import { parseBlogTitle } from 'Utils/parseBlogTitle';
 
 const BlogHeader = ({featured}) => {
   let firstImage = featured[0].featured_image_url || 'http://via.placeholder.com/700x500'

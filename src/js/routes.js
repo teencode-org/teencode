@@ -15,7 +15,7 @@ import Feedback from './components/feedback/Index';
 import ContactUs from './components/contact_us/Index';
 import NotFound from './components/not_found/notFound';
 import Blog from './components/blog';
-import BlogArticle from './components/blog/BlogArticle';
+import BlogArticle from './components/blog/blog_article';
 import AboutUsPage from './components/about/AboutUsPage';
 
 const redirectIfFlagIsDisabled = (flag, nextState, replace) => {

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { parseBlogTitle } from '../../utils/parseBlogTitle';
-import { stripHtmlTags } from '../../utils/helpers';
+import { parseBlogTitle } from 'Utils/parseBlogTitle';
+import { stripHtmlTags } from 'Utils/helpers';
 
 const BlogListArticle = ({ id, imageUrl, title, author, summary }) => {
   return (

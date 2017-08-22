@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
 import MainBannerSection from './MainBannerSection';
 import WhatWeDo from './WhatWeDo';
 import WhatDrivesUs from './WhatDrivesUs';
 import OurVision from './OurVision';
-// import WhereWeAreNow from './WhereWeAreNow';
 import Leadership from './Leadership';
 import Partners from './Partners';
-import ContactUs from '../contact_us/Index';
-import SponsorSection from '../home/SponsorSection';
-import ProgressSection from './../home/ProgressSection';
+import SponsorSection from 'Components/home/SponsorSection';
+import ProgressSection from 'Components/home/ProgressSection';
 
 class AboutUsPage extends React.Component {
   constructor(props, context){

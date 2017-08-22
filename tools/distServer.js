@@ -1,6 +1,7 @@
 "use strict"
 
 let express = require('express');
+let favicon = require('serve-favicon');
 let path = require('path');
 let compression = require('compression');
 
@@ -12,6 +13,7 @@ let app = express();
 
 app.use(compression());
 app.use(express.static('dist'));
+app.use(favicon(path.join(__dirname, '..', 'src', 'img', 'favicon.png')));
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../dist/index.html'));

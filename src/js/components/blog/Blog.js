@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import BlogHeader from './BlogHeader';
 import BlogList from './BlogList';
-import { getFeaturedBlogs } from '../../actions/blogActions';
+import { getFeaturedBlogs } from 'Actions/blogActions';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
