@@ -1,6 +1,10 @@
 import React from 'react';
 import { trimText } from 'Utils/helpers';
 
+const openURLInPopup = (url, name, width=600, height=400) => {
+  window.open(url, name || 'window' + Math.floor(Math.random() * 10000 + 1), `width=${width},height=${height},menubar=0,location=0,toolbar=0,status=0,scrollbars=1`);
+}
+
 const SocialLinks = (props) => {
   const url = props.url;
   const title = props.title;
@@ -9,26 +13,24 @@ const SocialLinks = (props) => {
 
   return (
     <div className="blog-socials" style={props.style}>
-      <a
-        target="_blank"
+      <span
         className="share-link"
-        href={`https://www.facebook.com/dialog/share?app_id=${process.env.FB_APPID}&display=popup&href=${url}/&redirect_uri=${url}`}
+        onClick={() => openURLInPopup(`https://www.facebook.com/dialog/share?app_id=${process.env.FB_APPID}&display=popup&href=${url}/&redirect_uri=${url}`)}
       >
         <i className="fa fa-facebook-square fa-2x" />
-      </a>
-      <a
-        target="_blank"
+      </span>
+      <span
         className="share-link"
-        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(trimText(title, tweetLength))} ${handle}&url=${url}`}
+        onClick={() => openURLInPopup(`https://twitter.com/intent/tweet?text=${encodeURIComponent(trimText(title, tweetLength))} ${handle}&url=${url}`)}
       >
         <i className="fa fa-twitter-square fa-2x" />
-      </a>
-      <a
-        href={`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&&source=Teencode`}
-        target="_blank"
+      </span>
+      <span
+        className="share-link"
+        onClick={() => openURLInPopup(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&&source=Teencode`)}
       >
         <i className="fa fa-linkedin-square fa-2x" />
-      </a>
+      </span>
     </div>
   );
 }

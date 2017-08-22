@@ -310,9 +310,10 @@
 .blog-socials {
   margin: 50px auto;
   text-align: center;
-  a {
+  .share-link {
     color: lighten($gray-dark, 60%);
     margin: 0 5px;
+    cursor: pointer;
     &:hover {
       color: $gray-dark;
     }
