@@ -1,8 +1,7 @@
 "use strict"
 
-import favicon from 'serve-favicon';
-
 let express = require('express');
+let favicon = require('serve-favicon');
 let path = require('path');
 let compression = require('compression');
 
