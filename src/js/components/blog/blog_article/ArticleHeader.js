@@ -15,7 +15,7 @@ const ArticleHeader = ({article}) => (
   </div>
 )
 
-ArticleHeader.PropTypes = {
+ArticleHeader.propTypes = {
   article: PropTypes.object.isRequired
 }
 

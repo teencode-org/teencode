@@ -8,7 +8,8 @@ const ArticleBanner = ({article, defaultBlogImage}) => (
 );
 
 ArticleBanner.propTypes = {
-  article: PropTypes.object.isRequired
+  article: PropTypes.object.isRequired,
+  defaultBlogImage: PropTypes.object.isRequired
 }
 
 export default ArticleBanner;
