@@ -7,6 +7,11 @@
   "env": {
     "dev": {
       "presets": ["react-hmre"]
+    },
+    "test": {
+      "plugins": [
+        [ "babel-plugin-webpack-alias", { "config": "./tools/webpack_config/dev.js" } ]
+      ]
     }
   }
 }
