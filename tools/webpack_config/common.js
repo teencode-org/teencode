@@ -1,12 +1,14 @@
 import webpack from 'webpack';
 import path from 'path';
 import featureFlags from '../featureFlags';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const PATH_ROOT = path.resolve(__dirname, '..', '..');
 
 const nodeModulesPath = path.resolve(PATH_ROOT, 'node_modules');
 const buildPath = path.resolve(PATH_ROOT, 'dist');
 const entryPath = path.resolve(PATH_ROOT, 'src', 'js', 'index.js');
+const imagesPath = path.resolve(PATH_ROOT, 'src', 'img', 'static_images');
 
 const GLOBALS = {
   'teencode.feature': featureFlags,
@@ -39,7 +41,10 @@ export default {
       Tether: 'tether',
       'window.Tether': 'tether'
     }),
-    new webpack.DefinePlugin(GLOBALS)
+    new webpack.DefinePlugin(GLOBALS),
+    new CopyWebpackPlugin([
+      { context: imagesPath, from: '*', to: 'img' }
+    ])
   ],
   module: {
     loaders: [

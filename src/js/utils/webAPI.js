@@ -1,4 +1,4 @@
-import Config from '../config/environment.js';
+import Config from '../config';
 import fetch from 'isomorphic-fetch';
 import 'babel-polyfill';
 
