@@ -7,12 +7,13 @@ const buildTags = (data, url) => {
     .replace(/[<&]\/?[a-zA-Z]+[0-9]?[>;]/g, ' ').substring(0, appConfig.SUMMARY_LENGTH);
   description = description.replace(/<(?:.|\n)*?>/gm, '');
   description = description.replace(/['"]+/g, '').trim();
+  const image_url = data.blog.featured_image_url || appConfig.defaultFeaturedImage;
 
   return `
       <meta id="og-title" property="og:title" content='${data.blog.title}' />
       <meta id="meta-description" property="og:description" content='${description}' />
       <meta id="og-url" property="og:url" content="${url}" />
-      <meta id="og-image" property="og:image" content="${data.blog.featured_image_url}" />
+      <meta id="og-image" property="og:image" content="${image_url}" />
       <meta id="og-type" property="og:type" content="article" />
       
       <meta name="description" content="${description}"/>
@@ -22,7 +23,7 @@ const buildTags = (data, url) => {
       <meta name="twitter:domain" content="Teencode Africa Offical Site">
       <meta name="twitter:title" content="${data.blog.title}">
       <meta name="twitter:description" content="${description}">
-      <meta name="twitter:image" content="${data.blog.featured_image_url}">
+      <meta name="twitter:image" content="${image_url}">
     `;
 }
 
