@@ -15,7 +15,7 @@ const SocialLinks = (props) => {
     <div className="blog-socials" style={props.style}>
       <span
         className="share-link"
-        onClick={() => openURLInPopup(`https://www.facebook.com/dialog/share?app_id=${process.env.FB_APPID}&display=popup&href=${url}/&redirect_uri=${url}`)}
+        onClick={() => openURLInPopup(`https://www.facebook.com/dialog/share?app_id=${process.env.FB_APPID}&display=popup&href=${encodeURIComponent(url)}&redirect_uri=${encodeURIComponent(url)}`)}
       >
         <i className="fa fa-facebook-square fa-2x" />
       </span>
