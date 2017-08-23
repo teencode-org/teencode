@@ -3,6 +3,7 @@ import { trimText } from 'Utils/helpers';
 
 const openURLInPopup = (url, name, width=600, height=400) => {
   window.open(url, name || 'window' + Math.floor(Math.random() * 10000 + 1), `width=${width},height=${height},menubar=0,location=0,toolbar=0,status=0,scrollbars=1`);
+  // window.open('https://www.facebook.com/dialog/share? app_id=145634995501895 &display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer', 'chd', 'width=600,height=400')
 }
 
 const SocialLinks = (props) => {
@@ -15,7 +16,7 @@ const SocialLinks = (props) => {
     <div className="blog-socials" style={props.style}>
       <span
         className="share-link"
-        onClick={() => openURLInPopup(`https://www.facebook.com/dialog/share?app_id=${process.env.FB_APPID}&display=popup&href=${url}/&redirect_uri=${url}`)}
+        onClick={() => openURLInPopup(`https://www.facebook.com/dialog/share?app_id=${process.env.FB_APPID}&display=popup&href=${encodeURIComponent(url)}&redirect_uri=${encodeURIComponent(url)}`)}
       >
         <i className="fa fa-facebook-square fa-2x" />
       </span>
