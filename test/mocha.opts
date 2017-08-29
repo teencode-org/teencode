@@ -1,0 +1,2 @@
+tools/testSetup.js src/**/*.spec.js
+tools/tests/**/*.test.js
