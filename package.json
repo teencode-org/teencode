@@ -18,7 +18,8 @@
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm-run-all clean-dist test build:html",
     "build": "babel-node tools/build.js NODE_ENV=production",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "test:server": "node_modules/.bin/mocha --report lcovonly \"tools/tests/**/*.test.js\""
   },
   "author": "Innocent Amadi",
   "license": "MIT",
@@ -100,6 +101,7 @@
   },
   "devDependencies": {
     "json-loader": "0.5.7",
+    "supertest": "^3.0.0",
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
