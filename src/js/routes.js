@@ -4,6 +4,7 @@ import App from './components/App';
 import Pages from './components/Pages';
 import HomePage from './components/home/HomePage';
 import CurriculumPage from './components/curriculum/Index';
+import FacilitatorGuidePage from './components/curriculum/FacilitatorGuide';
 import ApplicationPage from './components/partner_leads/application/Index';
 import EligibilityErrorPage from './components/feedback/error/Eligibility';
 import ApplicationSuccessPage from './components/feedback/success/Application';
@@ -34,6 +35,9 @@ export default (
       <Route path="curriculum"
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
              component={CurriculumPage} />
+      <Route path="facilitator-guide"
+             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
+             component={FacilitatorGuidePage} />
       <Route path="contact-us"
              component={ContactUs}
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
