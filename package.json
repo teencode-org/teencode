@@ -8,10 +8,10 @@
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "NODE_ENV='test' NODE_PATH=src mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
-    "test:dev": "mocha --reporter spec tools/testSetup.js \"src/**/*.spec.js\"",
+    "test": "NODE_ENV='test' NODE_PATH=src mocha --reporter progress",
+    "test:dev": "mocha --reporter spec",
     "test:watch": "npm run test -- --watch",
-    "test:coverage": "rimraf coverage/ && istanbul cover _mocha tools/testSetup.js \"src/**/*.spec.js\"",
+    "test:coverage": "rimraf coverage/ && istanbul cover _mocha",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf dist",
@@ -100,6 +100,7 @@
   },
   "devDependencies": {
     "json-loader": "0.5.7",
+    "supertest": "^3.0.0",
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
