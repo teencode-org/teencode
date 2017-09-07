@@ -18,6 +18,19 @@ table.table td {
   }
 }
 
+.guides-notes-divider {
+  border-top: 2px solid #e2e4e4;
+  margin: 4em -2.5em 3em;
+
+  @include mobile {
+    margin: 4em -1.3em 3em;
+  }
+
+  @include tablet {
+    margin: 4em -1.3em 3em;
+  }
+}
+
 .cur-links a {
   display: block;
   padding-bottom: 10px;
