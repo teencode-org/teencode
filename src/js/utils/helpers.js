@@ -54,6 +54,15 @@ const getTwoUniqueIdsFromBlogsArray = (arr, arrOfIdsToExclude) => {
   return newArr
 }
 
+const joinItemsWithCommaWithAnd = (itemList) => {
+    return itemList.join(", ").replace(/,(?!.*,)/gmi, " and");
+};
+
+const joinHtmlItemsWithCommaWithAnd = (itemList) => {
+    itemList = itemList.map(item => `<span>${item}</span>`);
+    return itemList.join(", ").replace(/,(?!.*,)/gmi, " and");
+};
+
 export {
   hasClass,
   addClass,
@@ -61,5 +70,7 @@ export {
   trimText,
   stripHtmlTags,
   getTwoUniqueIdsFromBlogsArray,
-  sanitizeHtml
+  sanitizeHtml,
+  joinItemsWithCommaWithAnd,
+  joinHtmlItemsWithCommaWithAnd
 }
