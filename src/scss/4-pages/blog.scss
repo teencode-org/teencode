@@ -39,6 +39,7 @@
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+
        &:after {
         content: '';
         position: absolute;
@@ -55,6 +56,7 @@
         left: 40px;
         z-index: 10;
         color: white;
+        margin-right: 15px;
 
         &:hover h3 {
          opacity: 0.7;
@@ -106,6 +108,9 @@
       align-items: center;
       justify-content: center;
       padding: unset;
+      width: 300px;
+      min-width: 300px;
+      background-size: cover;
 
       @media screen and (max-width: 768px) {
         img {
@@ -191,8 +196,9 @@
   .article-title {
     font-size: 28px;
     font-weight: 700;
-    text-align: center;
+    line-height: 1.3;
     margin-bottom: 30px;
+    text-align: center;
   }
   .blog-article-author {
     display: flex;
@@ -215,7 +221,7 @@
     }
     .article-author {
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 500;
       margin-bottom: 0.3em;
     }
   }

@@ -1,3 +1,3 @@
 module.exports = {
-  host: "https://teencode-backend-staging.herokuapp.com/api/v1"
+  host: "https://teencode-backend.herokuapp.com/api/v1"
 }
