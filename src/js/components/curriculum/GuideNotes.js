@@ -13,7 +13,7 @@ const GuideNotes = ({session}) => {
           target={sessionInfo && "_blank"}
           href={sessionInfo ? sessionInfo.facilitatorGuideUrl : defaultLink}
         >
-        <i className="fa fa-chevron-right" aria-hidden="true" />> Facilitator Guide
+        <i className="fa fa-chevron-right" aria-hidden="true" /> Facilitator Guide
         </a>
       </p>
       <p>
@@ -21,7 +21,7 @@ const GuideNotes = ({session}) => {
           target={sessionInfo && "_blank"}
           href={sessionInfo ? sessionInfo.lessonNotesUrl : defaultLink}
         >
-        <i className="fa fa-chevron-right" aria-hidden="true"/>> Lesson Notes
+        <i className="fa fa-chevron-right" aria-hidden="true"/> Lesson Notes
         </a>
       </p>
     </div>
