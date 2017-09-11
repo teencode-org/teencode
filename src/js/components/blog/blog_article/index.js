@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import { getBlogs, getBlogArticle } from '../../../actions/blogActions';
-import SocialLinks from '../SocialLinks';
+import SocialLinks from '../../common/SocialLinks';
 import ArticleThread from './ArticleThread';
 import ArticleHeader from './ArticleHeader';
 import ArticleBanner from './ArticleBanner';
