@@ -8,8 +8,7 @@ const BlogListArticle = ({ id, imageUrl, title, author, summary }) => {
     <div className="row blog-article">
       <div className="blog-article-image" style={{
         backgroundImage: `url(${imageUrl})`
-      }}>
-      </div>
+      }} />
       <div className="blog-article-info">
         <h2 className="article-title">{title}</h2>
         <p className="article-author">{author}</p>

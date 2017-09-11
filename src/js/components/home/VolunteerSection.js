@@ -7,7 +7,7 @@ const VolunteerSection = () =>
     <div className="container">
       <div className="row profile">
         <div className="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-          <img src='https://farm5.staticflickr.com/4397/36334242304_706089fdde_m.jpg' className="img-thumbnail picture hidden-xs" />
+          <img src="https://farm5.staticflickr.com/4397/36334242304_706089fdde_m.jpg" className="img-thumbnail picture hidden-xs" />
           <h5 className="name">Oluwadamilola Adebayo</h5>
           <p className="title">Software developer at Andela</p>
           <p className="role">Teencode volunteer facilitator</p>
