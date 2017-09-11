@@ -12,7 +12,7 @@ const SocialLinks = (props) => {
   const tweetLength = 140 - (25 + handle.length);
 
   return (
-    <div className="blog-socials" style={props.style}>
+    <div className="socials" style={props.style}>
       <span
         className="share-link"
         onClick={() => openURLInPopup(`https://www.facebook.com/dialog/share?app_id=${process.env.FB_APPID}&display=popup&href=${encodeURIComponent(url)}&redirect_uri=${encodeURIComponent(url)}`)}
