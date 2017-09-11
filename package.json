@@ -105,10 +105,6 @@
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
   },
-  "engines": {
-    "node": "^7.10.1",
-    "yarn": "^1.0.1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/andela-iamadi/react-bootstrap-test-starter"
