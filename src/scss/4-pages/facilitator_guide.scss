@@ -1,0 +1,119 @@
+.facilitor-guide {
+  .header-content {
+    position: sticky;
+    padding: 120px 0 80px;
+    border-bottom: 1px solid #eeeeee;
+    top: 0;
+    background: #ffffff;
+    z-index: 1;
+
+    h3 {
+      text-align: center;
+    }
+
+    p {
+      @include lato-font;
+      margin-bottom: 0;
+      letter-spacing: 1px;
+      color: #a09e9e;
+      font-size: 14px;
+
+      span {
+        color: $primary;
+      }
+    }
+
+    .header-content-titles {
+      border-right: 1px solid #dddddd;
+    }
+  }
+
+  .affixed-guide-links {
+    position: fixed;
+    right: 0;
+    left: 0;
+    border-right: 1px solid #eeeeee;
+    padding: 50px;
+    width: 350px;
+
+    .nav-link {
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: 16px;
+
+      &.active {
+        border-bottom: 3px solid $primary;
+      }
+    }
+  }
+
+  .guide-body {
+    padding: 30px;
+    font-weight: 300;
+
+    .embed {
+      border: 10px solid #dddddd;
+      margin: 10px 0 50px;
+    }
+
+    * {
+      @include roboto-font;
+      font-size: 18px;
+      line-height: 2;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 1.5;
+      margin: 25px 0 15px;
+      font-weight: 400;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include tablet {
+    .main-content {
+      margin-right: inherit;
+      max-width: calc(100vw - 220px);
+    }
+
+    .affixed-guide-links {
+      width: 220px;
+      padding: 0 25px;
+      line-height: 2;
+    }
+
+    .guide-body {
+      padding: 25px;
+
+      .embed {
+        margin: 10px 0 100px;
+      }
+    }
+  }
+
+  @include desktop {
+    .main-content {
+      margin-right: inherit;
+      max-width: calc(100vw - 350px);
+    }
+
+    .affixed-guide-links {
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .guide-body {
+      padding: 50px 100px;
+
+      .embed {
+        margin: 10px 0 80px;
+      }
+    }
+  }
+}
