@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import logo from '../../../img/logo-colored.png';
+import logo from 'Images/logo-colored.png';
 import DocumentTitle from '../common/DocumentTitle';
 import toastr from 'toastr';
 

@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import logo from '../../../../img/logo-colored.png';
+import logo from 'Images/logo-colored.png';
 import {Link, browserHistory} from 'react-router';
 import SingleQuestion from './SingleQuestion';
 import criteriaList from './criteriaList';

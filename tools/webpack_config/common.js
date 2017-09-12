@@ -1,30 +1,35 @@
-require('dotenv').config();
-
 import webpack from 'webpack';
 import path from 'path';
-import featureFlags from './tools/featureFlags';
+import featureFlags from '../featureFlags';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-const nodeModulesPath = path.resolve(__dirname, 'node_modules');
-const buildPath = path.resolve(__dirname, 'dist');
-const entryPath = path.resolve(__dirname, 'src', 'js', 'index.js');
+const PATH_ROOT = path.resolve(__dirname, '..', '..');
+
+const nodeModulesPath = path.resolve(PATH_ROOT, 'node_modules');
+const buildPath = path.resolve(PATH_ROOT, 'dist');
+const entryPath = path.resolve(PATH_ROOT, 'src', 'js', 'index.js');
+const imagesPath = path.resolve(PATH_ROOT, 'src', 'img', 'static_images');
+
+const GLOBALS = {
+  'teencode.feature': featureFlags,
+  'process.env.NODE_ENV': JSON.stringify('production'),
+  'process.env.FB_APPID': JSON.stringify(process.env.FB_APPID),
+  'process.env.DISQUS_SHORT_NAME': JSON.stringify(process.env.DISQUS_APP_NAME)
+};
 
 export default {
   debug: true,
   devtool: 'cheap-module-eval-source-map',
+  devServer: {
+    contentBase: './src'
+  },
+
   noInfo: false,
-  entry: [
-    'eventsource-polyfill',
-    'webpack-hot-middleware/client?reload=true',
-    entryPath
-  ],
   target: 'web',
   output: {
     path: buildPath,
     publicPath: '/',
     filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: './src'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -36,21 +41,26 @@ export default {
       Tether: 'tether',
       'window.Tether': 'tether'
     }),
-    new webpack.DefinePlugin({
-      'teencode.feature': featureFlags
-    })
+    new webpack.DefinePlugin(GLOBALS),
+    new CopyWebpackPlugin([
+      { context: imagesPath, from: '*', to: 'img' }
+    ])
   ],
   module: {
     loaders: [
       {
         test: /src\/js\/.+.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       // SASS
       {
         test: /css\/.+.(scss|css)$/,
         loaders: ['style', 'css', 'sass']
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
@@ -70,12 +80,20 @@ export default {
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file'
+        loader: 'file-loader'
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=image/svg+xml'
       }
     ]
+  },
+  resolve: {
+    alias: {
+      Utils: path.resolve(PATH_ROOT, 'src/js/utils/'),
+      Actions: path.resolve(PATH_ROOT, 'src/js/actions/'),
+      Images: path.resolve(PATH_ROOT, 'src/img/'),
+      Components: path.resolve(PATH_ROOT, 'src/js/components/'),
+    }
   }
 };

@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 const hasClass = (element, className) => {
   if (element.classList)
     return element.classList.contains(className)
@@ -20,8 +22,44 @@ const removeClass = (element, className) => {
   }
 }
 
+const trimText = (text, length) => {
+  return text.substring(0, length);
+}
+
+const stripHtmlTags = (html) => {
+  let div = document.createElement('div');
+  div.innerHTML = html;
+  return div.textContent || div.innerText;
+};
+
+const sanitizeHtml = (dirtyHTML) => {
+  return DOMPurify.sanitize(dirtyHTML);
+}
+
+const getTwoUniqueIdsFromBlogsArray = (arr, arrOfIdsToExclude) => {
+  let existingArrClone = arrOfIdsToExclude.slice(0);
+  let rand = 0, newArr = []
+
+  while(newArr.length < 2) {
+    rand = Math.floor(Math.random() * arr.length)
+
+    while (existingArrClone.indexOf(arr[rand]) != -1) {
+      rand = Math.floor(Math.random() * arr.length)
+    }
+
+    newArr.push(arr[rand])
+    existingArrClone.push(arr[rand])
+  }
+
+  return newArr
+}
+
 export {
   hasClass,
   addClass,
-  removeClass
+  removeClass,
+  trimText,
+  stripHtmlTags,
+  getTwoUniqueIdsFromBlogsArray,
+  sanitizeHtml
 }
