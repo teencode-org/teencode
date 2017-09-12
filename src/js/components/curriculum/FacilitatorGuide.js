@@ -65,7 +65,7 @@ export class FacilitatorGuidePage extends React.Component {
     let targetIndex = event.currentTarget.getAttribute('data-target');
     this.setState({selectedLinkIndex: targetIndex - 1});
     jquery('html, body').stop().animate({
-        scrollTop: (jquery(`.guide-body h2:nth-of-type(${targetIndex})`).offset().top - 170)
+        scrollTop: (jquery(`.guide-body h2:nth-of-type(${targetIndex})`).offset().top - 120)
     }, 500);
     event.preventDefault();
   }
@@ -127,7 +127,7 @@ export class FacilitatorGuidePage extends React.Component {
                 guide.intro_video &&
                 <div className="embed">
                   <div className="embed-responsive embed-responsive-16by9">
-                    <iframe className="embed-responsive-item" src={guide.intro_video} allowFullScreen></iframe>
+                    <iframe className="embed-responsive-item" src={guide.intro_video.replace("watch?v=", "embed/")} allowFullScreen></iframe>
                   </div>
                 </div>
               }
