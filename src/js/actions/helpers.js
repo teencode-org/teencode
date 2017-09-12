@@ -58,6 +58,7 @@ const handleApiCall = ({
             errorMessage && dispatch(receiveError(errorMessage, caller))
           } else {
             dispatch(actions.receive(response))
+            return response;
           }
         })
         .catch(errors => {
