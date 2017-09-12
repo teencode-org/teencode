@@ -32,14 +32,24 @@ export class FacilitatorGuidePage extends React.Component {
 
   handleScroll(event) {
     const header = event.target.querySelector('.header-content');
+    const footer = event.target.querySelector('footer');
     const sections = event.target.querySelectorAll('.guide-body h2');
+    const guideLinks = event.target.querySelector('.links');
     const headerHeight = header.clientHeight;
     const scrollTop = document.body.scrollTop;
 
-    if (scrollTop > headerHeight - 150) {
-      addClass(header, 'short-header');
-    } else {
+    const footerTop = footer.getBoundingClientRect().top + window.scrollY;
+    const heightToStartOfFooter = footerTop - window.innerHeight;
+
+    if (scrollTop < headerHeight - 150) {
       removeClass(header, 'short-header');
+    } else {
+      addClass(header, 'short-header');
+      if (scrollTop < heightToStartOfFooter) {
+        addClass(guideLinks, 'affixed-guide-links');
+      } else {
+        removeClass(guideLinks, 'affixed-guide-links');
+      }
     }
 
     for (let index = 0; index < sections.length; index++) {
@@ -105,12 +115,14 @@ export class FacilitatorGuidePage extends React.Component {
         </div>
         <div className="container main-content">
           <div className="row">
-            <aside className="affixed-guide-links hidden-sm-down">
-              <ul className="nav">
-                {this.getTocLinks()}
-              </ul>
+            <aside className="col-md-4 hidden-sm-down guide-links">
+              <div className="affixed-guide-links links">
+                <ul className="nav">
+                  {this.getTocLinks()}
+                </ul>
+              </div>
             </aside>
-            <div className="col-md-12 guide-body">
+            <div className="col-md-8 guide-body">
               {
                 guide.intro_video &&
                 <div className="embed">
