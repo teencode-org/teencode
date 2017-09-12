@@ -37,10 +37,9 @@
     position: fixed;
     right: 0;
     left: 0;
-    border-right: 1px solid #eeeeee;
     padding: 50px;
-    padding-left: 70px;
-    width: 370px;
+    padding-left: 150px;
+    width: 450px;
 
     .nav-link {
       cursor: pointer;
@@ -109,6 +108,16 @@
       top: 0;
       padding: 80px 30 40px;
 
+      &.short-header {
+        padding: 90px 0 25px;
+        box-shadow: 1px 3px 16px -6px #5d5c5c;
+
+        .header-content-titles,
+        .header-content-body {
+          display: none;
+        }
+      }
+
       h3 {
         text-align: center;
         font-size: 24px;
@@ -137,6 +146,7 @@
 
     .guide-body {
       padding: 30px;
+      border-left: 1px solid #eeeeee;
 
       * {
         font-size: 18px;
@@ -159,6 +169,19 @@
       position: sticky;
       top: 0;
       padding: 120px 0 80px;
+      -webkit-transition: padding 0.3s;
+      -moz-transition: padding 0.3s;
+      transition: padding 0.3s;
+
+      &.short-header {
+        padding: 90px 0 25px;
+        box-shadow: 1px 3px 16px -6px #5d5c5c;
+
+        .header-content-titles,
+        .header-content-body {
+          display: none;
+        }
+      }
 
       h3 {
         text-align: center;
@@ -177,7 +200,7 @@
 
     .main-content {
       margin-right: inherit;
-      max-width: calc(100vw - 350px);
+      max-width: calc(100vw - 450px);
     }
 
     .affixed-guide-links {
@@ -186,7 +209,8 @@
     }
 
     .guide-body {
-      padding: 50px 120px 50px 100px;
+      padding: 50px 170px 50px 80px;
+      border-left: 1px solid #eeeeee;
 
       * {
         font-size: 18px;
