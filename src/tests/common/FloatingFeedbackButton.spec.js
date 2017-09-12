@@ -7,6 +7,6 @@ describe('<FloatingFeedbackButton />', () => {
   const wrapper = shallow(<FloatingFeedbackButton />);
 
   it('displays the feedback text', () => {
-    expect(wrapper.find('span').text()).toEqual("We'd love to hear from you");
+    expect(wrapper.find('span').text()).toEqual("We would love to hear from you");
   });
 });
