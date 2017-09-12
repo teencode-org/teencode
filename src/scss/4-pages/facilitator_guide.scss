@@ -33,13 +33,22 @@
     }
   }
 
-  .affixed-guide-links {
-    position: fixed;
-    right: 0;
-    left: 0;
+  .guide-links {
+    width: 450px;
+  }
+
+  .links {
     padding: 50px;
     padding-left: 150px;
-    width: 450px;
+    -webkit-transition: position 0.3s;
+    -moz-transition: position 0.3s;
+    transition: position 0.3s;
+
+    &.affixed-guide-links {
+      position: fixed;
+      right: 0;
+      left: 0;
+    }
 
     .nav-link {
       cursor: pointer;
@@ -135,10 +144,10 @@
 
     .main-content {
       margin-right: inherit;
-      max-width: calc(100vw - 220px);
+      max-width: fit-content;
     }
 
-    .affixed-guide-links {
+    .guide-links {
       width: 220px;
       padding: 30px;
       line-height: 2;
@@ -147,6 +156,7 @@
     .guide-body {
       padding: 30px;
       border-left: 1px solid #eeeeee;
+      width: calc(100% - 220px);
 
       * {
         font-size: 18px;
@@ -200,10 +210,10 @@
 
     .main-content {
       margin-right: inherit;
-      max-width: calc(100vw - 450px);
+      max-width: fit-content;
     }
 
-    .affixed-guide-links {
+    .guide-links {
       font-size: 18px;
       line-height: 2;
     }
@@ -211,6 +221,7 @@
     .guide-body {
       padding: 50px 170px 50px 80px;
       border-left: 1px solid #eeeeee;
+      width: calc(100% - 450px);
 
       * {
         font-size: 18px;
