@@ -32,17 +32,18 @@ export default (
   <Route component={App}>
     <Route path="/" component={Pages} >
       <IndexRoute component={HomePage} />
-      <Route path="curriculum"
-             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
-             component={CurriculumPage} />
-      <Route path="facilitator-guide"
-             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
-             component={FacilitatorGuidePage} />
+      <Route
+        path="/curriculum"
+        onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
+      >
+        <IndexRoute component={CurriculumPage} />
+        <Route path="/curriculum/:id/facilitator-guide" component={FacilitatorGuidePage} />
+      </Route>
       <Route path="contact-us"
              component={ContactUs}
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
       <Route path="/blog"
-        onEnter={redirectIfFlagIsDisabled.bind(null,    flagChecks.blogPageIsEnabled())}
+        onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.blogPageIsEnabled())}
       >
         <IndexRoute component={Blog} />
         <Route path="/blog/:id/:title" component={BlogArticle}/>
