@@ -65,7 +65,7 @@ export class FacilitatorGuidePage extends React.Component {
     let targetIndex = event.currentTarget.getAttribute('data-target');
     this.setState({selectedLinkIndex: targetIndex - 1});
     jquery('html, body').stop().animate({
-        scrollTop: (jquery(`.guide-body h2:nth-of-type(${targetIndex})`).offset().top - 120)
+        scrollTop: (jquery(`.guide-body h2:nth-of-type(${targetIndex})`).offset().top - 170)
     }, 500);
     event.preventDefault();
   }

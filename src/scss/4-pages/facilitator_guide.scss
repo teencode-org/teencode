@@ -48,6 +48,7 @@
       position: fixed;
       right: 0;
       left: 0;
+      width: inherit;
     }
 
     .nav-link {
@@ -142,6 +143,10 @@
       }
     }
 
+    .links {
+      padding: 30px;
+    }
+
     .main-content {
       margin-right: inherit;
       max-width: fit-content;
@@ -149,7 +154,6 @@
 
     .guide-links {
       width: 220px;
-      padding: 30px;
       line-height: 2;
     }
 
@@ -169,7 +173,7 @@
       }
 
       .embed {
-        margin: 10px 0 100px;
+        margin: 10px 0 50px;
       }
     }
   }
