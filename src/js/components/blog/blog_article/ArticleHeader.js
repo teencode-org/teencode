@@ -1,14 +1,16 @@
 import React, { PropTypes } from 'react';
 
+const defaultTagline = "Building Africa's future, through code.";
+
 const ArticleHeader = ({article}) => (
   <div className="container">
     <div className="row">
       <div className="col-md-12">
         <h2 className="article-title hidden-sm-down">{article.title}</h2>
         {article.author && <div className="blog-article-author">
-          <img src={article.author.profile_image_url || 'http://via.placeholder.com/300x300?text=author'} />
+          <img src={article.author.profile_image_url || 'https://farm5.staticflickr.com/4352/36399928213_4820466c94_m.jpg'} />
           <p className="article-author">{article.author.name || ''}</p>
-          {article.author.tagline && <p className="article-tagline">{article.author.tagline}</p>}
+          <p className="article-tagline">{article.author.tagline || defaultTagline}</p>
         </div>}
       </div>
     </div>
