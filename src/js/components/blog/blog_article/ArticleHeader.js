@@ -8,7 +8,7 @@ const ArticleHeader = ({article}) => (
       <div className="col-md-12">
         <h2 className="article-title hidden-sm-down">{article.title}</h2>
         {article.author && <div className="blog-article-author">
-          <img src={article.author.profile_image_url || 'https://wrbunderwriting.com/wp-content/themes/wrb/dist/img/person-placeholder.jpg'} />
+          <img src={article.author.profile_image_url || 'https://farm5.staticflickr.com/4352/36399928213_4820466c94_m.jpg'} />
           <p className="article-author">{article.author.name || ''}</p>
           <p className="article-tagline">{article.author.tagline || defaultTagline}</p>
         </div>}
