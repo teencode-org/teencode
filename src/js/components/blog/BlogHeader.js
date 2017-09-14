@@ -20,7 +20,7 @@ const BlogHeader = ({featured}) => {
       <div className="col-sm-12 col-md-12 col-lg-5 right-col">
         {
           featured && featured.slice(1, 3).map(post =>
-            <Link key={post.id} to={`/blog/${post.id}/${parseBlogTitle(featured[1].title)}`} >
+            <Link key={post.id} to={`/blog/${post.id}/${parseBlogTitle(post.title)}`} >
               <div className="row top-row"
                    style={{ backgroundImage: `url("${post.featured_image_url || altImage}")`}}>
                 <div className="description">
