@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react'
 import CurriculumTableContainer from './CurriculumTable';
 import DocumentTitle from '../common/DocumentTitle';
-import guideData from './guideDummyData';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import jquery from 'jquery';
 import { sanitizeHtml, joinHtmlItemsWithCommaWithAnd } from '../../utils/helpers';
 import SocialLinks from '../common/SocialLinks';
-import { addClass, removeClass } from 'Utils/helpers'
+import { addClass, removeClass } from 'Utils/helpers';
+import { getFacilitatorGuide } from '../../actions/curriculumActions';
+import Loader from '../common/Loader';
 
 export class FacilitatorGuidePage extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export class FacilitatorGuidePage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.getFacilitatorGuide()
     window.scrollTo(0, 0);
     document.addEventListener('scroll', this.handleScroll);
   }
@@ -53,7 +55,9 @@ export class FacilitatorGuidePage extends React.Component {
     }
 
     for (let index = 0; index < sections.length; index++) {
-      if (sections[index].offsetTop < scrollTop) {
+      let sectionPosition = sections[index].offsetTop
+      let sectionHeight = sections[index].clientHeight
+      if (scrollTop >= sectionPosition - 20) {
         if (this.state.selectedLinkIndex !== index) {
           this.setState({selectedLinkIndex: index});
         }
@@ -63,16 +67,17 @@ export class FacilitatorGuidePage extends React.Component {
 
   goToSection(event) {
     let targetIndex = event.currentTarget.getAttribute('data-target');
-    this.setState({selectedLinkIndex: targetIndex - 1});
     jquery('html, body').stop().animate({
         scrollTop: (jquery(`.guide-body h2:nth-of-type(${targetIndex})`).offset().top - 170)
-    }, 500);
+    }, 500, function() {
+      this.setState({selectedLinkIndex: targetIndex - 1});
+    }.bind(this));
     event.preventDefault();
   }
 
   getTocLinks() {
     const tmpDiv = document.createElement('div');
-    tmpDiv.innerHTML = this.props.guide.body;
+    tmpDiv.innerHTML = this.props.curriculum.guide.body;
     const headings = tmpDiv.getElementsByTagName('h2');
     let tocLinks = []
     for (let index in headings) {
@@ -86,7 +91,8 @@ export class FacilitatorGuidePage extends React.Component {
   }
 
   render () {
-    const { guide } = this.props;
+    const { hasBeenFetched, guide } = this.props.curriculum;
+    if (!hasBeenFetched) return <Loader owner="facilitor guide"/>;
     const shareProps = {
       url: window.location.href,
       title: guide.title || '',
@@ -152,16 +158,23 @@ export class FacilitatorGuidePage extends React.Component {
 }
 
 FacilitatorGuidePage.propTypes = {
+  getFacilitatorGuide: PropTypes.func.isRequired,
   guide: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
   return {
-    guide: guideData
+    curriculum: state.curriculum
   };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    getFacilitatorGuide
+  }, dispatch)
 }
 
 export default DocumentTitle('Facilitor Guide')(connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(FacilitatorGuidePage));
