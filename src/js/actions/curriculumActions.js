@@ -1,5 +1,6 @@
 import actionTypes from '../constants/actionTypes';
 import { handleApiCall, baseActions } from './helpers';
+import guideData from '../components/curriculum/guideDummyData';
 
 export const getCurriculum = () => {
   let actions = baseActions({
@@ -18,3 +19,16 @@ export const getCurriculum = () => {
   });
 }
 
+export const getFacilitatorGuide = () => {
+  let actions = baseActions({
+    requestType: actionTypes.REQUEST_GET_FACILITATOR_GUIDE,
+    receiveType: actionTypes.RECEIVE_GET_FACILITATOR_GUIDE,
+    failType: actionTypes.FAIL_GET_FACILITATOR_GUIDE
+  });
+
+  
+  return (dispatch) => {
+    dispatch(actions.request({}))
+    dispatch(actions.receive(guideData))
+  }
+}
