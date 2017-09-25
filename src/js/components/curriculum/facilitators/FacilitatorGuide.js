@@ -6,7 +6,7 @@ import { getFacilitatorGuide } from '../../../actions/curriculumActions';
 import Loader from '../../common/Loader';
 import FacilitorTemplate from './Template';
 
-export class FacilitatorGuidePage extends React.Component {
+export class FacilitatorGuide extends React.Component {
   componentDidMount() {
     this.props.getFacilitatorGuide(this.props.params.id);
   }
@@ -19,9 +19,10 @@ export class FacilitatorGuidePage extends React.Component {
   }
 }
 
-FacilitatorGuidePage.propTypes = {
+FacilitatorGuide.propTypes = {
   getFacilitatorGuide: PropTypes.func.isRequired,
-  guide: PropTypes.object.isRequired
+  params: PropTypes.object.isRequired,
+  curriculum: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -39,4 +40,4 @@ const mapDispatchToProps = (dispatch) => {
 export default DocumentTitle('Facilitor Guide')(connect(
   mapStateToProps,
   mapDispatchToProps
-)(FacilitatorGuidePage));
+)(FacilitatorGuide));
