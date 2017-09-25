@@ -32,3 +32,17 @@ export const getFacilitatorGuide = () => {
     dispatch(actions.receive(guideData))
   }
 }
+
+export const getLessonNotes = () => {
+  let actions = baseActions({
+    requestType: actionTypes.REQUEST_GET_LESSON_NOTES,
+    receiveType: actionTypes.RECEIVE_GET_LESSON_NOTES,
+    failType: actionTypes.FAIL_GET_LESSON_NOTES
+  });
+
+  
+  return (dispatch) => {
+    dispatch(actions.request({}))
+    dispatch(actions.receive(guideData))
+  }
+}
