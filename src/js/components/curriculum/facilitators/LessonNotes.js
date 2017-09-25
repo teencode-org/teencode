@@ -8,16 +8,14 @@ import FacilitorTemplate from './Template';
 
 export class LessonNotesPage extends React.Component {
   componentDidMount() {
-    this.props.getLessonNotes();
+    this.props.getLessonNotes(this.props.params.id);
   }
 
   render () {
     const { hasBeenFetched, notes } = this.props.curriculum;
     if (!hasBeenFetched) return <Loader owner="lesson notes"/>;
 
-    return (
-      <FacilitorTemplate content={notes} />
-    )
+    return <FacilitorTemplate content={notes} />;
   }
 }
 

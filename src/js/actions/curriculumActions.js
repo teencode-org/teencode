@@ -19,7 +19,7 @@ export const getCurriculum = () => {
   });
 }
 
-export const getFacilitatorGuide = () => {
+export const getFacilitatorGuide = (curriculumSessionId) => {
   let actions = baseActions({
     requestType: actionTypes.REQUEST_GET_FACILITATOR_GUIDE,
     receiveType: actionTypes.RECEIVE_GET_FACILITATOR_GUIDE,
@@ -33,7 +33,7 @@ export const getFacilitatorGuide = () => {
   }
 }
 
-export const getLessonNotes = () => {
+export const getLessonNotes = (curriculumSessionId) => {
   let actions = baseActions({
     requestType: actionTypes.REQUEST_GET_LESSON_NOTES,
     receiveType: actionTypes.RECEIVE_GET_LESSON_NOTES,
