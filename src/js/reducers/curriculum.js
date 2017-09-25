@@ -4,15 +4,18 @@ export default function(state = initialState, action) {
   switch(action.type) {
     case actionTypes.REQUEST_GET_CURRICULUM:
     case actionTypes.REQUEST_GET_FACILITATOR_GUIDE:
+    case actionTypes.REQUEST_GET_LESSON_NOTES:
       return requestToGetCurriculum(state, action.payload);
+    case actionTypes.FAIL_GET_CURRICULUM:
+    case actionTypes.FAIL_GET_FACILITATOR_GUIDE:
+    case actionTypes.FAIL_GET_LESSON_NOTES:
+      return curriculumNotReceived();
     case actionTypes.RECEIVE_GET_CURRICULUM:
       return getCurriculum(state, action.payload);
-    case actionTypes.FAIL_GET_CURRICULUM:
-      return curriculumNotReceived();
     case actionTypes.RECEIVE_GET_FACILITATOR_GUIDE:
       return getFacilitatorGuide(state, action.payload);
-    case actionTypes.FAIL_GET_FACILITATOR_GUIDE:
-      return facilitatorGuideNotReceived();
+    case actionTypes.RECEIVE_GET_LESSON_NOTES:
+      return getLessonNotes(state, action.payload);
     default:
       return state;
   }
@@ -21,7 +24,8 @@ export default function(state = initialState, action) {
 const initialState = {
   isFetching: false,
   hasBeenFetched: false,
-  guide: {}
+  guide: {},
+  notes: {}
 }
 
 const requestToGetCurriculum = (state, payload) => {
@@ -43,12 +47,6 @@ const curriculumNotReceived = () => {
   });
 }
 
-const requestToGetFacilitatorGuide = (state, payload) => {
-  return Object.assign({}, state, {
-    isFetching: true
-  });
-}
-
 const getFacilitatorGuide = (state, payload) => {
   return Object.assign({}, state, {
     guide: payload.data,
@@ -56,8 +54,9 @@ const getFacilitatorGuide = (state, payload) => {
   });
 }
 
-const facilitatorGuideNotReceived = () => {
-  return Object.assign({}, {
-    hasBeenFetched: false
+const getLessonNotes = (state, payload) => {
+  return Object.assign({}, state, {
+    notes: payload.data,
+    hasBeenFetched: true
   });
 }
