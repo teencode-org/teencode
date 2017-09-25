@@ -6,7 +6,7 @@ import { getLessonNotes } from '../../../actions/curriculumActions';
 import Loader from '../../common/Loader';
 import FacilitorTemplate from './Template';
 
-export class LessonNotesPage extends React.Component {
+export class LessonNotes extends React.Component {
   componentDidMount() {
     this.props.getLessonNotes(this.props.params.id);
   }
@@ -19,9 +19,10 @@ export class LessonNotesPage extends React.Component {
   }
 }
 
-LessonNotesPage.propTypes = {
+LessonNotes.propTypes = {
   getLessonNotes: PropTypes.func.isRequired,
-  notes: PropTypes.object.isRequired
+  params: PropTypes.object.isRequired,
+  curriculum: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -39,4 +40,4 @@ const mapDispatchToProps = (dispatch) => {
 export default DocumentTitle('Lesson Notes')(connect(
   mapStateToProps,
   mapDispatchToProps
-)(LessonNotesPage));
+)(LessonNotes));

@@ -108,7 +108,7 @@ export class FacilitatorTemplate extends React.Component {
                 content.intro_video &&
                 <div className="embed">
                   <div className="embed-responsive embed-responsive-16by9">
-                    <iframe className="embed-responsive-item" src={content.intro_video.replace("watch?v=", "embed/")} allowFullScreen></iframe>
+                    <iframe className="embed-responsive-item" src={content.intro_video.replace("watch?v=", "embed/")} allowFullScreen />
                   </div>
                 </div>
               }
