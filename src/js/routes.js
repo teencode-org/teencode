@@ -5,6 +5,7 @@ import Pages from './components/Pages';
 import HomePage from './components/home/HomePage';
 import CurriculumPage from './components/curriculum/Index';
 import FacilitatorGuidePage from './components/curriculum/facilitators/FacilitatorGuide';
+import LessonNotesPage from './components/curriculum/facilitators/LessonNotes';
 import ApplicationPage from './components/partner_leads/application/Index';
 import EligibilityErrorPage from './components/feedback/error/Eligibility';
 import ApplicationSuccessPage from './components/feedback/success/Application';
@@ -37,7 +38,16 @@ export default (
         onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
       >
         <IndexRoute component={CurriculumPage} />
-        <Route path="/curriculum/:id/facilitator-guide" component={FacilitatorGuidePage} />
+        <Route
+          path="/curriculum/:id/facilitator-guide"
+          component={FacilitatorGuidePage}
+          onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.facilitatorGuideIsEnabled())}
+        />
+        <Route
+          path="/curriculum/:id/lesson-notes"
+          component={LessonNotesPage}
+          onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.lessonNotesIsEnabled())}
+        />
       </Route>
       <Route path="contact-us"
              component={ContactUs}
