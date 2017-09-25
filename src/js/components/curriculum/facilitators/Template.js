@@ -1,12 +1,7 @@
 import React, { PropTypes } from 'react'
-import DocumentTitle from '../../common/DocumentTitle';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import jquery from 'jquery';
-import { sanitizeHtml, joinHtmlItemsWithCommaWithAnd } from '../../../utils/helpers';
+import { addClass, removeClass, sanitizeHtml, joinHtmlItemsWithCommaWithAnd } from '../../../utils/helpers';
 import SocialLinks from '../../common/SocialLinks';
-import { addClass, removeClass } from 'Utils/helpers';
-import Loader from '../../common/Loader';
 import TocLinks from './TocLinks';
 
 export class FacilitatorTemplate extends React.Component {
