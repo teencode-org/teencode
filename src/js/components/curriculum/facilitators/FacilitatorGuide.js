@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react'
-import CurriculumTableContainer from './CurriculumTable';
-import DocumentTitle from '../common/DocumentTitle';
+import DocumentTitle from '../../common/DocumentTitle';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import jquery from 'jquery';
-import { sanitizeHtml, joinHtmlItemsWithCommaWithAnd } from '../../utils/helpers';
-import SocialLinks from '../common/SocialLinks';
+import { sanitizeHtml, joinHtmlItemsWithCommaWithAnd } from '../../../utils/helpers';
+import SocialLinks from '../../common/SocialLinks';
 import { addClass, removeClass } from 'Utils/helpers';
-import { getFacilitatorGuide } from '../../actions/curriculumActions';
-import Loader from '../common/Loader';
+import { getFacilitatorGuide } from '../../../actions/curriculumActions';
+import Loader from '../../common/Loader';
+import TocLinks from './TocLinks';
 
 export class FacilitatorGuidePage extends React.Component {
   constructor(props) {
@@ -75,21 +75,6 @@ export class FacilitatorGuidePage extends React.Component {
     event.preventDefault();
   }
 
-  getTocLinks() {
-    const tmpDiv = document.createElement('div');
-    tmpDiv.innerHTML = this.props.curriculum.guide.body;
-    const headings = tmpDiv.getElementsByTagName('h2');
-    let tocLinks = []
-    for (let index in headings) {
-      tocLinks.push(
-        <li key={index} className="nav-item">
-          <a data-target={parseInt(index) + 1} onClick={this.goToSection} className={`nav-link ${this.state.selectedLinkIndex === parseInt(index) ? 'active' : ''}`}>{headings[index].innerText}</a>
-        </li>
-      )
-    }
-    return tocLinks;
-  }
-
   render () {
     const { hasBeenFetched, guide } = this.props.curriculum;
     if (!hasBeenFetched) return <Loader owner="facilitor guide"/>;
@@ -123,9 +108,7 @@ export class FacilitatorGuidePage extends React.Component {
           <div className="row">
             <aside className="col-md-4 hidden-sm-down guide-links">
               <div className="affixed-guide-links links">
-                <ul className="nav">
-                  {this.getTocLinks()}
-                </ul>
+                <TocLinks selectedLinkIndex={this.state.selectedLinkIndex} body={guide.body} onClick={this.goToSection} />
               </div>
             </aside>
             <div className="col-md-8 guide-body">

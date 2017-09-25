@@ -4,7 +4,7 @@ import App from './components/App';
 import Pages from './components/Pages';
 import HomePage from './components/home/HomePage';
 import CurriculumPage from './components/curriculum/Index';
-import FacilitatorGuidePage from './components/curriculum/FacilitatorGuide';
+import FacilitatorGuidePage from './components/curriculum/facilitators/FacilitatorGuide';
 import ApplicationPage from './components/partner_leads/application/Index';
 import EligibilityErrorPage from './components/feedback/error/Eligibility';
 import ApplicationSuccessPage from './components/feedback/success/Application';
