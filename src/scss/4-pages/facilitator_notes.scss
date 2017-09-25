@@ -95,7 +95,7 @@
       }
     }
 
-    * {
+    *:not(i) {
       @include roboto-font;
       font-weight: 300;
     }
@@ -162,7 +162,7 @@
       border-left: 1px solid #eeeeee;
       width: calc(100% - 220px);
 
-      * {
+      *:not(i) {
         font-size: 18px;
         line-height: 2;
         letter-spacing: 1px;
@@ -227,7 +227,7 @@
       border-left: 1px solid #eeeeee;
       width: calc(100% - 450px);
 
-      * {
+      *:not(i) {
         font-size: 18px;
         line-height: 2;
         letter-spacing: 1px;
