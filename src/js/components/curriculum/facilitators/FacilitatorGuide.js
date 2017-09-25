@@ -8,7 +8,7 @@ import FacilitorTemplate from './Template';
 
 export class FacilitatorGuidePage extends React.Component {
   componentDidMount() {
-    this.props.getFacilitatorGuide();
+    this.props.getFacilitatorGuide(this.props.params.id);
   }
 
   render () {
