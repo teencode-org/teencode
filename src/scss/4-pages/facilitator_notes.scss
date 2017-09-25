@@ -1,4 +1,4 @@
-.facilitor-guide {
+.facilitor-content {
   .header-content {
     padding: 90px 30px 40px;
     border-bottom: 1px solid #eeeeee;
@@ -33,7 +33,7 @@
     }
   }
 
-  .guide-links {
+  .content-links {
     width: 450px;
   }
 
@@ -44,7 +44,7 @@
     -moz-transition: position 0.3s;
     transition: position 0.3s;
 
-    &.affixed-guide-links {
+    &.affixed-content-links {
       position: fixed;
       right: 0;
       left: 0;
@@ -62,7 +62,7 @@
     }
   }
 
-  .guide-body {
+  .content-body {
     padding: 30px;
     font-weight: 300;
 
@@ -152,12 +152,12 @@
       max-width: fit-content;
     }
 
-    .guide-links {
+    .content-links {
       width: 220px;
       line-height: 2;
     }
 
-    .guide-body {
+    .content-body {
       padding: 30px;
       border-left: 1px solid #eeeeee;
       width: calc(100% - 220px);
@@ -217,12 +217,12 @@
       max-width: fit-content;
     }
 
-    .guide-links {
+    .content-links {
       font-size: 18px;
       line-height: 2;
     }
 
-    .guide-body {
+    .content-body {
       padding: 50px 170px 50px 80px;
       border-left: 1px solid #eeeeee;
       width: calc(100% - 450px);
