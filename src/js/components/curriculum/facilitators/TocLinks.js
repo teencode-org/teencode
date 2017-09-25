@@ -13,7 +13,7 @@ const TocLinks = ({body, selectedLinkIndex, onClick}) => {
           {headings[index].innerText}
         </a>
       </li>
-    )
+    );
   }
 
   return (
