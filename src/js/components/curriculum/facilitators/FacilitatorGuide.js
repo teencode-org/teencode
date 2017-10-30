@@ -8,7 +8,8 @@ import FacilitorTemplate from './Template';
 
 export class FacilitatorGuide extends React.Component {
   componentDidMount() {
-    this.props.getFacilitatorGuide(this.props.params.id);
+    const { curriculum_id, id } = this.props.params;
+    this.props.getFacilitatorGuide(curriculum_id, id);
   }
 
   render () {
