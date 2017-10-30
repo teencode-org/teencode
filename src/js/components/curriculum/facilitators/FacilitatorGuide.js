@@ -8,15 +8,15 @@ import FacilitorTemplate from './Template';
 
 export class FacilitatorGuide extends React.Component {
   componentDidMount() {
-    const { curriculum_id, id } = this.props.params;
-    this.props.getFacilitatorGuide(curriculum_id, id);
+    const { sessionId, id } = this.props.params;
+    this.props.getFacilitatorGuide(sessionId, id);
   }
 
   render () {
     const { hasBeenFetched, guide } = this.props.curriculum;
     if (!hasBeenFetched) return <Loader owner="facilitor guide"/>;
 
-    return <FacilitorTemplate content={guide} />;
+    return <FacilitorTemplate content={guide} params={this.props.params} />;
   }
 }
 
