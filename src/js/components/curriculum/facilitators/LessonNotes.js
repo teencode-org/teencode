@@ -8,7 +8,8 @@ import FacilitorTemplate from './Template';
 
 export class LessonNotes extends React.Component {
   componentDidMount() {
-    this.props.getLessonNotes(this.props.params.id);
+    const { curriculum_id, id } = this.props.params;
+    this.props.getLessonNotes(curriculum_id, id);
   }
 
   render () {
