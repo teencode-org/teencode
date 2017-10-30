@@ -162,6 +162,12 @@
       border-left: 1px solid #eeeeee;
       width: calc(100% - 220px);
 
+      &.no-headings {
+        padding: 50px 100px;
+        border-left: none;
+        width: 100%;
+      }
+
       *:not(i) {
         font-size: 18px;
         line-height: 2;
@@ -226,6 +232,12 @@
       padding: 50px 170px 50px 80px;
       border-left: 1px solid #eeeeee;
       width: calc(100% - 450px);
+
+      &.no-headings {
+        padding: 50px 100px;
+        border-left: none;
+        width: 100%;
+      }
 
       *:not(i) {
         font-size: 18px;

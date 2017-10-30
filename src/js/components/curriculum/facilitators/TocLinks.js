@@ -1,9 +1,6 @@
 import React, {PropTypes} from 'react';
 
-const TocLinks = ({body, selectedLinkIndex, onClick}) => {
-  const tmpDiv = document.createElement('div');
-  tmpDiv.innerHTML = body;
-  const headings = tmpDiv.getElementsByTagName('h2');
+const TocLinks = ({headings, selectedLinkIndex, onClick}) => {
   let tocLinks = [];
 
   for (let index in headings) {
