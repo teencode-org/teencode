@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { getBlogs } from 'Actions/blogActions';
 import LoadMore from './LoadMore';
 import config from '../../config/';
+import { stripHtmlTags } from 'Utils/helpers';
 
 class BlogList extends Component {
 
@@ -15,12 +16,20 @@ class BlogList extends Component {
       blogs: [],
       page_data: {}
     }
+    this.isFetching = false;
   }
 
   componentWillMount() {
-    this.props.getBlogs().then(() => {
-      this.setState(Object.assign({}, this.state, this.props.blog.blogs));
-    });
+    this.getBlogs();
+  }
+
+  getBlogs = () => {
+    this.isFetching = true;
+    this.props.getBlogs({}, this.state.page_data.current_page + 1).then(({ blogs, page_data }) => {
+      if(!blogs || page_data.current_page === this.state.page_data.current_page) return;
+      this.isFetching = false;
+      this.setState({ page_data, blogs: [...this.state.blogs, ...blogs] });
+    })
   }
 
   displayBlogs = () => {
@@ -32,7 +41,7 @@ class BlogList extends Component {
                                     "http://via.placeholder.com/300x300"}
                         title={post.title}
                         author={`by ${post.author.name}`}
-                        summary={post.story.substring(0, config.SUMMARY_LENGTH) + "..."} />
+                        summary={stripHtmlTags(post.story).substring(0, config.SUMMARY_LENGTH) + "..."} />
     ));
   }
 
@@ -50,12 +59,7 @@ class BlogList extends Component {
 
   loadMore = () => {
     if (!this.moreArticlesAvailable()) return;
-    this.props.getBlogs({}, this.state.page_data.current_page + 1).then(() => {
-      if(this.moreArticlesAvailable()) {
-        const updatedState = [].concat(this.state.blogs).concat(this.props.blog.blogs);
-        this.setState({ page_data: this.props.blog.page_data, blogs: updatedState });
-      }
-    })
+    this.getBlogs();
   }
 
   noBlogs() {

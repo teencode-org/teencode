@@ -4,6 +4,7 @@ import React, { PropTypes } from 'react'
 import { getCurriculum } from '../../actions/curriculumActions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import GuideNotes from './GuideNotes'
 import Objectives from './Objectives'
 import Resources from './Resources'
 import Projects from './Projects'
@@ -31,10 +32,11 @@ export class CurriculumTable extends React.Component {
           <table className="table table-responsive">
             <tbody>
               {sortedCurriculumList.map(curriculumSession =>
-                <tr key={curriculumSession.id}>
+                <tr key={curriculumSession.id} name={`session${curriculumSession.id}`}>
                   <td>
                     <h6 className="cur-period">{curriculumSession.title}</h6>
                     <p>{curriculumSession.description}</p>
+                    <GuideNotes session={curriculumSession.id} />
                   </td>
                   <td>
                     <Objectives

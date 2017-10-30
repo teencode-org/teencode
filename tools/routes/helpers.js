@@ -29,8 +29,8 @@ const buildTags = ({blog}, url) => {
 }
 
 const injectMetaTag = (file, tags) => {
-  const headTag = '<head>';
-  const endOfOpeningHeadTag = file.indexOf(headTag) + headTag.length;
+  const headTag = '</head>';
+  const endOfOpeningHeadTag = file.indexOf(headTag);
   const opening = file.substring(0, endOfOpeningHeadTag);
   const closing = file.substring(endOfOpeningHeadTag);
   return opening + tags + closing;
