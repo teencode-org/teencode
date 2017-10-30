@@ -70,7 +70,7 @@ export class FacilitatorTemplate extends React.Component {
   }
 
   render () {
-    const { content } = this.props;
+    const { content, params } = this.props;
     const shareProps = {
       url: window.location.href,
       title: content.title || '',
@@ -95,7 +95,7 @@ export class FacilitatorTemplate extends React.Component {
               </div>
               <div className="col-xs-6 header-content-body">
                 <p>{content.level}</p>
-                {/*<p>{content.session.id}</p>*/}
+                <p>{params.sessionId}</p>
                 <p dangerouslySetInnerHTML={{__html: sanitizeHtml(joinHtmlItemsWithCommaWithAnd(content.authors.map(author => author.name)))}} />
               </div>
             </div>

@@ -39,12 +39,12 @@ export default (
       >
         <IndexRoute component={CurriculumPage} />
         <Route
-          path="/curriculum/:curriculum_id/facilitator-guide/:id"
+          path="/curriculum/:sessionId/facilitator-guide/:id"
           component={FacilitatorGuidePage}
           onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.facilitatorGuideIsEnabled())}
         />
         <Route
-          path="/curriculum/:curriculum_id/lesson-notes/:id"
+          path="/curriculum/:sessionId/lesson-notes/:id"
           component={LessonNotesPage}
           onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.lessonNotesIsEnabled())}
         />
