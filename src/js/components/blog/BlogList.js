@@ -33,16 +33,18 @@ class BlogList extends Component {
   }
 
   displayBlogs = () => {
-    return this.state.blogs.map((post, index) => (
-      <BlogListArticle key={index}
-                        id={post.id}
-                        imageUrl={post.featured_image_url ?
-                                    post.featured_image_url :
-                                    "http://via.placeholder.com/300x300"}
-                        title={post.title}
-                        author={`by ${post.author.name}`}
-                        summary={stripHtmlTags(post.story).substring(0, config.SUMMARY_LENGTH) + "..."} />
-    ));
+    return this.state.blogs.map((post, index) => {
+      if (post.published) {
+        return (<BlogListArticle key={index}
+                          id={post.id}
+                          imageUrl={post.featured_image_url ?
+                                      post.featured_image_url :
+                                      "http://via.placeholder.com/300x300"}
+                          title={post.title}
+                          author={`by ${post.author.name}`}
+                          summary={stripHtmlTags(post.story).substring(0, config.SUMMARY_LENGTH) + "..."} />)
+      }
+  });
   }
 
   moreArticlesAvailable() {
