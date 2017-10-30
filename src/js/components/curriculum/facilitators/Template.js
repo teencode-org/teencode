@@ -3,6 +3,7 @@ import jquery from 'jquery';
 import { addClass, removeClass, sanitizeHtml, joinHtmlItemsWithCommaWithAnd } from '../../../utils/helpers';
 import SocialLinks from '../../common/SocialLinks';
 import TocLinks from './TocLinks';
+import pluralize from 'pluralize';
 
 export class FacilitatorTemplate extends React.Component {
   constructor(props) {
@@ -77,6 +78,10 @@ export class FacilitatorTemplate extends React.Component {
       description: ''
     };
 
+    const tmpDiv = document.createElement('div');
+    tmpDiv.innerHTML = content.body;
+    const headings = tmpDiv.getElementsByTagName('h2');
+
     return (
       <section className="facilitor-content">
         <div className="header-content">
@@ -86,24 +91,27 @@ export class FacilitatorTemplate extends React.Component {
               <div className="col-xs-6 text-sm-right header-content-titles">
                 <p>Level</p>
                 <p>Session</p>
-                <p>Authors</p>
+                <p>{pluralize('Author', content.authors.length)}</p>
               </div>
               <div className="col-xs-6 header-content-body">
                 <p>{content.level}</p>
-                <p>{content.session}</p>
-                <p dangerouslySetInnerHTML={{__html: sanitizeHtml(joinHtmlItemsWithCommaWithAnd(content.authors.map(author => author.full_name)))}} />
+                {/*<p>{content.session.id}</p>*/}
+                <p dangerouslySetInnerHTML={{__html: sanitizeHtml(joinHtmlItemsWithCommaWithAnd(content.authors.map(author => author.name)))}} />
               </div>
             </div>
           </div>
         </div>
-        <div className="container main-content">
+        <div className={`container ${headings.length > 0 ? 'main-content' : ''}`}>
           <div className="row">
-            <aside className="col-md-4 hidden-sm-down content-links">
-              <div className="affixed-content-links links">
-                <TocLinks selectedLinkIndex={this.state.selectedLinkIndex} body={content.body} onClick={this.goToSection} />
-              </div>
-            </aside>
-            <div className="col-md-8 content-body">
+            {
+              headings.length > 0 &&
+              <aside className="col-md-4 hidden-sm-down content-links">
+                <div className="affixed-content-links links">
+                  <TocLinks selectedLinkIndex={this.state.selectedLinkIndex} headings={headings} onClick={this.goToSection} />
+                </div>
+              </aside>
+            }
+            <div className={`col-md-8 content-body ${headings.length > 0 ? '' : 'no-headings'}`}>
               {
                 content.intro_video &&
                 <div className="embed">
@@ -115,14 +123,20 @@ export class FacilitatorTemplate extends React.Component {
               <div className="" dangerouslySetInnerHTML={{__html: sanitizeHtml(content.body)}} />
               <SocialLinks {...shareProps} />
               <div className="col-md-12 next-prev-links">
-                <div className="col-md-5 text-md-right">
-                  <p>Previous:</p>
-                  <a href={content.prev_post.link}>{`<< ${content.prev_post.title}`}</a>
-                </div>
-                <div className="col-md-5 offset-md-2 text-xs-right text-md-left">
-                  <p>Next:</p>
-                  <a href={content.next_post.link}>{`${content.next_post.title} >>`}</a>
-                </div>
+                {
+                  content.previous &&
+                  <div className="col-md-5 text-md-right">
+                    <p>Previous</p>
+                    <a href={''}>{`<< ${content.previous.title}`}</a>
+                  </div>
+                }
+                {
+                  content.next &&
+                  <div className="col-md-5 offset-md-2 text-xs-right text-md-left">
+                    <p>Next</p>
+                    <a href={''}>{`${content.next.title} >>`}</a>
+                  </div>
+                }
               </div>
             </div>
           </div>
