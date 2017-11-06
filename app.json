@@ -3,6 +3,15 @@
   "scripts": {
   },
   "env": {
+    "CURRICULUM_ENABLED": {
+      "required": true
+    },
+    "FACILITATOR_GUIDE_ENABLED": {
+      "required": true
+    },
+    "LESSON_NOTES_ENABLED": {
+      "required": true
+    }
   },
   "formation": {
   },

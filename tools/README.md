@@ -7,6 +7,8 @@ We use feature flags to enable or disable deployed features.
 ## List of current feature flags
 
 * CURRICULUM_ENABLED
+* FACILITATOR_GUIDE_ENABLED
+* LESSON_NOTES_ENABLED
 * CONTACT_US_ENABLED
 * MISSION_PAGE_ENABLED
 * VOLUNTEER_ENABLED

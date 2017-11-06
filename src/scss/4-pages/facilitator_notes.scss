@@ -1,0 +1,257 @@
+.facilitor-content {
+  .header-content {
+    padding: 90px 30px 40px;
+    border-bottom: 1px solid #eeeeee;
+    background: #ffffff;
+    z-index: 1;
+
+    h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    p {
+      @include lato-font;
+      margin-bottom: 0;
+      letter-spacing: 1px;
+      color: #a09e9e;
+      font-size: 12px;
+
+      span {
+        color: $primary;
+      }
+    }
+
+    .header-content-titles {
+      border-right: 1px solid #dddddd;
+      width: 80px;
+      padding-left: 0;
+    }
+
+    .header-content-body {
+      width: calc(100% - 80px);
+    }
+  }
+
+  .content-links {
+    width: 450px;
+  }
+
+  .links {
+    padding: 50px;
+    padding-left: 150px;
+    -webkit-transition: position 0.3s;
+    -moz-transition: position 0.3s;
+    transition: position 0.3s;
+
+    &.affixed-content-links {
+      position: fixed;
+      right: 0;
+      left: 0;
+      width: inherit;
+    }
+
+    .nav-link {
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: 20px;
+
+      &.active {
+        border-bottom: 3px solid $primary;
+      }
+    }
+  }
+
+  .content-body {
+    padding: 30px;
+    font-weight: 300;
+
+    .embed {
+      border: 10px solid #dddddd;
+      margin: 10px 0 50px;
+    }
+
+    .socials {
+      margin-top: 70px;
+    }
+
+    .next-prev-links {
+      margin: 50px 0;
+      padding: 0;
+
+      & > div {
+        padding: 0;
+      }
+
+      p {
+        font-weight: 400;
+        margin-bottom: auto;
+        margin-top: 30px;
+      }
+
+      a {
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+
+    *:not(i) {
+      @include roboto-font;
+      font-weight: 300;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 1.5;
+      margin: 25px 0 15px;
+      font-weight: 400;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include tablet {
+    .header-content {
+      position: sticky;
+      top: 0;
+      padding: 80px 30 40px;
+
+      &.short-header {
+        padding: 90px 0 25px;
+        box-shadow: 1px 3px 16px -6px #5d5c5c;
+
+        .header-content-titles,
+        .header-content-body {
+          display: none;
+        }
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .header-content-titles,
+      .header-content-body {
+        width: 50%;
+      }
+    }
+
+    .links {
+      padding: 30px;
+    }
+
+    .main-content {
+      margin-right: inherit;
+      max-width: fit-content;
+    }
+
+    .content-links {
+      width: 220px;
+      line-height: 2;
+    }
+
+    .content-body {
+      padding: 30px;
+      border-left: 1px solid #eeeeee;
+      width: calc(100% - 220px);
+
+      &.no-headings {
+        padding: 50px 100px;
+        border-left: none;
+        width: 100%;
+      }
+
+      *:not(i) {
+        font-size: 18px;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .embed {
+        margin: 10px 0 50px;
+      }
+    }
+  }
+
+  @include desktop {
+    .header-content {
+      position: sticky;
+      top: 0;
+      padding: 120px 0 80px;
+      -webkit-transition: padding 0.3s;
+      -moz-transition: padding 0.3s;
+      transition: padding 0.3s;
+
+      &.short-header {
+        padding: 90px 0 25px;
+        box-shadow: 1px 3px 16px -6px #5d5c5c;
+
+        .header-content-titles,
+        .header-content-body {
+          display: none;
+        }
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .header-content-titles,
+      .header-content-body {
+        width: 50%;
+      }
+    }
+
+    .main-content {
+      margin-right: inherit;
+      max-width: fit-content;
+    }
+
+    .content-links {
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .content-body {
+      padding: 50px 170px 50px 80px;
+      border-left: 1px solid #eeeeee;
+      width: calc(100% - 450px);
+
+      &.no-headings {
+        padding: 50px 100px;
+        border-left: none;
+        width: 100%;
+      }
+
+      *:not(i) {
+        font-size: 18px;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .embed {
+        margin: 10px 0 80px;
+      }
+    }
+  }
+}

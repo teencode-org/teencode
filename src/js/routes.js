@@ -4,6 +4,8 @@ import App from './components/App';
 import Pages from './components/Pages';
 import HomePage from './components/home/HomePage';
 import CurriculumPage from './components/curriculum/Index';
+import FacilitatorGuidePage from './components/curriculum/facilitators/FacilitatorGuide';
+import LessonNotesPage from './components/curriculum/facilitators/LessonNotes';
 import ApplicationPage from './components/partner_leads/application/Index';
 import EligibilityErrorPage from './components/feedback/error/Eligibility';
 import ApplicationSuccessPage from './components/feedback/success/Application';
@@ -31,14 +33,27 @@ export default (
   <Route component={App}>
     <Route path="/" component={Pages} >
       <IndexRoute component={HomePage} />
-      <Route path="curriculum"
-             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
-             component={CurriculumPage} />
+      <Route
+        path="/curriculum"
+        onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.curriculumIsEnabled())}
+      >
+        <IndexRoute component={CurriculumPage} />
+        <Route
+          path="/curriculum/:sessionId/facilitator-guide/:id"
+          component={FacilitatorGuidePage}
+          onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.facilitatorGuideIsEnabled())}
+        />
+        <Route
+          path="/curriculum/:sessionId/lesson-notes/:id"
+          component={LessonNotesPage}
+          onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.lessonNotesIsEnabled())}
+        />
+      </Route>
       <Route path="contact-us"
              component={ContactUs}
              onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
       <Route path="/blog"
-        onEnter={redirectIfFlagIsDisabled.bind(null,    flagChecks.blogPageIsEnabled())}
+        onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.blogPageIsEnabled())}
       >
         <IndexRoute component={Blog} />
         <Route path="/blog/:id/:title" component={BlogArticle}/>

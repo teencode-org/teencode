@@ -4,6 +4,14 @@ export const curriculumIsEnabled = () => {
   return teencode.feature.CURRICULUM_ENABLED;
 };
 
+export const facilitatorGuideIsEnabled = () => {
+  return teencode.feature.FACILITATOR_GUIDE_ENABLED;
+};
+
+export const lessonNotesIsEnabled = () => {
+  return teencode.feature.LESSON_NOTES_ENABLED;
+};
+
 export const contactUsIsEnabled = () => {
   return teencode.feature.CONTACT_US_ENABLED;
 };
