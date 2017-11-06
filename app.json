@@ -3,10 +3,15 @@
   "scripts": {
   },
   "env": {
-    "INHERIT_THIS_CONFIG_VAR": {
+    "CURRICULUM_ENABLED": {
       "required": true
     },
-    "DONT_INHERIT_THIS_CONFIG_VAR": "production"
+    "FACILITATOR_GUIDE_ENABLED": {
+      "required": true
+    },
+    "LESSON_NOTES_ENABLED": {
+      "required": true
+    }
   },
   "formation": {
   },
