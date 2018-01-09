@@ -1,28 +1,21 @@
 import React, {PropTypes} from 'react';
-import facilitatorGuideList from './facilitatorGuideList'
+import { Link } from 'react-router';
 
 const GuideNotes = ({session}) => {
-  const sessionInfo = facilitatorGuideList.find((element) => element.id === session)
   const defaultLink = `#session${session}`
 
   return (
     <div>
       <div className="guides-notes-divider" />
       <p>
-        <a
-          target={sessionInfo && "_blank"}
-          href={sessionInfo ? sessionInfo.facilitatorGuideUrl : defaultLink}
-        >
-        <i className="fa fa-chevron-right" aria-hidden="true" /> Facilitator Guide
-        </a>
+        <Link to={`/curriculum/${session}/facilitator-guide/2`}>
+          <i className="fa fa-chevron-right" aria-hidden="true" /> Facilitator Guide
+        </Link>
       </p>
       <p>
-        <a
-          target={sessionInfo && "_blank"}
-          href={sessionInfo ? sessionInfo.lessonNotesUrl : defaultLink}
-        >
-        <i className="fa fa-chevron-right" aria-hidden="true"/> Lesson Notes
-        </a>
+        <Link to={`/curriculum/${session}/lesson-notes/2`}>
+          <i className="fa fa-chevron-right" aria-hidden="true"/> Lesson Notes
+        </Link>
       </p>
     </div>
   )

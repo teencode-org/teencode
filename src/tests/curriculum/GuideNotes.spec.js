@@ -13,10 +13,12 @@ describe('GuideNotes Component', () => {
   it('displays accurate links for the session', () => {
     const componentProps = GuideNotesRender.instance().props;
     expect(componentProps.session).toEqual(1);
+    const Links = GuideNotesRender.find('Link');
 
     expect(GuideNotesRender.find('.guides-notes-divider')).toBeTruthy();
-    expect(GuideNotesRender.find('a').length).toEqual(2);
-    expect(GuideNotesRender.find('a').nodes[0].props.href).toEqual('#session1');
+    expect(Links.length).toEqual(2);
+    expect(Links.nodes[0].props.children.includes(' Facilitator Guide'));
+    expect(Links.nodes[1].props.children.includes(' Lesson Notes'));
   });
 });
 
