@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { trimText } from 'Utils/helpers';
 
@@ -36,10 +37,10 @@ const SocialLinks = (props) => {
 }
 
 SocialLinks.propTypes = {
-  style: React.PropTypes.object,
-  title: React.PropTypes.string.isRequired,
-  url: React.PropTypes.string.isRequired,
-  imageUrl: React.PropTypes.string.isRequired
+  style: PropTypes.object,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired
 };
 
 export default SocialLinks;
