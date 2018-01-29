@@ -29,6 +29,11 @@ export class CurriculumTable extends React.Component {
       return (
         <div>
           <h3 className="page-header">Curriculum</h3>
+          <a href="https://docs.google.com/spreadsheets/d/1IgSMzpIA9rlQcizFiubTvWm0_3cW4xsi61v7FA5msfc/edit#gid=0"
+            className="progress-template-link"
+            target="_blank">
+            Progress Tracking Template (For facilitators)
+          </a>
           <table className="table table-responsive">
             <tbody>
               {sortedCurriculumList.map(curriculumSession =>
