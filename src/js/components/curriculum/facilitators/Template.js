@@ -83,64 +83,67 @@ export class FacilitatorTemplate extends React.Component {
     const headings = tmpDiv.getElementsByTagName('h2');
 
     return (
-      <section className="facilitor-content">
-        <div className="header-content">
-          <div className="row">
-            <div className="col-md-12">
-              <h3>{content.title}</h3>
-              <div className="col-xs-6 text-sm-right header-content-titles">
-                <p>Level</p>
-                <p>Session</p>
-                <p>{pluralize('Author', content.authors.length)}</p>
-              </div>
-              <div className="col-xs-6 header-content-body">
-                <p>{content.level}</p>
-                <p>{params.sessionId}</p>
-                <p dangerouslySetInnerHTML={{__html: sanitizeHtml(joinHtmlItemsWithCommaWithAnd(content.authors.map(author => author.name)))}} />
+      <section>
+        {content &&
+        <section className="facilitor-content">
+          <div className="header-content">
+            <div className="row">
+              <div className="col-md-12">
+                <h3>{content.title}</h3>
+                <div className="col-xs-6 text-sm-right header-content-titles">
+                  <p>Level</p>
+                  <p>Session</p>
+                  {/* <p>{pluralize('Author', content.authors.length)}</p> */}
+                </div>
+                {content.authors && <div className="col-xs-6 header-content-body">
+                  <p>{content.level}</p>
+                  <p>{params.sessionId}</p>
+                  <p dangerouslySetInnerHTML={{__html: sanitizeHtml(joinHtmlItemsWithCommaWithAnd(content.authors.map(author => author.name)))}} />
+                </div>}
               </div>
             </div>
           </div>
-        </div>
-        <div className={`container ${headings.length > 0 ? 'main-content' : ''}`}>
-          <div className="row">
-            {
-              headings.length > 0 &&
-              <aside className="col-md-4 hidden-sm-down content-links">
-                <div className="affixed-content-links links">
-                  <TocLinks selectedLinkIndex={this.state.selectedLinkIndex} headings={headings} onClick={this.goToSection} />
-                </div>
-              </aside>
-            }
-            <div className={`col-md-8 content-body ${headings.length > 0 ? '' : 'no-headings'}`}>
+          <div className={`container ${headings.length > 0 ? 'main-content' : ''}`}>
+            <div className="row">
               {
-                content.intro_video &&
-                <div className="embed">
-                  <div className="embed-responsive embed-responsive-16by9">
-                    <iframe className="embed-responsive-item" src={content.intro_video.replace("watch?v=", "embed/")} allowFullScreen />
+                headings.length > 0 &&
+                <aside className="col-md-4 hidden-sm-down content-links">
+                  <div className="affixed-content-links links">
+                    <TocLinks selectedLinkIndex={this.state.selectedLinkIndex} headings={headings} onClick={this.goToSection} />
                   </div>
-                </div>
+                </aside>
               }
-              <div className="" dangerouslySetInnerHTML={{__html: sanitizeHtml(content.body)}} />
-              <SocialLinks {...shareProps} />
-              <div className="col-md-12 next-prev-links">
+              <div className={`col-md-8 content-body ${headings.length > 0 ? '' : 'no-headings'}`}>
                 {
-                  content.previous &&
-                  <div className="col-md-5 text-md-right">
-                    <p>Previous</p>
-                    <a href={''}>{`<< ${content.previous.title}`}</a>
+                  content.intro_video &&
+                  <div className="embed">
+                    <div className="embed-responsive embed-responsive-16by9">
+                      <iframe className="embed-responsive-item" src={content.intro_video.replace("watch?v=", "embed/")} allowFullScreen />
+                    </div>
                   </div>
                 }
-                {
-                  content.next &&
-                  <div className="col-md-5 offset-md-2 text-xs-right text-md-left">
-                    <p>Next</p>
-                    <a href={''}>{`${content.next.title} >>`}</a>
-                  </div>
-                }
+                <div className="" dangerouslySetInnerHTML={{__html: sanitizeHtml(content.body)}} />
+                <SocialLinks {...shareProps} />
+                {/* <div className="col-md-12 next-prev-links">
+                  {
+                    content.previous &&
+                    <div className="col-md-5 text-md-right">
+                      <p>Previous</p>
+                      <a href={''}>{`<< ${content.previous.title}`}</a>
+                    </div>
+                  }
+                  {
+                    content.next &&
+                    <div className="col-md-5 offset-md-2 text-xs-right text-md-left">
+                      <p>Next</p>
+                      <a href={''}>{`${content.next.title} >>`}</a>
+                    </div>
+                  }
+                </div> */}
               </div>
             </div>
           </div>
-        </div>
+        </section>}
       </section>
     )
   }
