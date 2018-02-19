@@ -15,7 +15,6 @@ export class LessonNotes extends React.Component {
   render () {
     const { hasBeenFetched, notes } = this.props.curriculum;
     if (!hasBeenFetched) return <Loader owner="lesson notes"/>;
-
     return <FacilitorTemplate content={notes} params={this.props.params} />;
   }
 }
