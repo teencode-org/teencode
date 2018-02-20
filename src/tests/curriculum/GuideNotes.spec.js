@@ -5,14 +5,18 @@ import GuideNotes from '../../js/components/curriculum/GuideNotes';
 
 describe('GuideNotes Component', () => {
   const props = {
-    session: 1
+    session: {
+      id: 1,
+      lesson_notes: [{id: 1}],
+      facilitator_guides: [{id: 1}]
+    }
   };
 
   const GuideNotesRender = shallow(<GuideNotes {...props} />);
 
   it('displays accurate links for the session', () => {
     const componentProps = GuideNotesRender.instance().props;
-    expect(componentProps.session).toEqual(1);
+    expect(componentProps.session.id).toEqual(1);
     const Links = GuideNotesRender.find('Link');
 
     expect(GuideNotesRender.find('.guides-notes-divider')).toBeTruthy();
