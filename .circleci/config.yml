@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:9.11.1
+     steps:
+      - checkout
+      - run:
+          name: yarn-install
+          command: yarn install
+      - run:
+          name: test
+          command: yarn test
