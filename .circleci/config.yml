@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:9.11.1
-     steps:
+    steps:
       - checkout
       - run:
           name: yarn-install
