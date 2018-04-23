@@ -96,12 +96,11 @@
     "toastr": "2.1.2",
     "underscore": "^1.8.3",
     "url-loader": "0.5.7",
-    "webpack": "^1.12.2"
+    "webpack": "^1.13.0"
   },
   "devDependencies": {
     "json-loader": "0.5.7",
     "supertest": "^3.0.0",
-    "webpack": "^1.13.0",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
   },
