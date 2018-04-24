@@ -1,6 +1,11 @@
 /* eslint-disable no-var*/
 var expect = require('expect');
-var mount = require('enzyme').mount;
+const enzyme = require('enzyme');
+const Adapter = require('enzyme-adapter-react-16');
+
+var mount = enzyme.mount;
+
+enzyme.configure({ adapter: new Adapter() });
 var shallow = require('enzyme').shallow;
 var sinon = require('sinon');
 
