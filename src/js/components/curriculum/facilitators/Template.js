@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 import jquery from 'jquery';
 import { addClass, removeClass, sanitizeHtml, joinHtmlItemsWithCommaWithAnd } from '../../../utils/helpers';
 import SocialLinks from '../../common/SocialLinks';

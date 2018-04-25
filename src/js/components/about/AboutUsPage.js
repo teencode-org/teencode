@@ -15,7 +15,7 @@ class AboutUsPage extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    window.analytics.page();
+    // window.analytics.page();
   }
 
   render() {

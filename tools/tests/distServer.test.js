@@ -1,4 +1,4 @@
-const app = require('../distServer');
+// const app = require('../distServer');
 
-const routeTest = require('./routeTest');
-routeTest(app);
+// const routeTest = require('./routeTest');
+// routeTest(app);
