@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 import jquery from 'jquery';
+
 import SubLinks from './SubLinks';
 
 class NavLink extends React.Component {

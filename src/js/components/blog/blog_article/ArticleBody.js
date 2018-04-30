@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import { sanitizeHtml } from '../../../utils/helpers';
+
 
 const ArticleBody = ({article}) => (
   <div className="article-body">

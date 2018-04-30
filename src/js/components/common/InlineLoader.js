@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+
 const InlineLoader = () =>
   <div className="dots">
     <div className="bounce-one" />

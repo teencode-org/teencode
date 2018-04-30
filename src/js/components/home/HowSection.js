@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 
+
 const HowSection = () =>
   <section id="how" className="how bg-lighter-blue section">
     <div className="container">

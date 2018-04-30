@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+
 const MainBannerSection = () =>
   <section id="intro" className="intro">
     <div className="overlay">

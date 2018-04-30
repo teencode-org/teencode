@@ -6,7 +6,7 @@ import ProofArticlesSection from '../../js/components/home/ProofArticlesSection'
 describe('ProofArticlesSection', () => {
   const ProofArticlesRender = shallow(<ProofArticlesSection />);
 
-  it('displays the correct markup', function() {
+  it('displays the correct markup', () => {
     expect(ProofArticlesRender.find('section').length).toEqual(1);
     expect(ProofArticlesRender.find('section').hasClass('proof')).toBeTruthy();
     // expect(ProofArticlesRender.find('.proof').text()).toInclude('Nigeria brothers Osite and Anime');

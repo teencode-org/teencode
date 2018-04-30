@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 import jquery from 'jquery';
+
 import FloatingFeedbackButton from './FloatingFeedbackButton';
 import * as featureflags from 'Utils/featureFlagChecks';
+
 
 class Footer extends React.Component {
   constructor(props) {

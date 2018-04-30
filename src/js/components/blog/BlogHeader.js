@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
+
 import { parseBlogTitle } from 'Utils/parseBlogTitle';
+
 
 const BlogHeader = ({featured}) => {
   let firstImage = featured[0].featured_image_url || 'http://via.placeholder.com/700x500'

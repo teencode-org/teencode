@@ -7,6 +7,7 @@ import { getFeaturedBlogs } from 'Actions/blogActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+
 class Blog extends Component {
   componentWillMount() {
     this.props.getFeaturedBlogs()
@@ -15,7 +16,6 @@ class Blog extends Component {
   componentDidMount() {
     window.scrollTo(0, 0)
   }
-
 
   render() {
     return (

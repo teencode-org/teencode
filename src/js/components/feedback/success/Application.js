@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ApplicationSuccess = () => {
   return (
     <div className="page-title">

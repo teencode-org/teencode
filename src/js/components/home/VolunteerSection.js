@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
+
 import * as featureFlags from '../../utils/featureFlagChecks';
+
 
 const VolunteerSection = () =>
   <section id="volunteer" className="volunteers">

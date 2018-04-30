@@ -1,19 +1,17 @@
-const fs = require('fs');
-const cheerio = require('cheerio');
-const colors = require('colors');
+import { readFile, writeFile } from "fs";
+import { load } from "cheerio";
+import colors from "colors";
 
-/*eslint-disable no-console */
-
-fs.readFile('src/index.html', 'utf-8', function (err, markup) {
+readFile('src/index.html', 'utf-8', function (err, markup) {
   if (err) {
-    return console.log(err);
+    return err;
   }
-  const $ = cheerio.load(markup);
+  const $ = load(markup);
 
-  fs.writeFile('dist/index.html', $.html(), 'utf-8', function(err) {
+  writeFile('dist/index.html', $.html(), 'utf-8', function(err) {
     if (err) {
-      return console.log(err);
+      return err;
     }
-    console.log('index.html written to /dist'.green)
+    'index.html written to /dist'.green
   })
 })

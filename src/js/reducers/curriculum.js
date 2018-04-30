@@ -1,6 +1,7 @@
 import actionTypes from '../constants/actionTypes';
 
-export default function(state = initialState, action) {
+
+export default (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.REQUEST_GET_CURRICULUM:
     case actionTypes.REQUEST_GET_FACILITATOR_GUIDE:

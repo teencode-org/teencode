@@ -1,6 +1,8 @@
-import Config from '../config';
 import fetch from 'isomorphic-fetch';
 import 'babel-polyfill';
+
+import Config from '../config';
+
 
 const requestPath = (path, method, data = {}) => {
   if (method === 'GET' && data.length > 0) {
@@ -17,7 +19,7 @@ const requestBody = (data, method) => {
 /**
 * @return {Object} Headers containing auth details
 */
-export function requestHeaders() {
+export const requestHeaders = () => {
   return new Headers({
     'Content-Type': 'application/json'
   });
@@ -29,7 +31,7 @@ export function requestHeaders() {
 * @param {Object} data: eg {id: 1}
 * @return {Object} fetch: to be used in views that check for success or failure
 */
-export default function processRequest(path, method, data = {}) {
+const processRequest = (path, method, data = {}) => {
   let url = Config.host + requestPath(path, method, data);
   return fetch(url, {
     method  : method,
@@ -43,3 +45,5 @@ export default function processRequest(path, method, data = {}) {
     throw (err);
   });
 }
+
+export default processRequest;

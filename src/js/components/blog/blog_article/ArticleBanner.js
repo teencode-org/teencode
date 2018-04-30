@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+
 const ArticleBanner = ({article, defaultBlogImage}) => (
   <div className="article-image-container">
     <img className="article-image" src={article.featured_image_url || defaultBlogImage} />

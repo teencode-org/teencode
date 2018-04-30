@@ -1,5 +1,6 @@
 import actionTypes from '../constants/actionTypes';
 
+
 export default function(state = initialState, action) {
   switch(action.type) {
     case actionTypes.REQUEST_GET_BLOG:

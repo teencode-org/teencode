@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+
 const TocLinks = ({headings, selectedLinkIndex, onClick}) => {
   let tocLinks = [];
 

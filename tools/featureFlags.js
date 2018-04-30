@@ -1,4 +1,5 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default {
   'CURRICULUM_ENABLED': process.env.CURRICULUM_ENABLED,

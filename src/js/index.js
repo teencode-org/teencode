@@ -11,6 +11,7 @@ import 'tether';
 import 'bootstrap/dist/js/bootstrap.min';
 import '../scss/main.scss';
 
+
 // function fetchCookie(name) {
 //    if (document.cookie.indexOf(name + "=") < 0) {
 //      return null;

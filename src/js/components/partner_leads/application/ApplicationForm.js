@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import logo from '../../../../img/logo-colored.png';
 import TextField from '../../common/form/TextField';
 import Submit from '../../common/form/Submit';
+
 
 class ApplicationForm extends React.Component {
   constructor() {

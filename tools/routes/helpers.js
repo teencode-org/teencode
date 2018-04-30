@@ -1,7 +1,7 @@
-let request = require('request');
-let config = require('../../src/js/config');
+import request from 'request';
+import config from '../../src/js/config';
 
-const buildTags = ({blog}, url) => {
+export const buildTags = ({blog}, url) => {
   let description = blog.story
     .replace(/[<&]\/?[a-zA-Z]+[0-9]?[>;]/g, ' ').substring(0, config.SUMMARY_LENGTH);
   description = description.replace(/<(?:.|\n)*?>/gm, '');
@@ -28,7 +28,7 @@ const buildTags = ({blog}, url) => {
     `;
 }
 
-const injectMetaTag = (file, tags) => {
+export const injectMetaTag = (file, tags) => {
   const headTag = '</head>';
   const endOfOpeningHeadTag = file.indexOf(headTag);
   const opening = file.substring(0, endOfOpeningHeadTag);
@@ -36,7 +36,7 @@ const injectMetaTag = (file, tags) => {
   return opening + tags + closing;
 }
 
-const fetchBlog = (id, cb) => {
+export const fetchBlog = (id, cb) => {
   const url = `${config.host}/blogs/${id}`;
   request({ url }, (err, response, body) => {
     if (err !== null) {
@@ -46,9 +46,3 @@ const fetchBlog = (id, cb) => {
     cb(null, body);
   });
 }
-
-module.exports = {
-  buildTags,
-  injectMetaTag,
-  fetchBlog
-};

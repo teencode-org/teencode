@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import webpackConfig from './webpack_config/prod';
 import colors from 'colors';
 
+
 process.env.NODE_ENV = 'production'; // assures the babel dev config for hot reloading doesn't apply
 console.log('generating minified bundle for production via webpack. This will take a moment. . .'.blue);
 

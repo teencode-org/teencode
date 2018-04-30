@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import InlineLoader from './InlineLoader';
+
 
 class ProgressCircle extends React.Component {
   constructor(props) {

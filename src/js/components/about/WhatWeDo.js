@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const WhatWeDo = () =>
     <section className="bg-lighter-blue half-section main-wrapper">
       <div className="inner-wrapper">

@@ -1,15 +1,15 @@
-let fs = require('fs');
-let path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const ROOT_PATH = path.join(__dirname, '..', '..');
 
-let {
+import {
   buildTags,
   injectMetaTag,
-  fetchBlog,
-} = require('./helpers');
+  fetchBlog
+} from './helpers';
 
-module.exports = (req, res) => {
+export default (req, res) => {
   const blogId = req.params.id;
   fetchBlog(blogId, (err, data) => {
     if (err) {

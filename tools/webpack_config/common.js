@@ -1,7 +1,9 @@
 import webpack from 'webpack';
 import path from 'path';
-import featureFlags from '../featureFlags';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+
+import featureFlags from '../featureFlags';
+
 
 const PATH_ROOT = path.resolve(__dirname, '..', '..');
 

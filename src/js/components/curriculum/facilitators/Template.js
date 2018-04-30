@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import jquery from 'jquery';
+import pluralize from 'pluralize';
+
 import { addClass, removeClass, sanitizeHtml, joinHtmlItemsWithCommaWithAnd } from '../../../utils/helpers';
 import SocialLinks from '../../common/SocialLinks';
 import TocLinks from './TocLinks';
-import pluralize from 'pluralize';
+
 
 export class FacilitatorTemplate extends React.Component {
   constructor(props) {

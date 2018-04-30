@@ -1,5 +1,6 @@
 import DOMPurify from 'dompurify';
 
+
 const hasClass = (element, className) => {
   if (element.classList)
     return element.classList.contains(className)

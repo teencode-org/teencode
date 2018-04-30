@@ -1,10 +1,14 @@
+import prod from './prod';
+import dev from './dev';
+
+
 let commonConfig = require('./common');
 let config;
 
 if (process.env.BACKEND_APP === 'production') {
-  config = require('./prod');
+  config = prod;
 } else {
-  config = require('./dev');
+  config = dev;
 }
 
-module.exports = Object.assign({}, commonConfig, config);
+export default Object.assign({}, commonConfig, config);

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
 
+
 const ArticleThread = ({ articleId, articleTitle, shortName }) => {
   return (
     <ReactDisqusComments

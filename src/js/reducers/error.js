@@ -1,6 +1,7 @@
 import actionTypes from '../constants/actionTypes';
 
-export default function(state = [], action) {
+
+export default (state = [], action) => {
     switch(action.type) {
     case actionTypes.RECEIVE_ERROR:
       return createError(state, action.payload);

@@ -1,6 +1,8 @@
 import React from 'react'
+
 import CurriculumTableContainer from './CurriculumTable';
 import DocumentTitle from '../common/DocumentTitle';
+
 
 export class CurriculumPageContainer extends React.Component {
   componentDidMount() {

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+
 const ProofArticlesSection = () =>
   <section className="proof">
     <div className="container">
