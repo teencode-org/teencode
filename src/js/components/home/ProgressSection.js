@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
-
 import { getProgresses } from '../../actions/progressActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ProgressCircle from '../common/ProgressCircle';
-
 
 class ProgressSection extends React.Component {
   componentWillMount() {

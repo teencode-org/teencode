@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
 import { getCurriculum } from '../../actions/curriculumActions'
 import GuideNotes from './GuideNotes'
 import Objectives from './Objectives'
@@ -12,7 +11,6 @@ import Resources from './Resources'
 import Projects from './Projects'
 import Loader from '../common/Loader'
 import EmptyPage from '../common/EmptyPage'
-
 
 export class CurriculumTable extends React.Component {
   constructor(props) {

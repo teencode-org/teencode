@@ -3,7 +3,6 @@ import rootReducer from '../reducers/index';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger'
 
-
 const configureStore = (initialState) => {
   return createStore(
     rootReducer,

@@ -1,6 +1,5 @@
 import actionTypes from '../constants/actionTypes';
 
-
 export default (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.REQUEST_GET_CURRICULUM:

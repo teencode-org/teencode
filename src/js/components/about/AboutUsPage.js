@@ -1,5 +1,4 @@
 import React from 'react';
-
 import SponsorSection from 'Components/home/SponsorSection';
 import ProgressSection from 'Components/home/ProgressSection';
 import Leadership from './Leadership';
@@ -8,7 +7,6 @@ import OurVision from './OurVision';
 import Partners from './Partners';
 import WhatWeDo from './WhatWeDo';
 import WhatDrivesUs from './WhatDrivesUs';
-
 
 class AboutUsPage extends React.Component {
   constructor(props, context){

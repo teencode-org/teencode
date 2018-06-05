@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 
-
 const GuideNotes = ({session}) => {
   const defaultLink = `#session${session}`
   const {facilitator_guides, lesson_notes} = session

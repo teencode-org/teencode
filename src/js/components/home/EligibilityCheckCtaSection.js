@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 
-
 const EligibilityCheckCtaSection = (checkEligibility) =>
   <section id="cta" className="cta">
     <div className="container">

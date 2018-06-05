@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 
-
 const FloatingFeedbackButton = ({sticky}) =>
   <div className="feedback-sticky" style={{ display: sticky }}>
     <Link to="/contact-us">

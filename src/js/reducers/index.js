@@ -6,7 +6,6 @@ import progress from './progress';
 import error from './error';
 import blog from './blog';
 
-
 let rootReducer = combineReducers({
   application,
   contact,

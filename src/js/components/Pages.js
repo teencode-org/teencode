@@ -6,7 +6,6 @@ import Header from './common/Header';
 import Footer from './common/Footer';
 import toastr from 'toastr';
 
-
 class Pages extends React.Component {
   componentWillMount() {
     toastr.options.positionClass = "toast-nav-top-right";

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 const Submit = ({ label, icon, otherFormGroupClasses, onClick, disabled }) => {
   if (icon) {
     icon = <i className={`fa fa-${icon}`}></i>

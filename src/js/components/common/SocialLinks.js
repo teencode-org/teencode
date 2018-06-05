@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import { trimText } from 'Utils/helpers';
-
 
 const openURLInPopup = (url, name, width=600, height=400) => {
   return () => window.open(url, name || 'window' + Math.floor(Math.random() * 10000 + 1), `width=${width},height=${height},menubar=0,location=0,toolbar=0,status=0,scrollbars=1`);

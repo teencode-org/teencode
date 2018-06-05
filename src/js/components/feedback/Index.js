@@ -2,10 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 import toastr from 'toastr';
-
 import logo from 'Images/logo-colored.png';
 import DocumentTitle from '../common/DocumentTitle';
-
 
 class Feedback extends React.Component {
   componentWillMount() {

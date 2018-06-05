@@ -2,13 +2,11 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import BlogListArticle from './BlogListArticle';
 import { getBlogs } from 'Actions/blogActions';
 import LoadMore from './LoadMore';
 import config from '../../config/';
 import { stripHtmlTags } from 'Utils/helpers';
-
 
 class BlogList extends Component {
 

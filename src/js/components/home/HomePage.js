@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-
 import TestimonySection from './TestimonySection';
 import VideoSection from './VideoSection';
 import HowSection from './HowSection';
@@ -10,7 +9,6 @@ import EligibilityCheckCtaSection from './EligibilityCheckCtaSection';
 import MainBannerSection from './MainBannerSection';
 import VolunteerSection from './VolunteerSection';
 import ProgressSection from './ProgressSection';
-
 
 class HomePage extends React.Component {
   constructor(props, context){

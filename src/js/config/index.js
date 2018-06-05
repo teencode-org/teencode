@@ -1,7 +1,6 @@
 import prod from './prod';
 import dev from './dev';
 
-
 let commonConfig = require('./common');
 let config;
 

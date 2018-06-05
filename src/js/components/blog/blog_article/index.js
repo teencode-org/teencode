@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
-
 import { getBlogs, getBlogArticle } from '../../../actions/blogActions';
 import ArticleThread from './ArticleThread';
 import ArticleHeader from './ArticleHeader';
@@ -15,7 +14,6 @@ import NotFoundPage from 'Components/not_found/notFound';
 import defaultBlogImage from 'Images/teencode_maryleaks_small.jpeg';
 import { getTwoUniqueIdsFromBlogsArray } from '../../../utils/helpers';
 import SuggestedArticle from './SuggestedArticle';
-
 
 class BlogArticle extends Component {
   componentWillMount() {

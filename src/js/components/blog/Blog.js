@@ -3,10 +3,8 @@ import React, { Component } from 'react';
 import BlogHeader from './BlogHeader';
 import BlogList from './BlogList';
 import { getFeaturedBlogs } from 'Actions/blogActions';
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 
 class Blog extends Component {
   componentWillMount() {

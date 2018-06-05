@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 const ResponseButtons = ({criterion, setCriterion}) => {
 
   let affirmative = () => setCriterion(Object.assign(criterion, {value: true}));

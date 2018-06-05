@@ -1,6 +1,5 @@
 import actionTypes from '../constants/actionTypes';
 
-
 export default (state = [], action) => {
     switch(action.type) {
     case actionTypes.RECEIVE_ERROR:

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 const VideoSection = () =>
     <section id="video" className="why bg-lighter-blue section">
       <div className="container">

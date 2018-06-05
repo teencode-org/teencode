@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 const SponsorSection = () =>
   <section id="sponsor" className="bg-green section sponsored-by">
     <div className="container">

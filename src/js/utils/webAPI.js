@@ -1,8 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import 'babel-polyfill';
-
 import Config from '../config';
-
 
 const requestPath = (path, method, data = {}) => {
   if (method === 'GET' && data.length > 0) {

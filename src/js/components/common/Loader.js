@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 const Loader = ({owner}) =>
   <div className="spinner">
     <h3 className="spinner-header">Loading {owner} ...</h3>

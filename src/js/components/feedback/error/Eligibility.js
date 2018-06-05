@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-
 import logo from '../../../../img/logo-colored.png';
 import DocumentTitle from '../../common/DocumentTitle';
-
 
 const EligibilityError = () => {
   return (

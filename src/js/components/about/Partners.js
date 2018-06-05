@@ -1,7 +1,5 @@
 import React from 'react';
-
-import {PartnersImages } from './data';
-
+import { PartnersImages } from './data';
 
 export default class Partners extends React.Component {
   render() {

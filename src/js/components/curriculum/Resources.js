@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-
 const Resources = ({title, notes}) =>
   <div>
     <h5 className="cur-head">{title}</h5>

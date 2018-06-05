@@ -20,7 +20,6 @@ import Blog from './components/blog';
 import BlogArticle from './components/blog/blog_article';
 import AboutUsPage from './components/about/AboutUsPage';
 
-
 const redirectIfFlagIsDisabled = (flag, nextState, replace) => {
   if (flag) return;
   replace('/');
