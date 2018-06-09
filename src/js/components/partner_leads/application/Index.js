@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ApplicationForm from './ApplicationForm';
-import logo from '../../../../img/logo-colored.png';
-import toastr from 'toastr';
-import { Link, browserHistory } from 'react-router';
-import { apply } from '../../../actions/applicationActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link, browserHistory } from 'react-router';
+import toastr from 'toastr';
+import ApplicationForm from './ApplicationForm';
+import logo from '../../../../img/logo-colored.png';
+import { apply } from '../../../actions/applicationActions';
 import DocumentTitle from '../../common/DocumentTitle';
 
 export class ApplicationPageContainer extends React.Component {

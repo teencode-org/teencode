@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
-import { parseBlogTitle } from '../../../utils/parseBlogTitle';
 import defaultBlogImage from '../../../../img/teencode_maryleaks_small.jpeg';
+import { parseBlogTitle } from '../../../utils/parseBlogTitle';
 
 const SuggestedArticle = ({blogPost, index}) => (
   <Link

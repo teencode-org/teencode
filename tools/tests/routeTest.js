@@ -1,15 +1,15 @@
-const chai = require('chai');
-const supertest = require('supertest');
-const nock = require('nock');
-// const app = require('../srcServer');
-const config = require('../../src/js/config/');
+import chai from 'chai';
+import supertest from 'supertest';
+import nock from 'nock';
+// import app from '../srcServer';
+import config from '../../src/js/config/';
 
 const expect = chai.expect;
 
-module.exports = (app) => {
+export default (app) => {
   const api = supertest(app);
   describe('Blog Route Test', () => {
-    beforeEach(function () {
+    beforeEach(() => {
       const blogResponse = {
         blog: {
           id: 'no-blog',

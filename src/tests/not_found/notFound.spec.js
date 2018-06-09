@@ -6,7 +6,7 @@ import NotFoundPage from '../../js/components/not_found/notFound';
 const NotFound = () => {
     return mount(<NotFoundPage />);
 }
-describe("NotFound", function () {
+describe("NotFound", () => {
   const NotFoundWrapper = NotFound();
   it("should render the 404 text", () => {
     expect(NotFoundWrapper.find(".page-title").childAt(0).text()).toEqual("404. No one can find this page :(");

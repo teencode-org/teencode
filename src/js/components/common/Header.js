@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 import NavLink from './NavLink';
-import { addClass, removeClass } from 'Utils/helpers'
 import jquery from 'jquery';
+import { addClass, removeClass } from 'Utils/helpers'
 import * as flagChecks from 'Utils/featureFlagChecks';
 
 class Header extends React.Component {

@@ -1,11 +1,10 @@
 /*global SEGMENT_KEY:true*/
 
 import PropTypes from 'prop-types';
-
 import React from 'react';
-import { getCurriculum } from '../../actions/curriculumActions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { getCurriculum } from '../../actions/curriculumActions'
 import GuideNotes from './GuideNotes'
 import Objectives from './Objectives'
 import Resources from './Resources'

@@ -1,6 +1,6 @@
 import actionTypes from '../constants/actionTypes';
 
-export default function(state = {}, action) {
+export default (state = {}, action) => {
   switch(action.type) {
     case actionTypes.REQUEST_GET_PROGRESSES:
       return requestToGetProgresses(state, action.payload);

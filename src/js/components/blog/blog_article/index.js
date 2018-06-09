@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import { getBlogs, getBlogArticle } from '../../../actions/blogActions';
-import SocialLinks from '../../common/SocialLinks';
 import ArticleThread from './ArticleThread';
 import ArticleHeader from './ArticleHeader';
 import ArticleBanner from './ArticleBanner';
 import ArticleBody from './ArticleBody';
+import SocialLinks from '../../common/SocialLinks';
 import Loader from '../../common/Loader';
 import NotFoundPage from 'Components/not_found/notFound';
+import defaultBlogImage from 'Images/teencode_maryleaks_small.jpeg';
 import { getTwoUniqueIdsFromBlogsArray } from '../../../utils/helpers';
 import SuggestedArticle from './SuggestedArticle';
-import defaultBlogImage from 'Images/teencode_maryleaks_small.jpeg';
 
 class BlogArticle extends Component {
   componentWillMount() {

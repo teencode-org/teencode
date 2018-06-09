@@ -12,7 +12,7 @@ const ContactForm = () => {
   return shallow(<ContactUsForm />);
 }
 
-describe('ContactUs', function () {
+describe('ContactUs', () => {
   const ContactUsWrapper = ContactUs();
   const ContactFormWrapper = ContactForm();
 

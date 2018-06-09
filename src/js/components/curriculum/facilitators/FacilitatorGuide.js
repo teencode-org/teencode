@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import DocumentTitle from '../../common/DocumentTitle';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { getFacilitatorGuide } from '../../../actions/curriculumActions';
+import DocumentTitle from '../../common/DocumentTitle';
 import Loader from '../../common/Loader';
 import FacilitorTemplate from './Template';
 
 export class FacilitatorGuide extends React.Component {
-  componentDidMount() {
+  
+  componentDidMount = () => {
     const { sessionId, id } = this.props.params;
     this.props.getFacilitatorGuide(sessionId, id);
   }

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import DocumentTitle from '../../common/DocumentTitle';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import DocumentTitle from '../../common/DocumentTitle';
 import { getLessonNotes } from '../../../actions/curriculumActions';
 import Loader from '../../common/Loader';
 import FacilitorTemplate from './Template';

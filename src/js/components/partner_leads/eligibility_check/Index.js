@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import logo from 'Images/logo-colored.png';
-import {Link, browserHistory} from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import SingleQuestion from './SingleQuestion';
 import criteriaList from './criteriaList';
 import DocumentTitle from '../../common/DocumentTitle';

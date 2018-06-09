@@ -1,7 +1,9 @@
 import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
 import commonConfig from './common';
+
 
 const PATH_ROOT = path.resolve(__dirname, '..', '..');
 

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BlogListArticle from './BlogListArticle';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import BlogListArticle from './BlogListArticle';
 import { getBlogs } from 'Actions/blogActions';
 import LoadMore from './LoadMore';
 import config from '../../config/';
@@ -105,6 +105,5 @@ const mapDispatchToProps = (dispatch) => {
     getBlogs
   }, dispatch)
 }
-
 
 export default connect(stateToProps, mapDispatchToProps)(BlogList);

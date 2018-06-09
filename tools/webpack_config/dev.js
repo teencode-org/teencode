@@ -1,4 +1,5 @@
-require('dotenv').config();
+import dotenv from 'dotenv'
+dotenv.config()
 
 const PATH_ROOT = path.resolve(__dirname, '..', '..');
 
