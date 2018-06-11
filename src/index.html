@@ -30,10 +30,14 @@
       analytics.load("Tv6xwYgtVrVvvV8dxeM6nXjlr5RKugV3");
       }}();
     </script>    
-    <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js"
-    crossorigin="anonymous"></script>
-    <script>Raven.config('https://c2f8e0423a0d41c7918b8d1e2ec667c0@sentry.io/1195888').install()
-    </script>
+    <script src=https://cdn.ravenjs.com/3.24.0/raven.min.js
+    crossorigin=anonymous></script>
+    <script>
+      Raven.config('https://ac081c9adb4b4fea99d7446120d1d943@sentry.io/1221497', {
+        release: '0-0-0',
+        environment: 'development-test',
+      }).install()
+     </script>
   </head>
   <body id="page-top" data-spy="scroll" data-target="#top-nav" data-offset="51">
     <div id="app"> </div>
