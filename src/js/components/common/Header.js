@@ -23,7 +23,7 @@ class Header extends React.Component {
   subLinkOnClick(event) {
     let href = event.currentTarget.getAttribute('href');
     jquery('html, body').stop().animate({
-        scrollTop: (jquery(href).offset().top - 50)
+      scrollTop: (jquery(href).offset().top - 50)
     }, 1250);
     event.preventDefault();
   }
@@ -49,6 +49,7 @@ class Header extends React.Component {
 
   render() {
     let stickyClass = this.isHomeLink() ? '' : 'is-sticky';
+    const slackSignInURL = "https://slack.com/oauth/authorize?scope=identity.basic,identity.email,identity.team&client_id=158660860388.380264000787";
     return (
       <nav id="top-nav" className={`navbar navbar-full navbar-custom navbar-fixed-top ${stickyClass}`} data-toggle="sticky-onscroll">
         <div className="container">
@@ -57,7 +58,7 @@ class Header extends React.Component {
               &#9776;
             </button>
             <Link to="/" className="navbar-brand page-scroll nav-link" onClick={this.subLinkOnClick}>
-              <img src={require('../../../img/logo.png')}/>
+              <img src={require('../../../img/logo.png')} />
             </Link>
           </div>
           <div className="collapse navbar-toggleable-sm" id="collapsingNavbar">
@@ -77,6 +78,7 @@ class Header extends React.Component {
               {flagChecks.blogPageIsEnabled() && <NavLink path="/blog" name="Blog" />}
               {flagChecks.volunteerPageIsEnabled() && <NavLink path="/volunteer" name="Volunteers" />}
               {flagChecks.contactUsIsEnabled() && <NavLink path="/contact-us" name="Contact Us" />}
+              {flagChecks.facilitatorSignInIsEnabled() && <NavLink path={slackSignInURL} name="Sign In" />}
             </ul>
           </div>
         </div>
