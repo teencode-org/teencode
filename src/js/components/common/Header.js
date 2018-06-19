@@ -49,7 +49,7 @@ class Header extends React.Component {
 
   render() {
     let stickyClass = this.isHomeLink() ? '' : 'is-sticky';
-    const slackSignInURL = "https://slack.com/oauth/authorize?scope=identity.basic,identity.email&client_id=158660860388.380264000787";
+    const slackSignInURL = "https://slack.com/oauth/authorize?scope=users.profile:read&client_id=158660860388.380264000787";
     return (
       <nav id="top-nav" className={`navbar navbar-full navbar-custom navbar-fixed-top ${stickyClass}`} data-toggle="sticky-onscroll">
         <div className="container">
