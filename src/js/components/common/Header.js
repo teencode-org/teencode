@@ -78,7 +78,7 @@ class Header extends React.Component {
               {flagChecks.blogPageIsEnabled() && <NavLink path="/blog" name="Blog" />}
               {flagChecks.volunteerPageIsEnabled() && <NavLink path="/volunteer" name="Volunteers" />}
               {flagChecks.contactUsIsEnabled() && <NavLink path="/contact-us" name="Contact Us" />}
-              {flagChecks.facilitatorSignInIsEnabled() && <NavLink path={slackSignInURL} name="Sign In" />}
+              {flagChecks.facilitatorSignInIsEnabled() && <NavLink path={slackSignInURL} name="Sign In" target="_blank" />}
             </ul>
           </div>
         </div>
