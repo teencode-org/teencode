@@ -4,18 +4,19 @@ import { Link } from 'react-router';
 
 const GuideNotes = ({session}) => {
   const defaultLink = `#session${session}`
+  console.log('session', session)
   const {facilitator_guides, lesson_notes} = session
   return (
     <div>
       <div className="guides-notes-divider" />
-      {facilitator_guides &&
+      {facilitator_guides.length >= 1 &&
         <p>
           <Link to={`/curriculum/${session.id}/facilitator-guide/${facilitator_guides[0].id}`}>
             <i className="fa fa-chevron-right" aria-hidden="true" /> Facilitator Guide
           </Link>
         </p>
       }
-      {lesson_notes &&
+      {lesson_notes.length >= 1 &&
         <p>
           <Link to={`/curriculum/${session.id}/lesson-notes/${lesson_notes[0].id}`}>
             <i className="fa fa-chevron-right" aria-hidden="true"/> Lesson Notes
