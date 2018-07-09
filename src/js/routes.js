@@ -19,6 +19,7 @@ import NotFound from './components/not_found/notFound';
 import Blog from './components/blog';
 import BlogArticle from './components/blog/blog_article';
 import AboutUsPage from './components/about/AboutUsPage';
+import FacilitatorsDashboard from './components/facilitators';
 
 const redirectIfFlagIsDisabled = (flag, nextState, replace) => {
   if (flag) return;
@@ -50,18 +51,24 @@ export default (
         />
       </Route>
       <Route path="contact-us"
-             component={ContactUs}
-             onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
+        component={ContactUs}
+        onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.contactUsIsEnabled())} />
       <Route path="/blog"
         onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.blogPageIsEnabled())}
       >
         <IndexRoute component={Blog} />
-        <Route path="/blog/:id/:title" component={BlogArticle}/>
+        <Route path="/blog/:id/:title" component={BlogArticle} />
       </Route>
       <Route path="/not-found" component={NotFound} />
-      
+
       <Route path="about-us"
-             component={AboutUsPage} onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.aboutUsIsEnabled())} />
+        component={AboutUsPage} onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.aboutUsIsEnabled())} />
+      <Route path="/facilitators"
+        onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.facilitatorSignInIsEnabled())}
+      >
+        <IndexRoute component={FacilitatorsDashboard} />
+        <Route path="/blog/:id/:title" component={BlogArticle} />
+      </Route>
     </Route>
     <Route path="/not-found" component={NotFound} />
 

@@ -36,6 +36,7 @@ class NavLink extends React.Component {
           activeClassName="active"
           onlyActiveOnIndex
           className="nav-link"
+          target={this.props.target}
         >
           {this.props.name}
         </Link>
@@ -56,7 +57,8 @@ NavLink.propTypes = {
   path: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   subLinkOnClick: PropTypes.func,
-  subLinks: PropTypes.object
+  subLinks: PropTypes.object,
+  target: PropTypes.string
 }
 
 export default NavLink;

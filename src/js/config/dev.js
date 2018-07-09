@@ -1,1 +1,2 @@
-export default "https://teencode-backend-staging.herokuapp.com/api/v1";
+export default { host: "https://teencode-backend-staging.herokuapp.com/api/v1" };
+

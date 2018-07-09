@@ -8,6 +8,10 @@ export const facilitatorGuideIsEnabled = () => {
   return teencode.feature.FACILITATOR_GUIDE_ENABLED;
 };
 
+export const facilitatorSignInIsEnabled = () => {
+  return teencode.feature.FACILITATOR_SIGN_IN;
+};
+
 export const lessonNotesIsEnabled = () => {
   return teencode.feature.LESSON_NOTES_ENABLED;
 };
