@@ -16,7 +16,8 @@ const GLOBALS = {
   'teencode.feature': featureFlags,
   'process.env.NODE_ENV': JSON.stringify('production'),
   'process.env.FB_APPID': JSON.stringify(process.env.FB_APPID),
-  'process.env.DISQUS_SHORT_NAME': JSON.stringify(process.env.DISQUS_APP_NAME)
+  'process.env.DISQUS_SHORT_NAME': JSON.stringify(process.env.DISQUS_APP_NAME),
+  'process.env.SENTRY_DSN': JSON.stringify('https://ac081c9adb4b4fea99d7446120d1d943@sentry.io/1221497')
 };
 
 export default {
