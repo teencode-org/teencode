@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import 'babel-polyfill';
 import Config from '../config';
+import Raven from 'raven-js';
 
 const requestPath = (path, method, data = {}) => {
   if (method === 'GET' && data.length > 0) {
@@ -40,6 +41,16 @@ const processRequest = (path, method, data = {}) => {
   })
   .then(response => response.json())
   .catch(err => {
+    Raven.captureBreadcrumb({
+      message: `API Error ${path}`,
+      data: {
+        path: path,
+        params: requestBody(data, method),
+        data: data,
+        method: method,
+        url: url
+      }
+    })
     throw (err);
   });
 }
