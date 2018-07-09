@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 const GuideNotes = ({session}) => {
   const defaultLink = `#session${session}`
-  console.log('session', session)
   const {facilitator_guides, lesson_notes} = session
   return (
     <div>
