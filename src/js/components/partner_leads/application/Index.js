@@ -15,7 +15,8 @@ export class ApplicationPageContainer extends React.Component {
     this.state = {
       name: '',
       email: '',
-      phone_number: ''
+      phone_number: '',
+      reason_for_applying: ''
     }
   }
 
