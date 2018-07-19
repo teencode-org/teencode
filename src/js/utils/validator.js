@@ -25,7 +25,7 @@ class Validator {
     return typeof str === 'string' && (!str || str.length === 0);
   }
 
-  getFriendlyName(field) {  
+  getFriendlyName(field) {
     return field.replace("_", " ")
   }
 
@@ -93,7 +93,6 @@ class Validator {
       return this.validatorResults();
     }
 
-    this.testEmail('email');
     this.data.phone_number && this.testPhoneNumber('phone_number');
     if (this.options) {
       this.validateByOptions(this.data, this.options);
