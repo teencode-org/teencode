@@ -19,6 +19,8 @@ import NotFound from './components/not_found/notFound';
 import Blog from './components/blog';
 import BlogArticle from './components/blog/blog_article';
 import AboutUsPage from './components/about/AboutUsPage';
+import SummerClub from './components/summer_club';
+import SummerClubApplicationSuccess from './components/summer_club/Success';
 
 const redirectIfFlagIsDisabled = (flag, nextState, replace) => {
   if (flag) return;
@@ -59,9 +61,12 @@ export default (
         <Route path="/blog/:id/:title" component={BlogArticle}/>
       </Route>
       <Route path="/not-found" component={NotFound} />
-      
+
       <Route path="about-us"
              component={AboutUsPage} onEnter={redirectIfFlagIsDisabled.bind(null, flagChecks.aboutUsIsEnabled())} />
+      <Route path="/summer-club/success" component={SummerClubApplicationSuccess} />
+      <Route path="/summer-club" component={SummerClub}>
+      </Route>
     </Route>
     <Route path="/not-found" component={NotFound} />
 

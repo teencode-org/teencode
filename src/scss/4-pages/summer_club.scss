@@ -1,0 +1,40 @@
+.summer-club-banner {
+  margin: unset;
+}
+
+.banner-img {
+  width: 100%;
+}
+
+.form-panel {
+  margin-bottom: 50px;
+  border-bottom: 2px solid #edebeb;
+
+  .form-panel-body {
+    margin: 0 10px;
+    padding-bottom: 50px;
+  }
+
+  &:last-child {
+    border: none;
+
+    .form-panel-body {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.form-panel-heading {
+  display:  flex;
+  justify-content:  center;
+  margin-bottom: 10px;
+  width: 100%;
+
+  & h3 {
+    padding: 10px 0;
+  }
+}
+
+.page-index.summer-club {
+  min-height: calc(100vh - 350px);
+}
