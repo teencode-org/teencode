@@ -5,7 +5,7 @@ import VideoSection from './VideoSection';
 import HowSection from './HowSection';
 import SponsorSection from './SponsorSection';
 import ProofArticlesSection from './ProofArticlesSection';
-import EligibilityCheckCtaSection from './EligibilityCheckCtaSection';
+import SummerClubCta from './SummerClubCta';
 import MainBannerSection from './MainBannerSection';
 import VolunteerSection from './VolunteerSection';
 import ProgressSection from './ProgressSection';
@@ -46,7 +46,7 @@ class HomePage extends React.Component {
       console.log(err) // eslint-disable-line
     }
   }
-  
+
   submitDetails(e) {
     e.preventDefault();
     window.analytics.track('Submit', {
@@ -60,7 +60,7 @@ class HomePage extends React.Component {
       <div>
         <MainBannerSection />
 
-        <EligibilityCheckCtaSection checkEligibility={this.checkEligibility} />
+        <SummerClubCta checkEligibility={this.checkEligibility} />
 
         <ProofArticlesSection />
 

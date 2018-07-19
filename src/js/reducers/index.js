@@ -5,6 +5,7 @@ import curriculum from './curriculum';
 import progress from './progress';
 import error from './error';
 import blog from './blog';
+import summerClub from './summerClub'
 
 let rootReducer = combineReducers({
   application,
@@ -12,7 +13,8 @@ let rootReducer = combineReducers({
   curriculum,
   progress,
   error,
-  blog
+  blog,
+  summerClub
 });
 
 export default rootReducer;
