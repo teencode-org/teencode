@@ -1,0 +1,149 @@
+.summer-club {
+  height: 100vh;
+  position: relative;
+  margin-bottom: 150px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    position: initial;
+    display: flex;
+
+    .summer-club__left,
+    .summer-club__info {
+      width: 50%;
+    }
+  }
+}
+
+.summer-club__left {
+  height: inherit;
+  overflow-x: hidden;
+  position: relative;
+
+  img {
+    height: 100%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(76, 0, 167, .47);
+  }
+}
+
+.summer-club__info {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .summer-club__headline {
+    color: #fff;
+
+    span {
+      color: #FFEA00;
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .summer-club__subheadline {
+    color: #fff;
+  }
+
+  .summer-club__benefits {
+    list-style: none;
+    padding: 0;
+
+    li {
+      color: #fff;
+      display: flex;
+      align-items: center;
+
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+
+      &::before {
+        content: url("../img/caret-left.svg");
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin-right: 7px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      margin: 40px 0;
+    }
+  }
+
+  .summer-club__slots {
+    color: #fff;
+
+    @media (min-width: 768px) {
+      margin: 25px 0 30px;
+    }
+  }
+
+  .summer-club__date-venue {
+    p {
+      color: #FFEA00;
+
+      margin: 0;
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #FFEA00;
+    display: inline-block;
+    width: 100%;
+    padding: 18px 0;
+    text-align: center;
+    border: 1px solid #fff;
+    color: #000;
+
+    @media (min-width: 768px) {
+      width: initial;
+      padding: 18px 20px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    position: initial;
+    transform: none;
+    position: relative;
+    top: initial;
+    left: initial;
+    background: url("../img/paint2.png");
+    padding: 60px 30px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: -100px;
+
+    .summer-club__info-container {
+      position: relative;
+      z-index: 10;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(84, 0, 164, .95);
+    }
+  }
+}
+
