@@ -7,7 +7,7 @@ const EligibilityCheckCtaSection = (checkEligibility) =>
     <div className="container">
       <div className="row">
         <div className="col-md-7 col-xs-12">
-          <h3 className="action">High Schools in Lagos and Nairobi can apply to partner with us<span className="ribbon"> FREE</span></h3>
+          <h3 className="action">High Schools in Lagos, Kampala and Nairobi can apply to partner with us<span className="ribbon"> FREE</span></h3>
         </div>
         <div className="col-md-5 col-xs-12 text-md-right">
           <Link to="/partner-leads/check-eligibility" className="btn btn-action" >Check if your school is eligible >></Link>

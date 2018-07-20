@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
 import TestimonySection from './TestimonySection';
 import VideoSection from './VideoSection';
 import HowSection from './HowSection';
 import SponsorSection from './SponsorSection';
 import ProofArticlesSection from './ProofArticlesSection';
-import SummerClubCta from './SummerClubCta';
-import MainBannerSection from './MainBannerSection';
+import EligibilityCheckCtaSection from './EligibilityCheckCtaSection';
+// import MainBannerSection from './MainBannerSection';
+import SummerClubBanner from './SummerClubBanner';
 import VolunteerSection from './VolunteerSection';
 import ProgressSection from './ProgressSection';
 
@@ -58,9 +58,9 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <MainBannerSection />
-
-        <SummerClubCta checkEligibility={this.checkEligibility} />
+        {/* <MainBannerSection /> */}
+        <SummerClubBanner />
+        <EligibilityCheckCtaSection checkEligibility={this.checkEligibility} />
 
         <ProofArticlesSection />
 

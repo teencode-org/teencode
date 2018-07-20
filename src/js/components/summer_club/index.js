@@ -1,7 +1,6 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import ApplicationForm from './ApplicationForm';
-import SummerClubBanner from '../../../img/summer_club_banner.png';
 import { bindActionCreators } from '../../../../node_modules/redux';
 import DocumentTitle from '../common/DocumentTitle';
 import { connect } from 'react-redux';
@@ -77,12 +76,8 @@ class SummerClub extends React.Component {
   }
 
   render() {
-    return <div className=''>
-      <section className='summer-club-banner'>
-        <img src={SummerClubBanner} className="banner-img img-fluid" alt="Summer Club Banner" />
-      </section>
-
-      <div className='container page-index'>
+    return (<div className="">
+      <div className="container page-index">
       <div className="page-title">
         <h2>We'll love to hear from you</h2>
         <h5>Please come with your laptop :)</h5>
@@ -95,7 +90,7 @@ class SummerClub extends React.Component {
           removeChild={this.removeChild}
         />
       </div>
-    </div>
+    </div>)
   }
 }
 
