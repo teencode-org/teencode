@@ -10,15 +10,14 @@ const SummerClubBannner = () => (
     <div className="summer-club__info">
       <div className="summer-club__info-container">
         <h1 className="summer-club__headline">Learn To <span>Code for Free</span></h1>
-        <p className="summer-club__subheadline">SUMMER CLUB FOR TEENAGERS (JSS3 -SS3)</p>
+        <p className="summer-club__subheadline">SUMMER CLUB FOR TEENAGERS (JSS3 -SS3) - LAGOS, NIGERIA</p>
         <ul className="summer-club__benefits">
-          <li>Build Web applictions from scratch</li>
           <li>Introduction to problem solving</li>
           <li>Learn relevant soft skills</li>
+          <li>Build Web applictions from scratch</li>
         </ul>
         <div className="summer-club__date-venue">
           <p>Saturdays on 4th August - 1st Sept</p>
-          <p>Venue would be communicated to you via e-mail</p>
         </div>
         <h3 className="summer-club__slots">Only 80 slots Available</h3>
         <Link to="/summer-club">Register Your ward(s)</Link>
