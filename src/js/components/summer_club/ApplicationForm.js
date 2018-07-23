@@ -3,6 +3,7 @@ import React from 'react';
 import TextField from '../common/form/TextField';
 import SelectField from '../common/form/SelectField';
 import Submit from '../common/form/Submit';
+import ErrorMessage from '../common/form/ErrorMessage';
 
 const LEVELS = [
   'JSS 3',
@@ -25,12 +26,13 @@ class ApplicationForm extends React.Component {
     }
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0)
-  }
 
   componentWillMount(nextProps) {
     this.setState({buttonDisabled: false})
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -43,6 +45,10 @@ class ApplicationForm extends React.Component {
   }
 
   render() {
+    const {
+      errors
+    } = this.props;
+
     return (
       <content className="wrapper">
         <form>
@@ -51,49 +57,61 @@ class ApplicationForm extends React.Component {
               <div className="panel-heading form-panel-heading"><h3>Parent Details</h3></div>
               <div className="panel-body form-panel-body">
                 <TextField
-                    placeholder="Parent Name"
+                    placeholder="e.g: Kate Joseph"
                     name="parent_name"
                     label="Parent Name"
+                    isRequired
                     onChange={this.props.onChange}
+                    errorMessage={errors.name}
                 />
                 <TextField
-                    placeholder="parent@example.com"
+                    placeholder="e.g: kate_joseph@example.com"
                     type="email"
                     name="parent_email"
                     label="Parent Email"
                     onChange={this.props.onChange}
+                    errorMessage={errors.email}
                 />
 
                 <TextField
-                    placeholder="Phone Number"
+                    placeholder="e.g: 08032128530"
                     name="parent_phone_number"
                     label="Phone Number"
                     onChange={this.props.onChange}
+                    errorMessage={errors.phone_number}
                 />
 
                 <SelectField
-                    placeholder="Center"
                     name="center"
                     label="Prefered Center"
                     onChange={this.props.onChange}
                     options={LOCATIONS}
-                    placeholder='Select Prefered Center'
+                    placeholder="Select Prefered Center"
+                    errorMessage={errors.center}
                 />
               </div>
           </div>
 
           <div className="panel panel-default form-panel">
-            <div className="panel-heading form-panel-heading"><h3>Student Details</h3></div>
+            <div className="panel-heading form-panel-heading">
+              <h3
+                style={{
+                  textAlign: 'center'
+                }}
+              >
+                Student Details
+                <ErrorMessage message={errors.children}/>
+              </h3>
+            </div>
             <div className="panel-body form-panel-body">
               <TextField
-                  placeholder="Ward Name"
+                  placeholder="e.g: John Joseph"
                   name="student_one_name"
                   label="Ward Name"
                   onChange={this.props.onChange}
               />
 
               <SelectField
-                  placeholder="Ward Level"
                   name="student_one_level"
                   label="Ward Level"
                   onChange={this.props.onChange}
@@ -107,14 +125,14 @@ class ApplicationForm extends React.Component {
             <div className="panel-heading form-panel-heading"><h3>Student Details</h3></div>
             <div className="panel-body form-panel-body">
               <TextField
-                  placeholder="Ward Name"
+                  placeholder="e.g: Roselyn Joseph"
                   name="student_two_name"
                   label="Ward Name"
                   onChange={this.props.onChange}
               />
 
               <SelectField
-                  placeholder="Ward Level"
+                  placeholder="Select Student's Class"
                   name="student_two_level"
                   label="Ward Level"
                   onChange={this.props.onChange}

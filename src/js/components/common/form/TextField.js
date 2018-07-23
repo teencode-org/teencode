@@ -1,7 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const TextField = ({ name, placeholder, otherFormGroupClasses, type, label, onChange }) => {
+import ErrorMessage from './ErrorMessage';
+
+const TextField = ({
+  name,
+  placeholder,
+  otherFormGroupClasses,
+  type,
+  label,
+  onChange,
+  errorMessage
+}) => {
   return(
     <div className={`form-group row ${otherFormGroupClasses}`}>
       <label className="col-md-4 col-sm-12 col-form-label">{label}</label>
@@ -13,6 +23,7 @@ const TextField = ({ name, placeholder, otherFormGroupClasses, type, label, onCh
           name={name}
           onChange={onChange}
         />
+        <ErrorMessage message={errorMessage} />
       </div>
     </div>
   );
@@ -24,13 +35,15 @@ TextField.propTypes = {
   otherFormGroupClasses: PropTypes.string,
   type: PropTypes.string,
   label: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string
 };
 
 TextField.defaultProps = {
   type: 'text',
   placeholder: '',
-  otherFormGroupClasses: ''
+  otherFormGroupClasses: '',
+  errorMessage: null
 };
 
 export default TextField;

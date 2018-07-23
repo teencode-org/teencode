@@ -5,16 +5,14 @@ import { bindActionCreators } from '../../../../node_modules/redux';
 import DocumentTitle from '../common/DocumentTitle';
 import { connect } from 'react-redux';
 import { summerClubApplication } from '../../actions/summerClubActions';
-
-
-
-
+import Validator from '../../utils/validator';
 
 class SummerClub extends React.Component {
   constructor() {
     super();
 
     this.state = {
+        formErrors: {},
         parent_name: '',
         parent_email: '',
         parent_phone_number: '',
@@ -36,12 +34,60 @@ class SummerClub extends React.Component {
     this.setState({[event.target.name]: event.target.value});
   }
 
+  validateFormData = ({parent, children}) => {
+    const errors = {};
+
+    const validator = new Validator(parent);
+    const {
+      email,
+      center,
+      phone_number,
+      name
+    } = parent
+
+    if (!validator.validateEmail(email)) {
+      errors.email = "Please enter a valid email address"
+    }
+
+    if (center === "") {
+      errors.center = "Please choose a center close to you"
+    }
+
+    if (name === "" || name.indexOf(' ') == -1) {
+      errors.name = "Please enter your full name"
+    }
+
+    if (isNaN(phone_number) || phone_number.length !== 11) {
+      errors.phone_number = "Please enter a valid phone number"
+    }
+
+    if (children.length === 0) {
+      errors.children = "Please enter all the details of your ward(s)"
+    }
+
+    return {
+      errors,
+      valid: Object.keys(errors).length == 0
+    };
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
     event.target.value = 'Submiting';
     const params = {parent: this.parentParams(), children: this.childrenParams()}
 
-    this.props.summerClubApplication(params);
+    const {
+      valid,
+      errors
+    } = this.validateFormData(params);
+
+    if(valid) {
+      this.props.summerClubApplication(params);
+    } else {
+      this.setState({
+        formErrors: errors
+      })
+    }
   }
 
   childrenParams = () => {
@@ -55,16 +101,16 @@ class SummerClub extends React.Component {
         level: this.state.student_one_level
       }
     ].filter((child) => {
-      return child.name != '' && child.level != ''
+      return child.name.trim() != '' && child.level.trim() != ''
     })
   }
 
   parentParams = () => {
     return {
-      name: this.state.parent_name,
-      email: this.state.parent_email,
-      phone_number: this.state.parent_phone_number,
-      center: this.state.center
+      name: this.state.parent_name.trim(),
+      email: this.state.parent_email.trim(),
+      phone_number: this.state.parent_phone_number.trim(),
+      center: this.state.center.trim()
     }
   }
 
@@ -88,6 +134,7 @@ class SummerClub extends React.Component {
           onSubmit={this.handleSubmit}
           buttonDisabled={this.props.summerClub.isSending}
           removeChild={this.removeChild}
+          errors={this.state.formErrors}
         />
       </div>
     </div>)
