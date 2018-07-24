@@ -13,8 +13,16 @@ const LEVELS = [
 ]
 
 const LOCATIONS = [
-  'Lagos Mainland',
-  'Lagos Island'
+  {
+    value: 'Lagos Mainland',
+    label: 'Lagos Mainland - Slots Filled',
+    isDisabled: true
+  },
+  {
+    value: 'Lagos Island',
+    label: 'Lagos Island',
+    isDisabled: false
+  }
 ]
 
 class ApplicationForm extends React.Component {

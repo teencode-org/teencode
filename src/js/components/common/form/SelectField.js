@@ -19,8 +19,8 @@ const SelectField = ({
         <select className="form-control form-control-lg" name={name} onChange={onChange}>
           <option value={''}>{placeholder}</option>
           {
-            options.map(element => {
-              return <option value={element}>{element}</option>
+            options.map(({ label, value, isDisabled }) => {
+              return <option key={value} value={value} disabled={isDisabled}>{label}</option>
             })
           }
         </select>
@@ -36,7 +36,11 @@ SelectField.propTypes = {
   otherFormGroupClasses: PropTypes.string,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    isDisabled: PropTypes.bool.isRequired
+  })).isRequired,
   errorMessage: PropTypes.string
 };
 
