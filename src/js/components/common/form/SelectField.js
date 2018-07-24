@@ -1,7 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const SelectField = ({ name, placeholder, otherFormGroupClasses, label, onChange, options }) => {
+import ErrorMessage from './ErrorMessage';
+
+const SelectField = ({
+  name,
+  placeholder,
+  otherFormGroupClasses,
+  label,
+  onChange,
+  options,
+  errorMessage
+}) => {
   return(
     <div className={`form-group row ${otherFormGroupClasses}`}>
       <label className="col-md-4 col-sm-12 col-form-label">{label}</label>
@@ -14,6 +24,7 @@ const SelectField = ({ name, placeholder, otherFormGroupClasses, label, onChange
             })
           }
         </select>
+        <ErrorMessage message={errorMessage}/>
       </div>
     </div>
   );
@@ -29,12 +40,14 @@ SelectField.propTypes = {
     value: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     isDisabled: PropTypes.bool.isRequired
-  })).isRequired
+  })).isRequired,
+  errorMessage: PropTypes.string
 };
 
 SelectField.defaultProps = {
   placeholder: '',
-  otherFormGroupClasses: ''
+  otherFormGroupClasses: '',
+  errorMessage: null
 };
 
 export default SelectField;
