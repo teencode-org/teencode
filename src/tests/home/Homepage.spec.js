@@ -15,7 +15,7 @@ describe('Homepage', () => {
   });
 
   it('loads the EligibilityCheckCtaSection on the homepage', () => {
-    expect(home.find('SummerClubCta').length).toEqual(1);
+    expect(home.find('EligibilityCheckCtaSection').length).toEqual(1);
   });
 
   it('loads the ProofArticlesSection on the homepage', () => {

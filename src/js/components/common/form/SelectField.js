@@ -6,11 +6,13 @@ const SelectField = ({ name, placeholder, otherFormGroupClasses, label, onChange
     <div className={`form-group row ${otherFormGroupClasses}`}>
       <label className="col-md-4 col-sm-12 col-form-label">{label}</label>
       <div className="col-md-8 col-sm-12">
-        <select className='form-control form-control-lg' name={name} onChange={onChange}>
-        <option value={''}>{placeholder}</option>
-         {options.map(element => {
-            return <option value={element}>{element}</option>
-          })}
+        <select className="form-control form-control-lg" name={name} onChange={onChange}>
+          <option value={''}>{placeholder}</option>
+          {
+            options.map(({ label, value, isDisabled }) => {
+              return <option key={value} value={value} disabled={isDisabled}>{label}</option>
+            })
+          }
         </select>
       </div>
     </div>
@@ -23,7 +25,11 @@ SelectField.propTypes = {
   otherFormGroupClasses: PropTypes.string,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  options: PropTypes.array.isRequired
+  options: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    isDisabled: PropTypes.bool.isRequired
+  })).isRequired
 };
 
 SelectField.defaultProps = {

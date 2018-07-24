@@ -12,8 +12,16 @@ const LEVELS = [
 ]
 
 const LOCATIONS = [
-  'Lagos Mainland',
-  'Lagos Island'
+  {
+    value: 'Lagos Mainland',
+    label: 'Lagos Mainland - Slot Filled',
+    isDisabled: true
+  },
+  {
+    value: 'Lagos Island',
+    label: 'Lagos Island',
+    isDisabled: false
+  }
 ]
 
 class ApplicationForm extends React.Component {
@@ -77,7 +85,7 @@ class ApplicationForm extends React.Component {
                     label="Prefered Center"
                     onChange={this.props.onChange}
                     options={LOCATIONS}
-                    placeholder='Select Prefered Center'
+                    placeholder="Select Prefered Center"
                 />
               </div>
           </div>
