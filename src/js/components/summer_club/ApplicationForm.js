@@ -6,10 +6,26 @@ import Submit from '../common/form/Submit';
 import ErrorMessage from '../common/form/ErrorMessage';
 
 const LEVELS = [
-  'JSS 3',
-  'SSS 1',
-  'SSS 2',
-  'SSS 3'
+  {
+    value: 'JSS 3',
+    label: 'JSS 3',
+    isDisabled: false
+  },
+  {
+    value: 'SSS 1',
+    label: 'SSS 1',
+    isDisabled: false
+  },
+  {
+    value: 'SSS 2',
+    label: 'SSS 2',
+    isDisabled: false
+  },
+  {
+    value: 'SSS 3',
+    label: 'SSS 3',
+    isDisabled: false
+  }
 ]
 
 const LOCATIONS = [
