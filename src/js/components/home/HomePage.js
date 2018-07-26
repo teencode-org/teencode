@@ -5,8 +5,7 @@ import HowSection from './HowSection';
 import SponsorSection from './SponsorSection';
 import ProofArticlesSection from './ProofArticlesSection';
 import EligibilityCheckCtaSection from './EligibilityCheckCtaSection';
-// import MainBannerSection from './MainBannerSection';
-import SummerClubBanner from './SummerClubBanner';
+import MainBannerSection from './MainBannerSection';
 import VolunteerSection from './VolunteerSection';
 import ProgressSection from './ProgressSection';
 
@@ -58,8 +57,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        {/* <MainBannerSection /> */}
-        <SummerClubBanner />
+        <MainBannerSection />
         <EligibilityCheckCtaSection checkEligibility={this.checkEligibility} />
 
         <ProofArticlesSection />
