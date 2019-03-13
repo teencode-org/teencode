@@ -1,4 +1,6 @@
 import React from 'react';
+import {shallow} from 'enzyme';
+
 import MainBannerSection from '../../js/components/home/MainBannerSection';
 
 /*eslint-disable no-undef*/

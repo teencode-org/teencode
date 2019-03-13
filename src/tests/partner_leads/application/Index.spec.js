@@ -1,4 +1,5 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import { ApplicationPageContainer } from '../../../js/components/partner_leads/application/Index';
 
 /*eslint-disable no-undef*/

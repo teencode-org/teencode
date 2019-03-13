@@ -1,7 +1,12 @@
 /*eslint-disable no-console*/
 import webpack from 'webpack';
 import webpackConfig from './webpack_config/prod';
-import colors from 'colors';
+const colors = require('colors');
+
+const webpack = require('webpack');
+
+
+const webpackConfig = require('./webpack_config/prod')
 
 
 process.env.NODE_ENV = 'production'; // assures the babel dev config for hot reloading doesn't apply

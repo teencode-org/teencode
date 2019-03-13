@@ -1,4 +1,6 @@
 import React from 'react';
+import {shallow } from 'enzyme';
+
 import { CurriculumPageContainer } from '../../js/components/curriculum/Index';
 
 /*eslint-disable no-undef*/

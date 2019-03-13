@@ -9,7 +9,7 @@ import MainBannerSection from './MainBannerSection';
 import VolunteerSection from './VolunteerSection';
 import ProgressSection from './ProgressSection';
 
-class HomePage extends React.Component {
+class  HomePage extends React.Component {
   constructor(props, context){
     super(props);
   }

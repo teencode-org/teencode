@@ -1,4 +1,6 @@
 import React from 'react';
+import {shallow} from 'enzyme';
+
 import SponsorSection from '../../js/components/home/SponsorSection';
 
 /*eslint-disable no-undef*/
@@ -6,7 +8,6 @@ import SponsorSection from '../../js/components/home/SponsorSection';
 
 describe('SponsorSection', () => {
   const SponsorRender = shallow(<SponsorSection />);
-
   it('displays accurate markup', () => {
     expect(SponsorRender.find('section').length).toEqual(1);
     expect(SponsorRender.find('section').is('#sponsor')).toBeTruthy();

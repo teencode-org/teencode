@@ -1,4 +1,6 @@
 import React from 'react';
+import {shallow } from 'enzyme';
+
 import Resources from '../../js/components/curriculum/Resources';
 
 /*eslint-disable no-undef*/

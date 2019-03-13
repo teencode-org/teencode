@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import expect from 'expect';
 import NotFoundPage from '../../js/components/not_found/notFound';
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import {shallow } from 'enzyme';
+
 import GuideNotes from '../../js/components/curriculum/GuideNotes';
 
 /*eslint-disable no-undef*/

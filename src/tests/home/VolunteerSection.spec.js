@@ -1,4 +1,6 @@
 import React from 'react';
+import {shallow} from 'enzyme';
+
 import VolunteerSection from '../../js/components/home/VolunteerSection';
 
 /*eslint-disable no-undef*/

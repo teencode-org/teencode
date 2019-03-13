@@ -1,4 +1,5 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import FloatingFeedbackButton from '../../js/components/common/FloatingFeedbackButton';
 
 /*eslint-disable no-undef*/

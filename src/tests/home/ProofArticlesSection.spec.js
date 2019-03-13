@@ -1,5 +1,7 @@
 import React from 'react';
 import ProofArticlesSection from '../../js/components/home/ProofArticlesSection';
+import {shallow} from 'enzyme';
+
 
 /*eslint-disable no-undef*/
 

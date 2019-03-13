@@ -1,4 +1,5 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import Footer from '../../js/components/common/Footer';
 
 /*eslint-disable no-undef*/

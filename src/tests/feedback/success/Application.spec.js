@@ -1,4 +1,5 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import AppreciationPage from '../../../js/components/feedback/success/Application';
 
 /*eslint-disable no-undef*/

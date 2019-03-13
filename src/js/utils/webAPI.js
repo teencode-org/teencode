@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import 'babel-polyfill';
+import 'whatwg-fetch';
 import Config from '../config';
 import Raven from 'raven-js';
 

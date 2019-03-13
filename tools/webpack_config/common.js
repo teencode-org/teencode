@@ -1,8 +1,8 @@
-import webpack from 'webpack';
-import path from 'path';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+const webpack = require('webpack');
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-import featureFlags from '../featureFlags';
+const featureFlags =  require('../featureFlags');
 
 
 const PATH_ROOT = path.resolve(__dirname, '..', '..');
@@ -11,7 +11,7 @@ const nodeModulesPath = path.resolve(PATH_ROOT, 'node_modules');
 const buildPath = path.resolve(PATH_ROOT, 'dist');
 const entryPath = path.resolve(PATH_ROOT, 'src', 'js', 'index.js');
 const imagesPath = path.resolve(PATH_ROOT, 'src', 'img', 'static_images');
-
+console.log({featureFlags})
 const GLOBALS = {
   'teencode.feature': featureFlags,
   'process.env.NODE_ENV': JSON.stringify('production'),
@@ -20,14 +20,12 @@ const GLOBALS = {
   'process.env.SENTRY_DSN': JSON.stringify('https://ac081c9adb4b4fea99d7446120d1d943@sentry.io/1221497')
 };
 
-export default {
-  debug: true,
+module.exports = {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: './src'
   },
 
-  noInfo: false,
   target: 'web',
   output: {
     path: buildPath,
@@ -36,7 +34,7 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    // new webpack.NoErrorsPlugin(),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
@@ -50,7 +48,7 @@ export default {
     ])
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /src\/js\/.+.js$/,
         exclude: /node_modules/,
@@ -59,7 +57,7 @@ export default {
       // SASS
       {
         test: /css\/.+.(scss|css)$/,
-        loaders: ['style', 'css', 'sass']
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.json$/,
@@ -67,27 +65,11 @@ export default {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        loader: 'url?limit=25000'
+        loader: 'url-loader'
       },
       {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=application/octet-stream'
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=image/svg+xml'
+        test: /\.svg$/,
+        use: "file-loader",
       }
     ]
   },

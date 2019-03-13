@@ -1,5 +1,7 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import VideoSection from '../../js/components/home/VideoSection';
+
 
 /*eslint-disable no-undef*/
 

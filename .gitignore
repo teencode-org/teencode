@@ -8,4 +8,5 @@ coverage
 **/.DS_Store
 **/.idea
 .env
+yarn-error.log
 /dist
