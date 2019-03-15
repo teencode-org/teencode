@@ -1,7 +1,7 @@
-import request from 'request';
-import config from '../../src/js/config';
+const request  = require('request');
+const config  = require('../../src/js/config');
 
-export const buildTags = ({blog}, url) => {
+const buildTags = ({blog}, url) => {
   let description = blog.story
     .replace(/[<&]\/?[a-zA-Z]+[0-9]?[>;]/g, ' ').substring(0, config.SUMMARY_LENGTH);
   description = description.replace(/<(?:.|\n)*?>/gm, '');
@@ -16,7 +16,7 @@ export const buildTags = ({blog}, url) => {
       <meta id="og-url" property="og:url" content="${url}" />
       <meta id="og-image" property="og:image" content="${image_url}" />
       <meta id="og-type" property="og:type" content="article" />
-      
+
       <meta name="description" content="${description}"/>
 
       <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +28,7 @@ export const buildTags = ({blog}, url) => {
     `;
 }
 
-export const injectMetaTag = (file, tags) => {
+const injectMetaTag = (file, tags) => {
   const headTag = '</head>';
   const endOfOpeningHeadTag = file.indexOf(headTag);
   const opening = file.substring(0, endOfOpeningHeadTag);
@@ -36,7 +36,7 @@ export const injectMetaTag = (file, tags) => {
   return opening + tags + closing;
 }
 
-export const fetchBlog = (id, cb) => {
+const fetchBlog = (id, cb) => {
   const url = `${config.host}/blogs/${id}`;
   request({ url }, (err, response, body) => {
     if (err !== null) {
@@ -46,3 +46,5 @@ export const fetchBlog = (id, cb) => {
     cb(null, body);
   });
 }
+
+module.exports = {buildTags, injectMetaTag, fetchBlog}

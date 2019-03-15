@@ -1,5 +1,5 @@
-import prod from './prod';
-import dev from './dev';
+const prod = require('./prod');
+const dev = require('./dev');
 
 let commonConfig = require('./common');
 let config;
@@ -10,4 +10,4 @@ if (process.env.NODE_ENV === 'production') {
   config = dev;
 }
 
-export default Object.assign({}, commonConfig, config);
+module.exports = Object.assign({}, commonConfig, config);

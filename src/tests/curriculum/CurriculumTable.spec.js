@@ -1,4 +1,5 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import { CurriculumTable } from '../../js/components/curriculum/CurriculumTable';
 import fixtures from './fixtures';
 
@@ -56,6 +57,6 @@ describe('CurriculumTable', () => {
       expect(Object.keys(curList.curriculumList).length).toEqual(5);
       expect(trCount).toEqual(5);
     });
-    
+
   });
 })

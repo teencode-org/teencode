@@ -1,7 +1,6 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import TestimonySection from '../../js/components/home/TestimonySection';
-
-/*eslint-disable no-undef*/
 
 
 describe('TestimonySection', () => {

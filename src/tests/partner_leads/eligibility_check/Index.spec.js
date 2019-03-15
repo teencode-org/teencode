@@ -1,4 +1,5 @@
 import React from 'react';
+import {mount} from 'enzyme';
 import Index from '../../../js/components/partner_leads/eligibility_check/Index';
 
 /*eslint-disable no-undef*/
@@ -16,5 +17,5 @@ describe('Eligibility Check Index', () => {
     expect(smallElement.childAt(0).text()).toEqual('Eligibility Check');
     expect(IndexWrapper.find('SingleQuestion').length).toEqual(3);
   });
-  
+
 });

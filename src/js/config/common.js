@@ -1,2 +1,4 @@
-export const SUMMARY_LENGTH = 250;
-export const defaultFeaturedImage = '/img/teencode-group-pic.jpg';
+const SUMMARY_LENGTH = 250;
+const defaultFeaturedImage = '/img/teencode-group-pic.jpg';
+
+module.exports = {SUMMARY_LENGTH, defaultFeaturedImage}

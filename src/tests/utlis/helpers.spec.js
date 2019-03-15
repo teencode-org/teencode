@@ -1,13 +1,7 @@
-import expect from 'expect';
-
 import {
-  hasClass,
-  addClass,
-  removeClass,
   trimText,
   stripHtmlTags,
   getTwoUniqueIdsFromBlogsArray,
-  sanitizeHtml
 } from 'Utils/helpers';
 
 describe('.sanitizeHtml()', () => {

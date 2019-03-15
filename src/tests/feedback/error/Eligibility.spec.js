@@ -1,4 +1,5 @@
 import React from 'react';
+import {shallow} from 'enzyme';
 import IneligibilityPage from '../../../js/components/feedback/error/Eligibility';
 
 /*eslint-disable no-undef*/

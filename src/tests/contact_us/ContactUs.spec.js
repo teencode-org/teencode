@@ -1,6 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import expect from 'expect';
+import {shallow } from 'enzyme';
 import { ContactUsPage } from '../../js/components/contact_us/Index';
 import ContactUsForm from '../../js/components/contact_us/ContactUsForm';
 

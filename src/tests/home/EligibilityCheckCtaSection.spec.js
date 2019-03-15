@@ -1,4 +1,6 @@
 import React from 'react';
+import {shallow} from 'enzyme';
+
 import EligibilityCheckCtaSection from '../../js/components/home/EligibilityCheckCtaSection';
 
 /*eslint-disable no-undef*/

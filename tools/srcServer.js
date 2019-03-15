@@ -1,11 +1,11 @@
-import express from 'express';
-import webpack from 'webpack';
-import path from 'path';
-import config from './webpack_config/dev';
-import favicon from 'serve-favicon';
-import open from 'open';
-import bodyParser from 'body-parser';
-import blogRoute from './routes/blogRoute'
+const express = require('express');
+const webpack = require('webpack');
+const path = require('path');
+const config = require('./webpack_config/dev');
+const favicon = require('serve-favicon');
+const open = require('open');
+const bodyParser = require('body-parser');
+// const blogRoute = require('./routes/blogRoute');
 
 /* eslint-disable no-console */
 
@@ -24,13 +24,13 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(favicon(path.join(__dirname, '..', 'src', 'img', 'favicon.png')));
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.get('/blog/:id/:title', blogRoute);
+// app.get('/blog/:id/:title', blogRoute);
 
 app.use(function (req, res) {
   res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
-app.listen(port, (err) => {
+app.listen(port, function(err) {
   if (err) {
     console.log(err);
   } else {
@@ -39,4 +39,4 @@ app.listen(port, (err) => {
   }
 });
 
-export default app;
+module.exports = app

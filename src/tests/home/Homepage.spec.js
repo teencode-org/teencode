@@ -1,4 +1,6 @@
 import React from 'react';
+import {shallow} from 'enzyme';
+
 import HomepageComponent from '../../js/components/home/HomePage';
 
 /*eslint-disable no-undef*/
