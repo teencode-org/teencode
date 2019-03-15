@@ -1,1 +1,1 @@
-web: babel-node tools/distServer.js
+web: node tools/distServer.js
