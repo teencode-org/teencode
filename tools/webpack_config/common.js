@@ -1,13 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 const featureFlags =  require('../featureFlags');
 
 
 const PATH_ROOT = path.resolve(__dirname, '..', '..');
 
-const nodeModulesPath = path.resolve(PATH_ROOT, 'node_modules');
 const buildPath = path.resolve(PATH_ROOT, 'dist');
 const entryPath = path.resolve(PATH_ROOT, 'src', 'js', 'index.js');
 const imagesPath = path.resolve(PATH_ROOT, 'src', 'img', 'static_images');
@@ -33,19 +34,22 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new HtmlWebpackPlugin({
+    //   template: './src/index.html',
+    //   filename: './index.html'
+    // }),
     // new webpack.NoErrorsPlugin(),
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery',
-      jquery: 'jquery',
-      Tether: 'tether',
-      'window.Tether': 'tether'
-    }),
-    new webpack.DefinePlugin(GLOBALS),
-    new CopyWebpackPlugin([
-      { context: imagesPath, from: '*', to: 'img' }
-    ])
+    // new webpack.ProvidePlugin({
+    //   jQuery: 'jquery',
+    //   $: 'jquery',
+    //   jquery: 'jquery',
+    //   Tether: 'tether',
+    //   'window.Tether': 'tether'
+    // }),
+    // new webpack.DefinePlugin(GLOBALS),
+    // new CopyWebpackPlugin([
+    //   { context: imagesPath, from: '*', to: 'img' }
+    // ])
   ],
   module: {
     rules: [

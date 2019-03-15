@@ -1,6 +1,5 @@
 const dotenv = require('dotenv');
 dotenv.config();
-console.log('process', process.env)
 module.exports = {
   'CURRICULUM_ENABLED': process.env.CURRICULUM_ENABLED,
   'FACILITATOR_GUIDE_ENABLED': process.env.FACILITATOR_GUIDE_ENABLED,

@@ -1,24 +1,24 @@
-import express, { static as staticFiles } from "express";
-import favicon from "serve-favicon";
-import { join } from "path";
-import compression from "compression";
-import request from "request";
-import blogRoute from "./routes/blogRoute";
+const express = require("express");
+const favicon = require("serve-favicon");
+const path = require("path");
+const compression = require("compression");
+const blogRoute = require("./routes/blogRoute");
 
 /* eslint-disable no-console */
 
 let isDeveloping = process.env.NODE_ENV !== 'production';
 let port = isDeveloping ? 9000 : process.env.PORT;
+let staticFiles = express.static;
 let app = express();
 
 app.use(compression());
 app.use(staticFiles('dist'));
-app.use(favicon(join(__dirname, '..', 'src', 'img', 'favicon.png')));
+app.use(favicon(path.join(__dirname, '..', 'src', 'img', 'favicon.png')));
 
 app.get('/blog/:id/:title', blogRoute);
 
 app.use(function (req, res) {
-  res.sendFile(join(__dirname, '../src/index.html'));
+  res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
 app.listen(port, function (err) {
@@ -29,4 +29,4 @@ app.listen(port, function (err) {
   }
 });
 
-export default app;
+module.exports = app;
