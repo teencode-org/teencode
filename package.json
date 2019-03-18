@@ -51,7 +51,7 @@
     "mocha": "^5.1.1",
     "nock": "^8.0.0",
     "node-sass": "^4.11.0",
-    "npm-run-all": "^1.8.0",
+    "npm-run-all": "^4.1.5",
     "open": "0.0.5",
     "popover": "^2.4.1",
     "popper.js": "^1.14.7",
