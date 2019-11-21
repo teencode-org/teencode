@@ -27,7 +27,7 @@
     "chai": "^3.5.0",
     "colors": "^1.1.2",
     "compression": "^1.6.2",
-    "coveralls": "^2.11.12",
+    "coveralls": "^3.0.8",
     "cross-env": "1.0.7",
     "css-loader": "2.1.1",
     "dompurify": "1.0.1",
