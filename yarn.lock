@@ -2958,10 +2958,10 @@ domify@~1.4.0:
   resolved "https://registry.yarnpkg.com/domify/-/domify-1.4.0.tgz#11483617f764f8695975b4bdc79b14f0803b629b"
   integrity sha1-EUg2F/dk+GlZdbS9x5sU8IA7Yps=
 
-dompurify@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-1.0.1.tgz#a7dae8a6b0719c80d7d639fe44f834b81e9b02b8"
-  integrity sha512-f4076WvReScVPWXLkAA/xDZHqBLa7yXgKqGQijAch4f7FtXW8GMm9lRRbb7zVSTbHbggzo0ba9sv8FPybtejpg==
+dompurify@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.0.3.tgz#5cc4965a487d54aedba6ba9634b137cfbd7eb50d"
+  integrity sha512-q006uOkD2JGSJgF0qBt7rVhUvUPBWCxpGayALmHvXx2iNlMfNVz7PDGeXEUjNGgIDjADz59VZCv6UE3U8XRWVw==
 
 domutils@1.5.1:
   version "1.5.1"
