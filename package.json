@@ -78,7 +78,7 @@
     "style-loader": "0.23.1",
     "tether": "^1.4.0",
     "toastr": "2.1.2",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "url-loader": "0.5.7",
     "whatwg-fetch": "^3.0.0"
   },
